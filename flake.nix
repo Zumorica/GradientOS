@@ -9,10 +9,10 @@
 
     nixlib.url = "github:nix-community/nixpkgs.lib";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -22,7 +22,6 @@
     gradient-generator = {
       url = "git+ssh://git@github.com/Zumorica/gradient-generator";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     jovian-nixos = {
@@ -35,18 +34,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    #nixos-generators = {
-    #  url = "github:nix-community/nixos-generators";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable-2211, nixlib, flake-utils, home-manager, gradient-generator, jovian-nixos, sops-nix, disko, nixos-hardware, ... }:
+  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ... }:
   let
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
@@ -58,8 +48,8 @@
       overlays = overlays;
     };
   in
-  rec {
-    nixosConfigurations = rec {
+  {
+    nixosConfigurations = {
 
       miracle-crusher = nixpkgs.lib.nixosSystem 
       rec {
@@ -109,8 +99,8 @@
         pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs jovian-pkgs jovian-workaround ]; };
         specialArgs = { inherit self; };
         modules = [
+          sops-nix.nixosModules.sops
           jovian-modules
-          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix"
           ./core
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
@@ -138,8 +128,6 @@
               ];
             };
           }
-          sops-nix.nixosModules.sops
-          #disko.nixosModules.disko
         ];
       };
 
@@ -149,7 +137,6 @@
         pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs jovian-pkgs jovian-workaround ]; };
         specialArgs = { inherit self; };
         modules = [
-          #"${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix"
           sops-nix.nixosModules.sops
           jovian-modules
           ./core

@@ -5,7 +5,7 @@
   imports = [
     ./secrets
     ./locale.nix
-    #./filesystems.nix
+    ./filesystems.nix
     ./syncthing.nix
     ./wireguard.nix
   ];
