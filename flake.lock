@@ -1,0 +1,277 @@
+{
+  "nodes": {
+    "disko": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1681852972,
+        "narHash": "sha256-oLHe2PK9IMKRaoHxSRgSrcJQnoLGdfvz2fNThE51+Jw=",
+        "owner": "nix-community",
+        "repo": "disko",
+        "rev": "e10586ab84ea5d37e1332dc49e29ce7d06fd1d6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "disko",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673956053,
+        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1681202837,
+        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "gradient-generator": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "poetry2nix": "poetry2nix"
+      },
+      "locked": {
+        "lastModified": 1682004037,
+        "narHash": "sha256-siSGNvhktQya2/p8UYG/mDUhinG4Sfhx6ahW2kyJPKA=",
+        "ref": "refs/heads/master",
+        "rev": "b98ffbca8a2fefd4ee112562b8c83861a3ed6226",
+        "revCount": 73,
+        "type": "git",
+        "url": "ssh://git@github.com/Zumorica/gradient-generator"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/Zumorica/gradient-generator"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1681852391,
+        "narHash": "sha256-0wGjrFTmYyjS9jE6MdgjcOEKvWjFkKcRpOtSXso99JI=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "aa03c8a429902dbaf15b3395f8cefc5a4b83f7f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "jovian-nixos": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1682214531,
+        "narHash": "sha256-+tX9dXGKn8hdkB863FSQPsqgxLJdlxVbbTgylnhSKrw=",
+        "owner": "Zumorica",
+        "repo": "Jovian-NixOS",
+        "rev": "d5a3fb4eedf5438390501c40b7135e207a268fd3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Zumorica",
+        "ref": "unstable",
+        "repo": "Jovian-NixOS",
+        "type": "github"
+      }
+    },
+    "nixlib": {
+      "locked": {
+        "lastModified": 1681001314,
+        "narHash": "sha256-5sDnCLdrKZqxLPK4KA8+f4A3YKO/u6ElpMILvX0g72c=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "367c0e1086a4eb4502b24d872cea2c7acdd557f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1680876084,
+        "narHash": "sha256-eP9yxP0wc7XuVaODugh+ajgbFGaile2O1ihxiLxOuvU=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "3006d2860a6ed5e01b0c3e7ffb730e9b293116e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1681737997,
+        "narHash": "sha256-pHhjgsIkRMu80LmVe8QoKIZB6VZGRRxFmIvsC5S89k4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f00994e78cd39e6fc966f0c4103f908e63284780",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1681613598,
+        "narHash": "sha256-Ogkoma0ytYcDoMR2N7CZFABPo+i0NNo26dPngru9tPc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1040ce5f652b586da95dfd80d48a745e107b9eac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable-2211": {
+      "locked": {
+        "lastModified": 1681932375,
+        "narHash": "sha256-tSXbYmpnKSSWpzOrs27ie8X3I0yqKA6AuCzCYNtwbCU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3d302c67ab8647327dba84fbdb443cdbf0e82744",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "poetry2nix": {
+      "inputs": {
+        "flake-utils": [
+          "gradient-generator",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "gradient-generator",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1680741011,
+        "narHash": "sha256-yngUYI0IzwlvPq0pydX9B781munOueoSyzR69nlQQjY=",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "585f19cce38a7f75d5bc567b17060ec45bc63ed0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "disko": "disko",
+        "flake-compat": "flake-compat",
+        "flake-utils": "flake-utils",
+        "gradient-generator": "gradient-generator",
+        "home-manager": "home-manager",
+        "jovian-nixos": "jovian-nixos",
+        "nixlib": "nixlib",
+        "nixos-hardware": "nixos-hardware",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-stable-2211": "nixpkgs-stable-2211",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1681821695,
+        "narHash": "sha256-uwyBGo/9IALi97AfMuzkJroQQhV6hkybaZVdw6pRNG4=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "5698b06b0731a2c15ff8c2351644427f8ad33993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

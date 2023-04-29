@@ -1,0 +1,21 @@
+[Desktop Entry]
+DefaultProfile=vera.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+RememberWindowSize=false
+
+[MainWindow]
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAA/////wAAARUBAAAD+wAAACIAUQB1AGkAYwBrAEMAbwBtAG0AYQBuAGQAcwBEAG8AYwBrAAAAAAD/////AAABfAEAAAMAAAMKAAABsgAAAAQAAAAEAAAACAAAAAj8AAAAAgAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAAAMAAAABAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8ALRTLABaCTw==
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+CloseAllTabs=true
+
+[UiSettings]
+ColorScheme=
