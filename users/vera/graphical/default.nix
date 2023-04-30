@@ -22,6 +22,7 @@
     bitwarden
     tdesktop
     syncplay
+    audacity
     rustdesk
     cadence
     discord
@@ -30,6 +31,8 @@
     ventoy
     gimp
     kate
+    vmpk
+    peek
     vlc
     mpv
   ];
