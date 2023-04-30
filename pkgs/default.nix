@@ -13,11 +13,22 @@ with self; {
       # Extra Steam game dependencies go here.
       cups
       ffmpeg
+
+      # Needed for Space Station 14 MIDI support.
       fluidsynth
       (runCommand "soundfont-fluid-fixed" { } ''
         mkdir -p "$out/share/soundfonts"
         ln -sf ${soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2 $out/share/soundfonts/FluidR3_GM.sf2
       '')
+
+      # Needed for GTK file dialogs in certain games.
+      gtk3
+      pango
+      cairo
+      atk
+      zlib
+      glib
+      gdk-pixbuf
     ];
   };
 
