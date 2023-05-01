@@ -25,6 +25,7 @@
   environment.sessionVariables = { WINEDEBUG = "-all"; };
 
   environment.systemPackages = with pkgs; [
+    steam-rom-manager
     steamtinkerlaunch
     proton-caller
     protontricks
