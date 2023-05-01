@@ -25,7 +25,7 @@
     };
 
     jovian-nixos = {
-      url = "github:Zumorica/Jovian-NixOS/unstable";
+      url = "github:Jovian-Experiments/Jovian-NixOS";
       flake = false;
     };
 
