@@ -8,6 +8,8 @@
       cores = 0;
       max-jobs = "auto";
       experimental-features = [ "nix-command" "flakes" ];
+      keep-outputs = true;
+      keep-derivations = true;
     };
 
     gc = {

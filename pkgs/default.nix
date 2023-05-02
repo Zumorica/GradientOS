@@ -41,9 +41,7 @@ with self; {
       defaultFhsEnvArgs = appimageTools.defaultFhsEnvArgs // { unshareIpc = false; unsharePid = false; };
     };
   };
-
-  nix-direnv = super.nix-direnv.override { enableFlakes = true; };
-
+  
   gradient-generator = flake.inputs.gradient-generator.packages.${system}.default;
 
   gradientos-upgrade-switch = super.callPackage ./scripts/gradientos-upgrade-switch.nix { };
