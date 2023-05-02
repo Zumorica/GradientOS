@@ -8,6 +8,7 @@
     ./openssh.nix
     ./network.nix
     ./programs.nix
+    ./nix-direnv.nix
   ];
 
   xdg.autostart.enable = true;
