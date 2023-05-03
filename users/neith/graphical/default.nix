@@ -19,6 +19,7 @@
     cadence
     discord
     spotify
+    kate
     gimp
     vlc
     mpv
