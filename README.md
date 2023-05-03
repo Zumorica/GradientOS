@@ -19,4 +19,4 @@ Flake for different NixOS system configurations.
 
 - **miracle-crusher**: Gaming desktop.
 - **vera-deck**: Steam Deck.
-- **neith-deck**: Steam Deck. To be deployed.
+- **neith-deck**: Steam Deck.
