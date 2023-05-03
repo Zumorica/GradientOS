@@ -2,6 +2,9 @@
 
 {
   imports = [
+    ./secrets
+    ./ssh.nix
+    ./zsh.nix
   ];
 
   home.username = "neith";
