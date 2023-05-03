@@ -13,7 +13,6 @@
       enable = true;
       plugins = [ "git" "python" "man" ];
     };
-    initExtra = builtins.readFile ./zshrc;
   };
 
 }
