@@ -6,6 +6,6 @@ writeShellApplication {
   runtimeInputs = [ nixos-rebuild ];
 
   text = ''
-    sudo nixos-rebuild test --flake "https://github.com/Zumorica/GradientOS" --show-trace --refresh -L "$@"
+    sudo nixos-rebuild test --flake "git+https://github.com/Zumorica/GradientOS" --show-trace --refresh -L "$@"
   '';
 }
