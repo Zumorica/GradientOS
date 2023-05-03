@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     lxqt.pavucontrol-qt
     libsForQt5.okular
+    libsForQt5.falkon
     retroarchFull
     google-chrome
     prismlauncher
@@ -17,6 +18,7 @@
     anydesk
     cadence
     discord
+    spotify
     gimp
     vlc
     mpv
