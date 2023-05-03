@@ -49,13 +49,6 @@ in {
           endpoint = "192.168.1.24:1195";
           publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
         }
-
-        # NeithDeck
-        {
-          allowedIPs = [ "192.168.109.5/32" ];
-          publicKey = "p4dmhuDzBmzHvudnT2nnSTrGQY047ubuCEjEk2U2zFw=";
-          persistentKeepalive = 25;
-        }
       ];
     };
 

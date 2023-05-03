@@ -20,13 +20,6 @@ in {
           publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
           persistentKeepalive = 25;
         }
-
-        # Vera
-        {
-          allowedIPs = [ "192.168.109.2/32" ];
-          endpoint = "vpn.zumorica.es:51821";
-          publicKey = "pgPX/8I6p/6z19w4mP38VVNK9RQDXHI3rUdy9Zzv0gg=";
-        }
       ];
     };
 
@@ -40,13 +33,6 @@ in {
           endpoint = "vpn.zumorica.es:1196";
           publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
           persistentKeepalive = 25;
-        }
-
-        # Vera
-        {
-          allowedIPs = [ "192.168.4.3/32" ];
-          endpoint = "vpn.zumorica.es:51822";
-          publicKey = "pgPX/8I6p/6z19w4mP38VVNK9RQDXHI3rUdy9Zzv0gg=";
         }
       ];
     };
