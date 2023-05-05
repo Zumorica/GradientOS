@@ -132,9 +132,16 @@ alias hrt="python -c 'from datetime import date, datetime; from dateutil.relativ
 alias hrtlily="python -c 'from datetime import date, datetime; from dateutil.relativedelta import relativedelta; start = datetime(2021, 1, 27, 19, 10); hrtDelta = (date.today()-start.date()); hrtRelative = relativedelta(datetime.now(), start); print(\"%s days since HRT treatment began. (%s year(s), %s month(s) %s day(s) %s hour(s) %s minute(s))\" % (hrtDelta.days, hrtRelative.years, hrtRelative.months, hrtRelative.days, hrtRelative.hours, hrtRelative.minutes))'"
 alias youtube-dl="yt-dlp"
 alias rebootkexec='sudo kexec -l /boot/vmlinuz-linux-zen --initrd=/boot/initramfs-linux-zen.img --reuse-cmdline && sudo systemctl kexec'
-alias vlc-share="jack-matchmaker 'VLC.*:output_FL' 'WEBRTC.*:input_FL' 'VLC.*:output_FR' 'WEBRTC.*:input_FR'"
-alias chromium-share="jack-matchmaker 'Chromium.*:output_FL' 'WEBRTC.*:input_FL' 'Chromium.*:output_FR' 'WEBRTC.*:input_FR'"
-alias mpv-share="jack-matchmaker 'mpv.*:output_FL' 'WEBRTC.*:input_FL' 'mpv.*:output_FR' 'WEBRTC.*:input_FR'"
+
+jack-share() {
+  local IN=${1:-"null"}
+  local OUT=${2:-"WEBRTC"}
+  jack-matchmaker "$IN.*:output_FL" "$OUT.*:input_FL" "$IN.*:output_FR" "$OUT.*:input_FR"
+}
+
+alias vlc-share="jack-share 'VLC'"
+alias chromium-share="jack-share '(Google Chrome|Chromium)'"
+alias mpv-share="jack-share 'mpv'"
 
 ## Path
 export PATH="$PATH:/home/vera/bin/"
