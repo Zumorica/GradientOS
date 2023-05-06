@@ -1,14 +1,7 @@
 flake: self: super:
-with self; {
-  cadence = super.cadence.override {
-    libjack2 = super.pipewire.jack;
-  };
-
-  discord = super.discord.override {
-    withOpenASAR = true;
-  };
-
-  steam = super.steam.override {
+with self;
+let
+  steam-override = {
     extraPkgs = pkgs: with pkgs; [
       # Extra Steam game dependencies go here.
       cups
@@ -31,6 +24,17 @@ with self; {
       gdk-pixbuf
     ];
   };
+in rec {
+  cadence = super.cadence.override {
+    libjack2 = super.pipewire.jack;
+  };
+
+  discord = super.discord.override {
+    withOpenASAR = true;
+  };
+
+  steam = super.steam.override steam-override;
+  steam-original-fixed = unstable.steam.override steam-override;
 
   chromium = super.chromium.override {
     enableWideVine = true;
@@ -47,6 +51,12 @@ with self; {
   gradientos-upgrade-switch = super.callPackage ./scripts/gradientos-upgrade-switch.nix { };
   gradientos-upgrade-boot = super.callPackage ./scripts/gradientos-upgrade-boot.nix { };
   gradientos-upgrade-test = super.callPackage ./scripts/gradientos-upgrade-test.nix { };
+
+  # Unmodified unstable nixpkgs overlay.
+  unstable = import flake.inputs.nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
 
   # Stable nixpkgs overlay.
   stable-2211 = import flake.inputs.nixpkgs-stable-2211 {

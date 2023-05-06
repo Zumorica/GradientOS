@@ -40,7 +40,7 @@
   let
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
-    jovian-workaround = import ./pkgs/ignoreMissingKernelModules.nix;
+    jovian-workaround = import ./pkgs/jovian-workaround.nix;
     gradient-pkgs = import ./pkgs self;
     override-pkgs = { system, overlays ? [] }: import nixpkgs {
       inherit system;
