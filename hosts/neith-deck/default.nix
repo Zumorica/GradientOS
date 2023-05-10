@@ -17,5 +17,6 @@
   services.xserver.displayManager.autoLogin.user = lib.mkDefault "neith";
   
   programs.steam.package = pkgs.steam-original-fixed;
+  environment.systemPackages = [ pkgs.steam-deck-client ];
 
 }

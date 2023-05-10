@@ -23,6 +23,7 @@ let
       glib
       gdk-pixbuf
     ];
+    extraArgs = "-console";
   };
 in rec {
   cadence = super.cadence.override {
@@ -35,6 +36,7 @@ in rec {
 
   steam = super.steam.override steam-override;
   steam-original-fixed = unstable.steam.override steam-override;
+  steam-deck-client = super.callPackage ./steam-deck-client.nix { };
 
   chromium = super.chromium.override {
     enableWideVine = true;
