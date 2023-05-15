@@ -12,6 +12,7 @@
     moonlight-qt
     qbittorrent
     xivlauncher
+    chromium
     tdesktop
     rustdesk
     syncplay
