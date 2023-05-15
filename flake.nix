@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming = {
+      url = "github:/fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ... }:
@@ -70,6 +75,7 @@
           ./modules/graphical/steam.nix
           ./hardware/um2
           ./hardware/sound.nix
+          ./hardware/sound-low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
@@ -109,6 +115,7 @@
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
           ./hardware/sound.nix
+          ./hardware/sound-low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
@@ -148,6 +155,7 @@
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
           ./hardware/sound.nix
+          ./hardware/sound-low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix

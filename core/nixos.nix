@@ -24,6 +24,7 @@
   services.udisks2.enable = true;
 
   programs.dconf.enable = true;
+  programs.nix-ld.enable = true;
 
   hardware.enableRedistributableFirmware = true;
 

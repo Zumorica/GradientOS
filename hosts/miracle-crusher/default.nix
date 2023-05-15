@@ -23,4 +23,8 @@
     enable = true;
     openFirewall = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    nix-gaming.osu-stable
+  ];
 }

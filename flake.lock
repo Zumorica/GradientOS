@@ -21,11 +21,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1681202837,
-        "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
+        "lastModified": 1681037374,
+        "narHash": "sha256-XL6X3VGbEFJZDUouv2xpKg2Aljzu/etPLv5e1FPt1q0=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "cfacdce06f30d2b68473a46042957675eebb3401",
+        "rev": "033b9f258ca96a10e543d4442071f614dc3f8412",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1682004037,
-        "narHash": "sha256-siSGNvhktQya2/p8UYG/mDUhinG4Sfhx6ahW2kyJPKA=",
+        "lastModified": 1684160493,
+        "narHash": "sha256-XiNso5zv0e52drBzlmPibfZqYEpmmyMsipVCh1IO3K4=",
         "ref": "refs/heads/master",
-        "rev": "b98ffbca8a2fefd4ee112562b8c83861a3ed6226",
-        "revCount": 73,
+        "rev": "bb9163c7a11fe5ee599165b523ece0f36d66d539",
+        "revCount": 74,
         "type": "git",
         "url": "ssh://git@github.com/Zumorica/gradient-generator"
       },
@@ -90,6 +90,26 @@
       "original": {
         "owner": "Jovian-Experiments",
         "repo": "Jovian-NixOS",
+        "type": "github"
+      }
+    },
+    "nix-gaming": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1683767036,
+        "narHash": "sha256-nub1bvyRAwj/55a40RBJ4EH03cGjfjXd16CNFc9k5Mg=",
+        "owner": "fufexan",
+        "repo": "nix-gaming",
+        "rev": "bbd86d815f648769ae5f6cdd20eaa64b7a19dda5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fufexan",
+        "repo": "nix-gaming",
         "type": "github"
       }
     },
@@ -203,6 +223,7 @@
         "gradient-generator": "gradient-generator",
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
+        "nix-gaming": "nix-gaming",
         "nixlib": "nixlib",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",

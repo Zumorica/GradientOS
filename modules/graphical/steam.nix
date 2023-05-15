@@ -32,6 +32,7 @@
     protonup-qt
     steam-run
     gamescope
+    gamemode
   ];
 
 }

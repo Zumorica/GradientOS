@@ -54,6 +54,8 @@ in rec {
   gradientos-upgrade-boot = super.callPackage ./scripts/gradientos-upgrade-boot.nix { };
   gradientos-upgrade-test = super.callPackage ./scripts/gradientos-upgrade-test.nix { };
 
+  nix-gaming = flake.inputs.nix-gaming.packages.${system};
+
   # Unmodified unstable nixpkgs overlay.
   unstable = import flake.inputs.nixpkgs {
     inherit system;
