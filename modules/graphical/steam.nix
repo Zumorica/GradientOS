@@ -33,6 +33,7 @@
     steam-run
     gamescope
     gamemode
+    lutris
   ];
 
 }

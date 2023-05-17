@@ -13,11 +13,16 @@
     appimage-run
     imagemagick
     ssh-to-age
+    usbutils
     ffmpeg
     yt-dlp
+    p7zip
+    unrar
     sops
     gmic
     age
     nil
+    rar
+    dig
   ];
 }
