@@ -12,6 +12,7 @@
 
   xdg.autostart.enable = true;
   xdg.portal.enable = true;
+  xdg.portal.xdgOpenUsePortal = true;
   
   services.flatpak.enable = true;
   services.packagekit.enable = true;
