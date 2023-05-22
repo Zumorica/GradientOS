@@ -7,9 +7,9 @@ in {
   networking.wireguard.enable = true;
   environment.systemPackages = [ pkgs.wireguard-tools ];
 
-  networking.wg-quick.interfaces = {
+  networking.wireguard.interfaces = {
     gradientnet = {
-      address = [ "192.168.24.5/32" ];
+      ips = [ "192.168.24.5/32" ];
       privateKeyFile = private-key;
       peers = [
         # Gradient
@@ -18,6 +18,8 @@ in {
           endpoint = "vpn.zumorica.es:1194";
           publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
           persistentKeepalive = 25;
+          dynamicEndpointRefreshSeconds = 25;
+          dynamicEndpointRefreshRestartSeconds = 10;
         }
 
         # Gradient, but local net
@@ -30,7 +32,7 @@ in {
     };
 
     lilynet = {
-      address = [ "192.168.109.4/32" ];
+      ips = [ "192.168.109.4/32" ];
       privateKeyFile = private-key;
       peers = [
         # Gradient
@@ -39,6 +41,8 @@ in {
           endpoint = "vpn.zumorica.es:1195";
           publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
           persistentKeepalive = 25;
+          dynamicEndpointRefreshSeconds = 25;
+          dynamicEndpointRefreshRestartSeconds = 10;
         }
 
         # Gradient, but local net

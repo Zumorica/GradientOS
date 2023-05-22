@@ -161,6 +161,8 @@
           ./hardware/webcam.nix
           ./hardware/bluetooth.nix
           ./hardware/steamdeck.nix
+          ./hardware/home-dcp-l2530dw.nix
+          ./hardware/xbox-one-controller.nix
           ./users/vera
           ./hosts/vera-deck
           home-manager.nixosModules.home-manager {
@@ -177,6 +179,33 @@
           }
         ];
       };
+
+      atziluth = nixpkgs.lib.nixosSystem 
+      rec {
+        system = "x86_64-linux";
+        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
+        specialArgs = { inherit self; };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./core
+          ./modules/virtualisation.nix
+          ./hardware/home-dcp-l2530dw.nix
+          ./users/vera
+          ./hosts/atziluth
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.vera = {
+              imports = [
+                sops-nix.homeManagerModule
+                ./users/common/home.nix
+                ./users/vera/home.nix
+              ];
+            };
+          }
+        ];
+      };
     };
+
   };
 }
