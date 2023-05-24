@@ -205,6 +205,31 @@
           }
         ];
       };
+
+      briah = nixpkgs.lib.nixosSystem
+      rec {
+        system = "aarch64-linux";
+        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
+        specialArgs = { inherit self; };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./core
+          ./hardware/raspberrypi.nix
+          ./users/vera
+          ./hosts/briah
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.vera = {
+              imports = [
+                sops-nix.homeManagerModule
+                ./users/common/home.nix
+                ./users/vera/home.nix
+              ];
+            };
+          }
+        ];
+      }
     };
 
   };
