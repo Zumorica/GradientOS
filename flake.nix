@@ -74,6 +74,7 @@
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
           ./hardware/um2
+          ./hardware/wacom.nix
           ./hardware/sound.nix
           ./hardware/sound-low-latency.nix
           ./hardware/amdcpu.nix
@@ -229,8 +230,7 @@
             };
           }
         ];
-      }
+      };
     };
-
   };
 }
