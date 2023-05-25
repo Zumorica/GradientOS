@@ -1,7 +1,7 @@
 { writeShellApplication, nixos-rebuild, ... }:
 
 writeShellApplication {
-  name = "gradientos-upgrade-switch";
+  name = "gradientos-upgrade-boot";
 
   runtimeInputs = [ nixos-rebuild ];
 
