@@ -46,26 +46,20 @@
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
     jovian-workaround = import ./pkgs/jovian-workaround.nix;
-    gradient-pkgs = import ./pkgs self;
-    override-pkgs = { system, overlays ? [] }: import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-      overlays = overlays;
-    };
   in
-  {
+  rec {
+    lib = ( import ./lib self );
+
     nixosConfigurations = {
 
-      miracle-crusher = nixpkgs.lib.nixosSystem 
-      rec {
-        system = "x86_64-linux";
-        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
-        specialArgs = { inherit self; };
+      miracle-crusher = lib.gradientosSystem 
+      {
+        name = "miracle-crusher";
+
         modules = [
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-amd-pstate
-          gradient-generator.nixosModules.${system}.default
-          ./core
+          gradient-generator.nixosModules.x86_64-linux.default
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
           ./modules/wine.nix
@@ -83,32 +77,22 @@
           ./hardware/bluetooth.nix
           ./hardware/home-dcp-l2530dw.nix
           ./hardware/xbox-one-controller.nix
-          ./users/vera
-          ./hosts/miracle-crusher
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.vera = {
-              imports = [
-                sops-nix.homeManagerModule
-                ./users/common/home.nix
-                ./users/vera/home.nix
-                ./users/vera/graphical
-              ];
-            };
-          }
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
+          ./users/vera/graphical
         ];
       };
 
-      neith-deck = nixpkgs.lib.nixosSystem 
-      rec {
-        system = "x86_64-linux";
-        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs jovian-pkgs jovian-workaround ]; };
-        specialArgs = { inherit self; };
+      neith-deck = lib.gradientosSystem 
+      {
+        name = "neith-deck";
+        overlays = [ jovian-pkgs jovian-workaround ];
+
         modules = [
           sops-nix.nixosModules.sops
           jovian-modules
-          ./core
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
           ./modules/wine.nix
@@ -122,32 +106,22 @@
           ./hardware/webcam.nix
           ./hardware/bluetooth.nix
           ./hardware/steamdeck.nix
-          ./users/neith
-          ./hosts/neith-deck
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.neith = {
-              imports = [
-                sops-nix.homeManagerModule
-                ./users/common/home.nix
-                ./users/neith/home.nix
-                ./users/neith/graphical
-              ];
-            };
-          }
+        ];
+
+        users.neith.modules = [
+          sops-nix.homeManagerModule
+          ./users/neith/graphical
         ];
       };
 
-      vera-deck = nixpkgs.lib.nixosSystem 
-      rec {
-        system = "x86_64-linux";
-        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs jovian-pkgs jovian-workaround ]; };
-        specialArgs = { inherit self; };
+      vera-deck = lib.gradientosSystem 
+      {
+        name = "vera-deck";
+        overlays = [ jovian-pkgs jovian-workaround ];
+
         modules = [
           sops-nix.nixosModules.sops
           jovian-modules
-          ./core
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
           ./modules/wine.nix
@@ -164,24 +138,15 @@
           ./hardware/steamdeck.nix
           ./hardware/home-dcp-l2530dw.nix
           ./hardware/xbox-one-controller.nix
-          ./users/vera
-          ./hosts/vera-deck
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.vera = {
-              imports = [
-                sops-nix.homeManagerModule
-                ./users/common/home.nix
-                ./users/vera/home.nix
-                ./users/vera/graphical
-              ];
-            };
-          }
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
+          ./users/vera/graphical
         ];
       };
 
-      atziluth = nixpkgs.lib.nixosSystem 
+/*    atziluth = nixpkgs.lib.nixosSystem 
       rec {
         system = "x86_64-linux";
         pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
@@ -230,7 +195,7 @@
             };
           }
         ];
-      };
+      }; */
     };
   };
 }
