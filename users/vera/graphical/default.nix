@@ -29,6 +29,7 @@
     anydesk
     vscode
     ventoy
+    krita
     gimp
     kate
     vmpk
