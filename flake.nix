@@ -76,6 +76,7 @@
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
           ./hardware/bluetooth.nix
+          ./hardware/openrazer.nix
           ./hardware/home-dcp-l2530dw.nix
           ./hardware/xbox-one-controller.nix
         ];
@@ -137,6 +138,7 @@
           ./hardware/webcam.nix
           ./hardware/bluetooth.nix
           ./hardware/steamdeck.nix
+          ./hardware/openrazer.nix
           ./hardware/home-dcp-l2530dw.nix
           ./hardware/xbox-one-controller.nix
         ];
