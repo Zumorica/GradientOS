@@ -62,8 +62,14 @@ in rec {
     config.allowUnfree = true;
   };
 
-  # Stable nixpkgs overlay.
+  # Stable 22.11 nixpkgs overlay.
   stable-2211 = import flake.inputs.nixpkgs-stable-2211 {
+    inherit system;
+    config.allowUnfree = true;
+  };
+
+  # Stable 23.05 nixpkgs overlay.
+  stable-2305 = import flake.inputs.nixpkgs-stable-2305 {
     inherit system;
     config.allowUnfree = true;
   };
