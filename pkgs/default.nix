@@ -25,7 +25,7 @@ let
     ];
     extraArgs = "-console";
   };
-in rec {
+in {
   cadence = super.cadence.override {
     libjack2 = super.pipewire.jack;
   };

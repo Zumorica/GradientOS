@@ -65,11 +65,11 @@ in {
         devices = [ "SPACE-CATGIRL" "Pixel" "MiracleCrusher" ];
       };
 
-      #"/data2/EmulatorRoms" = {
-      #  id = "z3ihk-m2jwo";
-      #  label = "Emulator Roms";
-      #  devices = [ "SPACE-CATGIRL" "MiracleCrusher" ];
-      #};
+      "/run/media/deck/mmcblk0p1/retrodeck" = {
+        id = "9rctd-ets59";
+        label = "Retrodeck";
+        devices = [ "SPACE-CATGIRL" "MiracleCrusher" ];
+      };
     };
   };
 }

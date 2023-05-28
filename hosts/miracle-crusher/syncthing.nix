@@ -9,6 +9,8 @@ in {
     configDir = "/home/vera/.config/syncthing";
     cert = secrets.syncthing-cert.path;
     key = secrets.syncthing-key.path;
+    overrideFolders = false;
+    overrideDevices = false;
     devices = {
       SPACE-CATGIRL = {
         addresses = [
@@ -72,9 +74,9 @@ in {
         devices = [ "SPACE-CATGIRL" "NeithDeck" ];
       };
 
-      "/data2/EmulatorRoms" = {
-        id = "z3ihk-m2jwo";
-        label = "Emulator Roms";
+      "/data/retrodeck" = {
+        id = "9rctd-ets59";
+        label = "Retrodeck";
         devices = [ "SPACE-CATGIRL" "MiracleDeck" ];
       };
     };
