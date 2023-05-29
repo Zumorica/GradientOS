@@ -10,6 +10,8 @@
 
       wireguard-private-key = { restartUnits = [ "wg-quick-gradientnet.service" "wg-quick-lilynet.service" ]; };
 
+      nix-private-key = { };
+
       syncthing-cert = {
         format = "binary";
         sopsFile = ./syncthing-cert.pem;

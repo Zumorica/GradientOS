@@ -66,6 +66,7 @@
           ./modules/uwu-style.nix
           ./modules/wine.nix
           ./modules/virtualisation.nix
+          ./modules/nix-store-serve.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
@@ -99,6 +100,7 @@
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
           ./modules/wine.nix
+          ./modules/nix-store-serve.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
@@ -129,6 +131,7 @@
           ./modules/uwu-style.nix
           ./modules/wine.nix
           ./modules/virtualisation.nix
+          ./modules/nix-store-serve.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix

@@ -4,6 +4,7 @@
 
   imports = [
     ./secrets
+    ./nix.nix
     ./hardware-configuration.nix
     ./gradient-generator.nix
     ./filesystems.nix

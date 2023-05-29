@@ -47,6 +47,7 @@ in {
   networking.hosts = {
     "192.168.109.1" = [ "lilynet" ];
     "192.168.109.2" = [ "vera" ];
+    "192.168.109.4" = [ "vera-deck" ];
     "192.168.4.1" = [ "slugcatnet" ];
     "192.168.4.2" = [ "remie" ];
     "192.168.4.3" = [ "slugcatvera" ];

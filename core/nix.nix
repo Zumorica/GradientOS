@@ -19,6 +19,11 @@
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       ];
       
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
+
     };
 
     gc = {
@@ -39,6 +44,7 @@
       self.flake = self;
       nixpkgs.flake = self.inputs.nixpkgs;
       nixpkgs-stable-2211.flake = self.inputs.nixpkgs-stable-2211;
+      nixpkgs-stable-2305.flake = self.inputs.nixpkgs-stable-2305;
     };
 
   };
