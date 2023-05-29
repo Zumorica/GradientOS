@@ -10,7 +10,8 @@ Flake for different NixOS system configurations.
 - **core**: configurations that are shared across all machines
 - **hardware**: configurations specific to certain hardware
 - **hosts**: configurations specific to certain machines
-- **lib**: utility functions 
+- **lib**: utility functions
+- **misc**: for files without a clear category
 - **modules**: modular configurations for certain programs and services
 - **modules/graphical**: modular configurations for certain graphical programs and services
 - **pkgs**: nixpkgs overlays and custom packages

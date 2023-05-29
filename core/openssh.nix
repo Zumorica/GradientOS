@@ -1,6 +1,7 @@
-{ lib, ... }:
-
-{
+{ ... }:
+let
+  ssh-pub-keys = import ../misc/ssh-pub-keys.nix;
+in {
 
   programs.mosh.enable = true;
   
@@ -41,8 +42,8 @@ Host *
 
   };
 
-  users.users.root.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOH4ZOMQX/C9x2s4D7mvP7ip1ll+Nhar+tCJiTpy1DuY vera@miracle-crusher"
+  users.users.root.openssh.authorizedKeys.keys = with ssh-pub-keys; [
+    vera
   ];
 
 }
