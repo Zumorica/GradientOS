@@ -12,7 +12,7 @@
       keep-derivations = true;
 
       substituters = [
-        "https://nix-gaming.cachix.org"
+        "https://nix-gaming.cachix.org?priority=100"
       ];
 
       trusted-public-keys = [
