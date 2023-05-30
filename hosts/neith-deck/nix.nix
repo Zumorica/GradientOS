@@ -6,8 +6,8 @@ in {
   nix = {
     settings = {
       substituters = [
-        "ssh-ng://nix-ssh@vera"
-        "ssh-ng://nix-ssh@vera-deck"
+        "ssh-ng://nix-ssh@vera?priority=50"
+        "ssh-ng://nix-ssh@vera-deck?priority=100"
       ];
 
       trusted-public-keys = with nix-pub-keys; [
