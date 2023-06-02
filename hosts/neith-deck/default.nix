@@ -5,7 +5,6 @@
   imports = [
     ./secrets
     ./nix.nix
-    ./locale.nix
     ./filesystems.nix
     ./syncthing.nix
     ./wireguard.nix

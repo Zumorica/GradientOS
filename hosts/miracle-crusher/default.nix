@@ -11,7 +11,6 @@
     ./wireguard.nix
     ./syncthing.nix
     ./kernel.nix
-    ./locale.nix
   ];
 
   networking.hostName = "miracle-crusher";

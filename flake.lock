@@ -74,6 +74,22 @@
         "url": "ssh://git@github.com/Zumorica/gradient-generator"
       }
     },
+    "gradient-moe": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685715163,
+        "narHash": "sha256-krQCKbbK6Q1pQ4i8m42UzLaxEIAbr4mKgP/IsV0nydQ=",
+        "ref": "refs/heads/main",
+        "rev": "b49fa3793f3d04748efde7fab580a86aeeb4bf73",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/Zumorica/gradient.moe"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/Zumorica/gradient.moe"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -258,6 +274,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "gradient-generator": "gradient-generator",
+        "gradient-moe": "gradient-moe",
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "nix-gaming": "nix-gaming",

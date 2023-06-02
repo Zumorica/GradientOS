@@ -25,6 +25,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    gradient-moe = {
+      url = "git+ssh://git@github.com/Zumorica/gradient.moe";
+      flake = false;
+    };
+
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       flake = false;
@@ -62,9 +67,10 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-amd-pstate
           gradient-generator.nixosModules.x86_64-linux.default
+          ./modules/wine.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
-          ./modules/wine.nix
+          ./modules/vera-locale.nix
           ./modules/virtualisation.nix
           ./modules/nix-store-serve.nix
           ./modules/graphical
@@ -97,9 +103,10 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-modules
+          ./modules/wine.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
-          ./modules/wine.nix
+          ./modules/neith-locale.nix
           ./modules/nix-store-serve.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
@@ -127,9 +134,10 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-modules
+          ./modules/wine.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
-          ./modules/wine.nix
+          ./modules/vera-locale.nix
           ./modules/virtualisation.nix
           ./modules/nix-store-serve.nix
           ./modules/graphical
@@ -153,56 +161,22 @@
         ];
       };
 
-/*    atziluth = nixpkgs.lib.nixosSystem 
-      rec {
-        system = "x86_64-linux";
-        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
-        specialArgs = { inherit self; };
+      briah = lib.gradientosSystem
+      {
+        name = "briah";
+        system = "aarch64-linux";
+        
         modules = [
           sops-nix.nixosModules.sops
-          ./core
-          ./modules/virtualisation.nix
+          ./modules/nix-store-serve.nix
+          ./hardware/raspberrypi.nix
           ./hardware/home-dcp-l2530dw.nix
-          ./users/vera
-          ./hosts/atziluth
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.vera = {
-              imports = [
-                sops-nix.homeManagerModule
-                ./users/common/home.nix
-                ./users/vera/home.nix
-              ];
-            };
-          }
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
         ];
       };
-
-      briah = nixpkgs.lib.nixosSystem
-      rec {
-        system = "aarch64-linux";
-        pkgs = override-pkgs { inherit system; overlays = [ gradient-pkgs ]; };
-        specialArgs = { inherit self; };
-        modules = [
-          sops-nix.nixosModules.sops
-          ./core
-          ./hardware/raspberrypi.nix
-          ./users/vera
-          ./hosts/briah
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.vera = {
-              imports = [
-                sops-nix.homeManagerModule
-                ./users/common/home.nix
-                ./users/vera/home.nix
-              ];
-            };
-          }
-        ];
-      }; */
     };
   };
 }
