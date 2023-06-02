@@ -9,11 +9,6 @@
     ./network.nix
     ./programs.nix
   ];
-
-  xdg.autostart.enable = true;
-  
-  services.flatpak.enable = true;
-  services.packagekit.enable = true;
   
   services.fstrim.enable = true;
   services.fwupd.enable = true;

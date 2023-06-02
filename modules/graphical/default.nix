@@ -19,6 +19,11 @@
   # Enable portals.
   xdg.portal.enable = true;
   xdg.portal.xdgOpenUsePortal = true;
+  xdg.autostart.enable = true;
+  
+  # Enable flatpak
+  services.flatpak.enable = true;
+  services.packagekit.enable = true;
 
   hardware.opengl = {
     enable = true;
