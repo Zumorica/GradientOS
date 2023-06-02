@@ -16,6 +16,10 @@
   # Enable XWayland for X11 compat when using wayland.
   programs.xwayland.enable = true;
 
+  # Enable portals.
+  xdg.portal.enable = true;
+  xdg.portal.xdgOpenUsePortal = true;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
