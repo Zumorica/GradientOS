@@ -4,14 +4,30 @@ rec {
   gradientosSystem =
     { name
     , nixpkgs ? self.inputs.nixpkgs
+    , ... 
+    }@args:
+    nixpkgs.lib.nixosSystem (removeAttrs (gradientosSystemInternal args) ["format"]);
+
+  gradientosSystemGenerator =
+    { name
+    , nixpkgs ? self.inputs.nixpkgs
+    , ...
+    }@args:
+    self.inputs.nixos-generators.nixosGenerate (gradientosSystemInternal args);
+
+  gradientosSystemInternal =
+    { name
+    , nixpkgs ? self.inputs.nixpkgs
     , system ? "x86_64-linux"
     , modules ? [ ]
     , overlays ? [ ]
-    , users ? { } 
+    , users ? { }
     , specialArgs ? { }
+    , format ? "install-iso"
+    , ...
     }:
-    nixpkgs.lib.nixosSystem {
-      inherit system;
+    {
+      inherit system format;
 
       specialArgs = { inherit self; } // specialArgs;
 

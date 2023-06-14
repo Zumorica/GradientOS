@@ -8,6 +8,12 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixlib.follows = "nixlib";
+    };
+
     nixlib.url = "github:nix-community/nixpkgs.lib";
 
     home-manager = {
@@ -50,16 +56,15 @@
 
   outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ... }:
   let
+    mkFlake = (import ./lib/mkFlake.nix self);
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
     jovian-workaround = import ./pkgs/jovian-workaround.nix;
   in
-  rec {
-    lib = ( import ./lib self );
+  mkFlake {
 
-    nixosConfigurations = {
-
-      miracle-crusher = lib.gradientosSystem 
+    gradientosConfigurations = [
+        
       {
         name = "miracle-crusher";
 
@@ -93,9 +98,10 @@
           sops-nix.homeManagerModule
           ./users/vera/graphical
         ];
-      };
 
-      neith-deck = lib.gradientosSystem 
+        generators = [ "install-iso" ];
+      }
+
       {
         name = "neith-deck";
         overlays = [ jovian-pkgs jovian-workaround ];
@@ -124,9 +130,10 @@
           sops-nix.homeManagerModule
           ./users/neith/graphical
         ];
-      };
 
-      vera-deck = lib.gradientosSystem 
+        generators = [ "install-iso" ];
+      }
+
       {
         name = "vera-deck";
         overlays = [ jovian-pkgs jovian-workaround ];
@@ -159,9 +166,10 @@
           sops-nix.homeManagerModule
           ./users/vera/graphical
         ];
-      };
 
-      briah = lib.gradientosSystem
+        generators = [ "install-iso" ];
+      }
+
       {
         name = "briah";
         system = "aarch64-linux";
@@ -170,13 +178,14 @@
           sops-nix.nixosModules.sops
           ./modules/nix-store-serve.nix
           ./hardware/raspberrypi.nix
-          ./hardware/home-dcp-l2530dw.nix
         ];
 
         users.vera.modules = [
           sops-nix.homeManagerModule
         ];
-      };
-    };
+
+        generators = [ "sd-aarch64" ];
+      }
+    ];
   };
 }

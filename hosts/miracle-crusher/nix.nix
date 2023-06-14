@@ -6,8 +6,9 @@ in {
   nix = {
     settings = {
       substituters = [
-        "ssh-ng://nix-ssh@deck?priority=50"
-        "ssh-ng://nix-ssh@neith?priority=100"
+        # Disabled until https://github.com/NixOS/nix/pull/7188 is merged.
+        # "ssh-ng://nix-ssh@deck?priority=50"
+        # "ssh-ng://nix-ssh@neith?priority=100"
       ];
 
       trusted-public-keys = with nix-pub-keys; [

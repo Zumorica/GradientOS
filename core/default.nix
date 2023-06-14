@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, lib, ... }:
 
 {
 
@@ -6,7 +6,7 @@
     ./nixos.nix
   ];
 
-  system.configurationRevision = self.rev;
+  system.configurationRevision = lib.mkIf (self ? rev) self.rev;
   system.autoUpgrade.flake = "github:Zumorica/GradientOS";
 
 }
