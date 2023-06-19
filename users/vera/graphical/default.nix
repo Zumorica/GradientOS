@@ -23,6 +23,7 @@
     tdesktop
     syncplay
     audacity
+    inkscape
     rustdesk
     cadence
     discord
