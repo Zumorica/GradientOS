@@ -11,6 +11,7 @@
     whatsapp-for-linux
     libsForQt5.okular
     libreoffice-fresh
+    gimp-with-plugins
     jetbrains.rider
     retroarchFull
     google-chrome
@@ -31,7 +32,6 @@
     vscode
     ventoy
     krita
-    gimp
     kate
     vmpk
     peek

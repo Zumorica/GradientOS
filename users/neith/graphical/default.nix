@@ -6,6 +6,7 @@
     lxqt.pavucontrol-qt
     libsForQt5.okular
     libsForQt5.falkon
+    gimp-with-plugins
     retroarchFull
     google-chrome
     prismlauncher
@@ -21,7 +22,6 @@
     discord
     spotify
     kate
-    gimp
     vlc
     mpv
   ];
