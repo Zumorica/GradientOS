@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 let
   ssh-pub-keys = import ../misc/ssh-pub-keys.nix;
 in {
@@ -24,7 +24,7 @@ Host *
     
     settings = {
       PasswordAuthentication = false;
-      PermitRootLogin = "prohibit-password";
+      PermitRootLogin = lib.mkForce "prohibit-password";
     };
 
     knownHosts = {
