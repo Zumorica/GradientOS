@@ -24,7 +24,7 @@ Host *
     
     settings = {
       PasswordAuthentication = false;
-      PermitRootLogin = "yes";
+      PermitRootLogin = "prohibit-password";
     };
 
     knownHosts = {

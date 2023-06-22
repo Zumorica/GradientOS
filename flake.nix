@@ -171,6 +171,23 @@
       }
 
       {
+        name = "asiyah";
+
+        modules = [
+          sops-nix.nixosModules.sops
+          ./hardware/azure.nix
+          ./modules/vera-locale.nix
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
+        ];
+
+        generators = [ "azure" ];
+      }
+
+      /*
+       {
         name = "briah";
         system = "aarch64-linux";
         
@@ -186,6 +203,7 @@
 
         generators = [ "sd-aarch64" ];
       }
+      */
     ];
   };
 }
