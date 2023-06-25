@@ -1,11 +1,11 @@
 { lib, ... }:
 
 {
-  networking.wireless.enable = lib.mkForce false;
+  networking.wireless.enable = lib.mkDefault false;
 
   # Enable NetworkManager with dnsmasq
   networking.networkmanager = {
-    enable = true;
+    enable = lib.mkDefault true;
     dns = "dnsmasq";
   };
 
