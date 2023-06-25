@@ -10,7 +10,7 @@
 
       gradient-generator-environment = { restartUnits = [ "gradient-generator.daily-avatar.service" ]; };
 
-      wireguard-private-key = { restartUnits = [ "wg-quick-gradientnet.service" "wg-quick-lilynet.service" "wg-quick-slugcatnet.service" ]; };
+      wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
 
       nix-private-key = { };
 

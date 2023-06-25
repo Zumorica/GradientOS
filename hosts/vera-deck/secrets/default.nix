@@ -8,7 +8,7 @@
 
     secrets = {
 
-      wireguard-private-key = { restartUnits = [ "wg-quick-gradientnet.service" "wg-quick-lilynet.service" ]; };
+      wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
 
       nix-private-key = { };
 
