@@ -1,12 +1,15 @@
-{ ... }:
+{ lib, ... }:
 {
 
   imports = [
     ./wireguard.nix
     ./containers.nix
     ./filesystems.nix
-    ./hardware-configuration.nix
     ./trilium-memory-repository.nix
   ];
+
+  # Forcibly disable NetworkManager.
+  networking.networkmanager.enable = lib.mkForce false;
+
 
 }
