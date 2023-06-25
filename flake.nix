@@ -186,14 +186,14 @@
         generators = [ "azure" ];
       }
 
-      /*
        {
         name = "briah";
         system = "aarch64-linux";
         
         modules = [
           sops-nix.nixosModules.sops
-          ./modules/nix-store-serve.nix
+          ./modules/networkd.nix
+          ./modules/vera-locale.nix
           ./hardware/raspberrypi.nix
         ];
 
@@ -203,7 +203,7 @@
 
         generators = [ "sd-aarch64" ];
       }
-      */
+      
     ];
   };
 }
