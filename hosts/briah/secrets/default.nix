@@ -8,6 +8,8 @@
 
     secrets = {
       
+      wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
+
     };
   };
 
