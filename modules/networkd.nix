@@ -16,6 +16,4 @@
     };
   };
 
-  networking.resolvconf.enable = true;
-
 }
