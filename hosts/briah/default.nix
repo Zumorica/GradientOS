@@ -2,6 +2,8 @@
 {
 
   imports = [
+    ./secrets
+    ./nginx.nix
     ./wireguard.nix
     ./containers.nix
     ./filesystems.nix
