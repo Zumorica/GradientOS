@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [ ./python.nix ];
@@ -17,12 +17,15 @@
     ffmpeg
     yt-dlp
     p7zip
-    unrar
     sops
     gmic
     age
     nil
-    rar
     dig
-  ];
+  ] ++ (if pkgs.system == "x86_64-linux" then [
+    unrar
+    rar
+  ] else if pkgs.system == "aarch64-linux" then [
+
+  ] else []);
 }
