@@ -73,7 +73,7 @@ in {
 
     slugcatnet = with ips.slugcatnet; {
       ips = [ "${briah}/24" ];
-      listenPorts = 1196;
+      listenPort = 1196;
       privateKeyFile = private-key;
       peers = [
         {
