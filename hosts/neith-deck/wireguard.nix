@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 let
+  ips = import ../../misc/wireguard-addresses.nix;
+  keys = import ../../misc/wireguard-pub-keys.nix;
   private-key = config.sops.secrets.wireguard-private-key.path;
 in {
 
@@ -8,15 +10,14 @@ in {
   environment.systemPackages = [ pkgs.wireguard-tools ];
 
   networking.wireguard.interfaces = {
-    lilynet = {
-      ips = [ "192.168.109.5/32" ];
+    lilynet = with ips.lilynet; {
+      ips = [ "${neith-deck}/32" ];
       privateKeyFile = private-key;
       peers = [
-        # Gradient
         {
-          allowedIPs = [ "192.168.109.0/24" ];
+          allowedIPs = [ "${lilynet}/24" ];
           endpoint = "vpn.zumorica.es:1195";
-          publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
+          publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
           dynamicEndpointRefreshRestartSeconds = 10;
@@ -24,15 +25,14 @@ in {
       ];
     };
 
-    slugcatnet = {
-      ips = [ "192.168.4.5/32" ];
+    slugcatnet = with ips.slugcatnet; {
+      ips = [ "${neith-deck}/32" ];
       privateKeyFile = private-key;
       peers = [
-        # Gradient
         {
-          allowedIPs = [ "192.168.4.0/24" ];
+          allowedIPs = [ "${slugcatnet}/24" ];
           endpoint = "vpn.zumorica.es:1196";
-          publicKey = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
+          publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
           dynamicEndpointRefreshRestartSeconds = 10;
@@ -44,14 +44,14 @@ in {
   networking.firewall.trustedInterfaces = [ "lilynet" "slugcatnet" ];
   systemd.network.wait-online.ignoredInterfaces = [ "lilynet" "slugcatnet" ];
 
-  networking.hosts = {
-    "192.168.109.1" = [ "lilynet" ];
-    "192.168.109.2" = [ "vera" ];
-    "192.168.109.4" = [ "vera-deck" ];
-    "192.168.4.1" = [ "slugcatnet" ];
-    "192.168.4.2" = [ "remie" ];
-    "192.168.4.3" = [ "slugcatvera" ];
-    "192.168.4.4" = [ "luna" ];
+  networking.hosts = with ips; {
+    "${lilynet.briah}" = [ "lilynet" ];
+    "${lilynet.miracle-crusher}" = [ "vera" ];
+    "${lilynet.vera-deck}" = [ "vera-deck" ];
+    "${slugcatnet.briah}" = [ "slugcatnet" ];
+    "${slugcatnet.remie}" = [ "remie" ];
+    "${slugcatnet.miracle-crusher}" = [ "slugcatvera" ];
+    "${slugcatnet.luna}" = [ "luna" ];
   };
 
 }
