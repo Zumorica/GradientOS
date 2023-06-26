@@ -59,7 +59,7 @@
     mkFlake = (import ./lib/mkFlake.nix self);
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
-    jovian-workaround = import ./pkgs/jovian-workaround.nix;
+    kernel-workaround = import ./pkgs/kernel-workaround.nix;
   in
   mkFlake {
 
@@ -105,7 +105,7 @@
 
       {
         name = "neith-deck";
-        overlays = [ jovian-pkgs jovian-workaround ];
+        overlays = [ jovian-pkgs kernel-workaround ];
 
         modules = [
           sops-nix.nixosModules.sops
@@ -137,7 +137,7 @@
 
       {
         name = "vera-deck";
-        overlays = [ jovian-pkgs jovian-workaround ];
+        overlays = [ jovian-pkgs kernel-workaround ];
 
         modules = [
           sops-nix.nixosModules.sops
@@ -190,6 +190,7 @@
        {
         name = "briah";
         system = "aarch64-linux";
+        overlays = [ kernel-workaround ];
         
         modules = [
           sops-nix.nixosModules.sops
