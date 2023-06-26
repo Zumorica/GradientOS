@@ -19,6 +19,7 @@
     p7zip
     sops
     gmic
+    lsof
     age
     nil
     dig
