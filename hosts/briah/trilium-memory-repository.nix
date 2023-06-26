@@ -1,30 +1,12 @@
-{ config, pkgs, ... }:
-{
+{ ... }:
+let
+  ports = import misc/service-ports.nix;
+in {
 
-  containers.memory-repository = {
-    autoStart = true;
-    privateNetwork = true;
-    hostAddress = "192.168.128.1";
-    localAddress = "192.168.128.2";
-
-    config = { config, pkgs, ... }:
-    {
-      services.trilium-server = {
-        enable = true;
-        instanceName = "Memory Repository";
-        dataDir = "TODO";
-      };
-
-      networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [ 80 ];
-      };
-    };
-
-    extraFlags = [
-      # Workaround https://github.com/NixOS/nixpkgs/issues/196370
-      "--resolv-conf=bind-host"
-    ];
+  config.virtualisation.oci-containers.containers.memory-repository = {
+    image = "zadam/trilium:0.60-latest";
+    ports = [ "127.0.0.1:${ports.trilium}:8080" ];
+    volumes = [ "/data/trilium:/home/node/trilium-data" ];
   };
 
 }
