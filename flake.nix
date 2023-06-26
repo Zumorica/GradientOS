@@ -78,6 +78,7 @@
           ./modules/vera-locale.nix
           ./modules/virtualisation.nix
           ./modules/nix-store-serve.nix
+          ./modules/aarch64-emulation.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
