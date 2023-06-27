@@ -17,8 +17,14 @@ in {
         root = self.inputs.gradient-moe;
         enableACME = true;
         forceSSL = true;
+        serverAliases = [
+          "www.gradient.moe"
+          "zumorica.es"
+          "www.zumorica.es"
+        ];
       };
-      "gradient" = {
+      "gradientnet" = {
+        listenAddresses = [ (toString ips.gradientnet.briah) ];
         locations."memory_repository" = {
           proxyPass = "http://127.0.0.1:${toString ports.trilium}";
           extraConfig = ''
