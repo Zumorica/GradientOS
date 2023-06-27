@@ -10,8 +10,4 @@
     ./trilium-memory-repository.nix
   ];
 
-  # Forcibly disable NetworkManager.
-  networking.networkmanager.enable = lib.mkForce false;
-
-
 }

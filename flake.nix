@@ -194,7 +194,6 @@
         
         modules = [
           sops-nix.nixosModules.sops
-          ./modules/networkd.nix
           ./modules/vera-locale.nix
           ./hardware/raspberrypi.nix
         ];
