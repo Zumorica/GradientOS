@@ -22,6 +22,9 @@ in {
           "zumorica.es"
           "www.zumorica.es"
         ];
+        locations."/daily_gradient/data/" = {
+          alias = "/data/gradient-data/";
+        };
       };
       "gradientnet" = with ips.gradientnet; {
         listenAddresses = [ briah ];
