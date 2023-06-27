@@ -20,6 +20,7 @@
     qbittorrent
     xivlauncher
     smartgithg
+    obs-studio
     bitwarden
     tdesktop
     syncplay
