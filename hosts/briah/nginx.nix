@@ -16,24 +16,31 @@ in {
       "gradient.moe" = {
         root = self.inputs.gradient-moe;
         enableACME = true;
-        forceSSL = true;
+        addSSL = true;
         serverAliases = [
           "www.gradient.moe"
           "zumorica.es"
           "www.zumorica.es"
         ];
       };
-      "gradientnet" = {
-        listenAddresses = [ (toString ips.gradientnet.briah) ];
-        locations."memory_repository" = {
-          proxyPass = "http://127.0.0.1:${toString ports.trilium}";
+      "gradientnet" = with ips.gradientnet; {
+        listenAddresses = [ briah ];
+        serverAliases = [
+          "gradient"
+          briah
+        ];
+        locations."/memory_repository/" = let port = (toString ports.trilium); in {
+          proxyPass = "http://127.0.0.1:${port}/";
           extraConfig = ''
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection 'upgrade';
             proxy_set_header Host $host;
-            proxy_cache_bypass $http_upgrade;
-            allow ${ips.gradientnet.gradientnet}/24;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_http_version 1.1;
+            proxy_read_timeout 90;
+            allow ${gradientnet}/24;
             deny all;
           '';
         };
