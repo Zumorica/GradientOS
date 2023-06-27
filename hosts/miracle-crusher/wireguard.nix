@@ -12,7 +12,6 @@ in {
   networking.wireguard.interfaces = {
     gradientnet = with ips.gradientnet; {
       ips = [ "${miracle-crusher}/32" ];
-      listenPort = 51820;
       privateKeyFile = private-key;
       peers = [
         {
@@ -33,7 +32,6 @@ in {
 
     lilynet = with ips.lilynet; {
       ips = [ "${miracle-crusher}/32" ];
-      listenPort = 51821;
       privateKeyFile = private-key;
       peers = [
         {
@@ -54,7 +52,6 @@ in {
 
     slugcatnet = with ips.slugcatnet; {
       ips = [ "${miracle-crusher}/32" ];
-      listenPort = 51822;
       privateKeyFile = private-key;
       peers = [
         {

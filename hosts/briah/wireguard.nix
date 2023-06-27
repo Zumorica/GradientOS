@@ -105,7 +105,12 @@ in {
     };
   };
 
-  networking.firewall.trustedInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
+  networking.firewall = {
+    allowedTCPPorts = with ports; [ gradientnet lilynet slugcatnet ];
+    allowedUDPPorts = with ports; [ gradientnet lilynet slugcatnet ];
+    trustedInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
+  };
+
   systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
 
   networking.hosts = with ips; {
