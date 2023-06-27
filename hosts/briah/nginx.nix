@@ -27,7 +27,7 @@ in {
             proxy_set_header Connection 'upgrade';
             proxy_set_header Host $host;
             proxy_cache_bypass $http_upgrade;
-            allow ${ips.gradientnet}/24;
+            allow ${ips.gradientnet.gradientnet}/24;
             deny all;
           '';
         };
