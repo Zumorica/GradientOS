@@ -23,5 +23,5 @@ Flake for different NixOS system configurations.
 - **vera-deck**: Steam Deck.
 - **neith-deck**: Steam Deck.
 - **asiyah**: Azure Virtual Machine Server.
-- **briah**: Raspberry Pi 4 Server. *WIP*
+- **briah**: Raspberry Pi 4 Server.
 - **atziluth**: Server. *WIP*
