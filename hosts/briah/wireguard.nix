@@ -38,8 +38,8 @@ in {
       ips = [ "${briah}/24" ];
       listenPort = ports.gradientnet;
       privateKeyFile = private-key;
-      postSetup = gen-post-setup "gradientnet" "enp34s0";
-      postShutdown = gen-post-shutdown "gradientnet" "enp34s0";
+      postSetup = gen-post-setup "gradientnet" "end0";
+      postShutdown = gen-post-shutdown "gradientnet" "end0";
       peers = [
         {
           allowedIPs = [ "${miracle-crusher}/32" ];
@@ -60,8 +60,8 @@ in {
       ips = [ "${briah}/24" ];
       listenPort = ports.lilynet;
       privateKeyFile = private-key;
-      postSetup = gen-post-setup "lilynet" "enp34s0";
-      postShutdown = gen-post-shutdown "lilynet" "enp34s0";
+      postSetup = gen-post-setup "lilynet" "end0";
+      postShutdown = gen-post-shutdown "lilynet" "end0";
       peers = [
         {
           allowedIPs = [ "${miracle-crusher}/32" ];
@@ -82,8 +82,8 @@ in {
       ips = [ "${briah}/24" ];
       listenPort = ports.slugcatnet;
       privateKeyFile = private-key;
-      postSetup = gen-post-setup "slugcatnet" "enp34s0";
-      postShutdown = gen-post-shutdown "slugcatnet" "enp34s0";
+      postSetup = gen-post-setup "slugcatnet" "end0";
+      postShutdown = gen-post-shutdown "slugcatnet" "end0";
       peers = [
         {
           allowedIPs = [ "${remie}/32" ];
