@@ -61,10 +61,10 @@ in {
   systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" ];
 
   networking.hosts = with ips; {
-    "${gradientnet.briah}"  = ["gradient"];
+    "${gradientnet.briah}"  = [ "gradient" "briah" ];
     "${gradientnet.miracle-crusher}" = [ "vera" ];
-    "${lilynet.briah}" = ["lilynet"];
-    "${lilynet.neith-deck}" = ["neith" "lily"];
+    "${lilynet.briah}" = [ "lilynet" ];
+    "${lilynet.neith-deck}" = [ "neith" "lily" ];
   };
 
 }
