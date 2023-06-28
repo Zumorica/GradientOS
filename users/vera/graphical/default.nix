@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    space-station-14-launcher
     lxqt.pavucontrol-qt
     whatsapp-for-linux
     libsForQt5.okular
