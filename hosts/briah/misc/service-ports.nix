@@ -11,5 +11,6 @@
 
   # misc
   trilium = 8081;
+  grafana = 8082;
 
 }

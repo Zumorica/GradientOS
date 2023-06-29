@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, config, ... }:
 let
   ports = import misc/service-ports.nix;
   ips = import ../../misc/wireguard-addresses.nix;
@@ -30,10 +30,12 @@ in {
         listenAddresses = [ briah ];
         serverAliases = [
           "gradient"
+          "briah"
           briah
         ];
-        locations."/memory_repository/" = let port = (toString ports.trilium); in {
-          proxyPass = "http://127.0.0.1:${port}/";
+        
+        locations."/memory_repository/" = {
+          proxyPass = "http://127.0.0.1:${toString ports.trilium}/";
           extraConfig = ''
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -46,6 +48,11 @@ in {
             allow ${gradientnet}/24;
             deny all;
           '';
+        };
+
+        locations."/grafana/" = let grafana = config.services.grafana.settings.server; in {
+          proxyPass = "http://${toString grafana.http_addr}:${toString grafana.http_port}";
+          proxyWebsockets = true;
         };
       };
     };
