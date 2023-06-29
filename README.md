@@ -16,6 +16,7 @@ Flake for different NixOS system configurations.
 - **modules/graphical**: modular configurations for certain graphical programs and services
 - **pkgs**: nixpkgs overlays and custom packages
 - **users**: configurations specific to certain users, using [home-manager](https://github.com/nix-community/home-manager)
+- **users/common**: configurations shared across all users, using [home-manager](https://github.com/nix-community/home-manager)
 
 ### Machines
 
