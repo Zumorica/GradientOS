@@ -19,7 +19,7 @@ in {
       {
         job_name = "briah";
         static_configs = [
-          { targets = [ "127.0.0.1:${ports.prometheus-exporter-node}" ]; }
+          { targets = [ "127.0.0.1:${toString ports.prometheus-exporter-node}" ]; }
         ];
       }
     ];
