@@ -5,6 +5,7 @@
     ./secrets
     ./nginx.nix
     ./loki.nix
+    ./duckdns.nix
     ./grafana.nix
     ./promtail.nix
     ./wireguard.nix
