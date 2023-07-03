@@ -26,5 +26,6 @@
 
   environment.systemPackages = with pkgs; [
     nix-gaming.osu-stable
+    gradient-generator
   ];
 }

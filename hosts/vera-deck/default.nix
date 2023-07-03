@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
 
@@ -18,4 +18,8 @@
   
   services.xserver.displayManager.defaultSession = "steam-wayland";
 
+  environment.systemPackages = with pkgs; [
+    nix-gaming.osu-stable
+    gradient-generator
+  ]
 }
