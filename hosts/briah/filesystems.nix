@@ -12,4 +12,11 @@
     options = [ "rw" "auto" "noatime" "nofail" ];
   };
 
+  swapDevices = [
+    {
+      device = "/data/swapfile";
+      size = 16*1024;
+    }
+  ];
+
 }
