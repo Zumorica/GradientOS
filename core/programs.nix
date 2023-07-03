@@ -20,6 +20,7 @@
     sops
     gmic
     lsof
+    htop
     age
     nil
     dig
