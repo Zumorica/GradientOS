@@ -341,11 +341,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1688547270,
-        "narHash": "sha256-QhKVPLq9arbnDulJbKDq+T1N7p1gYx+wTkbr+oZDmws=",
+        "lastModified": 1688559167,
+        "narHash": "sha256-No6vvB8viPVleVtSvCAwpIvaDN2TR2MrxI41c4U1IXU=",
         "owner": "space-wizards",
         "repo": "SS14.Watchdog",
-        "rev": "c948f155feda899e1794d22190723cf7f9c295d8",
+        "rev": "daf61b16f77fd128670f2c0e355d5a7dd198e7b2",
         "type": "github"
       },
       "original": {
