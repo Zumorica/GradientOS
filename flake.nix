@@ -52,9 +52,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ss14-watchdog = {
+      url = "github:space-wizards/SS14.Watchdog";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ... }:
+  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ss14-watchdog, ... }:
   let
     mkFlake = (import ./lib/mkFlake.nix self);
     jovian-modules = (jovian-nixos + "/modules");
@@ -193,6 +198,7 @@
         overlays = [ kernel-workaround ];
         
         modules = [
+          ss14-watchdog.nixosModules.default
           sops-nix.nixosModules.sops
           ./modules/vera-locale.nix
           ./hardware/raspberrypi.nix

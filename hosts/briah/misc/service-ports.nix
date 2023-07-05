@@ -9,6 +9,10 @@
   lilynet = 1195;
   slugcatnet = 1196;
 
+  # ss14
+  robust-pong = 1313;
+  ss14-watchdog = 5000;
+
   # misc
   trilium = 8081;
   grafana = 8082;

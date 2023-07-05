@@ -9,6 +9,7 @@
     secrets = {
       
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
+      pong-api-token = { restartUnits = [ "space-station-14-watchdog" ]; };
       duckdns = {
         restartUnits = [ "duckdns" ];
         mode = "0500";
