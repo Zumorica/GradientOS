@@ -22,7 +22,7 @@
     lsof
     htop
     file
-    nixd
+    nil
     age
     dig
   ] ++ (if pkgs.system == "x86_64-linux" then [
