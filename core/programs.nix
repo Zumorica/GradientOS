@@ -21,8 +21,9 @@
     gmic
     lsof
     htop
+    file
+    nixd
     age
-    nil
     dig
   ] ++ (if pkgs.system == "x86_64-linux" then [
     unrar
