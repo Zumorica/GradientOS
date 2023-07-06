@@ -29,6 +29,7 @@ in {
       hub = {
         advertise = true;
         server_url = "ss14://ss14.gradient.moe:${port}";
+        tags = "region:eu_w,rp:none";
       };
 
       status = {
@@ -44,8 +45,8 @@ in {
 
       game = {
         hostname = "[EUW] Robust Pong";
-        maxplayers = 64;
-        welcomemsg = "Welcome to Robust Pong!";  
+        desc = "It's literally just pong.";
+        welcomemsg = "Welcome to Robust Pong!";
       };
     };
   };
