@@ -78,6 +78,7 @@
           nixos-hardware.nixosModules.common-cpu-amd-pstate
           gradient-generator.nixosModules.x86_64-linux.default
           ./modules/wine.nix
+          ./modules/podman.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
           ./modules/vera-locale.nix
