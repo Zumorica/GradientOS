@@ -4,6 +4,7 @@ Flake for different NixOS system configurations.
 ### Features
 - Encrypted secrets using [sops-nix](https://github.com/Mic92/sops-nix)
 - Optional Steam Deck support using [Jovian NixOS](https://github.com/Jovian-Experiments/Jovian-NixOS)
+- Supports deployments using [Colmena](https://github.com/zhaofengli/colmena)
 - Spaghetti!
 
 ### Overview

@@ -6,14 +6,28 @@ rec {
     , nixpkgs ? self.inputs.nixpkgs
     , ... 
     }@args:
-    nixpkgs.lib.nixosSystem (removeAttrs (gradientosSystemInternal args) ["format"]);
+    nixpkgs.lib.nixosSystem (gradientosSystemInternal args);
 
   gradientosSystemGenerator =
     { name
-    , nixpkgs ? self.inputs.nixpkgs
+    , format
     , ...
     }@args:
-    self.inputs.nixos-generators.nixosGenerate (gradientosSystemInternal args);
+    self.inputs.nixos-generators.nixosGenerate ((gradientosSystemInternal (args // { deployment = null; })) // { inherit format; });
+
+  gradientosSystemColmena =
+    { name
+    , ...
+    }@args:
+    let
+      gradientosConfig = gradientosSystemInternal args;
+    in {
+      meta = {
+        nodeNixpkgs.${name} = gradientosConfig.pkgs;
+        nodeSpecialArgs.${name} = gradientosConfig.specialArgs;
+      };
+      ${name} = gradientosConfig.modules;
+    };
 
   gradientosSystemInternal =
     { name
@@ -23,11 +37,12 @@ rec {
     , overlays ? [ ]
     , users ? { }
     , specialArgs ? { }
-    , format ? "install-iso"
+    , deployment ? {}
     , ...
     }:
     {
-      inherit system format;
+
+      inherit system;
 
       specialArgs = { inherit self; } // specialArgs;
 
@@ -43,8 +58,13 @@ rec {
         ../core
         ../hosts/${name}
         (mkHostNameModule name)
-      ] ++ modules ++ (mkUserModules users);
-    };
+      ] ++ modules ++ (mkUserModules users) 
+        ++ (if deployment != null then [{ inherit deployment; }] else []);
+
+    } // (if deployment != null then {
+      # See https://github.com/zhaofengli/colmena/issues/60#issuecomment-1047199551
+      extraModules = [ self.inputs.colmena.nixosModules.deploymentOptions ];
+    } else {});
 
   mkHostNameModule = name:
     ({ ... }: { networking.hostName = self.inputs.nixpkgs.lib.mkForce name; });
@@ -67,5 +87,4 @@ rec {
         }
       ])
       users));
-
 }

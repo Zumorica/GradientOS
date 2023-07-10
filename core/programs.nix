@@ -9,11 +9,13 @@
     gradientos-upgrade-switch
     gradientos-upgrade-boot
     gradientos-upgrade-test
+    gradientos-colmena
     dotnet-sdk_7
     appimage-run
     imagemagick
     ssh-to-age
     usbutils
+    colmena
     ffmpeg
     yt-dlp
     p7zip

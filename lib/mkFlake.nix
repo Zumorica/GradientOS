@@ -9,6 +9,7 @@
         ./example-home-manager-module.nix
       ];
       generators = [];
+      deployment = {};
     }
   ]
 */
@@ -20,14 +21,23 @@ in {
   inherit lib;
 
   nixosConfigurations = builtins.listToAttrs 
-    (map (x: { name = x.name; value = lib.gradientosSystem (removeAttrs x ["generators"]); }) gradientosConfigurations);
+    (map (x: { name = x.name; value = lib.gradientosSystem x; }) gradientosConfigurations);
+
+  colmena = nixpkgsLib.lists.foldr (a: b: (nixpkgsLib.attrsets.recursiveUpdate a b))
+    {
+      meta = {
+        description = "GradientOS machines";
+        nixpkgs = import self.inputs.nixpkgs { system = "x86_64-linux"; };
+      };
+    }
+    (map (x: lib.gradientosSystemColmena x) gradientosConfigurations);
 
   packages = 
   let
     configurations = builtins.filter (x: (builtins.length x.generators or []) != 0) gradientosConfigurations;
     x86_64-linux-configurations = builtins.filter (x: x.system or "x86_64-linux" == "x86_64-linux") configurations;
     aarch64-linux-configurations = builtins.filter (x: x.system or "x86_64-linux" == "aarch64-linux") configurations;
-    generate = config: (map (x: { name = config.name+"-"+x; value = lib.gradientosSystemGenerator ((removeAttrs config ["generators"]) // { format = x; }); })
+    generate = config: (map (x: { name = config.name+"-"+x; value = lib.gradientosSystemGenerator (config // { format = x; }); })
       (nixpkgsLib.lists.unique config.generators or []));
     generateMany = configs: builtins.listToAttrs (nixpkgsLib.lists.flatten (map (x: generate x) configs));
   in {

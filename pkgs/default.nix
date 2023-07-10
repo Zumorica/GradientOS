@@ -50,6 +50,7 @@ in {
   
   gradient-generator = flake.inputs.gradient-generator.packages.${system}.default;
 
+  gradientos-colmena = super.callPackage ./scripts/gradientos-colmena.nix { };
   gradientos-upgrade-switch = super.callPackage ./scripts/gradientos-upgrade-switch.nix { };
   gradientos-upgrade-boot = super.callPackage ./scripts/gradientos-upgrade-boot.nix { };
   gradientos-upgrade-test = super.callPackage ./scripts/gradientos-upgrade-test.nix { };

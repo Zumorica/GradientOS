@@ -61,6 +61,8 @@
 
   outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ss14-watchdog, ... }:
   let
+    ips = import ./misc/wireguard-addresses.nix;
+    colmena-tags = import ./misc/colmena-tags.nix;
     mkFlake = (import ./lib/mkFlake.nix self);
     jovian-modules = (jovian-nixos + "/modules");
     jovian-pkgs = import (jovian-nixos + "/overlay.nix");
@@ -107,6 +109,13 @@
         ];
 
         generators = [ "install-iso" ];
+
+        deployment = {
+          targetHost = ips.gradientnet.miracle-crusher;
+          tags = with colmena-tags; [ x86_64 desktop vera ];
+          allowLocalDeployment = true;
+          buildOnTarget = true;
+        };
       }
 
       {
@@ -139,6 +148,12 @@
         ];
 
         generators = [ "install-iso" ];
+
+        deployment = {
+          targetHost = ips.lilynet.neith-deck;
+          tags = with colmena-tags; [ x86_64 steam-deck desktop neith ];
+          allowLocalDeployment = true;
+        };
       }
 
       {
@@ -175,6 +190,12 @@
         ];
 
         generators = [ "install-iso" ];
+
+        deployment = {
+          targetHost = ips.gradientnet.vera-deck;
+          tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          allowLocalDeployment = true;
+        };
       }
 
       {
@@ -210,6 +231,12 @@
         ];
 
         generators = [ "sd-aarch64" ];
+
+        deployment = {
+          targetHost = ips.gradientnet.briah;
+          tags = with colmena-tags; [ aarch64 raspberry-pi server vera ];
+          allowLocalDeployment = true;
+        };
       }
       
     ];
