@@ -1,19 +1,11 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    enableVteIntegration = true;
-    syntaxHighlighting.enable = true;
-    historySubstringSearch.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "python" "man" ];
-    };
-    initExtra = builtins.readFile ./zshrc;
-  };
+  imports = [
+    ../../../modules/home/zsh.nix
+  ];
+  
+  programs.zsh.initExtra = builtins.readFile ./zshrc;
 
 }

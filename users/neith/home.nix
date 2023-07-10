@@ -4,7 +4,7 @@
   imports = [
     ./secrets
     ./ssh.nix
-    ./zsh.nix
+    ../../modules/home/zsh.nix
   ];
 
   home.username = "neith";
