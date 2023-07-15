@@ -57,6 +57,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.stable.follows = "nixpkgs-stable-2305";
+      inputs.flake-compat.follows = "flake-compat";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ss14-watchdog, ... }:
@@ -108,7 +115,7 @@
           ./users/vera/graphical
         ];
 
-        generators = [ "install-iso" ];
+        #generators = [ "install-iso" ];
 
         deployment = {
           targetHost = ips.gradientnet.miracle-crusher;
