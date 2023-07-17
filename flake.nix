@@ -97,6 +97,7 @@
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
+          ./modules/graphical/sunshine.nix
           ./hardware/um2
           ./hardware/wacom.nix
           ./hardware/sound.nix
