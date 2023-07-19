@@ -1,6 +1,7 @@
 { config, ... }:
 let
   secrets = config.sops.secrets;
+  ports = import ./misc/service-ports.nix;
   ips = import ../../misc/wireguard-addresses.nix;
   devices = import ../../misc/syncthing-device-ids.nix;
   folders = import ../../misc/syncthing-folder-ids.nix;
@@ -15,33 +16,34 @@ in {
     overrideFolders = false;
     overrideDevices = false;
     openDefaultPorts = true;
-    devices = with devices; with ips; {
-      briah = {
-        addresses = [
-          "tcp://192.168.1.24:22000"
-          "tcp://${gradientnet.briah}:22000"
-          "tcp://vpn.gradient.moe:22000"
-          "dynamic"
-        ];
-        id = briah;
-        introducer = true;
+    guiAddress = "127.0.0.1:${toString ports.syncthing}";
+    extraOptions = {
+      listenAddresses = [
+        "tcp://0.0.0.0:${toString ports.syncthing-transfers}"
+        "quic://0.0.0.0:${toString ports.syncthing-transfers}"
+        "dynamic+https://relays.syncthing.net/endpoint"
+      ];
+      gui = {
+        insecureSkipHostcheck = true;
       };
-
+    };
+    devices = with devices; with ips; {
+      miracle-crusher = {
+        addresses = [ "tcp://${gradientnet.miracle-crusher}:22000" "dynamic" ];
+        id = miracle-crusher;
+      };
       vera-deck = {
         addresses = [ "tcp://${gradientnet.vera-deck}:22000" "dynamic" ];
         id = vera-deck;
       };
-
       neith-deck = {
         addresses = [ "tcp://${lilynet.neith-deck}:22000" "dynamic" ];
         id = neith-deck;
       };
-
       vera-phone = {
         addresses = [ "tcp://${gradientnet.vera-phone}:22000" "dynamic" ];
         id = vera-phone;
       };
-
       work-laptop = {
         addresses = [ "dynamic" ];
         id = work-laptop;
@@ -49,40 +51,40 @@ in {
     };
 
     folders = with folders; {
-      "/home/vera/Documents/Sync/" = {
-        id = default;
-        label = "Default Sync Folder";
-        devices = [ "briah" "vera-deck" "work-laptop" ];
-      };
-
-      "/home/vera/.ImportantDocuments_encfs/" = {
-        id = important-documents;
-        label = "Encrypted";
-        devices = [ "briah" ];
-      };
-
-      "/home/vera/.xlcore/ffxivConfig" = {
-        id = ffxiv-config;
-        label = "FFXIV Config";
-        devices = [ "briah" "vera-deck" ];
-      };
-
-      "/home/vera/Music" = {
-        id = music;
-        label = "Music";
-        devices = [ "briah" "vera-phone" "vera-deck" ];
-      };
-
-      "/home/vera/Documents/TheMidnightHall" = {
-        id = midnight-hall;
-        label = "The Midnight Hall";
-        devices = [ "briah" "neith-deck" ];
-      };
-
       "/data/retrodeck" = {
         id = retrodeck;
         label = "Retrodeck";
-        devices = [ "briah" "vera-deck" ];
+        devices = [ "miracle-crusher" "vera-deck" "vera-phone" ];
+      };
+
+      "/data/Sync" = {
+        id = default;
+        label = "Default Sync Folder";
+        devices = [ "miracle-crusher" "vera-deck" "vera-phone" "work-laptop" ];
+      };
+
+      "/data/Encrypted" = {
+        id = important-documents;
+        label = "Encrypted";
+        devices = [ "miracle-crusher" ];
+      };
+
+      "/data/FFXIV Config" = {
+        id = ffxiv-config;
+        label = "FFXIV Config";
+        devices = [ "miracle-crusher" "vera-deck" ];
+      };
+
+      "/data/Music" = {
+        id = music;
+        label = "Music";
+        devices = [ "miracle-crusher" "vera-deck" "vera-phone" ];
+      };
+
+      "/data/The Midnight Hall" = {
+        id = midnight-hall;
+        label = "The Midnight Hall";
+        devices = [ "miracle-crusher" "neith-deck" ];
       };
     };
   };

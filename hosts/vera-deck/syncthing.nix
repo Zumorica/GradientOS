@@ -1,6 +1,9 @@
 { config, ... }:
 let
   secrets = config.sops.secrets;
+  ips = import ../../misc/wireguard-addresses.nix;
+  devices = import ../../misc/syncthing-device-ids.nix;
+  folders = import ../../misc/syncthing-folder-ids.nix;
 in {
   services.syncthing = {
     enable = true;
@@ -11,64 +14,62 @@ in {
     key = secrets.syncthing-key.path;
     overrideFolders = false;
     overrideDevices = false;
-    devices = {
-      SPACE-CATGIRL = {
+    openDefaultPorts = true;
+    devices = with devices; with ips; {
+      briah = {
         addresses = [
           "tcp://192.168.1.24:22000"
-          "tcp://192.168.24.1:22000"
-          "tcp://game.zumorica.es:22000"
+          "tcp://${gradientnet.briah}:22000"
+          "tcp://vpn.gradient.moe:22000"
+          "dynamic"
         ];
-        id = "YGAS3YA-IXVU3R5-KQR6A2Z-Z5GQCSX-XXLRS4D-4WPJQHA-CKODYMV-KZSYUQO";
+        id = briah;
         introducer = true;
       };
 
-      MiracleCrusher = {
+      miracle-crusher = {
         addresses = [
-          "tcp://192.168.24.2:22000"
+          "tcp://${gradientnet.miracle-crusher}:22000"
+          "dynamic"
         ];
-        id = "SXWKC5N-MKDTRAN-ZBA4SJQ-EACWWAJ-W75C5AE-EQ354MY-CNJRQMQ-OZ67TQY";
+        id = miracle-crusher;
         introducer = true;
       };
 
-      WorkLaptop = {
-        addresses = ["dynamic"];
-        id = "ZAWI35R-BHTHAVO-TPB4F6E-R65K2RD-5GN7RGC-ZRCDNUT-7LYPFE2-HUYRSAF";
+      work-laptop = {
+        addresses = [ "dynamic" ];
+        id = work-laptop;
       };
 
-      Pixel = {
-        addresses = ["dynamic"];
-        id = "RQ67OI4-SPEED6T-SPS2ZEB-NRZHJJH-555V55A-OJTZO7I-CP4NTAD-USFV5A7";
-      };
-
-      NeithDeck = {
-        addresses = ["dynamic"];
-        id = "SYZPJXZ-DXZGXDN-5HVLTP4-7MH45FI-YJSUP2A-ACLXJ24-MPGCSZT-IFFDRQ7";
+      vera-phone = {
+        addresses = [ "tcp://${gradientnet.vera-phone}:22000" "dynamic" ];
+        id = vera-phone;
       };
     };
 
-    folders = {
+    folders = with folders; {
       "/home/vera/Documents/Sync/" = {
-        id = "default";
+        id = default;
         label = "Default Sync Folder";
-        devices = [ "SPACE-CATGIRL" "MiracleCrusher" "WorkLaptop" ];
+        devices = [ "briah" "miracle-crusher" "work-laptop" ];
       };
 
       "/home/vera/.xlcore/ffxivConfig" = {
-        id = "ujgmj-wkmsh";
+        id = ffxiv-config;
         label = "FFXIV Config";
-        devices = [ "SPACE-CATGIRL" "MiracleCrusher" ];
+        devices = [ "briah" "miracle-crusher" ];
       };
 
       "/home/vera/Music" = {
-        id = "y0fft-chww4";
+        id = music;
         label = "Music";
-        devices = [ "SPACE-CATGIRL" "Pixel" "MiracleCrusher" ];
+        devices = [ "briah" "miracle-crusher" "vera-phone" ];
       };
 
       "/run/media/deck/mmcblk0p1/retrodeck" = {
-        id = "9rctd-ets59";
+        id = retrodeck;
         label = "Retrodeck";
-        devices = [ "SPACE-CATGIRL" "MiracleCrusher" ];
+        devices = [ "briah" "miracle-crusher" ];
       };
     };
   };

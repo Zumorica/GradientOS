@@ -16,10 +16,12 @@
   # misc
   trilium = 8081;
   grafana = 8082;
+  syncthing = 8384;
   prometheus = 9001;
   prometheus-exporter-node = 9002;
   loki = 9003;
   loki-alert-manager = 9004;
   promtail = 9005;
+  syncthing-transfers = 22000;
 
 }

@@ -1,6 +1,9 @@
 { config, ... }:
 let
   secrets = config.sops.secrets;
+  ips = import ../../misc/wireguard-addresses.nix;
+  devices = import ../../misc/syncthing-device-ids.nix;
+  folders = import ../../misc/syncthing-folder-ids.nix;
 in {
   services.syncthing = {
     enable = true;
@@ -11,31 +14,33 @@ in {
     key = secrets.syncthing-key.path;
     overrideFolders = false;
     overrideDevices = false;
-    devices = {
-      SPACE-CATGIRL = {
+    openDefaultPorts = true;
+    devices = with devices; with ips; {
+      briah = {
         addresses = [
-          "tcp://192.168.24.1:22000"
-          "tcp://game.zumorica.es:22000"
+          "tcp://${lilynet.briah}:22000"
+          "tcp://vpn.gradient.moe:22000"
+          "dynamic"
         ];
-        id = "YGAS3YA-IXVU3R5-KQR6A2Z-Z5GQCSX-XXLRS4D-4WPJQHA-CKODYMV-KZSYUQO";
+        id = briah;
         introducer = true;
       };
 
-      MiracleCrusher = {
+      miracle-crusher = {
         addresses = [
-          "tcp://192.168.24.2:22000"
+          "tcp://${lilynet.miracle-crusher}:22000"
+          "dynamic"
         ];
-        id = "SXWKC5N-MKDTRAN-ZBA4SJQ-EACWWAJ-W75C5AE-EQ354MY-CNJRQMQ-OZ67TQY";
+        id = miracle-crusher;
         introducer = true;
       };
-
     };
 
-    folders = {
+    folders = with folders; {
       "/home/neith/Documents/TheMidnightHall" = {
-        id = "ykset-ue2ke";
+        id = midnight-hall;
         label = "The Midnight Hall";
-        devices = [ "SPACE-CATGIRL" "MiracleCrusher" ];
+        devices = [ "briah" "miracle-crusher" ];
       };
     };
   };

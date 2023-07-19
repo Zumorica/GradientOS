@@ -13,6 +13,7 @@ in {
       miracle-crusher
       vera-deck
       neith-deck
+      briah
     ];
   };
 

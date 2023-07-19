@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 {
 
   imports = [
@@ -8,6 +8,7 @@
     ./duckdns.nix
     ./grafana.nix
     ./promtail.nix
+    ./syncthing.nix
     ./wireguard.nix
     ./prometheus.nix
     ./containers.nix
