@@ -7,6 +7,7 @@
     libsForQt5.okular
     libsForQt5.falkon
     gimp-with-plugins
+    jack-matchmaker
     retroarchFull
     google-chrome
     prismlauncher

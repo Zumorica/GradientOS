@@ -55,6 +55,8 @@ in {
   gradientos-upgrade-boot = super.callPackage ./scripts/gradientos-upgrade-boot.nix { };
   gradientos-upgrade-test = super.callPackage ./scripts/gradientos-upgrade-test.nix { };
 
+  jack-matchmaker = super.callPackage ./jack-matchmaker.nix { };
+
   nix-gaming = flake.inputs.nix-gaming.packages.${system};
 
   # Unmodified unstable nixpkgs overlay.

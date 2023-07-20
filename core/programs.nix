@@ -1,8 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ./python.nix ];
-
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
