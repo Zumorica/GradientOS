@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 {
 
@@ -16,5 +16,9 @@
   };
 
   sound.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    jack-matchmaker
+  ];
 
 }

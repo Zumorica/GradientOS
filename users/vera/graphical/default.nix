@@ -13,7 +13,6 @@
     libsForQt5.okular
     libreoffice-fresh
     gimp-with-plugins
-    jack-matchmaker
     jetbrains.rider
     retroarchFull
     google-chrome
