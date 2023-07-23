@@ -15,6 +15,7 @@ in {
     virtualHosts = {
       "gradient.moe" = {
         root = self.inputs.gradient-moe;
+        default = true;
         enableACME = true;
         addSSL = true;
         serverAliases = [
@@ -24,6 +25,34 @@ in {
         ];
         locations."/daily_gradient/data/" = {
           alias = "/data/gradient-data/";
+        };
+      };
+      "stream.gradient.moe" = 
+      let 
+        vdo-ninja = self.inputs.vdo-ninja;
+      in {
+        root = vdo-ninja;
+        basicAuthFile = config.sops.secrets.stream-htpasswd.path;
+        enableACME = true;
+        addSSL = true;
+        serverAliases = [
+          "stream.zumorica.es"
+        ];
+        locations."~ ^/([^/]+)/([^/?]+)$" = {
+          extraConfig = ''
+            root ${vdo-ninja};
+            try_files /$1/$2 /$1/$2.html /$1/$2/ /$2 /$2/ /$1/index.html;
+            add_header Access-Control-Allow-Origin *;
+          '';
+        };
+        locations."/" = {
+          extraConfig = ''
+            if ($request_uri ~ ^/(.*)\.html$) {
+                    return 302 /$1;
+            }
+            try_files $uri $uri.html $uri/ /index.html;
+            add_header Access-Control-Allow-Origin *;
+          '';
         };
       };
       "gradientnet" = with ips.gradientnet; {

@@ -351,7 +351,8 @@
         "nixpkgs-stable-2211": "nixpkgs-stable-2211",
         "nixpkgs-stable-2305": "nixpkgs-stable-2305",
         "sops-nix": "sops-nix",
-        "ss14-watchdog": "ss14-watchdog"
+        "ss14-watchdog": "ss14-watchdog",
+        "vdo-ninja": "vdo-ninja"
       }
     },
     "sops-nix": {
@@ -409,6 +410,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "vdo-ninja": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689469546,
+        "narHash": "sha256-txIqVzoAAS0+wdcdkA0aXUh9GRNwWcaNTV9OUowj44E=",
+        "owner": "steveseguin",
+        "repo": "vdo.ninja",
+        "rev": "9bd5d39eb393524a378ee59e7dcffae82bb73380",
+        "type": "github"
+      },
+      "original": {
+        "owner": "steveseguin",
+        "repo": "vdo.ninja",
         "type": "github"
       }
     }

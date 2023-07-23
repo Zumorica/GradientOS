@@ -48,7 +48,7 @@
     };
 
     nix-gaming = {
-      url = "github:/fufexan/nix-gaming";
+      url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -62,6 +62,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.stable.follows = "nixpkgs-stable-2305";
       inputs.flake-compat.follows = "flake-compat";
+    };
+
+    vdo-ninja = {
+      url = "github:steveseguin/vdo.ninja";
+      flake = false;
     };
 
   };
