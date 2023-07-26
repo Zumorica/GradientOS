@@ -121,7 +121,7 @@
           ./users/vera/graphical
         ];
 
-        #generators = [ "install-iso" ];
+        generators = [ "install-iso" ];
 
         deployment = {
           targetHost = ips.gradientnet.miracle-crusher;
@@ -216,15 +216,21 @@
 
         modules = [
           sops-nix.nixosModules.sops
-          ./hardware/azure.nix
+          nixos-hardware.common-cpu-intel
+          nixos-hardware.common-gpu-intel
+          ./modules/wine.nix
+          ./modules/podman.nix
           ./modules/vera-locale.nix
+          ./modules/virtualisation.nix
+          ./modules/nix-store-serve.nix
+          ./modules/aarch64-emulation.nix
         ];
 
         users.vera.modules = [
           sops-nix.homeManagerModule
         ];
 
-        generators = [ "azure" ];
+        generators = [ "install-iso" ];
       }
 
        {
