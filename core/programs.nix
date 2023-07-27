@@ -13,6 +13,7 @@
     imagemagick
     ssh-to-age
     usbutils
+    pciutils
     colmena
     ffmpeg
     yt-dlp
