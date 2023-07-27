@@ -2,6 +2,8 @@
 {
 
   imports = [
+    ./secrets
+    ./wireguard.nix
   ];
 
 }

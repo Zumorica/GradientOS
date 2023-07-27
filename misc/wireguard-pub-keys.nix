@@ -3,7 +3,7 @@
   miracle-crusher = "pgPX/8I6p/6z19w4mP38VVNK9RQDXHI3rUdy9Zzv0gg=";
   vera-deck = "3iA3etOZC+5J3zKjcFvQVw5bhiKKC0XGUQap43yMB1o=";
   neith-deck = "p4dmhuDzBmzHvudnT2nnSTrGQY047ubuCEjEk2U2zFw=";
-  asiyah = "TODO";
+  asiyah = "sZ7toLMyaiDj/r2Lz9n7UNMs1tXeQn+qAP1hHclKiQs=";
   briah = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
   atziluth = "TODO";
   vera-phone = "yySbF5AY5dmoTp5v/e6wwhl9VZqTvhXufGAnUqbfZkg=";

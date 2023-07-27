@@ -7,6 +7,8 @@
     defaultSopsFile = ./secrets.yml;
 
     secrets = {
+
+      wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
       
     };
   };
