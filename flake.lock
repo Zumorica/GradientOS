@@ -103,11 +103,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1688045916,
-        "narHash": "sha256-HwvC3AdHM65PyVpUu4/k1IvCnQENqsQOSQ0N95KdEWc=",
+        "lastModified": 1690456824,
+        "narHash": "sha256-3cwWWad2pFcZlkG+Y/Jh65BohYDcFRa1m6Y0hrdYOos=",
         "ref": "refs/heads/master",
-        "rev": "06b8ebd356e330124443e50938756b7f90b0fc16",
-        "revCount": 78,
+        "rev": "9f69a2ae5c27414f043493088bf904b7dff5ecec",
+        "revCount": 81,
         "type": "git",
         "url": "ssh://git@github.com/Zumorica/gradient-generator"
       },
@@ -119,11 +119,11 @@
     "gradient-moe": {
       "flake": false,
       "locked": {
-        "lastModified": 1688984004,
-        "narHash": "sha256-eUUmqjmGp0ba9MyX2CmNziEE+LWnZ7m3I56Vx+CEnQM=",
+        "lastModified": 1690456246,
+        "narHash": "sha256-DZrpx95mYwbtz0XruIk+equtn8z45oSBjVAGskUcMDs=",
         "ref": "refs/heads/main",
-        "rev": "c5589418e6cfa35c7eed660ec501f65c123550ef",
-        "revCount": 2,
+        "rev": "35322ca3a718aa76cb2cf1b340bb697279c1e2f8",
+        "revCount": 3,
         "type": "git",
         "url": "ssh://git@github.com/Zumorica/gradient.moe"
       },
