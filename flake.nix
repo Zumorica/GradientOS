@@ -103,10 +103,11 @@
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
           ./modules/graphical/sunshine.nix
-          ./hardware/um2
+          ./modules/pipewire
+          ./modules/pipewire/um2
+          ./modules/pipewire/virtual-sink
+          ./modules/pipewire/low-latency.nix
           ./hardware/wacom.nix
-          ./hardware/sound.nix
-          ./hardware/sound-low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
@@ -146,8 +147,9 @@
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
-          ./hardware/sound.nix
-          ./hardware/sound-low-latency.nix
+          ./modules/pipewire
+          ./modules/pipewire/virtual-sink
+          ./modules/pipewire/low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
@@ -185,8 +187,9 @@
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
-          ./hardware/sound.nix
-          ./hardware/sound-low-latency.nix
+          ./modules/pipewire
+          ./modules/pipewire/virtual-sink
+          ./modules/pipewire/low-latency.nix
           ./hardware/amdcpu.nix
           ./hardware/amdgpu.nix
           ./hardware/webcam.nix
