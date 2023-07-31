@@ -3,6 +3,7 @@
 let
   ips = import ../../misc/wireguard-addresses.nix;
   keys = import ../../misc/wireguard-pub-keys.nix;
+  briah-ports = import ../briah/misc/service-ports.nix;
   private-key = config.sops.secrets.wireguard-private-key.path;
 in {
 
@@ -17,7 +18,7 @@ in {
         # Gradient
         {
           allowedIPs = [ "${gradientnet}/24" ];
-          endpoint = "vpn.zumorica.es:1194";
+          endpoint = "vpn.gradient.moe:${toString briah-ports.gradientnet}";
           publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
@@ -27,7 +28,7 @@ in {
         # Gradient, but local net
         {
           allowedIPs = [ "${gradientnet}/24" ];
-          endpoint = "192.168.1.24:1194";
+          endpoint = "192.168.1.24:${toString briah-ports.gradientnet}";
           publicKey = keys.briah;
         }
       ];
@@ -40,7 +41,7 @@ in {
         # Gradient
         {
           allowedIPs = [ "${lilynet}/24" ];
-          endpoint = "vpn.zumorica.es:1195";
+          endpoint = "vpn.gradient.moe:${toString briah-ports.lilynet}";
           publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
@@ -50,7 +51,7 @@ in {
         # Gradient, but local net
         {
           allowedIPs = [ "${lilynet}/24" ];
-          endpoint = "192.168.1.24:1195";
+          endpoint = "192.168.1.24:${toString briah-ports.lilynet}";
           publicKey = keys.briah;
         }
       ];

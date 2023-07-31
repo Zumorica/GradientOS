@@ -3,6 +3,7 @@
 let
   ips = import ../../misc/wireguard-addresses.nix;
   keys = import ../../misc/wireguard-pub-keys.nix;
+  briah-ports = import ../briah/misc/service-ports.nix;
   private-key = config.sops.secrets.wireguard-private-key.path;
 in {
 
@@ -16,7 +17,7 @@ in {
       peers = [
         {
           allowedIPs = [ "${lilynet}/24" ];
-          endpoint = "vpn.zumorica.es:1195";
+          endpoint = "vpn.gradient.moe:${toString briah-ports.lilynet}";
           publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
@@ -31,7 +32,7 @@ in {
       peers = [
         {
           allowedIPs = [ "${slugcatnet}/24" ];
-          endpoint = "vpn.zumorica.es:1196";
+          endpoint = "vpn.gradient.moe:${toString briah-ports.slugcatnet}";
           publicKey = keys.briah;
           persistentKeepalive = 25;
           dynamicEndpointRefreshSeconds = 25;
