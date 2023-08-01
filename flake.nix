@@ -219,8 +219,8 @@
 
         modules = [
           sops-nix.nixosModules.sops
-          nixos-hardware.common-cpu-intel
-          nixos-hardware.common-gpu-intel
+          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.common-gpu-intel
           ./modules/wine.nix
           ./modules/podman.nix
           ./modules/vera-locale.nix
