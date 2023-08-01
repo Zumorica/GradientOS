@@ -10,11 +10,14 @@
   programs.kdeconnect.enable = true;
 
   programs.gnupg.agent.pinentryFlavor = "qt";
+
+  services.power-profiles-daemon.enable = true;
   
   environment.systemPackages = with pkgs; [
-    pinentry-qt
+    libsForQt5.powerdevil
     libsForQt5.discover
     libsForQt5.sddm-kcm
+    pinentry-qt
   ];
 
 }
