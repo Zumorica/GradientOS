@@ -97,6 +97,7 @@
           ./modules/virtualisation.nix
           ./modules/nix-store-serve.nix
           ./modules/aarch64-emulation.nix
+          ./modules/system76-scheduler.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
@@ -142,6 +143,7 @@
           ./modules/uwu-style.nix
           ./modules/neith-locale.nix
           ./modules/nix-store-serve.nix
+          ./modules/system76-scheduler.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
@@ -182,6 +184,7 @@
           ./modules/vera-locale.nix
           ./modules/virtualisation.nix
           ./modules/nix-store-serve.nix
+          ./modules/system76-scheduler.nix
           ./modules/graphical
           ./modules/graphical/kde.nix
           ./modules/graphical/steam.nix
