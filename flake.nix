@@ -38,7 +38,7 @@
 
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
-      flake = false;
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     sops-nix = {
@@ -76,8 +76,6 @@
     ips = import ./misc/wireguard-addresses.nix;
     colmena-tags = import ./misc/colmena-tags.nix;
     mkFlake = (import ./lib/mkFlake.nix self);
-    jovian-modules = (jovian-nixos + "/modules");
-    jovian-pkgs = import (jovian-nixos + "/overlay.nix");
     kernel-workaround = import ./pkgs/kernel-workaround.nix;
   in
   mkFlake {
@@ -134,11 +132,11 @@
 
       {
         name = "neith-deck";
-        overlays = [ jovian-pkgs kernel-workaround ];
+        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
 
         modules = [
           sops-nix.nixosModules.sops
-          jovian-modules
+          jovian-nixos.nixosModules.default
           ./modules/wine.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
@@ -173,11 +171,11 @@
 
       {
         name = "vera-deck";
-        overlays = [ jovian-pkgs kernel-workaround ];
+        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
 
         modules = [
           sops-nix.nixosModules.sops
-          jovian-modules
+          jovian-nixos.nixosModules.default
           ./modules/wine.nix
           ./modules/plymouth.nix
           ./modules/uwu-style.nix
