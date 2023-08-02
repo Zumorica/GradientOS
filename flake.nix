@@ -76,6 +76,7 @@
     ips = import ./misc/wireguard-addresses.nix;
     colmena-tags = import ./misc/colmena-tags.nix;
     mkFlake = (import ./lib/mkFlake.nix self);
+    modules = import ./nixosModules.nix;
     kernel-workaround = import ./pkgs/kernel-workaround.nix;
   in
   mkFlake {
@@ -89,31 +90,35 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-amd-pstate
           gradient-generator.nixosModules.x86_64-linux.default
-          ./modules/wine.nix
-          ./modules/podman.nix
-          ./modules/plymouth.nix
-          ./modules/uwu-style.nix
-          ./modules/vera-locale.nix
-          ./modules/virtualisation.nix
-          ./modules/nix-store-serve.nix
-          ./modules/aarch64-emulation.nix
-          ./modules/system76-scheduler.nix
-          ./modules/graphical
-          ./modules/graphical/kde.nix
-          ./modules/graphical/steam.nix
-          ./modules/graphical/sunshine.nix
-          ./modules/pipewire
-          ./modules/pipewire/um2
-          ./modules/pipewire/virtual-sink
-          ./modules/pipewire/low-latency.nix
-          ./hardware/wacom.nix
-          ./hardware/amdcpu.nix
-          ./hardware/amdgpu.nix
-          ./hardware/webcam.nix
-          ./hardware/bluetooth.nix
-          ./hardware/openrazer.nix
-          ./hardware/home-dcp-l2530dw.nix
-          ./hardware/xbox-one-controller.nix
+
+          modules.wine
+          modules.podman
+          modules.plymouth
+          modules.uwu-style
+          modules.vera-locale
+          modules.virtualisation
+          modules.nix-store-serve
+          modules.aarch64-emulation
+          modules.system76-scheduler
+
+          modules.graphical
+          modules.graphical-kde
+          modules.graphical-steam
+          modules.graphical-sunshine
+
+          modules.pipewire
+          modules.pipewire-um2
+          modules.pipewire-virtual-sink
+          modules.pipewire-low-latency
+
+          modules.hardware-wacom
+          modules.hardware-amdcpu
+          modules.hardware-amdgpu
+          modules.hardware-webcam
+          modules.hardware-bluetooth
+          modules.hardware-openrazer
+          modules.hardware-home-dcp-l2530dw
+          modules.hardware-xbox-one-controller
         ];
 
         users.vera.modules = [
@@ -138,23 +143,27 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
-          ./modules/wine.nix
-          ./modules/plymouth.nix
-          ./modules/uwu-style.nix
-          ./modules/neith-locale.nix
-          ./modules/nix-store-serve.nix
-          ./modules/system76-scheduler.nix
-          ./modules/graphical
-          ./modules/graphical/kde.nix
-          ./modules/graphical/steam.nix
-          ./modules/pipewire
-          ./modules/pipewire/virtual-sink
-          ./modules/pipewire/low-latency.nix
-          ./hardware/amdcpu.nix
-          ./hardware/amdgpu.nix
-          ./hardware/webcam.nix
-          ./hardware/bluetooth.nix
-          ./hardware/steamdeck.nix
+          
+          modules.wine
+          modules.plymouth
+          modules.uwu-style
+          modules.neith-locale
+          modules.nix-store-serve
+          modules.system76-scheduler
+          
+          modules.graphical
+          modules.graphical-kde
+          modules.graphical-steam
+          
+          modules.pipewire
+          modules.pipewire-virtual-sink
+          modules.pipewire-low-latency
+          
+          modules.hardware-amdcpu
+          modules.hardware-amdgpu
+          modules.hardware-webcam
+          modules.hardware-bluetooth
+          modules.hardware-steamdeck
         ];
 
         users.neith.modules = [
@@ -178,27 +187,31 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
-          ./modules/wine.nix
-          ./modules/plymouth.nix
-          ./modules/uwu-style.nix
-          ./modules/vera-locale.nix
-          ./modules/virtualisation.nix
-          ./modules/nix-store-serve.nix
-          ./modules/system76-scheduler.nix
-          ./modules/graphical
-          ./modules/graphical/kde.nix
-          ./modules/graphical/steam.nix
-          ./modules/pipewire
-          ./modules/pipewire/virtual-sink
-          ./modules/pipewire/low-latency.nix
-          ./hardware/amdcpu.nix
-          ./hardware/amdgpu.nix
-          ./hardware/webcam.nix
-          ./hardware/bluetooth.nix
-          ./hardware/steamdeck.nix
-          ./hardware/openrazer.nix
-          ./hardware/home-dcp-l2530dw.nix
-          ./hardware/xbox-one-controller.nix
+          
+          modules.wine
+          modules.plymouth
+          modules.uwu-style
+          modules.vera-locale
+          modules.virtualisation
+          modules.nix-store-serve
+          modules.system76-scheduler
+          
+          modules.graphical
+          modules.graphical-kde
+          modules.graphical-steam
+          
+          modules.pipewire
+          modules.pipewire-virtual-sink
+          modules.pipewire-low-latency
+          
+          modules.hardware-amdcpu
+          modules.hardware-amdgpu
+          modules.hardware-webcam
+          modules.hardware-bluetooth
+          modules.hardware-steamdeck
+          modules.hardware-openrazer
+          modules.hardware-home-dcp-l2530dw
+          modules.hardware-xbox-one-controller
         ];
 
         users.vera.modules = [
@@ -222,12 +235,13 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-gpu-intel
-          ./modules/wine.nix
-          ./modules/podman.nix
-          ./modules/vera-locale.nix
-          ./modules/virtualisation.nix
-          ./modules/nix-store-serve.nix
-          ./modules/aarch64-emulation.nix
+          
+          modules.podman
+          modules.vera-locale
+          modules.wine
+          modules.virtualisation
+          modules.nix-store-serve
+          modules.aarch64-emulation
         ];
 
         users.vera.modules = [
@@ -250,8 +264,9 @@
         modules = [
           ss14-watchdog.nixosModules.default
           sops-nix.nixosModules.sops
-          ./modules/vera-locale.nix
-          ./hardware/raspberrypi.nix
+
+          modules.vera-locale
+          modules.hardware-raspberrypi
         ];
 
         users.vera.modules = [
@@ -269,5 +284,8 @@
       }
       
     ];
+
+    nixosModules = modules;
+
   };
 }
