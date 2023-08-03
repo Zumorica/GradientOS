@@ -20,8 +20,11 @@ let
 in {
   inherit lib;
 
-  nixosConfigurations = builtins.listToAttrs 
-    (map (x: { name = x.name; value = lib.gradientosSystem x; }) gradientosConfigurations);
+  nixosConfigurations = 
+  let
+    configurations = builtins.filter (x: (x.makeSystem or true)) gradientosConfigurations;
+  in builtins.listToAttrs 
+    (map (x: { name = x.name; value = lib.gradientosSystem x; }) configurations);
 
   colmena = nixpkgsLib.lists.foldr (a: b: (nixpkgsLib.attrsets.recursiveUpdate a b))
     {

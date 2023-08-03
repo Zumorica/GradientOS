@@ -38,6 +38,9 @@ rec {
     , users ? { }
     , specialArgs ? { }
     , deployment ? {}
+    , makeSystem ? true
+    , importCore ? true
+    , importHost ? true
     , ...
     }:
     {
@@ -55,10 +58,10 @@ rec {
       };
 
       modules = [
-        ../core
-        ../hosts/${name}
         (mkHostNameModule name)
-      ] ++ modules ++ (mkUserModules users) 
+      ] ++ modules ++ (mkUserModules users)
+        ++ (if importCore then [../core] else [])
+        ++ (if importHost then [../hosts/${name}] else [])
         ++ (if deployment != null then [{ inherit deployment; }] else []);
 
     } // (if deployment != null then {

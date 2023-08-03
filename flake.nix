@@ -71,7 +71,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, ss14-watchdog, ... }:
+  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, nixos-generators, ss14-watchdog, ... }:
   let
     ips = import ./misc/wireguard-addresses.nix;
     colmena-tags = import ./misc/colmena-tags.nix;
@@ -126,8 +126,6 @@
           ./users/vera/graphical
         ];
 
-        generators = [ "install-iso" ];
-
         deployment = {
           targetHost = ips.gradientnet.miracle-crusher;
           tags = with colmena-tags; [ x86_64 desktop vera ];
@@ -170,8 +168,6 @@
           sops-nix.homeManagerModule
           ./users/neith/graphical
         ];
-
-        generators = [ "install-iso" ];
 
         deployment = {
           targetHost = ips.lilynet.neith-deck;
@@ -219,8 +215,6 @@
           ./users/vera/graphical
         ];
 
-        generators = [ "install-iso" ];
-
         deployment = {
           targetHost = ips.gradientnet.vera-deck;
           tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
@@ -247,8 +241,6 @@
         users.vera.modules = [
           sops-nix.homeManagerModule
         ];
-
-        generators = [ "install-iso" ];
 
         deployment = {
           tags = with colmena-tags; [ x86_64 server vera ];
@@ -281,6 +273,40 @@
           allowLocalDeployment = true;
           buildOnTarget = true; # cross-compile build breaks otherwise
         };
+      }
+
+      {
+        name = "GradientOS-x86_64";
+        system = "x86_64-linux";
+
+        modules = [
+          modules.graphical
+          modules.graphical-kde
+        ];
+
+        generators = [ "install-iso" ];
+
+        importHost = false;
+        makeSystem = false;
+      }
+
+      {
+        name = "GradientOS-x86_64-steamdeck";
+        system = "x86_64-linux";
+        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
+
+        modules = [
+          jovian-nixos.nixosModules.default
+
+          modules.graphical
+          modules.graphical-kde
+          modules.hardware-steamdeck
+        ];
+
+        generators = [ "install-iso" ];
+
+        importHost = false;
+        makeSystem = false;
       }
       
     ];
