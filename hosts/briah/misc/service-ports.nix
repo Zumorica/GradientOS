@@ -1,15 +1,10 @@
 {
 
-  # nginx
-  gradient-moe = 80;
-  gradient-moe-secure = 443;
-
   # ss14
   robust-pong = 1313;
   ss14-watchdog = 5000;
 
   # misc
-  trilium = 8081;
   grafana = 8082;
   syncthing = 8384;
   prometheus = 9001;

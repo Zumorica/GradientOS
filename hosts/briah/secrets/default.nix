@@ -36,11 +36,6 @@
         restartUnits = [ "syncthing.service" ];
       };
 
-      stream-htpasswd = {
-        mode = "0444";
-        restartUnits = [ "nginx.service" ];
-      };
-
     };
   };
 
