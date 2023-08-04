@@ -11,6 +11,7 @@
     dotnet-sdk_7
     appimage-run
     imagemagick
+    lm_sensors
     ssh-to-age
     usbutils
     pciutils
