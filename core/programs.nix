@@ -15,6 +15,7 @@
     usbutils
     pciutils
     colmena
+    sysstat
     ffmpeg
     yt-dlp
     p7zip
