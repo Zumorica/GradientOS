@@ -19,11 +19,6 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "vera";
 
-  services.jackett = {
-    enable = true;
-    openFirewall = true;
-  };
-
   environment.systemPackages = with pkgs; [
     nix-gaming.osu-stable
     gradient-generator
