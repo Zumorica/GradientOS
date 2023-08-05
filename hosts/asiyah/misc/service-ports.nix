@@ -16,6 +16,8 @@
   jellyfin-client-discovery = 7359;
   jackett = 9117;
   bazarr = 6767;
+  transmission = 9091;
+  transmission-peer = 51413;
 
   # misc
   trilium = 8081;

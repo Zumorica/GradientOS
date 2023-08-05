@@ -25,10 +25,15 @@ in {
     listenPort = ports.bazarr;
   };
 
-  services.deluge = {
+  services.transmission = {
     inherit group;
     enable = true;
-    web.enable = true;
+    openRPCPort = true;
+    openPeerPorts = true;
+    settings = {
+      rpc-port = ports.transmission;
+      peer-port = ports.transmission-peer;
+    };
   };
 
   networking.firewall.allowedUDPPorts = [ ports.jellyfin-client-discovery ];
