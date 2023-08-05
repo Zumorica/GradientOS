@@ -38,5 +38,11 @@ in {
 
   networking.firewall.allowedUDPPorts = [ ports.jellyfin-client-discovery ];
 
-  users.groups.${group} = {};
+  users.groups.${group}.members = with config.services; [
+    jellyfin.user
+    radarr.user
+    jackett.user
+    bazarr.user
+    transmission.user
+  ];
 }
