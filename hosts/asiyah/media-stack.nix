@@ -13,6 +13,12 @@ in {
     inherit group;
     enable = true;
   };
+
+  services.sonarr = {
+    inherit group;
+    enable = true;
+    openFirewall = true;
+  };
   
   services.jackett = {
     inherit group;
@@ -41,6 +47,7 @@ in {
   users.groups.${group}.members = with config.services; [
     jellyfin.user
     radarr.user
+    sonarr.user
     jackett.user
     bazarr.user
     transmission.user
