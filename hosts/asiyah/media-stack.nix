@@ -31,14 +31,39 @@ in {
     listenPort = ports.bazarr;
   };
 
-  services.transmission = {
+  services.deluge = {
     inherit group;
     enable = true;
-    openRPCPort = true;
-    openPeerPorts = true;
-    settings = {
-      rpc-port = ports.transmission;
-      peer-port = ports.transmission-peer;
+    declarative = true;
+    openFirewall = true;
+    authFile = config.sops.secrets.deluge-auth.path;
+    web = {
+      enable = true;
+      port = ports.deluge-web;
+    };
+    config = {
+      daemon_port = ports.deluge-daemon;
+      listen_ports = ports.deluge-listen;
+      
+      enabled_plugins = [ "Label" ];
+
+      max_active_limit = -1;
+      max_active_downloading = -1;
+      max_active_seeding = 10;
+
+      max_download_speed = 20000.0;
+      max_upload_speed = 5000.0;
+
+      remove_seed_at_ratio = true;
+      stop_seed_ratio = 2.0;
+      
+      download_location = "/data/Downloads/Incomplete";
+      
+      move_completed = true;
+      move_completed_path = "/data/Downloads/Complete";
+      
+      copy_torrent_file = true;
+      torrentfiles_location = "/data/Downloads/Torrents";
     };
   };
 
@@ -50,6 +75,6 @@ in {
     sonarr.user
     jackett.user
     bazarr.user
-    transmission.user
+    deluge.user
   ];
 }

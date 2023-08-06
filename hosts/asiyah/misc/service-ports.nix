@@ -14,10 +14,13 @@
   jellyfin-https = 8920;
   jellyfin-service-discovery = 1900;
   jellyfin-client-discovery = 7359;
+  radarr = 7878;
+  sonarr = 8989;
   jackett = 9117;
   bazarr = 6767;
-  transmission = 9091;
-  transmission-peer = 51413;
+  deluge-web = 8112;
+  deluge-daemon = 58846;
+  deluge-listen = [ 6881 6891 ];
 
   # misc
   trilium = 8081;

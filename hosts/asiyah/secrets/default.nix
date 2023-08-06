@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
 
@@ -15,6 +15,12 @@
         restartUnits = [ "nginx.service" ];
       };
       
+      deluge-auth = {
+        mode = "0440";
+        group = config.services.deluge.group;
+        restartUnits = [ "deluge.service" ];
+      };
+
     };
   };
 
