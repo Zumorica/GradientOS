@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, config, lib, ... }:
 let
   ports = import ./misc/service-ports.nix;
   group = "media-stack";
@@ -7,6 +7,17 @@ in {
   services.jellyfin = {
     inherit group;
     enable = true;
+    package = pkgs.jellyfin.override {
+      ffmpeg = pkgs.ffmpeg.override {
+        ffmpegVariant = "full";
+      };
+    };
+  };
+
+  systemd.services.jellyfin.serviceConfig = {
+    DeviceAllow = lib.mkForce "char-drm";
+    BindPaths = lib.mkForce "/dev/dri";
+    Restart = lib.mkForce "always";
   };
 
   services.radarr = {

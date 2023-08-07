@@ -236,6 +236,7 @@
           modules.virtualisation
           modules.nix-store-serve
           modules.aarch64-emulation
+          modules.hardware-intelgpu-vaapi
         ];
 
         users.vera.modules = [

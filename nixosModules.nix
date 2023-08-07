@@ -31,6 +31,7 @@
   hardware-azure = ./hardware/azure.nix;
   hardware-bluetooth = ./hardware/bluetooth.nix;
   hardware-home-dcp-l2530dw = ./hardware/home-dcp-l2530dw.nix;
+  hardware-intelgpu-vaapi = ./hardware/intelgpu-vaapi.nix;
   hardware-openrazer = ./hardware/openrazer.nix;
   hardware-raspberrypi = ./hardware/raspberrypi.nix;
   hardware-steamdeck = ./hardware/steamdeck.nix;
