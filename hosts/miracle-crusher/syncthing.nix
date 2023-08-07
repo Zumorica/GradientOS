@@ -15,7 +15,7 @@ in {
     overrideFolders = false;
     overrideDevices = false;
     openDefaultPorts = true;
-    devices = with devices; with ips; {
+    settings.devices = with devices; with ips; {
       briah = {
         addresses = [
           "tcp://192.168.1.24:22000"
@@ -48,7 +48,7 @@ in {
       };
     };
 
-    folders = with folders; {
+    settings.folders = with folders; {
       "/home/vera/Documents/Sync/" = {
         id = default;
         label = "Default Sync Folder";

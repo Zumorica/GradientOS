@@ -27,7 +27,7 @@ in {
         insecureSkipHostcheck = true;
       };
     };
-    devices = with devices; with ips; {
+    settings.devices = with devices; with ips; {
       miracle-crusher = {
         addresses = [ "tcp://${gradientnet.miracle-crusher}:22000" "dynamic" ];
         id = miracle-crusher;
@@ -50,7 +50,7 @@ in {
       };
     };
 
-    folders = with folders; {
+    settings.folders = with folders; {
       "/data/retrodeck" = {
         id = retrodeck;
         label = "Retrodeck";

@@ -19,7 +19,7 @@
         emoji = [ "Twitter Color Emoji" "Noto Color Emoji" ];
       };
     };
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji

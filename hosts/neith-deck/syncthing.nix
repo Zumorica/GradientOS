@@ -15,7 +15,7 @@ in {
     overrideFolders = false;
     overrideDevices = false;
     openDefaultPorts = true;
-    devices = with devices; with ips; {
+    settings.devices = with devices; with ips; {
       briah = {
         addresses = [
           "tcp://${lilynet.briah}:22000"
@@ -36,7 +36,7 @@ in {
       };
     };
 
-    folders = with folders; {
+    settings.folders = with folders; {
       "/home/neith/Documents/TheMidnightHall" = {
         id = midnight-hall;
         label = "The Midnight Hall";
