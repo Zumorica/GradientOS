@@ -8,6 +8,7 @@
   nix-store-serve = ./modules/nix-store-serve.nix;
   plymouth = ./modules/plymouth.nix;
   podman = ./modules/podman.nix;
+  steamcmd = ./modules/steamcmd.nix;
   system76-scheduler = ./modules/system76-scheduler.nix;
   uwu-style = ./modules/uwu-style.nix;
   vera-locale = ./modules/vera-locale.nix;

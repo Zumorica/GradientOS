@@ -231,6 +231,7 @@
           nixos-hardware.nixosModules.common-gpu-intel
           
           modules.podman
+          modules.steamcmd
           modules.vera-locale
           modules.wine
           modules.virtualisation
