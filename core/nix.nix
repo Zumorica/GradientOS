@@ -1,8 +1,10 @@
-{ self, ... }:
+{ self, pkgs, ... }:
 
 {
 
   nix = {
+
+    package = pkgs.nixVersions.unstable;
 
     settings = {
       cores = 0;
@@ -38,7 +40,10 @@
       dates = [ "weekly" ];
     };
 
-    nixPath = [ "/etc/nix/path" ];
+    nixPath = [ 
+      "self=/etc/nixpath/self"
+      "nixpkgs=/etc/nixpath/nixpkgs"
+    ];
 
     registry = {
       self.flake = self;
@@ -49,6 +54,7 @@
 
   };
 
-  environment.etc."nix/path/nixpkgs".source = self.inputs.nixpkgs;
+  environment.etc."nixpath/self".source = self;
+  environment.etc."nixpath/nixpkgs".source = self.inputs.nixpkgs;
 
 }
