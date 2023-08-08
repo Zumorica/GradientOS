@@ -25,6 +25,7 @@
     lsof
     htop
     file
+    cloc
     nil
     age
     dig
