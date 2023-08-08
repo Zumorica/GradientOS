@@ -8,6 +8,8 @@
 
     secrets = {
 
+      gradient-generator-environment = { restartUnits = [ "gradient-generator.daily-avatar.service" ]; };
+
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
 
       stream-htpasswd = {

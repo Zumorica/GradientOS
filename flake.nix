@@ -89,7 +89,6 @@
         modules = [
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-amd-pstate
-          gradient-generator.nixosModules.x86_64-linux.default
 
           modules.wine
           modules.podman
@@ -229,7 +228,9 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-gpu-intel
-          
+          gradient-generator.nixosModules.x86_64-linux.default
+
+
           modules.podman
           modules.steamcmd
           modules.vera-locale
