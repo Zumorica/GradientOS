@@ -42,7 +42,7 @@
 
     nixPath = [ 
       "self=/etc/nixpath/self"
-      "nixpkgs=/etc/nixpath/nixpkgs"
+      "/etc/nixpath/nixpkgs"
     ];
 
     registry = {
