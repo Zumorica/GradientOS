@@ -17,6 +17,9 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  security.rtkit.enable = true;
+  security.polkit.enable = true;
+
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
 
