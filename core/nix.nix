@@ -1,9 +1,13 @@
 { self, pkgs, lib, ... }:
-let
-  flakes = lib.attrsets.filterAttrs (_: v: (v.flake or true) == true) self.inputs;
-in {
+{
 
-  nix = {
+  nix =
+  let
+    registry = {
+      self.flake = self;
+      nixpkgs.flake = self.inputs.nixpkgs;
+    };
+  in {
 
     package = pkgs.nixVersions.unstable;
 
@@ -45,8 +49,9 @@ in {
     };
 
     # Pin channels to flake inputs.
-    nixPath = (lib.attrsets.mapAttrsToList (x: _: "${x}=flake:${x}") flakes) ++ [ "self=flake:self" ];
-    registry = (lib.attrsets.mapAttrs (_: flake: { inherit flake; }) flakes) // { self.flake = self; };
+    inherit registry;
+
+    nixPath = (lib.attrsets.mapAttrsToList (x: _: "${x}=flake:${x}") registry);
 
   };
 }

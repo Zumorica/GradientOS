@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./nix.nix
     ./nix-direnv.nix
   ];
 
