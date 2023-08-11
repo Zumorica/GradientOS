@@ -8,6 +8,16 @@
     dedicatedServer.openFirewall = true;
   };
 
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true;
+  };
+
+  programs.gamemode = {
+    enable = true;
+    enableRenice = true;
+  };
+
   # Workaround https://github.com/NixOS/nixpkgs/issues/45492
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
   security.pam.loginLimits = [{
@@ -31,8 +41,6 @@
     protontricks
     protonup-qt
     steam-run
-    gamescope
-    gamemode
     lutris
   ];
 
