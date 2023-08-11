@@ -11,6 +11,9 @@
     enable = true;
     openFirewall = true;
     extraBackends = [ pkgs.sane-airscan ];
+    netConf = ''
+      192.168.1.12
+    '';
     brscan5 = {
       enable = true;
       netDevices.brother = {
@@ -19,5 +22,9 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    xsane
+  ];
 
 }
