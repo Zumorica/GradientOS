@@ -103,6 +103,7 @@
           modules.graphical
           modules.graphical-kde
           modules.graphical-steam
+          modules.graphical-gamescope
           modules.graphical-sunshine
 
           modules.pipewire

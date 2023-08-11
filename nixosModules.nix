@@ -16,6 +16,7 @@
   wine = ./modules/wine.nix;
 
   graphical = ./modules/graphical/default.nix;
+  graphical-gamescope = ./modules/graphical/gamescope.nix;
   graphical-kde = ./modules/graphical/kde.nix;
   graphical-steam = ./modules/graphical/steam.nix;
   graphical-sunshine = ./modules/graphical/sunshine.nix;
