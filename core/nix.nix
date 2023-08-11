@@ -1,6 +1,7 @@
-{ self, pkgs, ... }:
-
-{
+{ self, pkgs, lib, ... }:
+let
+  flakes = lib.attrsets.filterAttrs (_: v: (v.flake or true) == true) self.inputs;
+in {
 
   nix = {
 
@@ -12,6 +13,9 @@
       experimental-features = [ "nix-command" "flakes" ];
       keep-outputs = true;
       keep-derivations = true;
+
+      # Ignore global flake registry
+      flake-registry = builtins.toFile "empty-registry.json" ''{"flakes": [], "version": 2}'';
 
       substituters = [
         "https://nix-gaming.cachix.org?priority=100"
@@ -40,21 +44,9 @@
       dates = [ "weekly" ];
     };
 
-    nixPath = [ 
-      "self=/etc/nixpath/self"
-      "/etc/nixpath/nixpkgs"
-    ];
-
-    registry = {
-      self.flake = self;
-      nixpkgs.flake = self.inputs.nixpkgs;
-      nixpkgs-stable-2211.flake = self.inputs.nixpkgs-stable-2211;
-      nixpkgs-stable-2305.flake = self.inputs.nixpkgs-stable-2305;
-    };
+    # Pin channels to flake inputs.
+    nixPath = (lib.attrsets.mapAttrsToList (x: _: "${x}=flake:${x}") flakes) ++ [ "self=flake:self" ];
+    registry = (lib.attrsets.mapAttrs (_: flake: { inherit flake; }) flakes) // { self.flake = self; };
 
   };
-
-  environment.etc."nixpath/self".source = self;
-  environment.etc."nixpath/nixpkgs".source = self.inputs.nixpkgs;
-
 }
