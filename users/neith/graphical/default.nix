@@ -13,6 +13,7 @@
     moonlight-qt
     qbittorrent
     xivlauncher
+    starsector
     chromium
     tdesktop
     rustdesk
