@@ -3,6 +3,7 @@
 {
 
   home.packages = with pkgs; [
+    starsector-gamescope-wrap
     lxqt.pavucontrol-qt
     libsForQt5.okular
     libsForQt5.falkon
@@ -13,7 +14,6 @@
     moonlight-qt
     qbittorrent
     xivlauncher
-    starsector
     chromium
     tdesktop
     rustdesk

@@ -57,6 +57,8 @@ in {
 
   jack-matchmaker = super.callPackage ./jack-matchmaker.nix { };
 
+  starsector-gamescope-wrap = super.callPackage ./starsector-gamescope-wrap.nix { }; 
+
   xwaylandvideobridge = super.libsForQt5.callPackage ./xwaylandvideobridge.nix { };
 
   nix-gaming = flake.inputs.nix-gaming.packages.${system};
