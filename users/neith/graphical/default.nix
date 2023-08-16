@@ -3,17 +3,13 @@
 {
 
   home.packages = with pkgs; [
-    starsector-gamescope-wrap
     lxqt.pavucontrol-qt
     libsForQt5.okular
     libsForQt5.falkon
     gimp-with-plugins
-    retroarchFull
     google-chrome
-    prismlauncher
     moonlight-qt
     qbittorrent
-    xivlauncher
     chromium
     tdesktop
     rustdesk

@@ -33,8 +33,12 @@
   };
 
   environment.systemPackages = with pkgs; [
+    space-station-14-launcher
     nix-gaming.osu-stable
     gradient-generator
     xwaylandvideobridge
+    prismlauncher
+    xivlauncher
+    starsector
   ];
 }
