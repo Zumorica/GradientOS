@@ -5,6 +5,7 @@ let
   keys = import ../../misc/wireguard-pub-keys.nix;
   asiyah-ports = import ../../hosts/asiyah/misc/service-ports.nix;
   private-key = config.sops.secrets.wireguard-private-key.path;
+  ports = import ./misc/service-ports.nix;
 in {
   networking.wireguard.enable = true;
   environment.systemPackages = [ pkgs.wireguard-tools ];
@@ -62,7 +63,7 @@ in {
     };
   };
 
-  networking.firewall.trustedInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
+  networking.firewall.interfaces.gradientnet.allowedTCPPorts = with ports; [ ssh ];
   systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
 
   networking.hosts = with ips; {

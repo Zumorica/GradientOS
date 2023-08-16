@@ -78,7 +78,19 @@ in {
     };
   };
 
-  networking.firewall.allowedUDPPorts = [ ports.jellyfin-client-discovery ];
+  networking.firewall.interfaces.gradientnet.allowedTCPPorts = with ports; [
+    jellyfin-http
+    jellyfin-https
+    radarr
+    sonarr
+    jackett
+    bazarr
+    deluge-web
+  ];
+  
+  networking.firewall.interfaces.gradientnet.allowedUDPPorts = with ports; [
+    jellyfin-client-discovery
+  ];
 
   users.groups.${group}.members = with config.services; [
     jellyfin.user

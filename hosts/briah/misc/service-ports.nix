@@ -1,5 +1,7 @@
 {
 
+  ssh = 22;
+
   # ss14
   robust-pong = 1313;
   ss14-watchdog = 5000;

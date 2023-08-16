@@ -1,5 +1,7 @@
 {
 
+  ssh = 22;
+
   # nginx
   gradient-moe = 80;
   gradient-moe-secure = 443;

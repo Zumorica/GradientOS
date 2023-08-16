@@ -120,7 +120,7 @@ in {
   networking.firewall = {
     allowedTCPPorts = with ports; [ gradientnet lilynet slugcatnet ];
     allowedUDPPorts = with ports; [ gradientnet lilynet slugcatnet ];
-    trustedInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
+    interfaces.gradientnet.allowedTCPPorts = with ports; [ ssh ];
   };
 
   systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];

@@ -10,6 +10,4 @@ in {
     environment = { TZ = config.time.timeZone; };
   };
 
-  networking.firewall.allowedTCPPorts = [ ports.trilium ];
-
 }
