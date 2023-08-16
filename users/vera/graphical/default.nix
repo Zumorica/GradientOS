@@ -21,6 +21,7 @@
     qbittorrent
     xivlauncher
     smartgithg
+    starsector
     obs-studio
     bitwarden
     tdesktop
