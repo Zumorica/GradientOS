@@ -65,7 +65,7 @@
     };
 
     vdo-ninja = {
-      url = "github:steveseguin/vdo.ninja";
+      url = "github:steveseguin/vdo.ninja/v23.5";
       flake = false;
     };
 
