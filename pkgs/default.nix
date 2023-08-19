@@ -4,8 +4,8 @@ let
   steam-override = {
     extraPkgs = pkgs: with pkgs; [
       # Extra Steam game dependencies go here.
+      ffmpeg-full
       cups
-      ffmpeg
 
       # Needed for Space Station 14 MIDI support.
       fluidsynth

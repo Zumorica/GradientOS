@@ -8,9 +8,7 @@ in {
     inherit group;
     enable = true;
     package = pkgs.jellyfin.override {
-      ffmpeg = pkgs.ffmpeg.override {
-        ffmpegVariant = "full";
-      };
+      ffmpeg = pkgs.ffmpeg-full;
     };
   };
 

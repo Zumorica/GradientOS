@@ -11,13 +11,13 @@
     dotnet-sdk_7
     appimage-run
     imagemagick
+    ffmpeg-full
     lm_sensors
     ssh-to-age
     usbutils
     pciutils
     colmena
     sysstat
-    ffmpeg
     yt-dlp
     p7zip
     sops
