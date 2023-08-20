@@ -36,6 +36,11 @@
       flake = false;
     };
 
+    constellation-moe = {
+      url = "git+ssh://git@github.com/ConstellationNRV/constellation.moe";
+      flake = false;
+    };
+
     jovian-nixos = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs";

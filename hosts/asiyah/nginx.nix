@@ -13,6 +13,7 @@ in {
     recommendedTlsSettings = true;
 
     virtualHosts = {
+
       "gradient.moe" = {
         root = self.inputs.gradient-moe;
         default = true;
@@ -27,6 +28,7 @@ in {
           alias = "/data/gradient-data/";
         };
       };
+
       "stream.gradient.moe" = 
       let 
         vdo-ninja = self.inputs.vdo-ninja;
@@ -104,6 +106,16 @@ in {
         #   '';
         # };
       };
+
+      "constellation.moe" = {
+        root = self.inputs.constellation-moe;
+        enableACME = true;
+        addSSL = true;
+        serverAliases = [
+          "www.constellation.moe"
+        ];
+      };
+
     };
   };
 

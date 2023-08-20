@@ -27,6 +27,22 @@
         "type": "github"
       }
     },
+    "constellation-moe": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692558694,
+        "narHash": "sha256-KpZC/AtC1T3/F6+ebuYSonUU4fmddLv8IQzl7RrBP9w=",
+        "ref": "refs/heads/main",
+        "rev": "23b7cf8b577a9273633b487dd972144824ccaa8f",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/ConstellationNRV/constellation.moe"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/ConstellationNRV/constellation.moe"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -365,6 +381,7 @@
     "root": {
       "inputs": {
         "colmena": "colmena",
+        "constellation-moe": "constellation-moe",
         "flake-compat": "flake-compat",
         "gradient-generator": "gradient-generator",
         "gradient-moe": "gradient-moe",

@@ -59,6 +59,12 @@ rec {
 
       modules = [
         (mkHostNameModule name)
+        self.inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit self; };
+        }
       ] ++ modules ++ (mkUserModules users)
         ++ (if importCore then [../core] else [])
         ++ (if importHost then [../hosts/${name}] else [])
@@ -77,11 +83,7 @@ rec {
     (lists.flatten (attrsets.mapAttrsToList
       (name: value: [
         ../users/${name}
-        self.inputs.home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit self; };
           home-manager.users.${name} = {
             imports = [
               ../users/common/home.nix
