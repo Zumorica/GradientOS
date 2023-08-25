@@ -11,10 +11,7 @@
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixlib.follows = "nixlib";
     };
-
-    nixlib.url = "github:nix-community/nixpkgs.lib";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -81,6 +78,7 @@
     ips = import ./misc/wireguard-addresses.nix;
     colmena-tags = import ./misc/colmena-tags.nix;
     mkFlake = (import ./lib/mkFlake.nix self);
+    mixins = import ./nixosMixins.nix;
     modules = import ./nixosModules.nix;
     kernel-workaround = import ./pkgs/kernel-workaround.nix;
   in
@@ -95,36 +93,36 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-amd-pstate
 
-          modules.wine
-          modules.podman
-          modules.plymouth
-          modules.uwu-style
-          modules.v4l2loopback
-          modules.vera-locale
-          modules.virtualisation
-          modules.nix-store-serve
-          modules.aarch64-emulation
-          modules.system76-scheduler
+          mixins.wine
+          mixins.podman
+          mixins.plymouth
+          mixins.uwu-style
+          mixins.v4l2loopback
+          mixins.vera-locale
+          mixins.virtualisation
+          mixins.nix-store-serve
+          mixins.aarch64-emulation
+          mixins.system76-scheduler
 
-          modules.graphical
-          modules.graphical-kde
-          modules.graphical-steam
-          modules.graphical-gamescope
-          modules.graphical-sunshine
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.graphical-steam
+          mixins.graphical-gamescope
+          mixins.graphical-sunshine
 
-          modules.pipewire
-          modules.pipewire-um2
-          modules.pipewire-virtual-sink
-          modules.pipewire-low-latency
+          mixins.pipewire
+          mixins.pipewire-um2
+          mixins.pipewire-virtual-sink
+          mixins.pipewire-low-latency
 
-          modules.hardware-wacom
-          modules.hardware-amdcpu
-          modules.hardware-amdgpu
-          modules.hardware-webcam
-          modules.hardware-bluetooth
-          modules.hardware-openrazer
-          modules.hardware-home-dcp-l2530dw
-          modules.hardware-xbox-one-controller
+          mixins.hardware-wacom
+          mixins.hardware-amdcpu
+          mixins.hardware-amdgpu
+          mixins.hardware-webcam
+          mixins.hardware-bluetooth
+          mixins.hardware-openrazer
+          mixins.hardware-home-dcp-l2530dw
+          mixins.hardware-xbox-one-controller
         ];
 
         users.vera.modules = [
@@ -148,27 +146,27 @@
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
           
-          modules.wine
-          modules.plymouth
-          modules.uwu-style
-          modules.v4l2loopback
-          modules.neith-locale
-          modules.nix-store-serve
-          modules.system76-scheduler
+          mixins.wine
+          mixins.plymouth
+          mixins.uwu-style
+          mixins.v4l2loopback
+          mixins.neith-locale
+          mixins.nix-store-serve
+          mixins.system76-scheduler
           
-          modules.graphical
-          modules.graphical-kde
-          modules.graphical-steam
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.graphical-steam
           
-          modules.pipewire
-          modules.pipewire-virtual-sink
-          modules.pipewire-low-latency
+          mixins.pipewire
+          mixins.pipewire-virtual-sink
+          mixins.pipewire-low-latency
           
-          modules.hardware-amdcpu
-          modules.hardware-amdgpu
-          modules.hardware-webcam
-          modules.hardware-bluetooth
-          modules.hardware-steamdeck
+          mixins.hardware-amdcpu
+          mixins.hardware-amdgpu
+          mixins.hardware-webcam
+          mixins.hardware-bluetooth
+          mixins.hardware-steamdeck
         ];
 
         users.neith.modules = [
@@ -191,31 +189,31 @@
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
           
-          modules.wine
-          modules.plymouth
-          modules.uwu-style
-          modules.vera-locale
-          modules.v4l2loopback
-          modules.virtualisation
-          modules.nix-store-serve
-          modules.system76-scheduler
+          mixins.wine
+          mixins.plymouth
+          mixins.uwu-style
+          mixins.vera-locale
+          mixins.v4l2loopback
+          mixins.virtualisation
+          mixins.nix-store-serve
+          mixins.system76-scheduler
           
-          modules.graphical
-          modules.graphical-kde
-          modules.graphical-steam
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.graphical-steam
           
-          modules.pipewire
-          modules.pipewire-virtual-sink
-          modules.pipewire-low-latency
+          mixins.pipewire
+          mixins.pipewire-virtual-sink
+          mixins.pipewire-low-latency
           
-          modules.hardware-amdcpu
-          modules.hardware-amdgpu
-          modules.hardware-webcam
-          modules.hardware-bluetooth
-          modules.hardware-steamdeck
-          modules.hardware-openrazer
-          modules.hardware-home-dcp-l2530dw
-          modules.hardware-xbox-one-controller
+          mixins.hardware-amdcpu
+          mixins.hardware-amdgpu
+          mixins.hardware-webcam
+          mixins.hardware-bluetooth
+          mixins.hardware-steamdeck
+          mixins.hardware-openrazer
+          mixins.hardware-home-dcp-l2530dw
+          mixins.hardware-xbox-one-controller
         ];
 
         users.vera.modules = [
@@ -240,15 +238,15 @@
           gradient-generator.nixosModules.x86_64-linux.default
 
 
-          modules.wine
-          modules.podman
-          modules.steamcmd
-          modules.vera-locale
-          modules.v4l2loopback
-          modules.virtualisation
-          modules.nix-store-serve
-          modules.aarch64-emulation
-          modules.hardware-intelgpu-vaapi
+          mixins.wine
+          mixins.podman
+          mixins.steamcmd
+          mixins.vera-locale
+          mixins.v4l2loopback
+          mixins.virtualisation
+          mixins.nix-store-serve
+          mixins.aarch64-emulation
+          mixins.hardware-intelgpu-vaapi
         ];
 
         users.vera.modules = [
@@ -270,9 +268,9 @@
           ss14-watchdog.nixosModules.default
           sops-nix.nixosModules.sops
 
-          modules.vera-locale
-          modules.v4l2loopback
-          modules.hardware-raspberrypi4
+          mixins.vera-locale
+          mixins.v4l2loopback
+          mixins.hardware-raspberrypi4
         ];
 
         users.vera.modules = [
@@ -294,8 +292,8 @@
         system = "x86_64-linux";
 
         modules = [
-          modules.graphical
-          modules.graphical-kde
+          mixins.graphical
+          mixins.graphical-kde
         ];
 
         generators = [ "install-iso" ];
@@ -312,9 +310,9 @@
         modules = [
           jovian-nixos.nixosModules.default
 
-          modules.graphical
-          modules.graphical-kde
-          modules.hardware-steamdeck
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.hardware-steamdeck
         ];
 
         generators = [ "install-iso" ];
@@ -325,7 +323,7 @@
       
     ];
 
-    nixosModules = modules;
+    nixosModules = modules // (nixpkgs.lib.attrsets.mapAttrs' (name: value: { name = "mixin-" + name; inherit value; }) mixins);
 
   };
 }

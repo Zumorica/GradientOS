@@ -235,11 +235,11 @@
     },
     "nixlib": {
       "locked": {
-        "lastModified": 1691887428,
-        "narHash": "sha256-IB1C4SnEDLkvligfbmez88q3L4nWqHGSfG/Z6+3sJok=",
+        "lastModified": 1689469483,
+        "narHash": "sha256-2SBhY7rZQ/iNCxe04Eqxlz9YK9KgbaTMBssq3/BgdWY=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "586b1f1e3dad8d02c8428fff9126b2048dfab5bf",
+        "rev": "02fea408f27186f139153e1ae88f8ab2abd9c22c",
         "type": "github"
       },
       "original": {
@@ -250,9 +250,7 @@
     },
     "nixos-generators": {
       "inputs": {
-        "nixlib": [
-          "nixlib"
-        ],
+        "nixlib": "nixlib",
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -388,7 +386,6 @@
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
         "nix-gaming": "nix-gaming",
-        "nixlib": "nixlib",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",

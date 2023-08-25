@@ -3,7 +3,7 @@
 
   imports = [
     "${modulesPath}/virtualisation/azure-common.nix"
-    ../modules/networkd.nix
+    ../mixins/networkd.nix
   ];
 
   # Forcibly disable NetworkManager.
