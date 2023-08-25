@@ -80,7 +80,6 @@
     mkFlake = (import ./lib/mkFlake.nix self);
     mixins = import ./nixosMixins.nix;
     modules = import ./nixosModules.nix;
-    kernel-workaround = import ./pkgs/kernel-workaround.nix;
   in
   mkFlake {
 
@@ -140,12 +139,11 @@
 
       {
         name = "neith-deck";
-        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
+        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
 
         modules = [
           sops-nix.nixosModules.sops
-          jovian-nixos.nixosModules.default
-          
+          jovian-nixos.nixokernel-workaround
           mixins.wine
           mixins.plymouth
           mixins.uwu-style
@@ -183,7 +181,7 @@
 
       {
         name = "vera-deck";
-        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
+        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
 
         modules = [
           sops-nix.nixosModules.sops
@@ -262,7 +260,7 @@
        {
         name = "briah";
         system = "aarch64-linux";
-        overlays = [ kernel-workaround ];
+        overlays = [ self.overlays.kernel-allow-missing ];
         
         modules = [
           ss14-watchdog.nixosModules.default
@@ -305,7 +303,7 @@
       {
         name = "GradientOS-x86_64-steamdeck";
         system = "x86_64-linux";
-        overlays = [ jovian-nixos.overlays.default kernel-workaround ];
+        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
 
         modules = [
           jovian-nixos.nixosModules.default
@@ -324,6 +322,15 @@
     ];
 
     nixosModules = modules // (nixpkgs.lib.attrsets.mapAttrs' (name: value: { name = "mixin-" + name; inherit value; }) mixins);
+
+    overlays = {
+      default = self.overlays.gradientpkgs;
+      gradientpkgs = import ./overlays/gradientpkgs.nix;
+      gradientos = import ./overlays/gradientos.nix;
+      kernel-allow-missing = import ./overlays/kernel-allow-missing.nix;
+    };
+
+    packages = self.lib.forAllSystems (pkgs: self.overlays.gradientpkgs pkgs pkgs);
 
   };
 }

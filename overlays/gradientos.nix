@@ -1,3 +1,7 @@
+/*
+*   Overlay for systems running a GradientOS-based configuration. 
+*   Includes some package overrides and GradientOS-specific scripts.
+*/
 flake: self: super:
 with self;
 let
@@ -36,7 +40,7 @@ in {
 
   steam = super.steam.override steam-override;
   steam-original-fixed = unstable.steam.override steam-override;
-  steam-deck-client = super.callPackage ./steam-deck-client.nix { };
+  steam-deck-client = super.callPackage ../pkgs/steam-deck-client.nix { };
 
   chromium = super.chromium.override {
     enableWideVine = true;
@@ -50,16 +54,10 @@ in {
   
   gradient-generator = flake.inputs.gradient-generator.packages.${system}.default;
 
-  gradientos-colmena = super.callPackage ./scripts/gradientos-colmena.nix { };
-  gradientos-upgrade-switch = super.callPackage ./scripts/gradientos-upgrade-switch.nix { };
-  gradientos-upgrade-boot = super.callPackage ./scripts/gradientos-upgrade-boot.nix { };
-  gradientos-upgrade-test = super.callPackage ./scripts/gradientos-upgrade-test.nix { };
-
-  jack-matchmaker = super.callPackage ./jack-matchmaker.nix { };
-
-  starsector-gamescope-wrap = super.callPackage ./starsector-gamescope-wrap.nix { }; 
-
-  xwaylandvideobridge = super.libsForQt5.callPackage ./xwaylandvideobridge.nix { };
+  gradientos-colmena = super.callPackage ../pkgs/scripts/gradientos-colmena.nix { };
+  gradientos-upgrade-switch = super.callPackage ../pkgs/scripts/gradientos-upgrade-switch.nix { };
+  gradientos-upgrade-boot = super.callPackage ../pkgs/scripts/gradientos-upgrade-boot.nix { };
+  gradientos-upgrade-test = super.callPackage ../pkgs/scripts/gradientos-upgrade-test.nix { };
 
   nix-gaming = flake.inputs.nix-gaming.packages.${system};
 

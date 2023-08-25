@@ -53,7 +53,8 @@ rec {
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (import ../pkgs self)
+          (import ../overlays/gradientos.nix self)
+          (import ../overlays/gradientpkgs.nix)
         ] ++ overlays;
       };
 
@@ -93,4 +94,8 @@ rec {
         }
       ])
       users));
+
+  forAllSystems = function:
+    self.inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ]
+      (system: function (import self.inputs.nixpkgs { inherit system; config.allowUnfree = true; }));
 }
