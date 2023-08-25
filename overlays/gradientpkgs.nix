@@ -7,5 +7,8 @@ self: super:
 
   starsector-gamescope-wrap = super.callPackage ../pkgs/starsector-gamescope-wrap.nix { }; 
 
+  tinypilot = super.callPackage ../pkgs/tinypilot.nix { };
+
   xwaylandvideobridge = super.libsForQt5.callPackage ../pkgs/xwaylandvideobridge.nix { };
+
 }
