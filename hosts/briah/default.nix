@@ -14,7 +14,6 @@
     ./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
-    ./hardware-configuration.nix
   ];
 
 }

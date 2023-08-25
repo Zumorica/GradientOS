@@ -99,6 +99,7 @@
           modules.podman
           modules.plymouth
           modules.uwu-style
+          modules.v4l2loopback
           modules.vera-locale
           modules.virtualisation
           modules.nix-store-serve
@@ -150,6 +151,7 @@
           modules.wine
           modules.plymouth
           modules.uwu-style
+          modules.v4l2loopback
           modules.neith-locale
           modules.nix-store-serve
           modules.system76-scheduler
@@ -193,6 +195,7 @@
           modules.plymouth
           modules.uwu-style
           modules.vera-locale
+          modules.v4l2loopback
           modules.virtualisation
           modules.nix-store-serve
           modules.system76-scheduler
@@ -237,10 +240,11 @@
           gradient-generator.nixosModules.x86_64-linux.default
 
 
+          modules.wine
           modules.podman
           modules.steamcmd
           modules.vera-locale
-          modules.wine
+          modules.v4l2loopback
           modules.virtualisation
           modules.nix-store-serve
           modules.aarch64-emulation
@@ -267,7 +271,8 @@
           sops-nix.nixosModules.sops
 
           modules.vera-locale
-          modules.hardware-raspberrypi
+          modules.v4l2loopback
+          modules.hardware-raspberrypi4
         ];
 
         users.vera.modules = [

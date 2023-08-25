@@ -11,6 +11,7 @@
   steamcmd = ./modules/steamcmd.nix;
   system76-scheduler = ./modules/system76-scheduler.nix;
   uwu-style = ./modules/uwu-style.nix;
+  v4l2loopback = ./modules/v4l2loopback.nix;
   vera-locale = ./modules/vera-locale.nix;
   virtualisation = ./modules/virtualisation.nix;
   wine = ./modules/wine.nix;
@@ -35,7 +36,7 @@
   hardware-home-dcp-l2530dw = ./hardware/home-dcp-l2530dw.nix;
   hardware-intelgpu-vaapi = ./hardware/intelgpu-vaapi.nix;
   hardware-openrazer = ./hardware/openrazer.nix;
-  hardware-raspberrypi = ./hardware/raspberrypi.nix;
+  hardware-raspberrypi4 = ./hardware/raspberrypi4.nix;
   hardware-steamdeck = ./hardware/steamdeck.nix;
   hardware-wacom = ./hardware/wacom.nix;
   hardware-webcam = ./hardware/webcam.nix;
