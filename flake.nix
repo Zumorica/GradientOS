@@ -327,7 +327,7 @@
     overlays = {
       default = self.overlays.gradientpkgs;
       gradientpkgs = import ./overlays/gradientpkgs.nix;
-      gradientos = import ./overlays/gradientos.nix;
+      gradientos = import ./overlays/gradientos.nix self;
       kernel-allow-missing = import ./overlays/kernel-allow-missing.nix;
     };
 
