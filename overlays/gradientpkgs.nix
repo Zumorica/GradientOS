@@ -1,14 +1,14 @@
 /*
 *   Overlay with packages that can be consumed without using a GradientOS configuration.
 */
-self: super:
+final: prev:
 {
-  jack-matchmaker = super.callPackage ../pkgs/jack-matchmaker.nix { };
+  jack-matchmaker = prev.callPackage ../pkgs/jack-matchmaker.nix { };
 
-  starsector-gamescope-wrap = super.callPackage ../pkgs/starsector-gamescope-wrap.nix { }; 
+  starsector-gamescope-wrap = prev.callPackage ../pkgs/starsector-gamescope-wrap.nix { }; 
 
-  tinypilot = super.callPackage ../pkgs/tinypilot.nix { };
+  tinypilot = prev.callPackage ../pkgs/tinypilot.nix { };
 
-  xwaylandvideobridge = super.libsForQt5.callPackage ../pkgs/xwaylandvideobridge.nix { };
+  xwaylandvideobridge = prev.libsForQt5.callPackage ../pkgs/xwaylandvideobridge.nix { };
 
 }

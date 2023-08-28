@@ -1,7 +1,7 @@
 /*
 *   Overlay which overrides makeModulesClosure to allow building the kernel with missing modules.
 */
-final: super:
+final: prev:
 {
-  makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
+  makeModulesClosure = x: prev.makeModulesClosure (x // { allowMissing = true; });
 }
