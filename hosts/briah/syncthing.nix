@@ -17,7 +17,7 @@ in {
     overrideDevices = false;
     openDefaultPorts = true;
     guiAddress = "127.0.0.1:${toString ports.syncthing}";
-    extraOptions = {
+    settings = {
       listenAddresses = [
         "tcp://0.0.0.0:${toString ports.syncthing-transfers}"
         "quic://0.0.0.0:${toString ports.syncthing-transfers}"
