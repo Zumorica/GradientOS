@@ -143,7 +143,8 @@
 
         modules = [
           sops-nix.nixosModules.sops
-          jovian-nixos.nixokernel-workaround
+          jovian-nixos.nixosModules.default
+
           mixins.wine
           mixins.plymouth
           mixins.uwu-style
