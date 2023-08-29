@@ -25,7 +25,6 @@
 
     gradient-generator = {
       url = "git+ssh://git@github.com/Zumorica/gradient-generator";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     gradient-moe = {
