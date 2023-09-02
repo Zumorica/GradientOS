@@ -3,11 +3,11 @@
 {
 
   imports = [
-    ./secrets
     ./nix.nix
-    ./filesystems.nix
     ./syncthing.nix
     ./wireguard.nix
+    ./filesystems.nix
+    ./secrets/default.nix
   ];
 
   networking.hostName = "vera-deck";

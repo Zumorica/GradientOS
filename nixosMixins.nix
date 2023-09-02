@@ -1,5 +1,5 @@
 {
-  core = ./core;
+  core = ./core/default.nix;
 
   aarch64-emulation = ./mixins/aarch64-emulation.nix;
   gnupg = ./mixins/gnupg.nix;

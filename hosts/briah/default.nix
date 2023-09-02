@@ -2,7 +2,6 @@
 {
 
   imports = [
-    ./secrets
     ./loki.nix
     ./duckdns.nix
     ./grafana.nix
@@ -14,6 +13,7 @@
     ./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
+    ./secrets/default.nix
   ];
 
 }

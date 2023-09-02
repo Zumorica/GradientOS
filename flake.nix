@@ -125,7 +125,7 @@
 
         users.vera.modules = [
           sops-nix.homeManagerModule
-          ./users/vera/graphical
+          ./users/vera/graphical/default.nix
         ];
 
         deployment = {
@@ -169,7 +169,7 @@
 
         users.neith.modules = [
           sops-nix.homeManagerModule
-          ./users/neith/graphical
+          ./users/neith/graphical/default.nix
         ];
 
         deployment = {
@@ -216,7 +216,7 @@
 
         users.vera.modules = [
           sops-nix.homeManagerModule
-          ./users/vera/graphical
+          ./users/vera/graphical/default.nix
         ];
 
         deployment = {

@@ -67,8 +67,8 @@ rec {
           home-manager.extraSpecialArgs = { inherit self; };
         }
       ] ++ modules ++ (mkUserModules users)
-        ++ (if importCore then [../core] else [])
-        ++ (if importHost then [../hosts/${name}] else [])
+        ++ (if importCore then [../core/default.nix] else [])
+        ++ (if importHost then [../hosts/${name}/default.nix] else [])
         ++ (if deployment != null then [{ inherit deployment; }] else []);
 
     } // (if deployment != null then {

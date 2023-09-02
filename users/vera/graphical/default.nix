@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./konsole
+    ./konsole/default.nix
   ];
 
   home.packages = with pkgs; [

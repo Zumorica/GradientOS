@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./secrets
-    ./programs.nix
     ./ssh.nix
-    ./zsh
+    ./programs.nix
+    ./zsh/default.nix
+    ./secrets/default.nix
   ];
 
   home.username = "vera";

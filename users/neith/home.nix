@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./secrets
     ./ssh.nix
+    ./secrets/default.nix
     ../../mixins/home/zsh.nix
   ];
 

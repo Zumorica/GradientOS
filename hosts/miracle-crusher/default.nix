@@ -3,13 +3,13 @@
  {
 
   imports = [
-    ./secrets
     ./nix.nix
-    ./hardware-configuration.nix
-    ./filesystems.nix
+    ./kernel.nix
     ./wireguard.nix
     ./syncthing.nix
-    ./kernel.nix
+    ./filesystems.nix
+    ./secrets/default.nix
+    ./hardware-configuration.nix
   ];
 
   networking.hostName = "miracle-crusher";
