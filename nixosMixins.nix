@@ -29,16 +29,16 @@
   pipewire-virtual-sink = ./mixins/pipewire/virtual-sink/default.nix;
   pipewire-low-latency = ./mixins/pipewire/low-latency.nix;
 
-  hardware-amdcpu = ./hardware/amdcpu.nix;
-  hardware-amdgpu = ./hardware/amdgpu.nix;
-  hardware-azure = ./hardware/azure.nix;
-  hardware-bluetooth = ./hardware/bluetooth.nix;
-  hardware-home-dcp-l2530dw = ./hardware/home-dcp-l2530dw.nix;
-  hardware-intelgpu-vaapi = ./hardware/intelgpu-vaapi.nix;
-  hardware-openrazer = ./hardware/openrazer.nix;
-  hardware-raspberrypi4 = ./hardware/raspberrypi4.nix;
-  hardware-steamdeck = ./hardware/steamdeck.nix;
-  hardware-wacom = ./hardware/wacom.nix;
-  hardware-webcam = ./hardware/webcam.nix;
-  hardware-xbox-one-controller = ./hardware/xbox-one-controller.nix;
+  hardware-amdcpu = ./mixins/hardware/amdcpu.nix;
+  hardware-amdgpu = ./mixins/hardware/amdgpu.nix;
+  hardware-azure = ./mixins/hardware/azure.nix;
+  hardware-bluetooth = ./mixins/hardware/bluetooth.nix;
+  hardware-home-dcp-l2530dw = ./mixins/hardware/home-dcp-l2530dw.nix;
+  hardware-intelgpu-vaapi = ./mixins/hardware/intelgpu-vaapi.nix;
+  hardware-openrazer = ./mixins/hardware/openrazer.nix;
+  hardware-raspberrypi4 = ./mixins/hardware/raspberrypi4.nix;
+  hardware-steamdeck = ./mixins/hardware/steamdeck.nix;
+  hardware-wacom = ./mixins/hardware/wacom.nix;
+  hardware-webcam = ./mixins/hardware/webcam.nix;
+  hardware-xbox-one-controller = ./mixins/hardware/xbox-one-controller.nix;
 }
