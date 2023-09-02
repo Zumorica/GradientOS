@@ -18,6 +18,8 @@
   
   services.xserver.displayManager.defaultSession = "steam-wayland";
 
+  services.xserver.desktopManager.plasma5.mobile.enable = true;
+
   environment.systemPackages = with pkgs; [
     starsector-gamescope-wrap
     space-station-14-launcher
