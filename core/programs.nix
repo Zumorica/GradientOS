@@ -4,11 +4,15 @@
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
+    (with dotnetCorePackages; combinePackages [
+      sdk_6_0
+      sdk_7_0
+      sdk_8_0
+    ])
     gradientos-upgrade-switch
     gradientos-upgrade-boot
     gradientos-upgrade-test
     gradientos-colmena
-    dotnet-sdk_7
     appimage-run
     imagemagick
     ffmpeg-full
