@@ -3,6 +3,8 @@
 */
 final: prev:
 {
+  godot-mono = prev.callPackage ../pkgs/godot-mono.nix { };
+
   jack-matchmaker = prev.callPackage ../pkgs/jack-matchmaker.nix { };
 
   starsector-gamescope-wrap = prev.callPackage ../pkgs/starsector-gamescope-wrap.nix { }; 

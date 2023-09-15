@@ -40,5 +40,6 @@
     prismlauncher
     xivlauncher
     starsector
+    godot-mono
   ];
 }
