@@ -38,8 +38,11 @@
     gradient-generator
     xwaylandvideobridge
     prismlauncher
+    prusa-slicer
     xivlauncher
     starsector
     godot-mono
+    openscad
+    freecad
   ];
 }
