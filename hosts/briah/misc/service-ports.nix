@@ -16,4 +16,6 @@
   promtail = 9005;
   syncthing-transfers = 22000;
 
+  octoprint = 5000;
+
 }

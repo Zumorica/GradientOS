@@ -2,15 +2,16 @@
 {
 
   imports = [
-    ./loki.nix
+    #./loki.nix
+    ./klipper.nix
     ./duckdns.nix
-    ./grafana.nix
+    #./grafana.nix
     ./programs.nix
-    ./promtail.nix
+    #./promtail.nix
     ./syncthing.nix
     ./wireguard.nix
     ./prometheus.nix
-    ./containers.nix
+    #./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
     ./secrets/default.nix
