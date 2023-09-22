@@ -17,4 +17,9 @@
     ./secrets/default.nix
   ];
 
+  boot.loader.raspberryPi.firmwareConfig = ''
+    dtoverlay=dwc2
+    gpu_mem=256
+  '';
+  
 }
