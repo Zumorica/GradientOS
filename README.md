@@ -14,7 +14,7 @@ Flake for different NixOS system configurations.
 - **misc**: for files without a clear category
 - **mixins**: configuration presets for certain programs and services
 - **mixins/graphical**: configuration presets for certain graphical programs and services
-- **mixins/hardware**: configurations presets specific to certain hardware
+- **mixins/hardware**: configuration presets specific to certain hardware
 - **mixins/home**: configuration presets for certain programs and services, using [home-manager](https://github.com/nix-community/home-manager)
 - **modules**: custom NixOS modules
 - **overlays**: nixpkgs overlays
