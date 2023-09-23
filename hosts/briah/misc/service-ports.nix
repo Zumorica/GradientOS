@@ -3,8 +3,8 @@
   ssh = 22;
 
   # ss14
-  robust-pong = 1313;
-  ss14-watchdog = 5000;
+  #robust-pong = 1313;
+  #ss14-watchdog = 5000;
 
   # misc
   grafana = 8082;
@@ -17,5 +17,6 @@
   syncthing-transfers = 22000;
 
   octoprint = 5000;
+  mjpg-streamer = 5050;
 
 }
