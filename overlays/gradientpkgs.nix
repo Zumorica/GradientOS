@@ -13,4 +13,9 @@ final: prev:
 
   xwaylandvideobridge = prev.libsForQt5.callPackage ../pkgs/xwaylandvideobridge.nix { };
 
+  klipper-np3pro-firmware = prev.klipper-firmware.override {
+    mcu = prev.lib.strings.sanitizeDerivationName "np3pro";
+    firmwareConfig = ../pkgs/klipper-np3pro-firmware/config;
+  };
+
 }
