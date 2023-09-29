@@ -8,13 +8,13 @@
     #./grafana.nix
     ./programs.nix
     ./octoprint.nix
+    ./ustreamer.nix
     #./promtail.nix
     ./syncthing.nix
     ./wireguard.nix
     ./prometheus.nix
     #./containers.nix
     ./filesystems.nix
-    ./mjpeg-streamer.nix
     # ./ss14-watchdog.nix
     ./secrets/default.nix
   ];

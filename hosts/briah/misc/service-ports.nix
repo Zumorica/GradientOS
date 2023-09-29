@@ -17,6 +17,6 @@
   syncthing-transfers = 22000;
 
   octoprint = 5000;
-  mjpg-streamer = 5050;
+  ustreamer = 5050;
 
 }
