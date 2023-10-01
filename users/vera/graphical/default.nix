@@ -20,7 +20,6 @@
     obs-studio
     bitwarden
     tdesktop
-    syncplay
     audacity
     inkscape
     rustdesk

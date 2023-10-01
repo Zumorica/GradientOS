@@ -13,7 +13,6 @@
     chromium
     tdesktop
     rustdesk
-    syncplay
     anydesk
     cadence
     discord

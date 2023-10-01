@@ -16,7 +16,7 @@
   #services.xserver.displayManager.autoLogin.enable = true;
   #services.xserver.displayManager.autoLogin.user = lib.mkDefault "vera";
   
-  services.xserver.displayManager.defaultSession = "steam-wayland";
+  services.xserver.displayManager.defaultSession = "gamescope-wayland";
 
   services.xserver.desktopManager.plasma5.mobile.enable = true;
 
