@@ -35,6 +35,7 @@
   hardware-bluetooth = ./mixins/hardware/bluetooth.nix;
   hardware-home-dcp-l2530dw = ./mixins/hardware/home-dcp-l2530dw.nix;
   hardware-intelgpu-vaapi = ./mixins/hardware/intelgpu-vaapi.nix;
+  hardware-logitech-driving-wheels = ./mixins/hardware/logitech-driving-wheels.nix;
   hardware-openrazer = ./mixins/hardware/openrazer.nix;
   hardware-raspberrypi4 = ./mixins/hardware/raspberrypi4.nix;
   hardware-steamdeck = ./mixins/hardware/steamdeck.nix;

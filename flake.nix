@@ -121,6 +121,7 @@
           mixins.hardware-openrazer
           mixins.hardware-home-dcp-l2530dw
           mixins.hardware-xbox-one-controller
+          mixins.hardware-logitech-driving-wheels
         ];
 
         users.vera.modules = [
