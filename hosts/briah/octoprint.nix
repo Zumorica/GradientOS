@@ -2,7 +2,7 @@
 let
   ports = import ./misc/service-ports.nix;
 in {
-    services.octoprint = {
+  services.octoprint = {
     enable = true;
     port = ports.octoprint;
     plugins = plugins: with plugins; [
@@ -18,7 +18,15 @@ in {
       stlviewer
       telegram
       themeify
+      touchui
     ];
+    extraConfig = {
+      accessControl = {
+        autologinLocal = true;
+        autologinAs = "vera";
+        localNetworks = [ "127.0.0.0/8" ];
+      };
+    };
   };
 
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.octoprint ];

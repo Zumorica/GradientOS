@@ -267,6 +267,8 @@
           ss14-watchdog.nixosModules.default
           sops-nix.nixosModules.sops
 
+          mixins.plymouth
+
           mixins.vera-locale
           mixins.v4l2loopback
           mixins.hardware-raspberrypi4
