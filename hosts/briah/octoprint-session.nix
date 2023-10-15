@@ -6,7 +6,7 @@ in {
   services.cage = {
     enable = true;
     user = "vera";
-    program = "${pkgs.firefox}/bin/firefox -kiosk -private-window http://127.0.0.1:${toString ports.octoprint}";
+    program = "${pkgs.unstable.chromium}/bin/chromium --noerrdialogs --disable-infobars --incognito --kiosk http://127.0.0.1:${toString ports.octoprint}";
     extraArguments = [ "-d" ];
   };
 
