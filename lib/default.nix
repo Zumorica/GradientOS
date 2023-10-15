@@ -51,7 +51,10 @@ rec {
 
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+        };
         overlays = [
           (import ../overlays/gradientos.nix self)
           (import ../overlays/gradientpkgs.nix)
