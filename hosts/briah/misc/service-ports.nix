@@ -16,7 +16,9 @@
   promtail = 9005;
   syncthing-transfers = 22000;
 
-  octoprint = 5000;
+  mainsail = 5000;
   ustreamer = 5050;
+
+  moonraker = 7125;
 
 }

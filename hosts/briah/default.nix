@@ -7,7 +7,9 @@
     ./duckdns.nix
     #./grafana.nix
     ./programs.nix
-    ./octoprint.nix
+    ./mainsail.nix
+    #./octoprint.nix
+    ./moonraker.nix
     ./ustreamer.nix
     #./promtail.nix
     ./syncthing.nix
@@ -16,8 +18,8 @@
     #./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
+    ./kiosk-session.nix
     ./secrets/default.nix
-    ./octoprint-session.nix
   ];
 
   boot.loader.raspberryPi.firmwareConfig = ''
