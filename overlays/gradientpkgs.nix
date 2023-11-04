@@ -11,8 +11,6 @@ final: prev:
 
   tinypilot = prev.callPackage ../pkgs/tinypilot.nix { };
 
-  xwaylandvideobridge = prev.libsForQt5.callPackage ../pkgs/xwaylandvideobridge.nix { };
-
   # Klipper with accelerometer support. See: https://www.klipper3d.org/Measuring_Resonances.html#software-installation
   klipper = prev.klipper.overrideAttrs (finalAttrs: prevAttrs: {
     buildInputs = [
