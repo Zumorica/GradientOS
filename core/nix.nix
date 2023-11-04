@@ -1,13 +1,7 @@
-{ self, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 {
-
   nix =
-  let
-    registry = {
-      self.flake = self;
-      nixpkgs.flake = self.inputs.nixpkgs;
-    };
-  in {
+  {
 
     package = pkgs.nixVersions.unstable;
 
@@ -49,11 +43,6 @@
       automatic = true;
       dates = [ "weekly" ];
     };
-
-    # Pin channels to flake inputs.
-    inherit registry;
-
-    nixPath = (lib.attrsets.mapAttrsToList (x: _: "${x}=flake:${x}") registry);
 
   };
 }

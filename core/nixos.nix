@@ -8,6 +8,7 @@
     ./openssh.nix
     ./network.nix
     ./programs.nix
+    ./nix-channels.nix
   ];
   
   services.fstrim.enable = true;
