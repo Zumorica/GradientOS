@@ -317,22 +317,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable-2211": {
-      "locked": {
-        "lastModified": 1688392541,
-        "narHash": "sha256-lHrKvEkCPTUO+7tPfjIcb7Trk6k31rz18vkyqmkeJfY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ea4c80b39be4c09702b0cb3b42eab59e2ba4f24b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-22.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable-2305": {
       "locked": {
         "lastModified": 1697851979,
@@ -403,7 +387,6 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable-2211": "nixpkgs-stable-2211",
         "nixpkgs-stable-2305": "nixpkgs-stable-2305",
         "sops-nix": "sops-nix",
         "ss14-watchdog": "ss14-watchdog",
@@ -416,7 +399,7 @@
           "nixpkgs"
         ],
         "nixpkgs-stable": [
-          "nixpkgs-stable-2211"
+          "nixpkgs-stable-2305"
         ]
       },
       "locked": {
