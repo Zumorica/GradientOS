@@ -138,7 +138,7 @@
 
       {
         name = "neith-deck";
-        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
+        overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
           sops-nix.nixosModules.sops
@@ -181,7 +181,7 @@
 
       {
         name = "vera-deck";
-        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
+        overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
           sops-nix.nixosModules.sops

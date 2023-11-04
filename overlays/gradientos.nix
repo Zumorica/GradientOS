@@ -26,10 +26,6 @@ let
     extraEnv.ROBUST_SOUNDFONT_OVERRIDE = "${prev.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
   };
 in {
-  cadence = prev.cadence.override {
-    libjack2 = prev.pipewire.jack;
-  };
-
   discord = prev.discord.override {
     withOpenASAR = true;
   };

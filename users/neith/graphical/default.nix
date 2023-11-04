@@ -14,9 +14,9 @@
     tdesktop
     rustdesk
     anydesk
-    cadence
     discord
     spotify
+    helvum
     kate
     vlc
     mpv

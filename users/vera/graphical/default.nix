@@ -23,9 +23,9 @@
     audacity
     inkscape
     rustdesk
-    cadence
     discord
     anydesk
+    helvum
     vscode
     ventoy
     krita

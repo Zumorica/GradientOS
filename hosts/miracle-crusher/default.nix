@@ -35,14 +35,14 @@
   environment.systemPackages = with pkgs; [
     space-station-14-launcher
     nix-gaming.osu-stable
-    gradient-generator
     xwaylandvideobridge
+    stable-2305.freecad
+    gradient-generator
     prismlauncher
     prusa-slicer
     xivlauncher
     starsector
     godot-mono
     openscad
-    freecad
   ];
 }
