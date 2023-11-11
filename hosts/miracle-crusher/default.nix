@@ -32,6 +32,9 @@
     XDG_SESSION_TYPE = "wayland";
   };
 
+  # WOL support.
+  networking.interfaces.enp34s0.wakeOnLan.enable = true;
+
   environment.systemPackages = with pkgs; [
     space-station-14-launcher
     nix-gaming.osu-stable
