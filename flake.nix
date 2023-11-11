@@ -112,6 +112,7 @@
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
 
+          mixins.hardware-qmk
           mixins.hardware-wacom
           mixins.hardware-amdcpu
           mixins.hardware-amdgpu
@@ -204,6 +205,7 @@
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
           
+          mixins.hardware-qmk
           mixins.hardware-amdcpu
           mixins.hardware-amdgpu
           mixins.hardware-webcam

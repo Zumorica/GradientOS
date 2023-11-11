@@ -37,6 +37,7 @@
   hardware-intelgpu-vaapi = ./mixins/hardware/intelgpu-vaapi.nix;
   hardware-logitech-driving-wheels = ./mixins/hardware/logitech-driving-wheels.nix;
   hardware-openrazer = ./mixins/hardware/openrazer.nix;
+  hardware-qmk = ./mixins/hardware/qmk.nix;
   hardware-raspberrypi4 = ./mixins/hardware/raspberrypi4.nix;
   hardware-steamdeck = ./mixins/hardware/steamdeck.nix;
   hardware-wacom = ./mixins/hardware/wacom.nix;
