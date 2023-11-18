@@ -25,8 +25,8 @@ Flake for different NixOS system configurations.
 ### Machines
 
 - **miracle-crusher**: Custom Gaming Desktop.
-- **vera-deck**: Steam Deck.
-- **neith-deck**: Steam Deck.
+- **vera-deck**: Steam Deck LCD.
+- **neith-deck**: Steam Deck LCD.
 - **asiyah**: ThinkCentre M900 Tiny Home Server.
 - **briah**: Raspberry Pi 4 Home Server.
 <!-- - **atziluth**: Server. *WIP* -->
