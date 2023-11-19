@@ -16,6 +16,7 @@
   services.xserver.displayManager.sddm.enable = lib.mkForce false;
   jovian.steam.autoStart = true;
   jovian.steam.user = "vera";
+  jovian.decky-loader.user = "vera";
   jovian.steam.desktopSession = "plasma";
   
   services.xserver.desktopManager.plasma5.mobile.enable = true;

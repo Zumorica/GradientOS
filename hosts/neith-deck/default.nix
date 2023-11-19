@@ -15,6 +15,7 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = lib.mkDefault "neith";
+  jovian.decky-loader.user = "neith";
   
   programs.steam.package = pkgs.steam-original-fixed;
   environment.systemPackages = with pkgs; [
