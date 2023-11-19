@@ -12,12 +12,12 @@
 
   networking.hostName = "vera-deck";
 
-  # Enable automatic login for the user.
-  #services.xserver.displayManager.autoLogin.enable = true;
-  #services.xserver.displayManager.autoLogin.user = lib.mkDefault "vera";
+  # Use Jovian's steam deck UI autostart.
+  services.xserver.displayManager.sddm.enable = lib.mkForce false;
+  jovian.steam.autoStart = true;
+  jovian.steam.user = "vera";
+  jovian.steam.desktopSession = "plasma";
   
-  services.xserver.displayManager.defaultSession = "gamescope-wayland";
-
   services.xserver.desktopManager.plasma5.mobile.enable = true;
 
   environment.systemPackages = with pkgs; [
