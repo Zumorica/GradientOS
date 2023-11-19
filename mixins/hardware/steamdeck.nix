@@ -4,7 +4,10 @@
 
   # Enable hardware and Steam support.
   jovian.devices.steamdeck.enable = true;
+  jovian.devices.steamdeck.autoUpdate = true;
   jovian.steam.enable = true;
+
+  jovian.decky-loader.enable = true;
 
   # Add some useful packages.
   environment.systemPackages = with pkgs; [
