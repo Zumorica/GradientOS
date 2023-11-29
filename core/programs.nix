@@ -18,6 +18,7 @@
     ffmpeg-full
     lm_sensors
     ssh-to-age
+    distrobox
     usbutils
     pciutils
     colmena
