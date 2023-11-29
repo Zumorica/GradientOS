@@ -4,13 +4,16 @@
 , makeDesktopItem
 , steam-run
 }:
+let
+  version = "4.1.3";
+in
 stdenv.mkDerivation {
+  inherit version;
   name = "godot-mono";
-  version = "4.1.1";
 
   src = fetchzip {
-    url = "https://github.com/godotengine/godot/releases/download/4.1.1-stable/Godot_v4.1.1-stable_mono_linux_x86_64.zip";
-    sha256 = "sha256-+8a/9T9zVaGKPA4+EUJ3FsgLuCSJ7BXdy+v1mQRxNcA=";
+    url = "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_mono_linux_x86_64.zip";
+    sha256 = "sha256-QtsPXx4q0S95WATc4YM+MSocapY1G7BgdSiToX/ODzY=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
@@ -34,7 +37,7 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
     cp -r ./* $out/bin
     makeWrapper ${steam-run}/bin/steam-run $out/bin/godot-mono \
-      --add-flags $out/bin/Godot_v4.1.1-stable_mono_linux.x86_64
+      --add-flags $out/bin/Godot_v${version}-stable_mono_linux.x86_64
 
     # Desktop item
     mkdir -p $out/share/applications
