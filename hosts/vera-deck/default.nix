@@ -4,6 +4,7 @@
 
   imports = [
     ./nix.nix
+    ./programs.nix
     ./syncthing.nix
     ./wireguard.nix
     ./filesystems.nix
@@ -21,12 +22,4 @@
   
   services.xserver.desktopManager.plasma5.mobile.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    starsector-gamescope-wrap
-    space-station-14-launcher
-    nix-gaming.osu-stable
-    gradient-generator
-    prismlauncher
-    xivlauncher
-  ];
 }

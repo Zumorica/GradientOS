@@ -4,6 +4,7 @@
 
   imports = [
     ./nix.nix
+    ./programs.nix
     ./syncthing.nix
     ./wireguard.nix
     ./filesystems.nix
@@ -16,13 +17,5 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = lib.mkDefault "neith";
   jovian.decky-loader.user = "neith";
-  
-  programs.steam.package = pkgs.steam-original-fixed;
-  environment.systemPackages = with pkgs; [
-    starsector-gamescope-wrap
-    steam-deck-client
-    prismlauncher
-    xivlauncher
-  ];
 
 }

@@ -64,6 +64,8 @@
       inputs.flake-compat.follows = "flake-compat";
     };
 
+    declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable";
+
     vdo-ninja = {
       url = "github:steveseguin/vdo.ninja/v23.5";
       flake = false;
@@ -71,7 +73,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, nixos-generators, ss14-watchdog, ... }:
+  outputs = { self, nixpkgs, home-manager, gradient-generator, jovian-nixos, sops-nix, nixos-hardware, nixos-generators, ss14-watchdog, declarative-flatpak, ... }:
   let
     ips = import ./misc/wireguard-addresses.nix;
     colmena-tags = import ./misc/colmena-tags.nix;
@@ -88,6 +90,7 @@
 
         modules = [
           sops-nix.nixosModules.sops
+          declarative-flatpak.nixosModules.default
           nixos-hardware.nixosModules.common-cpu-amd-pstate
 
           mixins.wine
@@ -100,6 +103,7 @@
           mixins.nix-store-serve
           mixins.aarch64-emulation
           mixins.system76-scheduler
+          mixins.declarative-flatpak
 
           mixins.graphical
           mixins.graphical-kde
@@ -144,6 +148,7 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
+          declarative-flatpak.nixosModules.default
 
           mixins.wine
           mixins.plymouth
@@ -152,6 +157,7 @@
           mixins.neith-locale
           mixins.nix-store-serve
           mixins.system76-scheduler
+          mixins.declarative-flatpak
           
           mixins.graphical
           mixins.graphical-kde
@@ -187,6 +193,7 @@
         modules = [
           sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
+          declarative-flatpak.nixosModules.default
           
           mixins.wine
           mixins.plymouth
@@ -196,6 +203,7 @@
           mixins.virtualisation
           mixins.nix-store-serve
           mixins.system76-scheduler
+          mixins.declarative-flatpak
           
           mixins.graphical
           mixins.graphical-kde

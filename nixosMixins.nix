@@ -2,6 +2,7 @@
   core = ./core/default.nix;
 
   aarch64-emulation = ./mixins/aarch64-emulation.nix;
+  declarative-flatpak = ./mixins/declarative-flatpak.nix;
   gnupg = ./mixins/gnupg.nix;
   neith-locale = ./mixins/neith-locale.nix;
   networkd = ./mixins/networkd.nix;

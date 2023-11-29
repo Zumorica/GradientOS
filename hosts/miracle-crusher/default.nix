@@ -5,6 +5,7 @@
   imports = [
     ./nix.nix
     ./kernel.nix
+    ./programs.nix
     ./wireguard.nix
     ./syncthing.nix
     ./filesystems.nix
@@ -34,18 +35,4 @@
 
   # WOL support.
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    space-station-14-launcher
-    nix-gaming.osu-stable
-    xwaylandvideobridge
-    stable-2305.freecad
-    gradient-generator
-    prismlauncher
-    prusa-slicer
-    xivlauncher
-    starsector
-    godot-mono
-    openscad
-  ];
 }
