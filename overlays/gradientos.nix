@@ -28,6 +28,8 @@ let
 in {
   discord = prev.discord.override {
     withOpenASAR = true;
+    withVencord = true;
+    withTTS = true;
   };
 
   steam = prev.steam.override steam-override;
