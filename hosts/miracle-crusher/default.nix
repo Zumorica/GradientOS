@@ -5,6 +5,7 @@
   imports = [
     ./nix.nix
     ./kernel.nix
+    ./libvirtd.nix
     ./programs.nix
     ./wireguard.nix
     ./syncthing.nix
