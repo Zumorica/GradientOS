@@ -13,10 +13,10 @@
     chromium
     tdesktop
     rustdesk
+    qpwgraph
     anydesk
     discord
     spotify
-    helvum
     kate
     vlc
     mpv
