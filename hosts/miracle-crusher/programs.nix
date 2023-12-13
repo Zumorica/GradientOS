@@ -12,6 +12,7 @@
     prusa-slicer
     xivlauncher
     godot-mono
+    unityhub
     openscad
   ];
 
