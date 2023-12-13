@@ -3,7 +3,6 @@
 
   programs.steam.package = pkgs.steam-original-fixed;
   environment.systemPackages = with pkgs; [
-    starsector-gamescope-wrap
     steam-deck-client
     prismlauncher
     xivlauncher

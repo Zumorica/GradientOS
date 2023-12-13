@@ -12,7 +12,6 @@
     qbittorrent
     chromium
     tdesktop
-    rustdesk
     qpwgraph
     anydesk
     discord

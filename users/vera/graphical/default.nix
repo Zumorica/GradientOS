@@ -12,7 +12,6 @@
     libsForQt5.okular
     libreoffice-fresh
     gimp-with-plugins
-    jetbrains.rider
     google-chrome
     moonlight-qt
     qbittorrent
@@ -22,7 +21,6 @@
     tdesktop
     audacity
     inkscape
-    rustdesk
     qpwgraph
     discord
     anydesk
