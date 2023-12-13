@@ -5,12 +5,12 @@
   imports = [
     ./nix.nix
     ./kernel.nix
-    ./libvirtd.nix
     ./programs.nix
     ./wireguard.nix
     ./syncthing.nix
     ./filesystems.nix
     ./secrets/default.nix
+    ./libvirtd/default.nix
     ./hardware-configuration.nix
   ];
 
