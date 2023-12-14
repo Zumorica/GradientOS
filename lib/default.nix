@@ -41,6 +41,7 @@ rec {
     , makeSystem ? true
     , importCore ? true
     , importHost ? true
+    , importModules ? true
     , ...
     }:
     {
@@ -72,6 +73,7 @@ rec {
       ] ++ modules ++ (mkUserModules users)
         ++ (if importCore then [../core/default.nix] else [])
         ++ (if importHost then [../hosts/${name}/default.nix] else [])
+        ++ (if importModules then [../modules/default.nix] else [])
         ++ (if deployment != null then [{ inherit deployment; }] else []);
 
     } // (if deployment != null then {
