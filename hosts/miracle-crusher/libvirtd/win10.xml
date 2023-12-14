@@ -3,17 +3,18 @@
   <uuid>2adee7d5-e161-42ce-92de-6d81a2ac2ffc</uuid>
   <metadata>
     <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
-      <libosinfo:os id="http://microsoft.com/win/11"/>
+      <libosinfo:os id="http://microsoft.com/win/10"/>
     </libosinfo:libosinfo>
   </metadata>
-  <memory unit="KiB">8388608</memory>
-  <currentMemory unit="KiB">8388608</currentMemory>
-  <vcpu placement="static">4</vcpu>
+  <memory unit="KiB">25165824</memory>
+  <currentMemory unit="KiB">25165824</currentMemory>
+  <vcpu placement="static">16</vcpu>
   <os>
-    <type arch="x86_64" machine="pc-q35-7.2">hvm</type>
+    <type arch="x86_64" machine="pc-q35-8.0">hvm</type>
     <loader readonly="yes" type="pflash">/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
     <nvram template="/run/libvirt/nix-ovmf/OVMF_VARS.fd">/var/lib/libvirt/qemu/nvram/win10_VARS.fd</nvram>
-    <bootmenu enable="yes"/>
+    <bootmenu enable="no"/>
+    <smbios mode="host"/>
   </os>
   <features>
     <acpi/>
@@ -22,10 +23,26 @@
       <relaxed state="on"/>
       <vapic state="on"/>
       <spinlocks state="on" retries="8191"/>
+      <vpindex state="on"/>
+      <runtime state="on"/>
+      <synic state="on"/>
+      <stimer state="on"/>
+      <vendor_id state="on" value="gradientos"/>
+      <frequencies state="on"/>
+      <tlbflush state="on"/>
+      <ipi state="on"/>
     </hyperv>
+    <kvm>
+      <hidden state="on"/>
+    </kvm>
     <vmport state="off"/>
+    <ioapic driver="kvm"/>
   </features>
-  <cpu mode="host-passthrough" check="none" migratable="on"/>
+  <cpu mode="host-passthrough" check="none" migratable="on">
+    <topology sockets="1" dies="1" cores="8" threads="2"/>
+    <cache mode="passthrough"/>
+    <feature policy="require" name="topoext"/>
+  </cpu>
   <clock offset="localtime">
     <timer name="rtc" tickpolicy="catchup"/>
     <timer name="pit" tickpolicy="delay"/>
@@ -137,6 +154,18 @@
     </interface>
     <input type="mouse" bus="ps2"/>
     <input type="keyboard" bus="ps2"/>
+    <input type="evdev">
+      <source dev="/dev/input/by-id/usb-Razer_Razer_DeathAdder_V3_Pro_000000000000-event-mouse"/>
+    </input>
+    <input type="evdev">
+      <source dev="/dev/input/by-id/usb-Razer_Razer_DeathAdder_V3_Pro_000000000000-if02-event-kbd"/>
+    </input>
+    <input type="evdev">
+      <source dev="/dev/input/by-id/usb-Keychron_Keychron_K10_Pro-if02-event-mouse"/>
+    </input>
+    <input type="evdev">
+      <source dev="/dev/input/by-id/usb-Keychron_Keychron_K10_Pro-if02-event-kbd" grab="all" grabToggle="ctrl-ctrl" repeat="on"/>
+    </input>
     <sound model="ich9">
       <address type="pci" domain="0x0000" bus="0x00" slot="0x1b" function="0x0"/>
     </sound>
@@ -145,6 +174,7 @@
       <source>
         <address domain="0x0000" bus="0x28" slot="0x00" function="0x0"/>
       </source>
+      <rom file="/var/lib/libvirt/vbios.rom"/>
       <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
@@ -165,9 +195,44 @@
       </source>
       <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
     </hostdev>
+    <hostdev mode="subsystem" type="usb" managed="yes">
+      <source startupPolicy="optional">
+        <vendor id="0x08bb"/>
+        <product id="0x2902"/>
+      </source>
+      <address type="usb" bus="0" port="3"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="usb" managed="yes">
+      <source startupPolicy="optional">
+        <vendor id="0x28de"/>
+        <product id="0x2102"/>
+        <address bus="5" device="22"/>
+      </source>
+      <address type="usb" bus="0" port="4"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="usb" managed="yes">
+      <source startupPolicy="optional">
+        <vendor id="0x28de"/>
+        <product id="0x2102"/>
+        <address bus="5" device="23"/>
+      </source>
+      <address type="usb" bus="0" port="5"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="usb" managed="yes">
+      <source startupPolicy="optional">
+        <vendor id="0x28de"/>
+        <product id="0x2300"/>
+      </source>
+      <address type="usb" bus="0" port="6"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="usb" managed="yes">
+      <source startupPolicy="optional">
+        <vendor id="0x28de"/>
+        <product id="0x2400"/>
+      </source>
+      <address type="usb" bus="0" port="7"/>
+    </hostdev>
     <watchdog model="itco" action="reset"/>
-    <memballoon model="virtio">
-      <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
-    </memballoon>
+    <memballoon model="none"/>
   </devices>
 </domain>

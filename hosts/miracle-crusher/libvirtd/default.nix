@@ -1,19 +1,13 @@
 { pkgs, ... }:
 let
-  hookDependencies = with pkgs; [ libvirt kmod gawk lsof ];
-  win10-prepare-begin-hook = pkgs.writeShellApplication {
-    name = "win10-prepare-begin-hook";
-    runtimeInputs = hookDependencies;
-    text = builtins.readFile ./win10-prepare-begin-hook.sh;
-    checkPhase = "";
-  };
-  win10-release-end-hook = pkgs.writeShellApplication {
-    name = "win10-release-end-hook";
-    runtimeInputs = hookDependencies;
-    text = builtins.readFile ./win10-release-end-hook.sh;
+  win10-hooks = pkgs.writeShellApplication {
+    name = "win10-hooks";
+    runtimeInputs = with pkgs; [ libvirt kmod gawk lsof ];
+    text = builtins.readFile ./win10-hooks.sh;
     checkPhase = "";
   };
 in {
+  
   virtualisation.libvirtd = {
     enable = true;
     onBoot = "ignore";
@@ -23,8 +17,11 @@ in {
       ovmf.enable = true;
     };
     hooks.qemu = {
-      "win10-prepare-begin.sh" = "${win10-prepare-begin-hook}/bin/win10-prepare-begin-hook";
-      "win10-release-end.sh" = "${win10-release-end-hook}/bin/win10-release-end-hook";
+      "win10-hooks.sh" = "${win10-hooks}/bin/win10-hooks";
     };
   };
+
+  boot.extraModprobeConfig = ''
+    options vfio-pci ids=1002:73bf,1002:ab28,1002:73a6,1002:73a4
+  '';
 }
