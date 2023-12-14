@@ -24,4 +24,29 @@ in {
   boot.extraModprobeConfig = ''
     options vfio-pci ids=1002:73bf,1002:ab28,1002:73a6,1002:73a4
   '';
+
+  systemd.tmpfiles.settings."10-libvirtd" = {
+    
+    "/var/lib/libvirt/vbios.rom".C = {
+      argument = "${./vbios.rom}";
+      doCheck = true;
+      group = "libvirtd";
+      mode = "0664";
+    };
+
+    "/var/lib/libvirt/qemu/win10.xml".C = {
+      argument = "${./win10.xml}";
+      doCheck = true;
+      group = "libvirtd";
+      mode = "0666";
+    };
+
+    "/var/lib/libvirt/qemu/win10-no-passthrough.xml".C = {
+      argument = "${./win10-no-passthrough.xml}";
+      doCheck = true;
+      group = "libvirtd";
+      mode = "0666";
+    };
+
+  };
 }
