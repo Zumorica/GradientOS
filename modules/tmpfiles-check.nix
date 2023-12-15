@@ -63,18 +63,26 @@ let
     );
   checkScriptFromFileSetting = 
     (target: args:
+      let source = args.C.argument; in
       ''
         RED="\033[0;31m"
         PURPLE="\033[1;35m"
         NC="\033[0m"
-        if [ -f "${target}" ]; then
+
+        if [ -d "${target}" ]; then
+          echo -e "''${RED}tmpfiles-check:$NC Target path ''${PURPLE}file://${target}$NC for source path ''${PURPLE}file://${source}$NC appears to be a directory. This is not supported."
+        elif [ -d "${source}" ]; then
+          echo -e "''${RED}tmpfiles-check:$NC Source path ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC appears to be a directory. This is not supported."
+        elif [ -f "${target}" ] && [ -f "${source}" ]; then
           TARGET=($(${pkgs.coreutils}/bin/sha256sum "${target}" -b))
-          SOURCE=($(${pkgs.coreutils}/bin/sha256sum "${args.C.argument}" -b))
+          SOURCE=($(${pkgs.coreutils}/bin/sha256sum "${source}" -b))
 
           if [ "$TARGET" != "$SOURCE" ]; then
-            echo -e "''${RED}tmpfiles-check:$NC ''${PURPLE}file://${target}$NC differs from source at ''${PURPLE}file://${args.C.argument}$NC"
+            echo -e "''${RED}tmpfiles-check:$NC ''${PURPLE}file://${target}$NC differs from source at ''${PURPLE}file://${source}$NC"
           fi
-        else
+        elif [ ! -f "${source}" ]; then
+          echo -e "''${RED}tmpfiles-check:$NC Source file ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC does not exist."
+        elif [ ! -f "${target}" ]; then
           ${pkgs.systemd}/bin/systemd-tmpfiles --create --prefix="${target}" && echo -e "''${RED}tmpfiles-check:$NC file://${target} created."
         fi
       ''
@@ -82,27 +90,33 @@ let
   checkScript = makeScriptFromSettings checkScriptFromFileSetting;
   fixScriptFromFileSetting=
     (target: args:
+      let source = args.C.argument; in
       ''
-        PURPLE="\033[1;35m"
-        NC="\033[0m"
-        if [ -f "${target}" ]; then
+        if [ -f "${target}" ] && [ -f "${source}" ]; then
           TARGET=($(${pkgs.coreutils}/bin/sha256sum "${target}" -b))
-          SOURCE=($(${pkgs.coreutils}/bin/sha256sum "${args.C.argument}" -b))
+          SOURCE=($(${pkgs.coreutils}/bin/sha256sum "${source}" -b))
           if [ "$TARGET" != "$SOURCE" ]; then
             ${pkgs.coreutils}/bin/rm -f "${target}"
             ${pkgs.systemd}/bin/systemd-tmpfiles --create --prefix="${target}"
-            echo -e "-> file://${target}"
+            echo -e "''${RED}->$NC file://${target}"
           fi
+        elif [ ! -f "${source}" ]; then
+          echo -e "''${RED}-X$NC Source file ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC does not exist."
+        elif [ -d "${source}" ]; then
+          echo -e "''${RED}-X$NC Source path ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC appears to be a directory. This is not supported."
+        elif [ -d "${target}" ]; then
+          echo -e "''${RED}-X$NC Target path ''${PURPLE}file://${target}$NC for source path ''${PURPLE}file://${source}$NC appears to be a directory. Please delete it manually and re-run this command."
         else
           ${pkgs.systemd}/bin/systemd-tmpfiles --create --prefix="${target}"
-          echo -e "-> file://${target}"
+          echo -e "''${RED}->$NC file://${target}"
         fi
       ''
     );
     fixScript = ''
+      RED="\033[0;31m"
+      PURPLE="\033[1;35m"
+      NC="\033[0m"
       if [ "$1" != "-y" ]; then
-        RED="\033[0;31m"
-        NC="\033[0m"
         echo -e  "''${RED}warning:$NC This will overwrite all your checked files with their original contents.\n''${RED}Your changes will be lost.$NC"
         read -p "Are you sure you want to continue? " -n 1 -r
         echo
