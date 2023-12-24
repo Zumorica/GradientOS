@@ -19,7 +19,7 @@
   services.udisks2.enable = true;
 
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   security.rtkit.enable = true;
   security.polkit.enable = true;
