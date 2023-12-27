@@ -209,6 +209,22 @@
         "type": "github"
       }
     },
+    "mobile-nixos": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702965184,
+        "narHash": "sha256-3EmjKFKBypRGluGEY1oUMkQRBRDO5rZdzUXwTlRbUiY=",
+        "owner": "NixOS",
+        "repo": "mobile-nixos",
+        "rev": "ae159f5535d733169cfd92514c88684440caace9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "mobile-nixos",
+        "type": "github"
+      }
+    },
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -437,6 +453,7 @@
         "gradient-moe": "gradient-moe",
         "home-manager": "home-manager",
         "jovian-nixos": "jovian-nixos",
+        "mobile-nixos": "mobile-nixos",
         "nix-gaming": "nix-gaming",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
