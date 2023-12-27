@@ -11,6 +11,7 @@
   podman = ./mixins/podman.nix;
   steamcmd = ./mixins/steamcmd.nix;
   system76-scheduler = ./mixins/system76-scheduler.nix;
+  upgrade-diff = ./mixins/upgrade-diff.nix;
   uwu-style = ./mixins/uwu-style.nix;
   v4l2loopback = ./mixins/v4l2loopback.nix;
   vera-locale = ./mixins/vera-locale.nix;

@@ -97,6 +97,7 @@
           mixins.podman
           mixins.plymouth
           mixins.uwu-style
+          mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.vera-locale
           mixins.virtualisation
@@ -153,6 +154,7 @@
           mixins.wine
           mixins.plymouth
           mixins.uwu-style
+          mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.neith-locale
           mixins.nix-store-serve
@@ -199,6 +201,7 @@
           mixins.plymouth
           mixins.uwu-style
           mixins.vera-locale
+          mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.virtualisation
           mixins.nix-store-serve
@@ -250,6 +253,7 @@
           mixins.podman
           mixins.steamcmd
           mixins.vera-locale
+          mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.virtualisation
           mixins.nix-store-serve
@@ -279,6 +283,7 @@
           mixins.plymouth
 
           mixins.vera-locale
+          mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.hardware-raspberrypi4
         ];
