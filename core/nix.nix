@@ -18,11 +18,13 @@
       substituters = [
         "https://nix-gaming.cachix.org?priority=100"
         "https://nix-community.cachix.org?priority=100"
+        "https://0uptime.cachix.org?priority=100"
       ];
 
       trusted-public-keys = [
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "0uptime.cachix.org-1:ctw8yknBLg9cZBdqss+5krAem0sHYdISkw/IFdRbYdE="
       ];
       
       trusted-users = [
