@@ -34,6 +34,10 @@
     XDG_SESSION_TYPE = "wayland";
   };
 
+  # For games and such.
+  networking.firewall.allowedTCPPorts = [ 7777 ];
+  networking.firewall.allowedUDPPorts = [ 7777 ];
+
   # WOL support.
   networking.interfaces.enp34s0.wakeOnLan.enable = true;
 }
