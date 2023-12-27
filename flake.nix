@@ -208,7 +208,7 @@
           mixins.vera-locale
           mixins.upgrade-diff
           mixins.v4l2loopback
-          mixins.mobile-stage1
+          # TODO: fix mixins.mobile-stage1
           mixins.virtualisation
           mixins.nix-store-serve
           mixins.system76-scheduler

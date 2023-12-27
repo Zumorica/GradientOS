@@ -8,10 +8,8 @@
     boot.stage-1.enable = true;
     boot.stage-1.kernel.useNixOSKernel = lib.mkForce true;
     boot.stage-1.gui.waitForDevices.enable = lib.mkForce true;
-    beautification = {
-      silentBoot = true;
-      splash = true;
-    };
+    beautification.silentBoot = true;
+    beautification.splash = true;
   };
 
 }
