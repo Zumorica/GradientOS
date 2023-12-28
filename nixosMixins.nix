@@ -31,6 +31,7 @@
   pipewire-um2 = ./mixins/pipewire/um2/default.nix;
   pipewire-virtual-sink = ./mixins/pipewire/virtual-sink/default.nix;
   pipewire-low-latency = ./mixins/pipewire/low-latency.nix;
+  pipewire-rnnoise = ./mixins/pipewire/rnnoise.nix;
 
   hardware-amdcpu = ./mixins/hardware/amdcpu.nix;
   hardware-amdgpu = ./mixins/hardware/amdgpu.nix;
