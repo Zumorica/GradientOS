@@ -59,7 +59,7 @@
     text = ''
       if [[ -e /run/current-system ]]; then
         echo "#---# diff to current-system #---#"
-        ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff /run/current-system "$systemConfig"
+        ${pkgs.nvd}/bin/nvd --nix-bin-dir=${config.nix.package}/bin diff $(${pkgs.coreutils}/bin/readlink "/run/current-system") "$systemConfig" | tee /etc/gradientos-changelog
         echo "#END# diff to current-system #---#"
       fi
     '';
