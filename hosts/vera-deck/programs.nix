@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     space-station-14-launcher
     prismlauncher
+    dolphin-emu
     xivlauncher
   ];
 

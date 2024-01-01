@@ -10,6 +10,7 @@
     osu-lazer-bin
     prismlauncher
     prusa-slicer
+    dolphin-emu
     xivlauncher
     godot-mono
     unityhub

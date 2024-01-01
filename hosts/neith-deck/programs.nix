@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     steam-deck-client
     prismlauncher
+    dolphin-emu
     xivlauncher
   ];
 
