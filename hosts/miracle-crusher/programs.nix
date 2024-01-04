@@ -15,6 +15,7 @@
     godot-mono
     unityhub
     openscad
+    heroic
   ];
 
   services.flatpak.packages = [

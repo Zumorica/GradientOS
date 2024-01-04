@@ -6,6 +6,7 @@
     prismlauncher
     dolphin-emu
     xivlauncher
+    heroic
   ];
 
   services.flatpak.packages = [
