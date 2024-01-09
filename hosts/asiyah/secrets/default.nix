@@ -11,17 +11,14 @@
       gradient-generator-environment = { restartUnits = [ "gradient-generator.daily-avatar.service" ]; };
 
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
-
-      stream-htpasswd = {
-        mode = "0444";
-        restartUnits = [ "nginx.service" ];
-      };
       
       deluge-auth = {
         mode = "0440";
         group = config.services.deluge.group;
         restartUnits = [ "deluge.service" ];
       };
+
+      oauth2-proxy-secrets = { restartUnits = [ "oauth2_proxy.service" ]; };
 
     };
   };

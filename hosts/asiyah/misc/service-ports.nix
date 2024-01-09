@@ -5,6 +5,7 @@
   # nginx
   gradient-moe = 80;
   gradient-moe-secure = 443;
+  oauth2-proxy = 4180;
 
   # wireguard
   gradientnet = 1194;
@@ -25,6 +26,7 @@
   deluge-listen = [ 6881 6891 ];
 
   # misc
+  redis-oauth2 = 6380;
   trilium = 8081;
   
   # game servers

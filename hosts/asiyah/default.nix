@@ -6,6 +6,7 @@
     ./wireguard.nix
     ./filesystem.nix
     ./media-stack.nix
+    ./oauth2-proxy.nix
     # ./project-zomboid.nix
     ./secrets/default.nix
     ./redbot-stardream.nix
