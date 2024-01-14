@@ -24,6 +24,6 @@
   };
 
   # Symlink old Steam Deck SD card path to new one.
-  systemd.tmpfiles.rules = [ "L+ /run/media/mmcblk0p1 - - - - /run/media/deck/mmcblk0p1" ]
+  systemd.tmpfiles.rules = [ "L+ /run/media/mmcblk0p1 - - - - /run/media/deck/mmcblk0p1" ];
 
 }
