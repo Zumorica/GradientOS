@@ -18,8 +18,8 @@ context.modules = [
                     label = noise_suppressor_stereo
                     control = {
                         "VAD Threshold (%)" = 50.0
-                        "VAD Grace Period (ms)" = 200
-                        "Retroactive VAD Grace (ms)" = 0
+                        "VAD Grace Period (ms)" = 1000
+                        "Retroactive VAD Grace (ms)" = 100
                     }
                 }
             ]

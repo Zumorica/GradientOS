@@ -3,9 +3,10 @@
   ssh = 22;
 
   # nginx
-  gradient-moe = 80;
-  gradient-moe-secure = 443;
+  nginx = 80;
+  nginx-ssl = 443;
   oauth2-proxy = 4180;
+  vdo-ninja = 8082;
 
   # wireguard
   gradientnet = 1194;

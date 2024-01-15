@@ -1,14 +1,16 @@
 { config, ... }:
 let
   secrets = config.sops.secrets;
-  ports = import ./misc/service-ports.nix;
+  ports = import ../misc/service-ports.nix;
 in {
+
+  # TODO: Make this a container so we can have multiple instances of oauth2_proxy
 
   services.oauth2_proxy = {
     enable = true;
     provider = "github";
     httpAddress = "http://127.0.0.1:${toString ports.oauth2-proxy}";
-    upstream = "http://127.0.0.1:${toString ports.gradient-moe}";
+    upstream = "http://127.0.0.1:${toString ports.nginx}";
     redirectURL = "https://polycule.constellation.moe/oauth2/callback";
     github.org = "ConstellationNRV";
     clientID = "05fb727827ad30eddf0d";

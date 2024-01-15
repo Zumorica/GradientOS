@@ -2,12 +2,11 @@
 {
 
   imports = [
-    ./nginx.nix
     ./wireguard.nix
     ./filesystem.nix
     ./media-stack.nix
-    ./oauth2-proxy.nix
     # ./project-zomboid.nix
+    ./nginx/default.nix
     ./secrets/default.nix
     ./redbot-stardream.nix
     ./gradient-generator.nix
