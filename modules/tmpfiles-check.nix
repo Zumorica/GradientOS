@@ -11,8 +11,11 @@
 *   You can also use the "tmpfiles-check" command to check existing files and create missing ones.
 *   If you want to restore a file to its original contents, you can simply delete the file and run "tmpfiles-check".
 *
-*   To restore every single checked file to their original contents, you can run "tmpfiles-check-fix".
+*   To restore every single checked file to their original contents, you can run "tmpfiles-check-restore".
 *   You can pass "-y" as an argument to skip the confirmation check. It takes no other arguments and has no help command, sorry!
+*
+*   To synchronize every single modified checked file to their specified repository paths, you can run "tmpfiles-check-sync".
+*   You can also pass "-y" as an argument here, to skip the confirmation check. No other arguments yet, no help argument either!
 *
 * EXAMPLE:
 
@@ -21,6 +24,7 @@ systemd.tmpfiles.settings."example"."/home/vera/example.txt".C = {
   group = "users";
   mode = "0755";
   argument = "${pkgs.writeText "example.txt" ''Hello there!''}";
+  repoPath = "/etc/nixos/example.txt";  # <- Optionally set this to make tmpfiles-check-sync work. 
   doCheck = true;   # <- This right here is the important bit!
 };
 
@@ -36,7 +40,7 @@ let
     (files:
       attrsets.filterAttrs
         (_: v:
-          v ? C
+          v ? C && v.C.doCheck
         )
         files
     );
@@ -88,7 +92,7 @@ let
       ''
     );
   checkScript = makeScriptFromSettings checkScriptFromFileSetting;
-  fixScriptFromFileSetting=
+  restoreScriptFromFileSetting=
     (target: args:
       let source = args.C.argument; in
       ''
@@ -112,7 +116,7 @@ let
         fi
       ''
     );
-    fixScript = ''
+    restoreScript = ''
       RED="\033[0;31m"
       PURPLE="\033[1;35m"
       NC="\033[0m"
@@ -126,7 +130,45 @@ let
       fi
 
       echo "Restoring checked files..."
-      ${(makeScriptFromSettings fixScriptFromFileSetting)}
+      ${(makeScriptFromSettings restoreScriptFromFileSetting)}
+      echo "Done!"
+    '';
+    syncScriptFromFileSetting=
+      (source: args: # Notice how "source" is now called "target" in the other scripts!
+        let
+          target = args.C.repoPath;
+        in if target != null then
+        ''
+          if [ -f "${target}" ] && [ -f "${source}" ]; then
+            TARGET=($(${pkgs.coreutils}/bin/sha256sum "${target}" -b))
+            SOURCE=($(${pkgs.coreutils}/bin/sha256sum "${source}" -b))
+            if [ "$TARGET" != "$SOURCE" ]; then
+              ${pkgs.coreutils}/bin/cp "${source}" "${target}"
+              echo -e "''${RED}->$NC file://${target}"
+            fi
+          elif [ ! -f "${source}" ]; then
+            echo -e "''${RED}-X$NC Source file ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC does not exist."
+          elif [ -d "${source}" ]; then
+            echo -e "''${RED}-X$NC Source path ''${PURPLE}file://${source}$NC for target path ''${PURPLE}file://${target}$NC appears to be a directory. This is not supported."
+          elif [ -d "${target}" ]; then
+            echo -e "''${RED}-X$NC Target path ''${PURPLE}file://${target}$NC for source path ''${PURPLE}file://${source}$NC appears to be a directory. Please delete it manually and re-run this command."
+          fi
+        '' else "");
+    syncScript = ''
+      RED="\033[0;31m"
+      PURPLE="\033[1;35m"
+      NC="\033[0m"
+      if [ "$1" != "-y" ]; then
+        echo -e  "''${RED}warning:$NC This will overwrite the repository paths you specified with their modified counterparts.\n''${RED}Any changes will be lost.$NC"
+        read -p "Are you sure you want to continue? " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+        fi
+      fi
+
+      echo "Synchronizing modified files to repository paths..."
+      ${(makeScriptFromSettings syncScriptFromFileSetting)}
       echo "Done!"
     '';
 in
@@ -136,13 +178,23 @@ in
     type = types.attrsOf (types.attrsOf (types.attrsOf (types.submodule ({ name, config, ... }:
     {
       options.doCheck = mkOption {
-        type = types.boolean;
+        type = types.bool;
         default = false;
         example = true;
         description = mdDoc ''
           Whether to check if the target file hash differs from the source file hash specified in the argument.
 
           Only works with type of operation "C".
+        '';
+      };
+
+      options.repoPath = mkOption {
+        type = types.nullOr types.str;
+        default = null;
+        example = "/etc/nixos/example.conf";
+        description = mdDoc ''
+          Setting this allows you to write any changes from modified files back to your repository.
+          Must be set to
         '';
       };
     }))));
@@ -156,7 +208,8 @@ in
 
     environment.systemPackages = [
       (pkgs.writeShellScriptBin "tmpfiles-check" checkScript)
-      (pkgs.writeShellScriptBin "tmpfiles-check-fix" fixScript)
+      (pkgs.writeShellScriptBin "tmpfiles-check-restore" restoreScript)
+      (pkgs.writeShellScriptBin "tmpfiles-check-sync" syncScript)
     ];
 
   };
