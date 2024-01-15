@@ -12,7 +12,7 @@
 
   # Temporary workaround to enable user lingering.
   systemd.tmpfiles.rules = [
-    "f /var/lib/systemd/linger/vera"
+    "f /var/lib/systemd/linger/neith"
   ];
 
 }
