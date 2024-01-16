@@ -1,4 +1,4 @@
-{ self, config, lib, ... }:
+{ self, config, lib, pkgs, ... }:
 let
   ports = import ../misc/service-ports.nix;
 in {
@@ -14,6 +14,9 @@ in {
 
   services.nginx = {
     enable = true;
+    package = pkgs.nginxStable.override {
+      withSlice = true;
+    };
     defaultHTTPListenPort = ports.nginx;
     defaultSSLListenPort = ports.nginx-ssl;
     recommendedGzipSettings = true;
