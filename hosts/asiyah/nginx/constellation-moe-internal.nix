@@ -17,7 +17,7 @@ let
 in {
 
   services.nginx.virtualHosts."polycule.constellation.moe" = {
-    root = self.inputs.constellation-moe;
+    root = self.inputs.polycule-constellation-moe;
     enableACME = true;
     addSSL = true;
     extraConfig = ''

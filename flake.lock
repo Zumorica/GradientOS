@@ -443,6 +443,22 @@
         "type": "github"
       }
     },
+    "polycule-constellation-moe": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1705427748,
+        "narHash": "sha256-BdnBo7SyWbgyhKbdEbcS8zXdtQZ47wIorzKyneIA37g=",
+        "ref": "refs/heads/main",
+        "rev": "0cab14e52228ddbc868e29d867db2aa70d451362",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/ConstellationNRV/polycule.constellation.moe"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/ConstellationNRV/polycule.constellation.moe"
+      }
+    },
     "root": {
       "inputs": {
         "colmena": "colmena",
@@ -459,6 +475,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable-2305": "nixpkgs-stable-2305",
+        "polycule-constellation-moe": "polycule-constellation-moe",
         "sops-nix": "sops-nix",
         "ss14-watchdog": "ss14-watchdog",
         "vdo-ninja": "vdo-ninja"
