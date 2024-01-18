@@ -4,7 +4,7 @@
 
   services.uvcvideo.dynctrl = {
     enable = true;
-    packages = [ pkgs.tiscamera ];
+    packages = [ pkgs.stable.tiscamera ]; # Workaround until nixpkgs unstable fixes tiscamera
   };
   
 }

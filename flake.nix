@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable-2305.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     
@@ -54,7 +54,7 @@
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable-2305";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
 
     nix-gaming = {
@@ -70,7 +70,7 @@
     colmena = {
       url = "github:zhaofengli/colmena";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.stable.follows = "nixpkgs-stable-2305";
+      inputs.stable.follows = "nixpkgs-stable";
       inputs.flake-compat.follows = "flake-compat";
     };
 

@@ -8,12 +8,12 @@
 
   home.packages = with pkgs; [
     lxqt.pavucontrol-qt
+    # moonlight-qt TODO: Broken on latest nixpkgs, check
     whatsapp-for-linux
     libsForQt5.okular
     libreoffice-fresh
     gimp-with-plugins
     google-chrome
-    moonlight-qt
     qbittorrent
     smartgithg
     obs-studio

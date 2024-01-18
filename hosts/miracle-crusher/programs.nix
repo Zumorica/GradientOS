@@ -4,9 +4,9 @@
   environment.systemPackages = with pkgs; [
     space-station-14-launcher
     xwaylandvideobridge
-    stable-2305.freecad
     gradient-generator
     jetbrains.rider
+    stable.freecad
     osu-lazer-bin
     prismlauncher
     prusa-slicer
@@ -20,6 +20,7 @@
 
   services.flatpak.packages = [
     "flathub:app/net.retrodeck.retrodeck/x86_64/stable"
+    "flathub:app/com.moonlight_stream.Moonlight/x86_64/stable"
   ];
   
 }

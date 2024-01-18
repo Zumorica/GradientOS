@@ -20,6 +20,7 @@
   jovian.decky-loader.user = "vera";
   jovian.steam.desktopSession = "plasma";
   
-  services.xserver.desktopManager.plasma5.mobile.enable = true;
+  # Broken on latest unstable... TODO: Check if fixed? Then again, I don't really use this...
+  # services.xserver.desktopManager.plasma5.mobile.enable = true;
 
 }
