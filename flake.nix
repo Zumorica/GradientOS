@@ -179,6 +179,7 @@
           mixins.graphical-steam
           
           mixins.pipewire
+          mixins.pipewire-input-normalizer
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
           
