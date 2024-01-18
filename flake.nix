@@ -126,7 +126,7 @@
 
           mixins.pipewire
           mixins.pipewire-um2
-          mixins.pipewire-rnnoise
+          mixins.pipewire-input-normalizer
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
 

@@ -16,6 +16,7 @@ Flake for different NixOS system configurations.
 - **[mixins/graphical](mixins/graphical)**: configuration presets for certain graphical programs and services
 - **[mixins/hardware](mixins/hardware)**: configuration presets specific to certain hardware
 - **[mixins/home](mixins/home)**: configuration presets for certain programs and services, using [home-manager](https://github.com/nix-community/home-manager)
+- **[mixins/pipewire](mixins/pipewire)**: configuration presets for Pipewire
 - **[modules](modules)**: custom NixOS modules
 - **[overlays](overlays)**: nixpkgs overlays
 - **[pkgs](pkgs)**: custom packages

@@ -32,6 +32,7 @@
   pipewire = ./mixins/pipewire/default.nix;
   pipewire-um2 = ./mixins/pipewire/um2/default.nix;
   pipewire-virtual-sink = ./mixins/pipewire/virtual-sink/default.nix;
+  pipewire-input-normalizer = ./mixins/pipewire/input-normalizer.nix;
   pipewire-low-latency = ./mixins/pipewire/low-latency.nix;
   pipewire-rnnoise = ./mixins/pipewire/rnnoise.nix;
 
