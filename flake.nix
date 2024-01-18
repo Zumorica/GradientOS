@@ -121,6 +121,8 @@
           mixins.graphical-steam
           mixins.graphical-gamescope
           mixins.graphical-sunshine
+          mixins.graphical-wayland-autologin-workaround
+          mixins.graphical-wayland-environment-variables
 
           mixins.pipewire
           mixins.pipewire-um2

@@ -24,6 +24,8 @@
   graphical-kde = ./mixins/graphical/kde.nix;
   graphical-steam = ./mixins/graphical/steam.nix;
   graphical-sunshine = ./mixins/graphical/sunshine.nix;
+  graphical-wayland-autologin-workaround = ./mixins/graphical/wayland/autologin-workaround.nix;
+  graphical-wayland-environment-variables = ./mixins/graphical/wayland/environment-variables.nix;
 
   home-zsh = ./mixins/home/zsh.nix;
 
