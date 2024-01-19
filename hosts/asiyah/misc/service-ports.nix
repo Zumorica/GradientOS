@@ -31,6 +31,7 @@
   trilium = 8081;
   
   # game servers
+  palworld = 8211;
   project-zomboid = 16261;
   project-zomboid-direct = 16262;
   project-zomboid-steam-1 = 21971;
