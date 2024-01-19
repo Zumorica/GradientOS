@@ -22,7 +22,8 @@ in {
   systemd.services.palworld = {
     path = [ pkgs.xdg-user-dirs ];
 
-    wantedBy = [ "multi-user.target" ];
+    # Manually start the server if needed, to save resources.
+    wantedBy = [ ];
 
     # Install the game before launching.
     wants = [ "steamcmd@${steam-app}.service" ];
@@ -40,7 +41,7 @@ in {
       ];
       Nice = "-5";
       PrivateTmp = true;
-      Restart = "always";
+      Restart = "on-failure";
       User = config.users.users.palworld.name;
       WorkingDirectory = "~";
     };
