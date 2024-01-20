@@ -33,11 +33,10 @@ in {
       ExecStart = lib.escapeShellArgs [
         "${pkgs.steam-run}/bin/steam-run"
         "/var/lib/steamcmd/apps/${steam-app}/PalServer.sh"
-        "-publicport=${toString ports.palworld}"
+        "port=${toString ports.palworld}"
         "-useperfthreads"
         "-NoAsyncLoadingThread"
         "-UseMultithreadForDS"
-        "EpicApp=PalServer"
       ];
       Nice = "-5";
       PrivateTmp = true;
@@ -50,11 +49,11 @@ in {
     };
   };
 
-  networking.firewall.allowedTCPPorts = with ports; [
+  networking.firewall.interfaces.slugcatnet.allowedTCPPorts = with ports; [
     palworld
   ];
 
-  networking.firewall.allowedUDPPorts = with ports; [
+  networking.firewall.interfaces.slugcatnet.allowedUDPPorts = with ports; [
     palworld
   ];
 }
