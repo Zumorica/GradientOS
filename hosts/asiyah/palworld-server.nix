@@ -10,6 +10,7 @@ in {
     createHome = true;
     homeMode = "750";
     group = config.users.groups.palworld.name;
+    extraGroups = [ config.users.groups.steamcmd.name ];
   };
 
   users.groups.palworld = {};

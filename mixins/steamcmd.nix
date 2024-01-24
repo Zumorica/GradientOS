@@ -59,6 +59,8 @@
         steamcmd $cmds
 
         for f in $dir/*; do
+          chmod -R ugo+rwx $f
+
           if ! [[ -f $f && -x $f ]]; then
             continue
           fi
