@@ -26,6 +26,7 @@
         inputs = with pkgs; [
           patchelf
           steamcmd
+          coreutils
         ];
         execer = [
           "cannot:${pkgs.steamcmd}/bin/steamcmd"
