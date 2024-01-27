@@ -257,7 +257,6 @@
           nixos-hardware.nixosModules.common-gpu-intel
           gradient-generator.nixosModules.x86_64-linux.default
 
-
           mixins.wine
           mixins.podman
           mixins.steamcmd

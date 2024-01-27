@@ -10,9 +10,6 @@
   # Requires enabling CEF remote debugging on the Developer menu settings to work.
   jovian.decky-loader.enable = true;
 
-  # In case you use disk encryption.
-  boot.initrd.unl0kr.enable = true;
-
   # Add some useful packages.
   environment.systemPackages = with pkgs; [
     mangohud
