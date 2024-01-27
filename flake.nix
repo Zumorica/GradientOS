@@ -6,11 +6,6 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    
-    mobile-nixos = {
-      url = "github:NixOS/mobile-nixos";
-      flake = false;
-    };
 
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -217,7 +212,6 @@
           mixins.vera-locale
           mixins.upgrade-diff
           mixins.v4l2loopback
-          # TODO: fix mixins.mobile-stage1
           mixins.virtualisation
           mixins.nix-store-serve
           mixins.system76-scheduler

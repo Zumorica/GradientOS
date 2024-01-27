@@ -29,6 +29,9 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  # systemd-based initrd
+  boot.initrd.systemd.enable = true;
+
   boot.supportedFilesystems = [ "ntfs" ];
 
   # This value determines the NixOS release from which the default
