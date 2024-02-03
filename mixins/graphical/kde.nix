@@ -15,6 +15,7 @@
   
   environment.systemPackages = with pkgs; [
     libsForQt5.powerdevil
+    libsForQt5.kio-admin
     libsForQt5.discover
     libsForQt5.sddm-kcm
     pinentry-qt
