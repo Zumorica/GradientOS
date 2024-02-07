@@ -4,6 +4,7 @@
   aarch64-emulation = ./mixins/aarch64-emulation.nix;
   declarative-flatpak = ./mixins/declarative-flatpak.nix;
   gnupg = ./mixins/gnupg.nix;
+  monado = ./mixins/monado.nix;
   neith-locale = ./mixins/neith-locale.nix;
   networkd = ./mixins/networkd.nix;
   nix-store-serve = ./mixins/nix-store-serve.nix;

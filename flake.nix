@@ -99,6 +99,7 @@
           nixos-hardware.nixosModules.common-cpu-amd-pstate
 
           mixins.wine
+          mixins.monado
           mixins.podman
           mixins.plymouth
           mixins.uwu-style
