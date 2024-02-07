@@ -1,10 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    package = pkgs.bluez-experimental;
     settings = {
       General = {
         Class = "0x000100";
