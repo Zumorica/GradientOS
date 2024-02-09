@@ -9,6 +9,7 @@
     stable.freecad
     osu-lazer-bin
     prismlauncher
+    sqlitebrowser
     prusa-slicer
     dolphin-emu
     xivlauncher
