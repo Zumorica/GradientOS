@@ -1,9 +1,11 @@
 { ... }:
 {
+  boot.loader.grub.enable = false;
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXOS_SD";
     fsType = "ext4";
+    mountPoint = "/";
   };
 
   # Stupid HDD died TODO: replace by a new one

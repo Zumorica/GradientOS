@@ -6,6 +6,7 @@
     miracle-crusher = "192.168.24.2";
     vera-deck = "192.168.24.3";
     vera-phone = "192.168.24.4";
+    vera-laptop = "192.168.24.5";
   };
   
   lilynet = {

@@ -3,21 +3,25 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/64bf0904-8981-4e37-af05-c4cd43872db5";
     fsType = "ext4";
+    mountPoint = "/";
   };
 
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/e8dac6e2-b559-4382-817d-4382a41b6c38";
     fsType = "ext4";
+    mountPoint = "/data";
   };
 
   fileSystems."/boot" = { 
     device = "/dev/disk/by-uuid/06C6-4997";
     fsType = "vfat";
+    mountPoint = "/boot";
   };
 
   swapDevices = [

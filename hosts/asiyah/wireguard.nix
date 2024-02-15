@@ -57,6 +57,10 @@ in {
           allowedIPs = [ "${vera-phone}/32" ];
           publicKey = keys.vera-phone;
         }
+        {
+          allowedIPs = [ "${vera-laptop}/32" ];
+          publicKey = keys.vera-laptop;
+        }
       ];
     };
 
@@ -129,6 +133,7 @@ in {
     "${gradientnet.briah}" = [ "briah" ];
     "${gradientnet.miracle-crusher}" = [ "vera" ];
     "${gradientnet.vera-deck}" = [ "deck" ];
+    "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.neith-deck}" = [ "lily" "neith" ];
   };
 }

@@ -79,6 +79,7 @@ in {
     "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];
     "${gradientnet.briah}" = [ "briah" ];
     "${gradientnet.vera-deck}" = [ "deck" ];
+    "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.asiyah}" = [ "lilynet" ];
     "${lilynet.neith-deck}" = [ "neith" "lily" ];
     "${slugcatnet.asiyah}" = [ "slugcatnet" ];

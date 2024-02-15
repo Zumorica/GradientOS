@@ -33,7 +33,7 @@ in {
         nixpkgs = import self.inputs.nixpkgs { system = "x86_64-linux"; };
       };
     }
-    (map (x: lib.gradientosSystemColmena x) gradientosConfigurations);
+    (map (x: lib.gradientosSystemColmena x) (builtins.filter (x: x.makeSystem or true) gradientosConfigurations));
 
   packages = 
   let

@@ -3,6 +3,7 @@
 {
 
   home.packages = with pkgs; [
+    libsForQt5.kolourpaint
     lxqt.pavucontrol-qt
     # moonlight-qt TODO: Broken on latest nixpkgs, check
     libsForQt5.okular

@@ -4,6 +4,7 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
@@ -20,12 +21,14 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ed52dbed-453d-4eb5-bc09-0cce0113f8a5";
       fsType = "ext4";
+      mountPoint = "/";
     };
 
   
   fileSystems."/boot/efi" =
     { device = "/dev/disk/by-uuid/8F40-DE56";
       fsType = "vfat";
+      mountPoint = "/boot/efi";
     };
 
   swapDevices =
