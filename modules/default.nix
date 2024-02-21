@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./gradientos
     ./tmpfiles-check.nix
   ];
 
