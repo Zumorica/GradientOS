@@ -250,6 +250,53 @@
       }
 
       {
+        name = "vera-deck-oled";
+        overlays = [ self.overlays.kernel-allow-missing ];
+
+        modules = [
+          sops-nix.nixosModules.sops
+          jovian-nixos.nixosModules.default
+          declarative-flatpak.nixosModules.default
+          
+          mixins.wine
+          mixins.plymouth
+          mixins.uwu-style
+          mixins.vera-locale
+          mixins.upgrade-diff
+          mixins.v4l2loopback
+          mixins.virtualisation
+          mixins.system76-scheduler
+          mixins.declarative-flatpak
+          
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.graphical-steam
+          
+          mixins.pipewire
+          mixins.pipewire-virtual-sink
+          mixins.pipewire-low-latency
+          
+          mixins.hardware-qmk
+          mixins.hardware-amdcpu
+          mixins.hardware-amdgpu
+          mixins.hardware-webcam
+          mixins.hardware-bluetooth
+          mixins.hardware-steamdeck
+          mixins.hardware-openrazer
+          mixins.hardware-home-dcp-l2530dw
+          mixins.hardware-xbox-one-controller
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
+          ./users/vera/graphical/default.nix
+        ];
+
+        # This host is still a WIP, so this soft-disables it.
+        makeSystem = false;
+      }
+
+      {
         name = "asiyah";
 
         modules = [

@@ -31,6 +31,7 @@ Flake for different NixOS system configurations.
 
 - **[miracle-crusher](hosts/miracle-crusher)**: Custom Gaming Desktop.
 - **[vera-deck](hosts/vera-deck)**: Steam Deck LCD.
+- **[vera-deck-oled](hosts/vera-deck-oled)**: Steam Deck OLED.
 - **[neith-deck](hosts/neith-deck)**: Steam Deck LCD.
 - **[asiyah](hosts/asiyah)**: ThinkCentre M900 Tiny Home Server.
 - **[briah](hosts/briah)**: Raspberry Pi 4 Home Server.
