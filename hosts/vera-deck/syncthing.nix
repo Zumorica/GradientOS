@@ -36,6 +36,14 @@ in {
         introducer = true;
       };
 
+      vera-deck-oled = {
+        addresses = [
+          "tcp://${gradientnet.vera-deck-oled}:22000"
+          "dynamic"
+        ];
+        id = vera-deck-oled;
+      };
+
       work-laptop = {
         addresses = [ "dynamic" ];
         id = work-laptop;
@@ -51,26 +59,26 @@ in {
       "/home/vera/Documents/Sync/" = {
         id = default;
         label = "Default Sync Folder";
-        devices = [ "briah" "miracle-crusher" "work-laptop" ];
+        devices = [ "briah" "miracle-crusher" "work-laptop" "vera-deck-oled" ];
       };
 
       "/home/vera/.xlcore/ffxivConfig" = {
         id = ffxiv-config;
         label = "FFXIV Config";
-        devices = [ "briah" "miracle-crusher" ];
+        devices = [ "briah" "miracle-crusher" "vera-deck-oled" ];
       };
 
       "/home/vera/Music" = {
         id = music;
         label = "Music";
-        devices = [ "briah" "miracle-crusher" "vera-phone" ];
+        devices = [ "briah" "miracle-crusher" "vera-phone" "vera-deck-oled" ];
       };
 
-      "/run/media/deck/mmcblk0p1/retrodeck" = {
+      /*"/run/media/deck/mmcblk0p1/retrodeck" = {
         id = retrodeck;
         label = "Retrodeck";
-        devices = [ "briah" "miracle-crusher" ];
-      };
+        devices = [ "briah" "miracle-crusher" "vera-deck-oled" ];
+      };*/
     };
   };
 }

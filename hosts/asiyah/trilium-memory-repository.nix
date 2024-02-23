@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 let
   ports = import misc/service-ports.nix;
   name = "trilium-memory-repository";
@@ -22,7 +22,6 @@ in {
           cd /usr/src/app
           cp ${(pkgs.writeScript "start-memory-repository" ''
             #!/bin/sh
-            npm install pyodide
             ./start-docker.sh
           '')} ./start-memory-repository.sh
         '';

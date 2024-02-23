@@ -16,6 +16,8 @@
 
   networking.hostName = "miracle-crusher";
 
+  gradient.profiles.gaming.enable = true;
+
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "vera";

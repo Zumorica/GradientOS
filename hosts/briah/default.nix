@@ -12,7 +12,7 @@
     ./moonraker.nix
     ./ustreamer.nix
     #./promtail.nix
-    ./syncthing.nix
+    #./syncthing.nix
     ./wireguard.nix
     ./prometheus.nix
     #./containers.nix

@@ -43,9 +43,9 @@ in {
     generate = config: (map (x: { name = config.name+"-"+x; value = lib.gradientosSystemGenerator (config // { format = x; }); })
       (nixpkgsLib.lists.unique config.generators or []));
     generateMany = configs: builtins.listToAttrs (nixpkgsLib.lists.flatten (map (x: generate x) configs));
-  in {
+  in (nixpkgsLib.attrsets.recursiveUpdate ({
     "x86_64-linux" = generateMany x86_64-linux-configurations;
     "aarch64-linux" = generateMany aarch64-linux-configurations;
-  };
+  }) (args.packages or {}));
 
-} // removeAttrs args [ "gradientosConfigurations" ]
+} // removeAttrs args [ "gradientosConfigurations" "packages" ]

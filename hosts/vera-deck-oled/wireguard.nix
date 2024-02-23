@@ -12,9 +12,10 @@ in {
 
   networking.wireguard.interfaces = {
     gradientnet = with ips.gradientnet; {
-      ips = [ "${miracle-crusher}/32" ];
+      ips = [ "${vera-deck-oled}/32" ];
       privateKeyFile = private-key;
       peers = [
+        # Gradient
         {
           allowedIPs = [ "${gradientnet}/24" ];
           endpoint = "vpn.gradient.moe:${toString asiyah-ports.gradientnet}";
@@ -23,6 +24,8 @@ in {
           dynamicEndpointRefreshSeconds = 25;
           dynamicEndpointRefreshRestartSeconds = 10;
         }
+
+        # Gradient, but local net
         {
           allowedIPs = [ "${gradientnet}/24" ];
           endpoint = "192.168.1.48:${toString asiyah-ports.gradientnet}";
@@ -32,9 +35,10 @@ in {
     };
 
     lilynet = with ips.lilynet; {
-      ips = [ "${miracle-crusher}/32" ];
+      ips = [ "${vera-deck-oled}/32" ];
       privateKeyFile = private-key;
       peers = [
+        # Gradient
         {
           allowedIPs = [ "${lilynet}/24" ];
           endpoint = "vpn.gradient.moe:${toString asiyah-ports.lilynet}";
@@ -43,6 +47,8 @@ in {
           dynamicEndpointRefreshSeconds = 25;
           dynamicEndpointRefreshRestartSeconds = 10;
         }
+
+        # Gradient, but local net
         {
           allowedIPs = [ "${lilynet}/24" ];
           endpoint = "192.168.1.48:${toString asiyah-ports.lilynet}";
@@ -50,42 +56,19 @@ in {
         }
       ];
     };
-
-    slugcatnet = with ips.slugcatnet; {
-      ips = [ "${miracle-crusher}/32" ];
-      privateKeyFile = private-key;
-      peers = [
-        {
-          allowedIPs = [ "${slugcatnet}/24" ];
-          endpoint = "vpn.gradient.moe:${toString asiyah-ports.slugcatnet}";
-          publicKey = keys.asiyah;
-          persistentKeepalive = 25;
-          dynamicEndpointRefreshSeconds = 25;
-          dynamicEndpointRefreshRestartSeconds = 10;
-        }
-        {
-          allowedIPs = [ "${slugcatnet}/24" ];
-          endpoint = "192.168.1.48:${toString asiyah-ports.slugcatnet}";
-          publicKey = keys.asiyah;
-        }
-      ];
-    };
   };
 
-  networking.firewall.trustedInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
-  systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" "slugcatnet" ];
+  networking.firewall.trustedInterfaces = [ "gradientnet" "lilynet" ];
+  systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" "lilynet" ];
 
   networking.hosts = with ips; {
-    "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];
-    "${gradientnet.briah}" = [ "briah" ];
+    "${gradientnet.asiyah}" = [ "gradientnet" "gradient" "asiyah" ];
+    "${gradientnet.briah}"  = [ "briah" ];
+    "${gradientnet.miracle-crusher}" = [ "vera" ];
     "${gradientnet.vera-deck}" = [ "deck" ];
-    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
     "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.asiyah}" = [ "lilynet" ];
     "${lilynet.neith-deck}" = [ "neith" "lily" ];
-    "${slugcatnet.asiyah}" = [ "slugcatnet" ];
-    "${slugcatnet.remie}" = [ "remie" ];
-    "${slugcatnet.luna}" = [ "luna" ];
   };
 
 }

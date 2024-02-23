@@ -4,6 +4,8 @@ let
     mkConstantBase description file (lib.types.attrsOf lib.types.str);
   mkConstantNested = description: file: 
     mkConstantBase description file (lib.types.attrsOf (lib.types.attrsOf lib.types.str));
+  mkConstantFiles = description: file:
+    mkConstantBase description file (lib.types.attrsOf lib.types.pathInStore);
   mkConstantBase = description: file: type: lib.mkOption {
     inherit type;
     default = import file;
@@ -34,7 +36,13 @@ in
       ./../../misc/wireguard-addresses.nix;
 
     gradient.const.wireguard.pubKeys = mkConstant "Wireguard public keys"
-      ./../../misc/wireguard-pub-keys.nix; 
+      ./../../misc/wireguard-pub-keys.nix;
+
+    gradient.modules = mkConstantFiles "GradientOS Modules"
+      ./../../nixosModules.nix;
+
+    gradient.mixins = mkConstantFiles "GradientOS Mixin Modules"
+      ./../../nixosMixins.nix;
   };
 
 }

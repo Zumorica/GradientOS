@@ -36,6 +36,10 @@ in {
         addresses = [ "tcp://${gradientnet.vera-deck}:22000" "dynamic" ];
         id = vera-deck;
       };
+      era-deck-oled = {
+        addresses = [ "tcp://${gradientnet.vera-deck-oled}:22000" "dynamic" ];
+        id = vera-deck-oled;
+      };
       neith-deck = {
         addresses = [ "tcp://${lilynet.neith-deck}:22000" "dynamic" ];
         id = neith-deck;
@@ -54,13 +58,13 @@ in {
       "/data/retrodeck" = {
         id = retrodeck;
         label = "Retrodeck";
-        devices = [ "miracle-crusher" "vera-deck" "vera-phone" ];
+        devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" "vera-phone" ];
       };
 
       "/data/Sync" = {
         id = default;
         label = "Default Sync Folder";
-        devices = [ "miracle-crusher" "vera-deck" "vera-phone" "work-laptop" ];
+        devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" "vera-phone" "work-laptop" ];
       };
 
       "/data/Encrypted" = {
@@ -72,13 +76,13 @@ in {
       "/data/FFXIV Config" = {
         id = ffxiv-config;
         label = "FFXIV Config";
-        devices = [ "miracle-crusher" "vera-deck" ];
+        devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" ];
       };
 
       "/data/Music" = {
         id = music;
         label = "Music";
-        devices = [ "miracle-crusher" "vera-deck" "vera-phone" ];
+        devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" "vera-phone" ];
       };
 
       "/data/The Midnight Hall" = {

@@ -7,7 +7,7 @@ in
   options = {
     gradient.core.nix.enable = lib.mkOption {
       type = lib.types.bool;
-      default = cfg.gradient.core.enable;
+      default = cfg.core.enable;
       description = ''
         Whether to enable Nix-specific core GradientOS configurations.
       '';
@@ -15,7 +15,7 @@ in
 
     gradient.core.nix.emptyGlobalFlakeRegistry = lib.mkOption {
       type = lib.types.bool;
-      default = cfg.gradient.core.nix.enable;
+      default = cfg.core.nix.enable;
       description = ''
         Whether to empty the global flake registry.
       '';
@@ -23,7 +23,7 @@ in
 
     gradient.core.nix.pinChannelsToFlakeInputs = lib.mkOption {
       type = lib.types.bool;
-      default = cfg.gradient.core.nix.enable;
+      default = cfg.core.nix.enable;
       description = ''
         Whether to enable pinning channels to various GradientOS flake inputs, such as nixpgks.
       '';
@@ -79,7 +79,7 @@ in
     })
     
     (lib.mkIf cfg.core.nix.emptyGlobalFlakeRegistry {
-        nix.flake-registry = builtins.toFile "empty-registry.json" ''{"flakes": [], "version": 2}'';
+        nix.settings.flake-registry = builtins.toFile "empty-registry.json" ''{"flakes": [], "version": 2}'';
     })
 
     (lib.mkIf cfg.core.nix.pinChannelsToFlakeInputs {

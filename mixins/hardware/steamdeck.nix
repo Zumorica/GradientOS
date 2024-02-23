@@ -5,6 +5,7 @@
   # Enable hardware and Steam support.
   jovian.devices.steamdeck.enable = true;
   jovian.devices.steamdeck.autoUpdate = true;
+  jovian.devices.steamdeck.enableXorgRotation = false;
   jovian.steam.enable = true;
 
   # Requires enabling CEF remote debugging on the Developer menu settings to work.
@@ -13,6 +14,7 @@
   # Add some useful packages.
   environment.systemPackages = with pkgs; [
     mangohud
+    galileo-mura
     steamdeck-firmware
     jupiter-dock-updater-bin
   ];

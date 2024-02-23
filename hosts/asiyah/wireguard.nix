@@ -61,6 +61,10 @@ in {
           allowedIPs = [ "${vera-laptop}/32" ];
           publicKey = keys.vera-laptop;
         }
+        {
+          allowedIPs = [ "${vera-deck-oled}/32" ];
+          publicKey = keys.vera-deck-oled;
+        }
       ];
     };
 
@@ -86,6 +90,10 @@ in {
         {
           allowedIPs = [ "${vera-deck}/32" ];
           publicKey = keys.vera-deck;
+        }
+        {
+          allowedIPs = [ "${vera-deck-oled}/32" ];
+          publicKey = keys.vera-deck-oled;
         }
       ];
     };
@@ -133,6 +141,7 @@ in {
     "${gradientnet.briah}" = [ "briah" ];
     "${gradientnet.miracle-crusher}" = [ "vera" ];
     "${gradientnet.vera-deck}" = [ "deck" ];
+    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
     "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.neith-deck}" = [ "lily" "neith" ];
   };

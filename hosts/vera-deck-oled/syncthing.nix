@@ -27,32 +27,23 @@ in {
         introducer = true;
       };
 
-      vera-deck = {
-        addresses = [ "tcp://${gradientnet.vera-deck}:22000" "dynamic" ];
-        id = vera-deck;
-      };
-
-      vera-deck-oled = {
+      miracle-crusher = {
         addresses = [
-          "tcp://${gradientnet.vera-deck-oled}:22000"
+          "tcp://${gradientnet.miracle-crusher}:22000"
           "dynamic"
         ];
-        id = vera-deck-oled;
-      };
-
-      neith-deck = {
-        addresses = [ "tcp://${lilynet.neith-deck}:22000" "dynamic" ];
-        id = neith-deck;
-      };
-
-      vera-phone = {
-        addresses = [ "tcp://${gradientnet.vera-phone}:22000" "dynamic" ];
-        id = vera-phone;
+        id = miracle-crusher;
+        introducer = true;
       };
 
       work-laptop = {
         addresses = [ "dynamic" ];
         id = work-laptop;
+      };
+
+      vera-phone = {
+        addresses = [ "tcp://${gradientnet.vera-phone}:22000" "dynamic" ];
+        id = vera-phone;
       };
     };
 
@@ -60,37 +51,25 @@ in {
       "/home/vera/Documents/Sync/" = {
         id = default;
         label = "Default Sync Folder";
-        devices = [ "briah" "vera-deck" "work-laptop" "vera-deck-oled" ];
-      };
-
-      "/home/vera/.ImportantDocuments_encfs/" = {
-        id = important-documents;
-        label = "Encrypted";
-        devices = [ "briah" ];
+        devices = [ "briah" "miracle-crusher" "work-laptop" ];
       };
 
       "/home/vera/.xlcore/ffxivConfig" = {
         id = ffxiv-config;
         label = "FFXIV Config";
-        devices = [ "briah" "vera-deck" "vera-deck-oled" ];
+        devices = [ "briah" "miracle-crusher" ];
       };
 
       "/home/vera/Music" = {
         id = music;
         label = "Music";
-        devices = [ "briah" "vera-phone" "vera-deck" "vera-deck-oled" ];
+        devices = [ "briah" "miracle-crusher" "vera-phone" ];
       };
 
-      "/home/vera/Documents/TheMidnightHall" = {
-        id = midnight-hall;
-        label = "The Midnight Hall";
-        devices = [ "briah" "neith-deck" "vera-deck-oled" ];
-      };
-
-      "/data/retrodeck" = {
+      "/run/media/deck/mmcblk0p1/retrodeck" = {
         id = retrodeck;
         label = "Retrodeck";
-        devices = [ "briah" "vera-deck" "vera-deck-oled" ];
+        devices = [ "briah" "miracle-crusher" ];
       };
     };
   };

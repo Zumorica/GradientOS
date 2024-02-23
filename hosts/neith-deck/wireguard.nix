@@ -49,6 +49,7 @@ in {
     "${lilynet.asiyah}" = [ "lilynet" ];
     "${lilynet.miracle-crusher}" = [ "vera" ];
     "${lilynet.vera-deck}" = [ "vera-deck" ];
+    "${lilynet.vera-deck-oled}" = [ "vera-deck-oled" ];
     "${slugcatnet.asiyah}" = [ "slugcatnet" ];
     "${slugcatnet.remie}" = [ "remie" ];
     "${slugcatnet.miracle-crusher}" = [ "slugcatvera" ];

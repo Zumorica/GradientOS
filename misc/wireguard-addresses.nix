@@ -7,6 +7,7 @@
     vera-deck = "192.168.24.3";
     vera-phone = "192.168.24.4";
     vera-laptop = "192.168.24.5";
+    vera-deck-oled = "192.168.24.6";
   };
   
   lilynet = {
@@ -16,6 +17,7 @@
     miracle-crusher = "192.168.109.2";
     neith-deck = "192.168.109.3";
     vera-deck = "192.168.109.5";
+    vera-deck-oled = "192.168.109.6";
   };
 
   slugcatnet = {

@@ -244,7 +244,7 @@
 
         deployment = {
           targetHost = ips.gradientnet.vera-deck;
-          tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          # tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
           allowLocalDeployment = true;
         };
       }
@@ -292,8 +292,11 @@
           ./users/vera/graphical/default.nix
         ];
 
-        # This host is still a WIP, so this soft-disables it.
-        makeSystem = false;
+        deployment = {
+          targetHost = ips.gradientnet.vera-deck-oled;
+          tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          allowLocalDeployment = true;
+        };
       }
 
       {
@@ -363,8 +366,11 @@
         system = "x86_64-linux";
 
         modules = [
-          mixins.graphical
-          mixins.graphical-kde
+          ({ modulesPath, lib, ... }:
+          {
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix") ];
+            boot.initrd.systemd.enable = lib.mkForce false;
+          })
         ];
 
         generators = [ "install-iso" ];
@@ -376,14 +382,18 @@
       {
         name = "GradientOS-x86_64-steamdeck";
         system = "x86_64-linux";
-        overlays = [ jovian-nixos.overlays.default self.overlays.kernel-allow-missing ];
+        overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
           jovian-nixos.nixosModules.default
-
-          mixins.graphical
-          mixins.graphical-kde
-          mixins.hardware-steamdeck
+          ({ modulesPath, lib, ... }:
+          {
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix") ];
+            jovian.devices.steamdeck.enable = true;
+            jovian.devices.steamdeck.enableXorgRotation = false;
+            hardware.pulseaudio.enable = lib.mkForce false;
+            boot.initrd.systemd.enable = lib.mkForce false;
+          })
         ];
 
         generators = [ "install-iso" ];

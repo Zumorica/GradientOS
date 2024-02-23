@@ -19,4 +19,14 @@
     jack-matchmaker
   ];
 
+  # Very permissive limit... But it fixes a race condition!
+  systemd.services.wireplumber = {
+    startLimitBurst = 100;
+    startLimitIntervalSec = 60;
+  };
+  systemd.user.services.wireplumber = {
+    startLimitBurst = 100;
+    startLimitIntervalSec = 60;
+  };
+
 }
