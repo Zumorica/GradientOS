@@ -84,7 +84,7 @@ in {
       "/home/vera/Documents/TheMidnightHall" = {
         id = midnight-hall;
         label = "The Midnight Hall";
-        devices = [ "briah" "neith-deck" "vera-deck-oled" ];
+        devices = [ "briah" "neith-deck" ];
       };
 
       "/data/retrodeck" = {
