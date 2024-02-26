@@ -31,4 +31,9 @@
     driSupport32Bit = true;
   };
 
+  environment.sessionVariables = {
+    # Use desktop environment's native file dialog in certain programs.
+    GTK_USE_PORTAL = "1";
+  };
+
 }
