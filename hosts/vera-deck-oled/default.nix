@@ -14,6 +14,9 @@
 
   gradient.profiles.gaming.enable = true;
 
+  # Android app support with waydroid.
+  virtualisation.waydroid.enable = true;
+
   # Use Jovian's steam deck UI autostart.
   services.xserver.displayManager.sddm.enable = lib.mkForce false;
   jovian.steam.autoStart = true;
