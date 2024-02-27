@@ -33,7 +33,8 @@
 
   environment.sessionVariables = {
     # Use desktop environment's native file dialog in certain programs.
-    GTK_USE_PORTAL = "1";
+    # TODO: Breaks many things, disabled temporarily.
+    # GTK_USE_PORTAL = "1";
   };
 
 }
