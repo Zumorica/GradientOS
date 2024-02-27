@@ -2,7 +2,7 @@
 let
   ports = import misc/service-ports.nix;
   name = "trilium-memory-repository";
-  tag = "0.62.4"; # Corresponds to original image tag.
+  tag = "0.62.6"; # Corresponds to original image tag.
 in {
 
   virtualisation.oci-containers.containers.memory-repository = {
