@@ -10,6 +10,7 @@
     ./wireguard.nix
     ./filesystems.nix
     ./secrets/default.nix
+    ./hardware-configuration.nix
   ];
 
   networking.hostName = "vera-deck";
