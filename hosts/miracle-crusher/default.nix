@@ -21,7 +21,7 @@
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "vera";
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.defaultSession = "plasma";
 
   # For games and such.
   networking.firewall.allowedTCPPorts = [ 7777 ];

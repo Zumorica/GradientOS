@@ -19,8 +19,6 @@ in {
 
     extraOptions = ''
       secret-key-files = ${config.sops.secrets.nix-private-key.path}
-      connect-timeout = 10
-      fallback = true
     '';
   };
 

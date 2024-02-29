@@ -10,7 +10,7 @@
     lxqt.pavucontrol-qt
     # moonlight-qt TODO: Broken on latest nixpkgs, check
     whatsapp-for-linux
-    libsForQt5.okular
+    kdePackages.okular
     libreoffice-fresh
     gimp-with-plugins
     google-chrome

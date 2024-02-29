@@ -24,6 +24,7 @@ let
     ];
     extraArgs = "-console";
     extraEnv.ROBUST_SOUNDFONT_OVERRIDE = "${prev.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
+    extraEnv.LD_PRELOAD = "${final.pkgsi686Linux.extest}/lib/libextest.so";
   };
 in {
   discord = prev.discord.override {

@@ -32,10 +32,11 @@
   environment.sessionVariables = { WINEDEBUG = "-all"; };
 
   # See https://github.com/NixOS/nixpkgs/issues/230575
-  environment.etc = {
-    "ssl/certs/f387163d.0".source = "${pkgs.cacert.unbundled}/etc/ssl/certs/Starfield_Class_2_CA.crt";
-    "ssl/certs/f081611a.0".source = "${pkgs.cacert.unbundled}/etc/ssl/certs/Go_Daddy_Class_2_CA:0.crt";
-  };
+  # Breaks some other things...
+  #environment.etc = {
+  #  "ssl/certs/f387163d.0".source = "${pkgs.cacert.unbundled}/etc/ssl/certs/Starfield_Class_2_CA:0.crt";
+  #  "ssl/certs/f081611a.0".source = "${pkgs.cacert.unbundled}/etc/ssl/certs/Go_Daddy_Class_2_CA:0.crt";
+  #};
 
   environment.systemPackages = with pkgs; [
     steam-rom-manager

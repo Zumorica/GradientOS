@@ -3,11 +3,11 @@
 {
 
   home.packages = with pkgs; [
-    libsForQt5.kolourpaint
+    kdePackages.kolourpaint
     lxqt.pavucontrol-qt
     # moonlight-qt TODO: Broken on latest nixpkgs, check
-    libsForQt5.okular
-    libsForQt5.falkon
+    kdePackages.okular
+    kdePackages.falkon
     gimp-with-plugins
     google-chrome
     qbittorrent

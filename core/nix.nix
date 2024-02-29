@@ -31,8 +31,12 @@
         "root"
         "@wheel"
       ];
-
     };
+
+    extraOptions = ''
+      fallback = true
+      connect-timeout = 2
+    '';
 
     gc = {
       automatic = true;

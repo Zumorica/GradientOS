@@ -173,6 +173,8 @@
           mixins.graphical
           mixins.graphical-kde
           mixins.graphical-steam
+          mixins.graphical-wayland-autologin-workaround
+          mixins.graphical-wayland-environment-variables
           
           mixins.pipewire
           mixins.pipewire-input-normalizer
@@ -221,6 +223,8 @@
           mixins.graphical
           mixins.graphical-kde
           mixins.graphical-steam
+          mixins.graphical-wayland-autologin-workaround
+          mixins.graphical-wayland-environment-variables
           
           mixins.pipewire
           mixins.pipewire-virtual-sink
@@ -271,6 +275,8 @@
           mixins.graphical
           mixins.graphical-kde
           mixins.graphical-steam
+          mixins.graphical-wayland-autologin-workaround
+          mixins.graphical-wayland-environment-variables
           
           mixins.pipewire
           mixins.pipewire-virtual-sink
