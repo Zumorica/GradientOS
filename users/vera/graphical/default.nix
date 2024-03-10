@@ -7,12 +7,12 @@
   ];
 
   home.packages = with pkgs; [
+    stable.gimp-with-plugins
     lxqt.pavucontrol-qt
     # moonlight-qt TODO: Broken on latest nixpkgs, check
     whatsapp-for-linux
     kdePackages.okular
     libreoffice-fresh
-    gimp-with-plugins
     google-chrome
     qbittorrent
     smartgithg

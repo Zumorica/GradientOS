@@ -3,12 +3,12 @@
 {
 
   home.packages = with pkgs; [
+    stable.gimp-with-plugins
     kdePackages.kolourpaint
     lxqt.pavucontrol-qt
     # moonlight-qt TODO: Broken on latest nixpkgs, check
     kdePackages.okular
     kdePackages.falkon
-    gimp-with-plugins
     google-chrome
     qbittorrent
     chromium

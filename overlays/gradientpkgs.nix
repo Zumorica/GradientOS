@@ -3,8 +3,6 @@
 */
 final: prev:
 {
-  extest = prev.callPackage ../pkgs/extest.nix { };
-
   godot-mono = prev.callPackage ../pkgs/godot-mono.nix { };
 
   jack-matchmaker = prev.callPackage ../pkgs/jack-matchmaker.nix { };
