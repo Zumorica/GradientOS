@@ -6,8 +6,6 @@
 
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
-    pinentryFlavor = lib.mkDefault "curses";
   };
 
   environment.systemPackages = with pkgs; [

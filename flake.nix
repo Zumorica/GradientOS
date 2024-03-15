@@ -99,12 +99,13 @@
           nixos-hardware.nixosModules.common-cpu-amd-pstate
 
           mixins.wine
+          mixins.gnupg
           mixins.monado
           mixins.podman
           mixins.plymouth
           mixins.uwu-style
           mixins.upgrade-diff
-          mixins.v4l2loopback
+          # mixins.v4l2loopback # TODO: Re-enable once fixed, currently broken with linux-zen 6.8
           mixins.vera-locale
           mixins.virtualisation
           mixins.nix-store-serve
@@ -161,6 +162,7 @@
           declarative-flatpak.nixosModules.default
 
           mixins.wine
+          mixins.gnupg
           mixins.plymouth
           mixins.uwu-style
           mixins.upgrade-diff
@@ -210,6 +212,7 @@
           declarative-flatpak.nixosModules.default
           
           mixins.wine
+          mixins.gnupg
           mixins.plymouth
           mixins.uwu-style
           mixins.vera-locale
@@ -263,6 +266,7 @@
           declarative-flatpak.nixosModules.default
           
           mixins.wine
+          mixins.gnupg
           mixins.plymouth
           mixins.uwu-style
           mixins.vera-locale
@@ -312,9 +316,10 @@
           sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-gpu-intel
-          gradient-generator.nixosModules.x86_64-linux.default
+          gradient-generator.nixosModules.default
 
           mixins.wine
+          mixins.gnupg
           mixins.podman
           mixins.steamcmd
           mixins.vera-locale
@@ -345,6 +350,7 @@
           ss14-watchdog.nixosModules.default
           sops-nix.nixosModules.sops
 
+          mixins.gnupg
           mixins.plymouth
 
           mixins.vera-locale
