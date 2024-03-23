@@ -60,7 +60,7 @@ in {
       "/home/vera/Documents/Sync/" = {
         id = default;
         label = "Default Sync Folder";
-        devices = [ "briah" "vera-deck" "work-laptop" "vera-deck-oled" ];
+        devices = [ "briah" "vera-deck" "work-laptop" "vera-deck-oled" "vera-phone" ];
       };
 
       "/home/vera/.ImportantDocuments_encfs/" = {

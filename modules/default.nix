@@ -1,9 +1,13 @@
-# Dummy module that imports every other module.
+# Dummy module that imports every other module here.
+# Some of these require the "core" module.
 { ... }:
 {
 
   imports = [
-    ./gradientos
+    ./kernel
+    ./hardware
+    ./profiles
+    # WIP: ./wireguard.nix
     ./tmpfiles-check.nix
   ];
 
