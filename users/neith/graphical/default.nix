@@ -17,6 +17,7 @@
     anydesk
     discord
     spotify
+    carla
     kate
     vlc
     mpv

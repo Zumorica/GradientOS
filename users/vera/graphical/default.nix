@@ -27,6 +27,7 @@
     vscode
     ventoy
     krita
+    carla
     kate
     vmpk
     peek
