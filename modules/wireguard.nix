@@ -8,6 +8,10 @@ in
 {
 
   options = {
+    gradient.wireguard.hostName = lib.mkOption {
+      type = lib.types.str;
+      default = config.networking.hostName;
+    };
     gradient.wireguard.networks = lib.mkOption {
       description = "Wireguard networks to generate configurations for.";
       default = {};
@@ -19,36 +23,36 @@ in
             type = lib.types.attrsOf lib.types.submodule ({ ... }: {
               options = {
                 ips = lib.mkOption {
-
-                };
-
-                isHost = lib.mkOption {
-
+                  type = lib.types.listOf lib.types.str;
                 };
 
                 endpoint = lib.mkOption {
-
+                  type = lib.types.nullOr lib.types.str;
+                  default = null;
                 };
 
                 listenPort = lib.mkOption {
                   type = lib.types.nullOr lib.types.int;
+                  default = null;
                 };
 
                 publicKey = lib.mkOptions {
-
+                  type = lib.types.singleLineStr;
                 };
 
                 privateKeyFile = lib.mkOptions {
-
+                  type = lib.types.nullOr lib.types.str;
                 };
 
                 routingInterface = lib.mkOption {
-
+                  type = lib.types.nullOr lib.types.str;
+                  default = null;
                 };
 
                 persistentKeepalive = lib.mkOption {
-
-                }
+                  type = lib.types.nullOr lib.types.ints.unsigned;
+                  default = null;
+                };
               };
             });
           };
@@ -59,8 +63,7 @@ in
 
   config = 
     let
-      currentMachineInNetwork = network: 
-        builtins.hasAttr config.networking.hostName network.peers;
+      currentMachineInNetwork = network: builtins.hasAttr cfg.wireguard.hostName network.peers;
       iptablesCmd = "${pkgs.iptables}/bin/iptables";
       ip6tablesCmd = "${pkgs.iptables}/bin/ip6tables";
       gen-post-setup = vpn: interface: 
@@ -79,14 +82,14 @@ in
       ";
     in
     lib.mkMerge
-      lib.attrsets.mapAttrsToList 
+      (lib.attrsets.mapAttrsToList 
         (networkName: network: 
           lib.mkIf (currentMachineInNetwork network) 
             (let
-              currentPeer = network.peers.${config.networking.hostName};
+              currentPeer = network.peers.${cfg.wireguard.hostName};
               currentPeerHasEndpoint = currentPeer.endpoint != null;
               otherPeers = lib.attrsets.filterAttrs 
-                (name: _: name != config.networking.hostName) 
+                (name: _: name != cfg.wireguard.hostName) 
                 network.peers;
               otherPeersWithEndpoints = lib.attrsets.filterAttrs
                 (_: peer: peer.endpoint != null)
@@ -116,6 +119,6 @@ in
               } else {});
             })
         )
-        cfg.gradient.wireguard.networks;
+        cfg.wireguard.networks);
 
 }

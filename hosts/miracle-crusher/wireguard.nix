@@ -9,7 +9,7 @@ in {
 
   networking.wireguard.enable = true;
   environment.systemPackages = [ pkgs.wireguard-tools ];
-
+  
   networking.wireguard.interfaces = {
     gradientnet = with ips.gradientnet; {
       ips = [ "${miracle-crusher}/32" ];

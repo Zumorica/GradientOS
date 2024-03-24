@@ -18,31 +18,31 @@ in
 
   options = {
     gradient.const.colmena.tags = mkConstant "Colmena tags"
-      ./../../misc/colmena-tags.nix;
+      ./../misc/colmena-tags.nix;
 
     gradient.const.nix.pubKeys = mkConstant "Nix public keys" 
-      ./../../misc/nix-pub-keys.nix;
+      ./../misc/nix-pub-keys.nix;
 
     gradient.const.ssh.pubKeys = mkConstant "SSH public keys"
-      ./../../misc/ssh-pub-keys.nix;
+      ./../misc/ssh-pub-keys.nix;
 
     gradient.const.syncthing.deviceIds = mkConstant "Syncthing device identifiers" 
-      ./../../misc/syncthing-device-ids.nix;
+      ./../misc/syncthing-device-ids.nix;
 
     gradient.const.syncthing.folderIds = mkConstant "Syncthing folder identifiers"
-      ./../../misc/syncthing-folder-ids.nix;
+      ./../misc/syncthing-folder-ids.nix;
 
     gradient.const.wireguard.addresses = mkConstantNested "Wireguard VPN addresses"
-      ./../../misc/wireguard-addresses.nix;
+      ./../misc/wireguard-addresses.nix;
 
     gradient.const.wireguard.pubKeys = mkConstant "Wireguard public keys"
-      ./../../misc/wireguard-pub-keys.nix;
+      ./../misc/wireguard-pub-keys.nix;
 
     gradient.modules = mkConstantFiles "GradientOS Modules"
-      ./../../nixosModules.nix;
+      ./../nixosModules.nix;
 
     gradient.mixins = mkConstantFiles "GradientOS Mixin Modules"
-      ./../../nixosMixins.nix;
+      ./../nixosMixins.nix;
   };
 
 }
