@@ -3,8 +3,9 @@
 {
   imports = [
     ./ssh.nix
+    ./nushell.nix
     ./programs.nix
-    ./zsh/default.nix
+    #./zsh/default.nix
     ./secrets/default.nix
   ];
 
@@ -24,6 +25,8 @@
     enable = true;
     createDirectories = true;
   };
+
+  programs.carapace.enable = true;
 
   home.file.".face".source = ./face.png;
 

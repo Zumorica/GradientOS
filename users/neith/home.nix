@@ -3,8 +3,9 @@
 {
   imports = [
     ./ssh.nix
+    ./nushell.nix
     ./secrets/default.nix
-    ../../mixins/home/zsh.nix
+    #../../mixins/home/zsh.nix
   ];
 
   home.username = "neith";

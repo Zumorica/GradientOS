@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   cfg = config.gradient;
 in
@@ -42,6 +42,12 @@ in
     programs.nix-ld.enable = true;
 
     hardware.enableRedistributableFirmware = true;
+
+    environment.shells = with pkgs; [
+      zsh
+      nushell
+      nushellFull
+    ]; 
 
     # systemd-based initrd
     boot.initrd.systemd.enable = true;
