@@ -7,7 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/64bf0904-8981-4e37-af05-c4cd43872db5";
+    device = "/dev/disk/by-uuid/599884aa-ad46-44e0-8616-3ef644cf6fab";
     fsType = "ext4";
     mountPoint = "/";
   };
@@ -19,13 +19,13 @@
   };
 
   fileSystems."/boot" = { 
-    device = "/dev/disk/by-uuid/06C6-4997";
+    device = "/dev/disk/by-uuid/2B43-E0C0";
     fsType = "vfat";
     mountPoint = "/boot";
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/7ffb0ba5-18de-469a-81c7-e66108357512"; priority = 100; }
+    { device = "/dev/disk/by-uuid/57eb5b85-fd37-4345-ba94-5ac155c89a46"; priority = 100; }
     { device = "/dev/disk/by-uuid/1e460ca4-2612-43b3-9ca5-941592a9a98b"; priority = 50; }
   ];
 
