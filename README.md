@@ -36,3 +36,16 @@ Flake for different NixOS system configurations.
 - **[asiyah](hosts/asiyah)**: ThinkCentre M900 Tiny Home Server.
 - **[briah](hosts/briah)**: Raspberry Pi 4 Home Server.
 <!-- - **atziluth**: Server. *WIP* -->
+
+### FAQ
+
+> Should I use this on my machine?
+
+No, these configurations make many assumptions about the hardware they are running on, so they will not work on your machine.<br>
+Feel free to take inspiration from them or modify them so they work for you, though!
+
+> Should I expect this flake's outputs to be stable?
+
+No, always expect breaking changes. You might be better off copying whatever you need into your config rather than consuming this flake directly.<br>
+Just don't forget to leave a comment with attribution and this project's license!
+
