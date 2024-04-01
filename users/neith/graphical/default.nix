@@ -6,10 +6,10 @@
     stable.gimp-with-plugins
     kdePackages.kolourpaint
     lxqt.pavucontrol-qt
-    # moonlight-qt TODO: Broken on latest nixpkgs, check
     kdePackages.okular
     kdePackages.falkon
     google-chrome
+    moonlight-qt
     qbittorrent
     chromium
     tdesktop

@@ -23,11 +23,13 @@
   services.xserver.displayManager.autoLogin.user = "vera";
   services.xserver.displayManager.defaultSession = "plasma";
 
+  services.hardware.openrgb.enable = true;
+
   # For games and such.
   networking.firewall.allowedTCPPorts = [ 7777 ];
   networking.firewall.allowedUDPPorts = [ 7777 ];
 
   # WOL support.
-  networking.interfaces.enp34s0.wakeOnLan.enable = true;
+  networking.interfaces.enp16s0.wakeOnLan.enable = true;
 
 }
