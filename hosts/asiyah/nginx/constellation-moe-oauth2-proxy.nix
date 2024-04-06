@@ -25,6 +25,7 @@ in {
       redis-connection-url = "redis://127.0.0.1:${toString ports.redis-oauth2}/0";
     };
     nginx.virtualHosts = [ "polycule.constellation.moe" ];
+    nginx.domain = "polycule.constellation.moe";
   };
 
   services.redis.servers.oauth2 = {

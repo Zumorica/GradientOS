@@ -16,7 +16,7 @@
     "iommu=1"
     "video=efifb:off"
 
-    # needed for controlling RGB LEDs on RAM sticks supposedly
+    # needed for controlling RGB LEDs on RAM sticks
     "acpi_enforce_resources=lax"
   ];
   boot.extraModulePackages = [ ];
