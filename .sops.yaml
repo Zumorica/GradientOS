@@ -9,6 +9,18 @@ keys:
   - &host_briah age1mlznec0ruk9xgkzygpmetsfvutxk4qml636rqcvzpzudyp4wlcfqzgh2e2
 creation_rules:
 
+  - path_regex: 'core/secrets/*'
+    key_groups:
+    - age:
+      - *user_vera
+      - *user_neith
+      - *host_miraclecrusher
+      - *host_neithdeck
+      - *host_veradeck
+      - *host_veradeckoled
+      - *host_asiyah
+      - *host_briah
+
   - path_regex: 'users/vera/secrets/*'
     key_groups:
     - age:

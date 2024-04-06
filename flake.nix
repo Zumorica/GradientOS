@@ -94,7 +94,6 @@
         name = "miracle-crusher";
 
         modules = [
-          sops-nix.nixosModules.sops
           declarative-flatpak.nixosModules.default
           nixos-hardware.nixosModules.common-cpu-amd-pstate
 
@@ -127,6 +126,8 @@
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
 
+          mixins.restic-repository-hokma
+
           mixins.hardware-qmk
           mixins.hardware-wacom
           mixins.hardware-amdcpu
@@ -157,7 +158,6 @@
         overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
-          sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
           declarative-flatpak.nixosModules.default
 
@@ -207,7 +207,6 @@
         overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
-          sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
           declarative-flatpak.nixosModules.default
           
@@ -261,7 +260,6 @@
         overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
-          sops-nix.nixosModules.sops
           jovian-nixos.nixosModules.default
           declarative-flatpak.nixosModules.default
           
@@ -313,7 +311,6 @@
         name = "asiyah";
 
         modules = [
-          sops-nix.nixosModules.sops
           nixos-hardware.nixosModules.common-cpu-intel
           nixos-hardware.nixosModules.common-gpu-intel
           gradient-generator.nixosModules.default
@@ -348,7 +345,6 @@
         
         modules = [
           ss14-watchdog.nixosModules.default
-          sops-nix.nixosModules.sops
 
           mixins.gnupg
           mixins.plymouth

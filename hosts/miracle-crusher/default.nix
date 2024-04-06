@@ -5,6 +5,7 @@
   imports = [
     ./nix.nix
     ./kernel.nix
+    ./backups.nix
     ./programs.nix
     ./wireguard.nix
     ./syncthing.nix

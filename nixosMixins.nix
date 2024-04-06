@@ -36,6 +36,8 @@
   pipewire-low-latency = ./mixins/pipewire/low-latency.nix;
   pipewire-rnnoise = ./mixins/pipewire/rnnoise.nix;
 
+  restic-repository-hokma = ./mixins/restic/repository-hokma.nix;
+
   hardware-amdcpu = ./mixins/hardware/amdcpu.nix;
   hardware-amdgpu = ./mixins/hardware/amdgpu.nix;
   hardware-azure = ./mixins/hardware/azure.nix;
