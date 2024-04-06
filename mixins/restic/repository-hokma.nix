@@ -19,7 +19,34 @@ in
 
     # Set these on your host!
     paths = [];
-    exclude = [];
+
+    # Sane defaults, but feel free to override
+    exclude = [
+      ".git"
+
+      # tmpfs, no point in backing up
+      "/home/*/tmp"
+
+      # Too heavy and unimportant to back up
+      "/home/*/Games"
+      "/home/*/Downloads"
+      "/home/*/.xlcore/ffxiv/game"
+
+      # No point in backing these up
+      "/home/*/.cache"
+      "/home/*/.local/share/Trash"
+      "/home/*/.local/share/containers"
+
+      # Steam games
+      "/home/*/.steam/"
+      "/home/*/.local/share/Steam/steamapps/temp"
+      "/home/*/.local/share/Steam/steamapps/*.acf"
+      "/home/*/.local/share/Steam/steamapps/common"
+      "/home/*/.local/share/Steam/steamapps/workshop"
+      "/home/*/.local/share/Steam/steamapps/sourcemods"
+      "/home/*/.local/share/Steam/steamapps/downloading"
+      "/home/*/.local/share/Steam/steamapps/shadercache"
+    ];
   };
 
   sops.secrets = 

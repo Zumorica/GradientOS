@@ -284,6 +284,8 @@
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
           
+          mixins.restic-repository-hokma
+
           mixins.hardware-qmk
           mixins.hardware-amdcpu
           mixins.hardware-amdgpu

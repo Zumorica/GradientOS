@@ -3,6 +3,7 @@
 
   imports = [
     ./secrets
+    ./backups.nix
     ./programs.nix
     ./wireguard.nix
     ./syncthing.nix
