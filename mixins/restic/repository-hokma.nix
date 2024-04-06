@@ -33,6 +33,7 @@ in
       "/home/*/Games"
       "/home/*/Downloads"
       "/home/*/.xlcore/ffxiv/game"
+      "/home/*/Documents/Unity"
 
       # No point in backing these up
       "/home/*/.cache"
