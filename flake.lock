@@ -598,16 +598,16 @@
     "vdo-ninja": {
       "flake": false,
       "locked": {
-        "lastModified": 1686777572,
-        "narHash": "sha256-rgAhXZrYrXf8TYtGv027JuriQT9MXZjkvkRNrPTJo2g=",
+        "lastModified": 1711696836,
+        "narHash": "sha256-sc8T0Zra36Y1dfxXBtIgEg2Diyvs23VLAI5JYFiU7Jk=",
         "owner": "steveseguin",
         "repo": "vdo.ninja",
-        "rev": "ed1716c23ce8a2564e709c3b58b3bf4e82d33249",
+        "rev": "df7ee9a65920a74e99ab142198262c47988d553f",
         "type": "github"
       },
       "original": {
         "owner": "steveseguin",
-        "ref": "v23.5",
+        "ref": "v24.4",
         "repo": "vdo.ninja",
         "type": "github"
       }

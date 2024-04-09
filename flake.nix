@@ -72,7 +72,7 @@
     declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable";
 
     vdo-ninja = {
-      url = "github:steveseguin/vdo.ninja/v23.5";
+      url = "github:steveseguin/vdo.ninja/v24.4";
       flake = false;
     };
 
