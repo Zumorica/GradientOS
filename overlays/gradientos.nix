@@ -26,11 +26,34 @@ let
     extraEnv.ROBUST_SOUNDFONT_OVERRIDE = "${prev.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
   };
 in {
-  discord = prev.discord.override {
+  discord = (prev.discord.override {
     withOpenASAR = true;
     withVencord = true;
     withTTS = true;
-  };
+  }).overrideAttrs (prevAttrs: {
+    desktopItem = prevAttrs.desktopItem.override (prevDesktopAttrs: {
+      # Fixes xwaylandvideobridge.
+      exec = "env NIXOS_OZONE_WL=0 XDG_SESSION_TYPE=x11 ${prevDesktopAttrs.exec}";
+    });
+  });
+
+  moonlight-qt = prev.moonlight-qt.overrideAttrs (prevAttrs: {
+    nativeBuildInputs = prevAttrs.nativeBuildInputs ++ [ prev.copyDesktopItems ];
+    postInstall = prevAttrs.postInstall + ''
+      rm $out/share/applications/com.moonlight_stream.Moonlight.desktop
+    '';
+    desktopItems = [
+      (prev.makeDesktopItem {
+        name = "Moonlight";
+        # Needed for dead keys to work on Wayland.
+        exec = "env QT_QPA_PLATFORM=xcb SDL_DRIVER=x11 ${prevAttrs.meta.mainProgram}";
+        icon = "moonlight";
+        desktopName = "Moonlight";
+        genericName = prevAttrs.meta.description;
+        categories = [ "Qt" "Game" ];
+      })
+    ];
+  });
 
   steam = prev.steam.override steam-override;
   steam-original-fixed = final.unstable.steam.override steam-override;
