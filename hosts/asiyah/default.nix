@@ -3,6 +3,7 @@
 
   imports = [
     # WIP: ./mediamtx.nix
+    ./backups.nix
     ./wireguard.nix
     ./filesystem.nix
     ./media-stack.nix

@@ -328,6 +328,7 @@
           mixins.nix-store-serve
           mixins.aarch64-emulation
           mixins.hardware-intelgpu-vaapi
+          mixins.restic-repository-hokma
         ];
 
         users.vera.modules = [
@@ -355,6 +356,7 @@
           mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.hardware-raspberrypi4
+          mixins.restic-repository-hokma
         ];
 
         users.vera.modules = [

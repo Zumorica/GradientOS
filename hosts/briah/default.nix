@@ -3,6 +3,7 @@
 
   imports = [
     #./loki.nix
+    ./backups.nix
     ./klipper.nix
     ./duckdns.nix
     #./grafana.nix
@@ -14,7 +15,7 @@
     #./promtail.nix
     #./syncthing.nix
     ./wireguard.nix
-    ./prometheus.nix
+    #./prometheus.nix
     #./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
