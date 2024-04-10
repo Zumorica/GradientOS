@@ -104,7 +104,7 @@
           mixins.plymouth
           mixins.uwu-style
           mixins.upgrade-diff
-          # mixins.v4l2loopback # TODO: Re-enable once fixed, currently broken with linux-zen 6.8
+          mixins.v4l2loopback
           mixins.vera-locale
           mixins.virtualisation
           mixins.nix-store-serve
