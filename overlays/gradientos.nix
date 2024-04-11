@@ -46,7 +46,8 @@ in {
       (prev.makeDesktopItem {
         name = "Moonlight";
         # Needed for dead keys to work on Wayland.
-        exec = "env QT_QPA_PLATFORM=xcb SDL_DRIVER=x11 ${prevAttrs.meta.mainProgram}";
+        # Block access to /dev/video* to prevent crashes with special v4l2loopback config.
+        exec = "env QT_QPA_PLATFORM=xcb SDL_DRIVER=x11 firejail --noprofile --blacklist=\"/dev/video*\" ${prevAttrs.meta.mainProgram}";
         icon = "moonlight";
         desktopName = "Moonlight";
         genericName = prevAttrs.meta.description;

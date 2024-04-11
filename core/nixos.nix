@@ -41,6 +41,9 @@ in
     programs.dconf.enable = true;
     programs.nix-ld.enable = true;
 
+    # Mainly for the security wrapper + firejail in PATH
+    programs.firejail.enable = true;
+
     hardware.enableRedistributableFirmware = true;
 
     environment.shells = with pkgs; [
