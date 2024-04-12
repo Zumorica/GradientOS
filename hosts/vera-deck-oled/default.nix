@@ -19,7 +19,7 @@
   virtualisation.waydroid.enable = true;
 
   # Use Jovian's steam deck UI autostart.
-  services.xserver.displayManager.sddm.enable = lib.mkForce false;
+  services.displayManager.sddm.enable = lib.mkForce false;
   jovian.steam.autoStart = true;
   jovian.steam.user = "vera";
   jovian.decky-loader.user = "vera";

@@ -17,9 +17,9 @@
   gradient.profiles.gaming.enable = true;
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = lib.mkDefault "neith";
-  services.xserver.displayManager.defaultSession = "plasma";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = lib.mkDefault "neith";
+  services.displayManager.defaultSession = "plasma";
   jovian.decky-loader.user = "neith";
 
 }

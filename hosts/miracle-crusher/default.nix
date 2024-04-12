@@ -19,9 +19,9 @@
   gradient.profiles.gaming.enable = true;
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "vera";
-  services.xserver.displayManager.defaultSession = "plasma";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "vera";
+  services.displayManager.defaultSession = "plasma";
 
   services.hardware.openrgb.enable = true;
 
