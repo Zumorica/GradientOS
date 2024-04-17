@@ -3,10 +3,12 @@ let
   ports = import ./misc/service-ports.nix;
   addresses = import ../../misc/wireguard-addresses.nix;
   ustreamer-address = "http://${addresses.gradientnet.briah}:${toString ports.ustreamer}";
+  cfgPath = "/var/lib/moonraker";
 in {
 
   services.moonraker = {
     enable = true;
+    stateDir = cfgPath;
     allowSystemControl = true;
     address = "0.0.0.0";
     port = ports.moonraker;
@@ -24,6 +26,10 @@ in {
           "127.0.0.1"
           "${addresses.gradientnet.gradientnet}/24"
         ];
+      };
+
+      file_manager = {
+        check_klipper_config_path = "False";
       };
 
       # Enable ustreamer camera support.

@@ -4,7 +4,7 @@
   services.restic.backups.hokma = {
     paths = [
       "/home/vera"
-      "/var/lib/klipper"
+      "/var/lib/moonraker"
     ];
   };
 
