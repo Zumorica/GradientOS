@@ -56,6 +56,8 @@ in {
     ];
   });
 
+  moonraker = prev.moonraker.overrideAttrs (final.moonraker-timelapse.moonrakerOverrideAttrs);
+
   steam = prev.steam.override steam-override;
   steam-original-fixed = final.unstable.steam.override steam-override;
   steam-deck-client = prev.callPackage ../pkgs/steam-deck-client.nix { };

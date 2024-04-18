@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   ports = import ./misc/service-ports.nix;
   addresses = import ../../misc/wireguard-addresses.nix;
@@ -50,7 +50,18 @@ in {
         attach = "${ustreamer-address}/snapshot";
       };
 
+      timelapse = {
+        output_path = "${cfgPath}/timelapse/";
+        ffmpeg_binary_path = "${pkgs.ffmpeg}/bin/ffmpeg";
+      };
     };
+  };
+
+  systemd.tmpfiles.settings."10-klipper"."${cfgPath}/config/timelapse.cfg"."L+" = {
+    argument = pkgs.moonraker-timelapse.macroFile;
+    user = config.services.moonraker.user;
+    group = config.services.moonraker.group;
+    mode = "0777";
   };
 
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.moonraker ];

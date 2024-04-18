@@ -100,7 +100,9 @@ rec {
       ])
       users));
 
-  forAllSystems = function:
+  forAllSystems = function: forAllSystemsCustom { config.allowUnfree = true; } function;
+  forAllSystemsWithOverlays = overlays: function: forAllSystemsCustom { inherit overlays; config.allowUnfree = true; } function;
+  forAllSystemsCustom = nixpkgsCfg: function:
     self.inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ]
-      (system: function (import self.inputs.nixpkgs { inherit system; config.allowUnfree = true; }));
+      (system: function (import self.inputs.nixpkgs (nixpkgsCfg // { inherit system; })));
 }

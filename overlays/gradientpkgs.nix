@@ -7,6 +7,8 @@ final: prev:
 
   jack-matchmaker = prev.callPackage ../pkgs/jack-matchmaker.nix { };
 
+  moonraker-timelapse = prev.callPackage ../pkgs/moonraker-timelapse.nix { };
+
   starsector-gamescope-wrap = prev.callPackage ../pkgs/starsector-gamescope-wrap.nix { }; 
 
   tinypilot = prev.callPackage ../pkgs/tinypilot.nix { };
