@@ -426,6 +426,6 @@
     };
 
     packages = self.lib.forAllSystems (pkgs: self.overlays.gradientpkgs pkgs pkgs);
-
+    legacyPackages = self.lib.forAllSystemsWithOverlays [ self.overlays.gradientpkgs self.overlays.gradientos  ] (pkgs: (pkgs));
   };
 }
