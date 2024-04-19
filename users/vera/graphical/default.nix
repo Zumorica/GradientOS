@@ -16,7 +16,6 @@
     moonlight-qt
     qbittorrent
     smartgithg
-    obs-studio
     bitwarden
     tdesktop
     audacity
@@ -34,5 +33,13 @@
     vlc
     mpv
   ];
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      obs-vkcapture
+      obs-vaapi
+    ];
+  };
 
 }
