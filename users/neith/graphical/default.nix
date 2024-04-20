@@ -7,13 +7,13 @@
     kdePackages.kolourpaint
     lxqt.pavucontrol-qt
     kdePackages.okular
-    kdePackages.falkon
     google-chrome
     moonlight-qt
     qbittorrent
     chromium
     tdesktop
     qpwgraph
+    firefox
     anydesk
     discord
     spotify
