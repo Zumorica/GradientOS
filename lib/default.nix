@@ -105,4 +105,22 @@ rec {
   forAllSystemsCustom = nixpkgsCfg: function:
     self.inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ]
       (system: function (import self.inputs.nixpkgs (nixpkgsCfg // { inherit system; })));
+
+  /*
+  *   similar to switch statements in other programming languages.
+        value -> any
+        cases -> list of attrset "case"
+        case -> {
+          case -> any, must match value
+          value -> any
+        }
+      a case with a null value is treated as the default match.
+      in case of multiple matches, the first one is returned.
+      in case of no matches, null is returned.
+  */
+  switch = value: cases: 
+    let
+     matches = builtins.filter (case: (case.case == value) || (case.case == null)) cases;
+    in
+      if matches == [] then null else builtins.head(matches);
 }
