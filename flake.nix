@@ -102,6 +102,7 @@
           mixins.monado
           mixins.podman
           mixins.plymouth
+          mixins.wireguard
           mixins.uwu-style
           mixins.upgrade-diff
           mixins.v4l2loopback
@@ -164,6 +165,7 @@
           mixins.wine
           mixins.gnupg
           mixins.plymouth
+          mixins.wireguard
           mixins.uwu-style
           mixins.upgrade-diff
           mixins.v4l2loopback
@@ -213,6 +215,7 @@
           mixins.wine
           mixins.gnupg
           mixins.plymouth
+          mixins.wireguard
           mixins.uwu-style
           mixins.vera-locale
           mixins.upgrade-diff
@@ -266,6 +269,7 @@
           mixins.wine
           mixins.gnupg
           mixins.plymouth
+          mixins.wireguard
           mixins.uwu-style
           mixins.vera-locale
           mixins.upgrade-diff
@@ -321,6 +325,7 @@
           mixins.gnupg
           mixins.podman
           mixins.steamcmd
+          mixins.wireguard
           mixins.vera-locale
           mixins.upgrade-diff
           mixins.v4l2loopback
@@ -351,7 +356,7 @@
 
           mixins.gnupg
           mixins.plymouth
-
+          mixins.wireguard
           mixins.vera-locale
           mixins.upgrade-diff
           mixins.v4l2loopback

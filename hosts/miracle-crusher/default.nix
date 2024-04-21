@@ -1,4 +1,4 @@
- { ... }:
+ { config, ... }:
 
  {
 
@@ -6,7 +6,6 @@
     ./nix.nix
     ./backups.nix
     ./programs.nix
-    ./wireguard.nix
     ./syncthing.nix
     ./filesystems.nix
     ./secrets/default.nix
@@ -31,5 +30,18 @@
 
   # WOL support.
   networking.interfaces.enp16s0.wakeOnLan.enable = true;
+
+  networking.hosts = with config.gradient.const.wireguard.addresses; {
+    "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];
+    "${gradientnet.briah}" = [ "briah" ];
+    "${gradientnet.vera-deck}" = [ "deck" ];
+    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
+    "${gradientnet.vera-laptop}" = [ "laptop" ];
+    "${lilynet.asiyah}" = [ "lilynet" ];
+    "${lilynet.neith-deck}" = [ "neith" "lily" ];
+    "${slugcatnet.asiyah}" = [ "slugcatnet" ];
+    "${slugcatnet.remie}" = [ "remie" ];
+    "${slugcatnet.luna}" = [ "luna" ];
+  };
 
 }

@@ -7,7 +7,6 @@
     ./kernel
     ./hardware
     ./profiles
-    # WIP: ./wireguard.nix
     ./tmpfiles-check.nix
   ];
 

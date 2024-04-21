@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
 
   imports = [
@@ -14,7 +14,6 @@
     ./ustreamer.nix
     #./promtail.nix
     #./syncthing.nix
-    ./wireguard.nix
     #./prometheus.nix
     #./containers.nix
     ./filesystems.nix
@@ -29,4 +28,12 @@
     hdmi_force_hotplug=1
   '';
   
+  networking.hosts = with config.gradient.const.wireguard.addresses; {
+    "${gradientnet.asiyah}" = [ "asiyah" ];
+    "${gradientnet.miracle-crusher}" = [ "vera" ];
+    "${gradientnet.vera-deck}" = [ "deck" ];
+    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
+    "${lilynet.neith-deck}" = [ "lily" "neith" ];
+  };
+
 }

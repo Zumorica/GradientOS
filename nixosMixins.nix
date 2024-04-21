@@ -18,6 +18,7 @@
   vera-locale = ./mixins/vera-locale.nix;
   virtualisation = ./mixins/virtualisation.nix;
   wine = ./mixins/wine.nix;
+  wireguard = ./mixins/wireguard.nix;
 
   graphical = ./mixins/graphical/default.nix;
   graphical-gamescope = ./mixins/graphical/gamescope.nix;
