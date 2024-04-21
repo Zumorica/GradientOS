@@ -20,16 +20,12 @@ in {
     root = self.inputs.polycule-constellation-moe;
     enableACME = true;
     addSSL = true;
-    extraConfig = ''
+    /*extraConfig = ''
       # Set for whole server.
       ${oauth2-config}
-    '';
+    '';*/
 
     locations."/oauth2/".extraConfig = ''
-      auth_request off;
-    '';
-
-    locations."/oauth2/auth".extraConfig = ''
       auth_request off;
     '';
 
