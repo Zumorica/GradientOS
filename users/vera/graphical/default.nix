@@ -21,6 +21,7 @@
     audacity
     inkscape
     qpwgraph
+    firefox
     discord
     anydesk
     vscode
