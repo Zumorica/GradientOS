@@ -1,7 +1,7 @@
 /*
   Internal services accessible via the gradientnet VPN.
 */
-{ ... }:
+{ config, ... }:
 let
   ports = import ../misc/service-ports.nix;
   ips = import ../../../misc/wireguard-addresses.nix;
@@ -32,14 +32,14 @@ in {
       '';
     };
 
-    # locations."/grafana/" = let grafana = config.services.grafana.settings.server; in {
-    #   proxyPass = "http://${toString grafana.http_addr}:${toString grafana.http_port}";
-    #   proxyWebsockets = true;
-    #   extraConfig = ''
-    #     allow ${gradientnet}/24;
-    #     deny all;
-    #   '';
-    # };
+    locations."/grafana/" = let grafana = config.services.grafana.settings.server; in {
+      proxyPass = "http://${toString grafana.http_addr}:${toString grafana.http_port}";
+      proxyWebsockets = true;
+      extraConfig = ''
+        allow ${gradientnet}/24;
+        deny all;
+      '';
+    };
 
     # locations."/syncthing/" = {
     #   extraConfig = ''

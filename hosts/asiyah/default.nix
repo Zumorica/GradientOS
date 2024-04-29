@@ -4,6 +4,7 @@
   imports = [
     # WIP: ./mediamtx.nix
     ./backups.nix
+    ./grafana.nix
     ./filesystem.nix
     ./media-stack.nix
     ./nginx/default.nix

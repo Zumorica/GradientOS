@@ -1,4 +1,4 @@
-{ self, config, lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   ports = import ../misc/service-ports.nix;
 in {

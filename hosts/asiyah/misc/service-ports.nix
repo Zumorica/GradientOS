@@ -28,6 +28,13 @@
   # misc
   redis-oauth2 = 6380;
   trilium = 8081;
+
+  # grafana
+  grafana = 8083;
+  prometheus = 8084;
+  prometheus-node-exporter = 8085;
+  loki = 8086;
+  promtail = 8087;
   
   # game servers
   palworld = 8211;
