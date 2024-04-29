@@ -1,6 +1,8 @@
 ## GradientOS
 Flake for different NixOS system configurations.
 
+# GradientOS supports the [aux.computer](https://aux.computer/) project and so should you!
+
 ### Features
 - Encrypted secrets using [sops-nix](https://github.com/Mic92/sops-nix)
 - Optional Steam Deck support using [Jovian NixOS](https://github.com/Jovian-Experiments/Jovian-NixOS)
