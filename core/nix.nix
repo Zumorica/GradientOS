@@ -35,7 +35,7 @@ in
       nix =
       {
 
-        package = pkgs.nixVersions.unstable;
+        package = pkgs.nixVersions.latest;
 
         settings = {
           cores = 0;

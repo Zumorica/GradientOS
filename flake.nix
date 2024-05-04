@@ -2,8 +2,8 @@
   description = "GradientOS flake.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:auxolotl/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:auxolotl/nixpkgs/nixos-23.11";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
@@ -318,7 +318,7 @@
 
         modules = [
           nixos-hardware.nixosModules.common-cpu-intel
-          nixos-hardware.nixosModules.common-gpu-intel
+          # nixos-hardware.nixosModules.common-gpu-intel
           gradient-generator.nixosModules.default
 
           mixins.wine
