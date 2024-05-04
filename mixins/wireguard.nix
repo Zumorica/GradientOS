@@ -117,8 +117,8 @@ in
     })
 
     (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost neithDeckHost veraDeckHost veraDeckOledHost ]) {
-      networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" "slugcatnet" ];
-      systemd.network.wait-online.ignoredInterfaces = [ "lilynet" "slugcatnet" ];
+      networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
+      systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
       networking.wireguard.interfaces.lilynet = with addr.lilynet; {
         ips = ["${addr.lilynet.${hostName}}/${if isAsiyah then "24" else "32"}"];
@@ -149,7 +149,7 @@ in
           }
         ] else [
           {
-            allowedIPs = [ "${slugcatnet}/24" ];
+            allowedIPs = [ "${lilynet}/24" ];
             endpoint = "vpn.gradient.moe:${toString asiyahPorts.slugcatnet}";
             publicKey = keys.asiyah;
             persistentKeepalive = 25;
@@ -157,57 +157,63 @@ in
             dynamicEndpointRefreshRestartSeconds = 10;
           }
           {
-            allowedIPs = [ "${slugcatnet}/24" ];
-            endpoint = "192.168.1.48:${toString asiyahPorts.slugcatnet}";
-            publicKey = keys.asiyah;
-          }
-        ]);
-      };
-
-      networking.wireguard.interfaces.slugcatnet = with addr.slugcatnet; {
-        ips = ["${addr.slugcatnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
-        listenPort = lib.mkIf isAsiyah asiyahPorts.slugcatnet;
-        postSetup = lib.mkIf isAsiyah (gen-post-setup "slugcatnet" "eno1");
-        postShutdown = lib.mkIf isAsiyah (gen-post-shutdown "slugcatnet" "eno1");
-        privateKeyFile = private-key;
-        peers = (if isAsiyah then [
-          {
-            allowedIPs = [ "${briah}/32" ];
-            publicKey = keys.briah;
-          }
-          {
-            allowedIPs = [ "${remie}/32" ];
-            publicKey = keys.remie;
-          }
-          {
-            allowedIPs = [ "${miracle-crusher}/32" ];
-            publicKey = keys.miracle-crusher;
-          }
-          {
-            allowedIPs = [ "${luna}/32" ];
-            publicKey = keys.luna;
-          }
-          {
-            allowedIPs = [ "${neith-deck}/32" ];
-            publicKey = keys.neith-deck;
-          }
-        ] else [
-          {
-            allowedIPs = [ "${slugcatnet}/24" ];
-            endpoint = "vpn.gradient.moe:${toString asiyahPorts.slugcatnet}";
-            publicKey = keys.asiyah;
-            persistentKeepalive = 25;
-            dynamicEndpointRefreshSeconds = 25;
-            dynamicEndpointRefreshRestartSeconds = 10;
-          }
-          {
-            allowedIPs = [ "${slugcatnet}/24" ];
+            allowedIPs = [ "${lilynet}/24" ];
             endpoint = "192.168.1.48:${toString asiyahPorts.slugcatnet}";
             publicKey = keys.asiyah;
           }
         ]);
       };
     })
+
+    ( lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost neithDeckHost ]) {
+        networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
+        systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
+        
+        networking.wireguard.interfaces.slugcatnet = with addr.slugcatnet; {
+          ips = ["${addr.slugcatnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
+          listenPort = lib.mkIf isAsiyah asiyahPorts.slugcatnet;
+          postSetup = lib.mkIf isAsiyah (gen-post-setup "slugcatnet" "eno1");
+          postShutdown = lib.mkIf isAsiyah (gen-post-shutdown "slugcatnet" "eno1");
+          privateKeyFile = private-key;
+          peers = (if isAsiyah then [
+            {
+              allowedIPs = [ "${briah}/32" ];
+              publicKey = keys.briah;
+            }
+            {
+              allowedIPs = [ "${remie}/32" ];
+              publicKey = keys.remie;
+            }
+            {
+              allowedIPs = [ "${miracle-crusher}/32" ];
+              publicKey = keys.miracle-crusher;
+            }
+            {
+              allowedIPs = [ "${luna}/32" ];
+              publicKey = keys.luna;
+            }
+            {
+              allowedIPs = [ "${neith-deck}/32" ];
+              publicKey = keys.neith-deck;
+            }
+          ] else [
+            {
+              allowedIPs = [ "${slugcatnet}/24" ];
+              endpoint = "vpn.gradient.moe:${toString asiyahPorts.slugcatnet}";
+              publicKey = keys.asiyah;
+              persistentKeepalive = 25;
+              dynamicEndpointRefreshSeconds = 25;
+              dynamicEndpointRefreshRestartSeconds = 10;
+            }
+            {
+              allowedIPs = [ "${slugcatnet}/24" ];
+              endpoint = "192.168.1.48:${toString asiyahPorts.slugcatnet}";
+              publicKey = keys.asiyah;
+            }
+          ]);
+        };
+      }
+    )
 
   ];
 
