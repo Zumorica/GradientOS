@@ -6,6 +6,7 @@
     ./backups.nix
     ./grafana.nix
     ./filesystem.nix
+    ./dns-server.nix
     ./media-stack.nix
     ./nginx/default.nix
     ./palworld-server.nix

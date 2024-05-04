@@ -42,4 +42,10 @@
   project-zomboid-direct = 16262;
   project-zomboid-steam-1 = 21971;
   project-zomboid-steam-2 = 21972;
+
+  # DNS
+  dns-lan = 54;
+  dns-gradientnet = 55;
+  dns-lilynet = 56;
+  dns-slugcatnet = 57;
 }

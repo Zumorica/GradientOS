@@ -11,7 +11,7 @@
   #services.xserver.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Enable XWayland for X11 compat when using wayland.
   programs.xwayland.enable = true;

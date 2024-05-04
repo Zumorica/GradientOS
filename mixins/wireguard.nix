@@ -67,6 +67,10 @@ in
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "gradientnet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" ];
 
+      environment.etc."NetworkManager/dnsmasq.d/nameserver-gradientnet.conf".text = ''
+        server=/gradient/${addr.gradientnet.asiyah}#${toString asiyahPorts.dns-gradientnet}
+      '';
+
       networking.wireguard.interfaces.gradientnet = with addr.gradientnet; {
         ips = ["${addr.gradientnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
         listenPort = lib.mkIf isAsiyah asiyahPorts.gradientnet;
@@ -120,6 +124,10 @@ in
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
+      environment.etc."NetworkManager/dnsmasq.d/nameserver-lilynet.conf".text = ''
+        server=/lily/${addr.lilynet.asiyah}#${toString asiyahPorts.dns-lilynet}
+      '';
+
       networking.wireguard.interfaces.lilynet = with addr.lilynet; {
         ips = ["${addr.lilynet.${hostName}}/${if isAsiyah then "24" else "32"}"];
         listenPort = lib.mkIf isAsiyah asiyahPorts.lilynet;
@@ -150,7 +158,7 @@ in
         ] else [
           {
             allowedIPs = [ "${lilynet}/24" ];
-            endpoint = "vpn.gradient.moe:${toString asiyahPorts.slugcatnet}";
+            endpoint = "vpn.gradient.moe:${toString asiyahPorts.lilynet}";
             publicKey = keys.asiyah;
             persistentKeepalive = 25;
             dynamicEndpointRefreshSeconds = 25;
@@ -158,7 +166,7 @@ in
           }
           {
             allowedIPs = [ "${lilynet}/24" ];
-            endpoint = "192.168.1.48:${toString asiyahPorts.slugcatnet}";
+            endpoint = "192.168.1.48:${toString asiyahPorts.lilynet}";
             publicKey = keys.asiyah;
           }
         ]);
@@ -168,6 +176,10 @@ in
     ( lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost neithDeckHost ]) {
         networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
         systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
+
+        environment.etc."NetworkManager/dnsmasq.d/nameserver-slugcatnet.conf".text = ''
+          server=/slugcat/${addr.slugcatnet.asiyah}#${toString asiyahPorts.dns-slugcatnet}
+        '';
         
         networking.wireguard.interfaces.slugcatnet = with addr.slugcatnet; {
           ips = ["${addr.slugcatnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
