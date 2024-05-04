@@ -26,6 +26,7 @@
     anydesk
     vscode
     ventoy
+    nheko
     krita
     carla
     kate
