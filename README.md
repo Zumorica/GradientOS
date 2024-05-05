@@ -1,7 +1,7 @@
 ## GradientOS
 Flake for different NixOS system configurations.
 
-# GradientOS supports the [aux.computer](https://aux.computer/) project and so should you!
+# GradientOS supports the [auxolotl](https://auxolotl.org/) project and so should you!
 
 ### Features
 - Encrypted secrets using [sops-nix](https://github.com/Mic92/sops-nix)
