@@ -1,22 +1,25 @@
-{ ... }:
-let
-  ssh-pub-keys = import ../misc/ssh-pub-keys.nix;
-in {
+{ config, ... }:
+{
 
   nix.sshServe = {
     enable = true;
     write = true;
     protocol = "ssh-ng";
-    keys = with ssh-pub-keys; [
+    keys = with config.gradient.const.ssh.pubKeys; [
       vera
       neith
       miracle-crusher
       vera-deck
+      vera-deck-oled
       neith-deck
+      asiyah
       briah
     ];
   };
 
   nix.settings.trusted-users = [ "nix-ssh" ];
+  nix.extraOptions = ''
+    secret-key-files = ${config.sops.secrets.nix-private-key.path}
+  '';
 
 }

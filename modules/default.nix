@@ -8,6 +8,7 @@
     ./hardware
     ./profiles
     ./tmpfiles-check.nix
+    ./substituter-switcher.nix
   ];
 
 }

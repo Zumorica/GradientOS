@@ -10,6 +10,8 @@
       
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
 
+      nix-private-key = { };
+
       #pong-api-token = {
       #  mode = "0440";
       #  owner = config.users.users.ss14-watchdog.name;

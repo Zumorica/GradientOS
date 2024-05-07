@@ -43,17 +43,21 @@ in
           keep-derivations = true;
 
           substituters = [
-            "https://nix-gaming.cachix.org?priority=100"
-            "https://nix-community.cachix.org?priority=100"
-            "https://cache.lix.systems"
-            # "https://0uptime.cachix.org?priority=100"
+            "https://nix-gaming.cachix.org?priority=10"
+            "https://nix-community.cachix.org?priority=20"
+            "https://cache.lix.systems?priority=20"
           ];
 
-          trusted-public-keys = [
+          trusted-public-keys = with cfg.const.nix.pubKeys; [
             "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
             "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
             "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
-            # "0uptime.cachix.org-1:ctw8yknBLg9cZBdqss+5krAem0sHYdISkw/IFdRbYdE="
+            asiyah
+            briah
+            miracle-crusher
+            vera-deck
+            vera-deck-oled
+            neith-deck
           ];
           
           trusted-users = [

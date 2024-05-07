@@ -9,6 +9,8 @@
 
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
 
+      nix-private-key = { };
+
       mura = {
         format = "binary";
         sopsFile = ./mura.tar;

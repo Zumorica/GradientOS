@@ -285,6 +285,7 @@
           mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.virtualisation
+          mixins.nix-store-serve
           mixins.system76-scheduler
           mixins.declarative-flatpak
           
@@ -370,6 +371,7 @@
           mixins.vera-locale
           mixins.upgrade-diff
           mixins.v4l2loopback
+          mixins.nix-store-serve
           mixins.hardware-raspberrypi4
           mixins.restic-repository-hokma
         ];

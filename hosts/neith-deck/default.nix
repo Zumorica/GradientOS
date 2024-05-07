@@ -3,7 +3,6 @@
 {
 
   imports = [
-    ./nix.nix
     ./programs.nix
     ./syncthing.nix
     ./filesystems.nix
@@ -20,6 +19,13 @@
   services.displayManager.autoLogin.user = lib.mkDefault "neith";
   services.displayManager.defaultSession = "plasma";
   jovian.decky-loader.user = "neith";
+
+  gradient.substituters = {
+    asiyah = "ssh-ng://nix-ssh@asiyah.lily?priority=50";
+    briah = "ssh-ng://nix-ssh@briah.lily?priority=60";
+    vera = "ssh-ng://nix-ssh@vera.lily?priority=50";
+    vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.lily?priority=50";
+  };
 
   networking.hosts = with config.gradient.const.wireguard.addresses; {
     "${lilynet.asiyah}" = [ "lilynet" ];

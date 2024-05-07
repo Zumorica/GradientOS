@@ -3,7 +3,6 @@
  {
 
   imports = [
-    ./nix.nix
     ./backups.nix
     ./programs.nix
     ./syncthing.nix
@@ -30,6 +29,13 @@
 
   # WOL support.
   networking.interfaces.enp16s0.wakeOnLan.enable = true;
+
+  gradient.substituters = {
+    asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";
+    briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
+    vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
+    neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+  };
 
   networking.hosts = with config.gradient.const.wireguard.addresses; {
     "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];

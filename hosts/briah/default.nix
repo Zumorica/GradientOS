@@ -22,6 +22,13 @@
     ./secrets/default.nix
   ];
 
+  gradient.substituters = {
+    asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";
+    vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";
+    vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
+    neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+  };
+
   boot.loader.raspberryPi.firmwareConfig = ''
     arm_64bit=1
     gpu_mem=256

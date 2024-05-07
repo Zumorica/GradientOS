@@ -11,6 +11,8 @@
       gradient-generator-environment = { restartUnits = [ "gradient-generator.daily-avatar.service" ]; };
 
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
+
+      nix-private-key = { };
       
       deluge-auth = {
         mode = "0440";
