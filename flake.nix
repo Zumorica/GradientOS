@@ -5,6 +5,16 @@
     nixpkgs.url = "github:auxolotl/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:auxolotl/nixpkgs/nixos-23.11";
 
+    lix = {
+      url = "git+https://git.lix.systems/lix-project/lix?ref=refs/tags/2.90-beta.1";
+      flake = false;
+    };
+    lix-module = {
+      url = "git+https://git.lix.systems/lix-project/nixos-module";
+      inputs.lix.follows = "lix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     nixos-generators = {

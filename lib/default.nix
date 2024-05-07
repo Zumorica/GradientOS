@@ -64,6 +64,7 @@ rec {
 
       modules = [
         (mkHostNameModule name)
+        self.inputs.lix-module.nixosModules.default
         self.inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

@@ -12,6 +12,7 @@
     whatsapp-for-linux
     kdePackages.okular
     libreoffice-fresh
+    element-desktop
     google-chrome
     moonlight-qt
     qbittorrent
@@ -19,6 +20,7 @@
     bitwarden
     tdesktop
     audacity
+    chromium
     inkscape
     qpwgraph
     firefox
@@ -26,7 +28,6 @@
     anydesk
     vscode
     ventoy
-    nheko
     krita
     carla
     kate
