@@ -31,6 +31,7 @@
 { config, pkgs, lib, ... }:
 let
   cfg = config.gradient.substituters;
+  timeout = "${pkgs.coreutils}/bin/timeout";
   confPath = "/etc/nix/substituter-switcher.conf";
   script = pkgs.writers.writeNuBin "substituters" ''
 
@@ -54,8 +55,8 @@ def makeConfWritable [] {
 # Allows you to activate an optional substituter
 def "main activate" [
     ...names: string, # The substituter or substituters to activate.
-    --all # Activates all optional substituters.
-    --quiet # Does not print any messages when set.
+    --all (-a) # Activates all optional substituters.
+    --quiet (-q) # Does not print any messages when set.
   ] {
   makeConfWritable
   let substituters = readJson;
@@ -88,8 +89,8 @@ def "main activate" [
 # Allows you to deactivate an optional substituter.
 def "main deactivate" [
     ...names: string, # The substituter or substituters to deactivate.
-    --all # Deactivates all optional substituters.
-    --quiet # Does not print any messages when set.
+    --all (-a) # Deactivates all optional substituters.
+    --quiet (-q) # Does not print any messages when set.
   ] {
   let substituters = readJson;
   if $all {
@@ -120,9 +121,33 @@ def "main deactivate" [
 }
 
 # Prints a list of all optional substituters and whether they're active or not.
-def "main list" [] {
+def "main list" [
+  --no-ping (-n) # Prevent this command from pinging the substituters to get their reachable status.
+  --timeout (-t): int = 3 # Timeout in seconds for pinging the substituters.
+] {
   let conf = (open "${confPath}" --raw | into string)
-  readJson | insert state {|row| if ($conf | str contains $"extra-substituters = ($row.value)") { "active" } else { "inactive" }}
+  let list = (readJson |
+    insert state {|row| if ($conf | str contains $"extra-substituters = ($row.value)") { "active" } else { "inactive" }}
+  );
+  if $no_ping {
+    return $list
+  } else {
+    return ($list | par-each {|row|
+      # Basically, if /*  */the host is not in the ssh known_hosts this will automatically input no and report an error
+      let ping = NIX_SSHOPTS="-oStrictHostKeyChecking=yes" ((${timeout} $"($timeout)s" "nix" "store" "ping" "--store" $row.value) | complete)
+      if $ping.exit_code != 0 {
+        if ($ping.stderr | str contains "interrupted by the user") or ($ping.stderr | str contains "timed out") {
+          $row | insert remote "timed out"
+        } else if ($ping.stderr | str contains "key verification failed") {
+          $row | insert remote "key verification failed"
+        } else {
+          $row | insert remote "unreachable"
+        }
+      } else {
+        $row | insert remote "reachable"
+      }
+    })
+  }
 }
 
 def main [] {
