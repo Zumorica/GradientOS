@@ -9,7 +9,6 @@ in
     ./zsh.nix
     ./openssh.nix
     ./network.nix
-    ./programs.nix
     ./nix-channels.nix
   ];
 
@@ -35,6 +34,15 @@ in
     services.avahi.enable = true;
     services.avahi.nssmdns4 = true;
 
+    # Performance and power saving
+    services.auto-cpufreq.enable = true;
+    services.irqbalance.enable = true;
+    services.ananicy = {
+      enable = true;
+      package = pkgs.ananicy-cpp;
+      rulesProvider = pkgs.ananicy-rules-cachyos;
+    };
+
     security.rtkit.enable = true;
     security.polkit.enable = true;
 
@@ -47,7 +55,6 @@ in
     hardware.enableRedistributableFirmware = true;
 
     environment.shells = with pkgs; [
-      zsh
       nushell
       nushellFull
     ]; 
