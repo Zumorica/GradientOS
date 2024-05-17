@@ -5,6 +5,7 @@
     # WIP: ./mediamtx.nix
     ./backups.nix
     ./grafana.nix
+    ./duckdns.nix
     ./filesystem.nix
     ./dns-server.nix
     ./media-stack.nix

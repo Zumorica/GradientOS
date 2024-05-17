@@ -19,13 +19,6 @@
       #  restartUnits = [ "space-station-14-watchdog" ];
       #};
 
-      duckdns = {
-        mode = "0500";
-        owner = config.users.users.duckdns.name;
-        group = config.users.users.duckdns.group;
-        restartUnits = [ "duckdns" ];
-      };
-
       syncthing-cert = {
         format = "binary";
         sopsFile = ./syncthing-cert.pem;

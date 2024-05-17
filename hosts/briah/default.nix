@@ -5,7 +5,6 @@
     #./loki.nix
     ./backups.nix
     ./klipper.nix
-    ./duckdns.nix
     #./grafana.nix
     ./programs.nix
     ./mainsail.nix
