@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
 
@@ -22,6 +22,13 @@
         format = "binary";
         sopsFile = ./syncthing-key.pem;
         restartUnits = [ "syncthing.service" ];
+      };
+
+      moonraker = {
+        owner = config.services.moonraker.user;
+        group = config.services.moonraker.group;
+        path = "${config.services.moonraker.stateDir}/moonraker.secrets";
+        restartUnits = [ "moonraker.service" ];
       };
     
     };

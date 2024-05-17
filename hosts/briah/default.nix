@@ -3,15 +3,10 @@
 
   imports = [
     ./backups.nix
-    ./klipper.nix
     ./programs.nix
-    ./mainsail.nix
-    ./moonraker.nix
-    ./ustreamer.nix
     #./syncthing.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
-    ./kiosk-session.nix
     ./secrets/default.nix
   ];
 

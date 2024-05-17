@@ -50,6 +50,7 @@
   hardware-qmk = ./mixins/hardware/qmk.nix;
   hardware-raspberrypi4 = ./mixins/hardware/raspberrypi4.nix;
   hardware-steamdeck = ./mixins/hardware/steamdeck.nix;
+  hardware-steamdeck-minimal = ./mixins/hardware/steamdeck-minimal.nix;
   hardware-wacom = ./mixins/hardware/wacom.nix;
   hardware-webcam = ./mixins/hardware/webcam.nix;
   hardware-xbox-one-controller = ./mixins/hardware/xbox-one-controller.nix;

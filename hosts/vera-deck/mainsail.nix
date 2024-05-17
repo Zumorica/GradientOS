@@ -12,7 +12,7 @@ in {
         port = ports.mainsail;
       }
       {
-        addr = addresses.gradientnet.briah;
+        addr = addresses.gradientnet.vera-deck;
         port = ports.mainsail;
       }
     ];

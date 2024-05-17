@@ -224,7 +224,6 @@
           
           mixins.wine
           mixins.gnupg
-          mixins.plymouth
           mixins.wireguard
           mixins.uwu-style
           mixins.vera-locale
@@ -232,28 +231,18 @@
           mixins.v4l2loopback
           mixins.virtualisation
           mixins.nix-store-serve
-          mixins.system76-scheduler
           mixins.declarative-flatpak
-          
-          mixins.graphical
-          mixins.graphical-kde
-          mixins.graphical-steam
-          mixins.graphical-wayland-autologin-workaround
-          mixins.graphical-wayland-environment-variables
-          
-          mixins.pipewire
-          mixins.pipewire-virtual-sink
-          mixins.pipewire-low-latency
           
           mixins.hardware-qmk
           mixins.hardware-amdcpu
           mixins.hardware-amdgpu
           mixins.hardware-webcam
           mixins.hardware-bluetooth
-          mixins.hardware-steamdeck
           mixins.hardware-openrazer
+          mixins.hardware-steamdeck-minimal
           mixins.hardware-home-dcp-l2530dw
-          mixins.hardware-xbox-one-controller
+          
+          mixins.restic-repository-hokma
         ];
 
         users.vera.modules = [

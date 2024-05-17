@@ -3,8 +3,12 @@
 {
 
   imports = [
-    ./kernel.nix
+    ./backups.nix
+    ./klipper.nix
     ./programs.nix
+    ./mainsail.nix
+    ./ustreamer.nix
+    ./moonraker.nix
     ./syncthing.nix
     ./filesystems.nix
     ./secrets/default.nix
@@ -12,15 +16,6 @@
   ];
 
   networking.hostName = "vera-deck";
-
-  gradient.profiles.gaming.enable = true;
-
-  # Use Jovian's steam deck UI autostart.
-  services.displayManager.sddm.enable = lib.mkForce false;
-  jovian.steam.autoStart = true;
-  jovian.steam.user = "vera";
-  jovian.decky-loader.user = "vera";
-  jovian.steam.desktopSession = "plasma";
 
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";

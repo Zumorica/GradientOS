@@ -2,7 +2,7 @@
 let
   ports = import ./misc/service-ports.nix;
   addresses = import ../../misc/wireguard-addresses.nix;
-  ustreamer-address = "http://${addresses.gradientnet.briah}:${toString ports.ustreamer}";
+  ustreamer-address = "http://${addresses.gradientnet.vera-deck}:${toString ports.ustreamer}";
   cfgPath = "/var/lib/moonraker";
 in {
 
