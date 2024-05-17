@@ -2,19 +2,13 @@
 {
 
   imports = [
-    #./loki.nix
     ./backups.nix
     ./klipper.nix
-    #./grafana.nix
     ./programs.nix
     ./mainsail.nix
-    #./octoprint.nix
     ./moonraker.nix
     ./ustreamer.nix
-    #./promtail.nix
     #./syncthing.nix
-    #./prometheus.nix
-    #./containers.nix
     ./filesystems.nix
     # ./ss14-watchdog.nix
     ./kiosk-session.nix
