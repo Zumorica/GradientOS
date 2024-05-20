@@ -21,6 +21,7 @@ in {
       authorization = {
         cors_domains = [
           "*://${config.networking.hostName}:*"
+          "*//vera-deck.gradient:*"
         ];
         trusted_clients = [
           "127.0.0.1"

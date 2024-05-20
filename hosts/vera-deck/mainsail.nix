@@ -15,6 +15,10 @@ in {
         addr = addresses.gradientnet.vera-deck;
         port = ports.mainsail;
       }
+      {
+        addr = "vera-deck.gradient";
+        port = ports.mainsail;
+      }
     ];
   };
 
