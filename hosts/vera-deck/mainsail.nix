@@ -16,9 +16,13 @@ in {
         port = ports.mainsail;
       }
       {
-        addr = "vera-deck.gradient";
+        addr = addresses.lilynet.vera-deck;
         port = ports.mainsail;
       }
+    ];
+    nginx.serverAliases = [
+      "vera-deck.gradient"
+      "vera-deck.lily"
     ];
   };
 
@@ -27,5 +31,8 @@ in {
 
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.mainsail ];
   networking.firewall.interfaces.gradientnet.allowedUDPPorts = [ ports.mainsail ];
+
+  networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.mainsail ];
+  networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.mainsail ];
 
 }

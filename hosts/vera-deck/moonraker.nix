@@ -22,6 +22,7 @@ in {
         cors_domains = [
           "*://${config.networking.hostName}:*"
           "*//vera-deck.gradient:*"
+          "*//vera-deck.lily:*"
         ];
         trusted_clients = [
           "127.0.0.1"
