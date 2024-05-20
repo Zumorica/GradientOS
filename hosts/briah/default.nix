@@ -13,8 +13,14 @@
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";
     vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";
+    vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
     vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
     neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+  };
+
+  hardware.raspberry-pi."4".fkms-3d = {
+    enable = true;
+    cma = 256;
   };
 
   boot.loader.raspberryPi.firmwareConfig = ''

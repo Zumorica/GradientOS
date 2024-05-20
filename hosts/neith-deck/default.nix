@@ -24,6 +24,7 @@
     asiyah = "ssh-ng://nix-ssh@asiyah.lily?priority=50";
     briah = "ssh-ng://nix-ssh@briah.lily?priority=60";
     vera = "ssh-ng://nix-ssh@vera.lily?priority=50";
+    vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
     vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.lily?priority=50";
   };
 

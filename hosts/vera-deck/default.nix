@@ -11,6 +11,7 @@
     ./moonraker.nix
     ./syncthing.nix
     ./filesystems.nix
+    ./kiosk-session.nix
     ./secrets/default.nix
     ./hardware-configuration.nix
   ];

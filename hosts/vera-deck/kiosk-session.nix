@@ -10,11 +10,6 @@ in {
     extraArguments = [ "-d" ];
   };
 
-  hardware.raspberry-pi."4".fkms-3d = {
-    enable = true;
-    cma = 256;
-  };
-
   systemd.services."cage-tty1".after = [ "nginx.service" "moonraker.service" ];
 
   systemd.services."serial-getty@ttyS0".enable = false;
