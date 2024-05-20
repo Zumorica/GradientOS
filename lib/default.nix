@@ -69,6 +69,7 @@ rec {
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "bck";
           home-manager.extraSpecialArgs = { inherit self; };
         }
       ] ++ modules ++ (mkUserModules users)
