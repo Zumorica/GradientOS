@@ -7,7 +7,7 @@ in {
     enable = true;
     user = "vera";
     program = "${pkgs.unstable.chromium}/bin/chromium --noerrdialogs --disable-infobars --incognito --kiosk http://127.0.0.1:${toString ports.mainsail}";
-    extraArguments = [ "-d" ];
+    extraArguments = [ "-d" "-m last" ];
   };
 
   systemd.services."cage-tty1".after = [ "nginx.service" "moonraker.service" ];
