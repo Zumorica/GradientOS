@@ -2,7 +2,6 @@
 let
   ports = import ./misc/service-ports.nix;
   addresses = import ../../misc/wireguard-addresses.nix;
-  ustreamer-address = "http://${addresses.gradientnet.vera-deck}:${toString ports.ustreamer}";
   cfgPath = "/var/lib/moonraker";
 in {
 
@@ -10,7 +9,7 @@ in {
     enable = true;
     stateDir = cfgPath;
     allowSystemControl = true;
-    address = "0.0.0.0";
+    address = "127.0.0.1";
     port = ports.moonraker;
     settings = {
 
@@ -21,12 +20,15 @@ in {
       authorization = {
         cors_domains = [
           "*://${config.networking.hostName}:*"
-          "*//vera-deck.gradient:*"
-          "*//vera-deck.lily:*"
+          "*://${addresses.gradientnet.vera-deck}:*"
+          "*://${addresses.lilynet.vera-deck}:*"
+          "*//vera-deck.gradient"
+          "*//vera-deck.lily"
         ];
         trusted_clients = [
           "127.0.0.1"
           "${addresses.gradientnet.gradientnet}/24"
+          "${addresses.lilynet.lilynet}/24"
         ];
       };
 
@@ -38,10 +40,10 @@ in {
       "webcam c920" = {
         enabled = "True";
         service = "uv4l-mjpeg";
-        stream_url = "${ustreamer-address}/stream";
-        snapshot_url = "${ustreamer-address}/snapshot";
+        stream_url = "/stream";
+        snapshot_url = "/snapshot";
         aspect_ratio = "16:9";
-        target_fps = 30;
+        target_fps = 60;
       };
 
       # Enable Telegram notification support.
@@ -49,12 +51,13 @@ in {
         url = "tgram://{secrets.telegram.token}/{secrets.telegram.chat}";
         events = "*";
         body = "Your printer status has changed to {event_name}";
-        attach = "${ustreamer-address}/snapshot";
+        attach = "/snapshot";
       };
 
       timelapse = {
         output_path = "${cfgPath}/timelapse/";
         ffmpeg_binary_path = "${pkgs.ffmpeg}/bin/ffmpeg";
+        camera = "c920";
       };
     };
   };
@@ -68,5 +71,8 @@ in {
 
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.moonraker ];
   networking.firewall.interfaces.gradientnet.allowedUDPPorts = [ ports.moonraker ];
+
+  networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.moonraker ];
+  networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.moonraker ];
 
 }

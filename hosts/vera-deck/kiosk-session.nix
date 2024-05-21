@@ -6,8 +6,11 @@ in {
   services.cage = {
     enable = true;
     user = "vera";
-    program = "${pkgs.unstable.chromium}/bin/chromium --noerrdialogs --disable-infobars --incognito --kiosk http://127.0.0.1:${toString ports.mainsail}";
-    extraArguments = [ "-d" "-m last" ];
+    program = pkgs.writeScript "cage-script" ''
+      ${pkgs.unstable.wlr-randr}/bin/wlr-randr --output eDP-1 --off
+      ${pkgs.unstable.chromium}/bin/chromium --noerrdialogs --disable-infobars --incognito --kiosk http://127.0.0.1:${toString ports.mainsail}
+    '';
+    extraArguments = [ "-d" ];
   };
 
   systemd.services."cage-tty1".after = [ "nginx.service" "moonraker.service" ];
