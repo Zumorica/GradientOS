@@ -6,7 +6,7 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     lix = {
-      url = "git+https://git.lix.systems/lix-project/lix?ref=refs/tags/2.90-beta.1";
+      url = "git+https://git.lix.systems/lix-project/lix";
       flake = false;
     };
     lix-module = {
@@ -252,7 +252,7 @@
 
         deployment = {
           targetHost = ips.gradientnet.vera-deck;
-          # tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          tags = with colmena-tags; [ x86_64 steam-deck desktop server vera ];
           allowLocalDeployment = true;
         };
       }
@@ -373,7 +373,7 @@
 
         deployment = {
           targetHost = ips.gradientnet.briah;
-          tags = with colmena-tags; [ aarch64 raspberry-pi server vera ];
+          tags = with colmena-tags; [ aarch64 raspberry-pi ]; # Disabled for now. [ server vera ];
           allowLocalDeployment = true;
           # buildOnTarget = true; # cross-compile build breaks otherwise
         };
