@@ -4,7 +4,7 @@
 
   services.printing = {
     enable = true;
-    drivers = [ pkgs.brlaser ];
+    drivers = [ pkgs.brlaser pkgs.ptouch-driver ];
   };
 
   hardware.sane = {
@@ -24,6 +24,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    ptouch-print
     xsane
   ];
 
