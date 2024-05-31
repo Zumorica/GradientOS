@@ -8,8 +8,9 @@ in {
     serviceConfig = {
       User = "ustreamer";
       Group = "video";
-      Restart = "on-failure";
+      Restart = "always";
       RestartSec = 1;
+      Nice="-10";
     };
     script = ''exec ${pkgs.ustreamer}/bin/ustreamer \
       --device /dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920-video-index0 \
@@ -17,13 +18,14 @@ in {
       --port ${builtins.toString ports.ustreamer} \
       --format MJPEG \
       --resolution 1280x720 \
-      --desired-fps 60 \
+      --desired-fps 30 \
       --drop-same-frames 30 \
       --last-as-blank 60 \
       --device-timeout 60 \
       --workers 4 \
       --image-default \
-      --slowdown'';
+      --slowdown \
+      --persistent'';
   };
 
 
