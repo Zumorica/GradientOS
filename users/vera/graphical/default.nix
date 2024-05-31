@@ -23,9 +23,9 @@
     chromium
     inkscape
     qpwgraph
+    rustdesk
     firefox
     discord
-    anydesk
     vscode
     ventoy
     krita

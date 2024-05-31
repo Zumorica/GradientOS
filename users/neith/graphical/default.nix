@@ -13,8 +13,8 @@
     chromium
     tdesktop
     qpwgraph
+    rustdesk
     firefox
-    anydesk
     discord
     spotify
     carla
