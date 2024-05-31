@@ -38,7 +38,6 @@
 
     gradient-moe = {
       url = "git+ssh://git@github.com/Zumorica/gradient.moe";
-      flake = false;
     };
 
     constellation-moe = {

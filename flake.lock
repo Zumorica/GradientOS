@@ -183,13 +183,15 @@
       }
     },
     "gradient-moe": {
-      "flake": false,
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
       "locked": {
-        "lastModified": 1690456246,
-        "narHash": "sha256-DZrpx95mYwbtz0XruIk+equtn8z45oSBjVAGskUcMDs=",
+        "lastModified": 1717169771,
+        "narHash": "sha256-PaXABQTCQX+K0P391/OVXiP4dTtJzrR/8B9ZACwEcDE=",
         "ref": "refs/heads/main",
-        "rev": "35322ca3a718aa76cb2cf1b340bb697279c1e2f8",
-        "revCount": 3,
+        "rev": "8cdaffd53aa4c76eedc81c7564cd0e364c8c8e72",
+        "revCount": 12,
         "type": "git",
         "url": "ssh://git@github.com/Zumorica/gradient.moe"
       },
@@ -460,6 +462,22 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1716948383,
+        "narHash": "sha256-SzDKxseEcHR5KzPXLwsemyTR/kaM9whxeiJohbL04rs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ad57eef4ef0659193044870c731987a6df5cf56b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
         "lastModified": 1716509168,
         "narHash": "sha256-4zSIhSRRIoEBwjbPm3YiGtbd8HDWzFxJjw5DYSDy1n8=",
         "owner": "NixOS",
@@ -530,7 +548,7 @@
         "nix-gaming": "nix-gaming",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-stable": "nixpkgs-stable",
         "polycule-constellation-moe": "polycule-constellation-moe",
         "sops-nix": "sops-nix",

@@ -3,11 +3,11 @@
   Public gradient.moe website.
 
 */
-{ self, ... }:
+{ self, pkgs, ... }:
 {
 
   services.nginx.virtualHosts."gradient.moe" = {
-    root = self.inputs.gradient-moe;
+    root = toString self.inputs.gradient-moe.packages.${pkgs.system}.default;
     default = true;
     enableACME = true;
     addSSL = true;
