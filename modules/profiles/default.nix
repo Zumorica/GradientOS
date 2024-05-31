@@ -41,6 +41,7 @@ in
       usbutils
       pciutils
       colmena
+      waypipe
       sysstat
       yt-dlp
       p7zip
