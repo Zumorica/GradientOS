@@ -24,8 +24,8 @@
   services.hardware.openrgb.enable = true;
 
   # For games and such.
-  networking.firewall.allowedTCPPortRanges = [ { from=7777; to=7787; } ];
-  networking.firewall.allowedUDPPortRanges = [ { from=7777; to=7787; } ];
+  networking.firewall.allowedTCPPortRanges = [ { from=7777; to=7787; } { from=25565; to=25566; } ];
+  networking.firewall.allowedUDPPortRanges = [ { from=7777; to=7787; } { from=25565; to=25566; } ];
 
   # WOL support.
   networking.interfaces.enp16s0.wakeOnLan.enable = true;
