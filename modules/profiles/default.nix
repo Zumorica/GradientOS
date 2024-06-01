@@ -38,6 +38,7 @@ in
       lm_sensors
       ssh-to-age
       distrobox
+      wlr-randr
       usbutils
       pciutils
       colmena
