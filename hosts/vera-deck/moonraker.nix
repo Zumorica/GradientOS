@@ -13,7 +13,11 @@ in {
     port = ports.moonraker;
     settings = {
 
-      octoprint_compat = { };
+      octoprint_compat = {
+        enable_ufp = "True";
+        webcam_enabled = "True";
+        stream_url = "/stream";
+      };
 
       history = { };
 
@@ -43,7 +47,22 @@ in {
         stream_url = "/stream";
         snapshot_url = "/snapshot";
         aspect_ratio = "16:9";
-        target_fps = 60;
+        location = "printer";
+        icon = "printer";
+        target_fps = 30;
+        target_fps_idle = 15;
+      };
+
+      "webcam endoscope" = {
+        enabled = "True";
+        server = "uv4l-mjpeg";
+        stream_url = "/stream-endoscope";
+        snapshot_url = "/snapshot-endoscope";
+        aspect_ratio = "4:3";
+        location = "nozzle";
+        icon = "mdiPrinter3dNozzle";
+        target_fps = 30;
+        target_fps_idle = 15;
       };
 
       # Enable Telegram notification support.
@@ -51,7 +70,7 @@ in {
         url = "tgram://{secrets.telegram.token}/{secrets.telegram.chat}";
         events = "*";
         body = "Your printer status has changed to {event_name}";
-        attach = "http://127.0.0.1:${toString ports.ustreamer}/snapshot";
+        attach = "http://127.0.0.1:${toString ports.ustreamer}/snapshot\nhttp://127.0.0.1:${toString ports.ustreamer-endoscope}/snapshot";
       };
 
       timelapse = {
