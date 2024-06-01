@@ -38,6 +38,13 @@
     neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
   };
 
+  # Share QL-600 printer!
+  services.printing = {
+    openFirewall = true;
+    defaultShared = true;
+    browsing = true;
+  };
+
   networking.hosts = with config.gradient.const.wireguard.addresses; {
     "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];
     "${gradientnet.briah}" = [ "briah" ];
