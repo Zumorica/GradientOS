@@ -25,9 +25,36 @@ in {
       --workers 4 \
       --image-default \
       --slowdown \
+      --quality 100 \
       --persistent'';
   };
 
+  systemd.services.ustreamer-endoscope = {
+    description = "ustreamer endoscope streamer";
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      User = "ustreamer";
+      Group = "video";
+      Restart = "always";
+      RestartSec = 1;
+      Nice="-10";
+    };
+    script = ''exec ${pkgs.ustreamer}/bin/ustreamer \
+      --device /dev/v4l/by-id/usb-Generic_USB2.0_PC_CAMERA-video-index0 \
+      --host 0.0.0.0 \
+      --port ${builtins.toString ports.ustreamer-endoscope} \
+      --format YUYV \
+      --resolution 640x480 \
+      --desired-fps 30 \
+      --drop-same-frames 30 \
+      --last-as-blank 60 \
+      --device-timeout 60 \
+      --workers 4 \
+      --image-default \
+      --slowdown \
+      --quality 100 \
+      --persistent'';
+  };
 
   services.mainsail.nginx.locations = {
     "/stream".extraConfig = ''
@@ -37,10 +64,16 @@ in {
       proxy_pass http://127.0.0.1:${toString ports.ustreamer}/stream;
     '';
     "/snapshot".extraConfig = ''
+      proxy_pass http://127.0.0.1:${toString ports.ustreamer}/snapshot;
+    '';
+    "/stream-endoscope".extraConfig = ''
       postpone_output 0;
       proxy_buffering off;
       proxy_ignore_headers X-Accel-Buffering;
-      proxy_pass http://127.0.0.1:${toString ports.ustreamer}/snapshot;
+      proxy_pass http://127.0.0.1:${toString ports.ustreamer-endoscope}/stream;
+    '';
+    "/snapshot-endoscope".extraConfig = ''
+      proxy_pass http://127.0.0.1:${toString ports.ustreamer-endoscope}/snapshot;
     '';
   };
 
@@ -50,10 +83,10 @@ in {
     group = "video";
   };
 
-  networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.ustreamer ];
-  networking.firewall.interfaces.gradientnet.allowedUDPPorts = [ ports.ustreamer ];
+  networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.ustreamer ports.ustreamer-endoscope ];
+  networking.firewall.interfaces.gradientnet.allowedUDPPorts = [ ports.ustreamer ports.ustreamer-endoscope ];
 
-  networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.ustreamer ];
-  networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.ustreamer ];
+  networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.ustreamer ports.ustreamer-endoscope ];
+  networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.ustreamer ports.ustreamer-endoscope ];
 
 }
