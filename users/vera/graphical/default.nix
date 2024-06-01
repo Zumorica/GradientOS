@@ -23,7 +23,6 @@
     chromium
     inkscape
     qpwgraph
-    rustdesk
     firefox
     discord
     vscode

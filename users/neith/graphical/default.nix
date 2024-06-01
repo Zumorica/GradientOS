@@ -13,7 +13,6 @@
     chromium
     tdesktop
     qpwgraph
-    rustdesk
     firefox
     discord
     spotify
