@@ -28,11 +28,14 @@
       source-sans-pro
       source-serif-pro
       google-fonts
+      nerdfonts
       fira
       fira-mono
       fira-code
       fira-code-symbols
+      unifont
       corefonts
+      ubuntu_font_family
     ];
   };
 
