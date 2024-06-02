@@ -70,7 +70,11 @@ in {
         url = "tgram://{secrets.telegram.token}/{secrets.telegram.chat}";
         events = "*";
         body = "Your printer status has changed to {event_name}";
-        attach = "http://127.0.0.1:${toString ports.ustreamer}/snapshot\nhttp://127.0.0.1:${toString ports.ustreamer-endoscope}/snapshot";
+        attach = 
+        [
+          "http://127.0.0.1:${toString ports.ustreamer}/snapshot"
+          "http://127.0.0.1:${toString ports.ustreamer-endoscope}/snapshot"
+        ];
       };
 
       timelapse = {
