@@ -25,7 +25,7 @@ in {
       --workers 8 \
       --image-default \
       --slowdown \
-      --quality 100 \
+      --quality 80 \
       --persistent \
       --encoder hw'';
   };
@@ -53,7 +53,7 @@ in {
       --workers 8 \
       --image-default \
       --slowdown \
-      --quality 100 \
+      --quality 80 \
       --persistent \
       --encoder M2M-IMAGE'';
   };
