@@ -16,6 +16,7 @@
     google-chrome
     moonlight-qt
     qbittorrent
+    glabels-qt
     smartgithg
     bitwarden
     tdesktop
