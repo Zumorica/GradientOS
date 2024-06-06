@@ -26,6 +26,7 @@
     qpwgraph
     firefox
     discord
+    blender
     vscode
     ventoy
     krita
