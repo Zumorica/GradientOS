@@ -55,7 +55,7 @@ in {
 
       "webcam endoscope" = {
         enabled = "True";
-        server = "uv4l-mjpeg";
+        service = "uv4l-mjpeg";
         stream_url = "/stream-endoscope";
         snapshot_url = "/snapshot-endoscope";
         aspect_ratio = "4:3";
