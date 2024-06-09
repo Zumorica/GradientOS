@@ -9,6 +9,7 @@ in
     ./zsh.nix
     ./openssh.nix
     ./network.nix
+    ./workarounds.nix
     ./nix-channels.nix
   ];
 
