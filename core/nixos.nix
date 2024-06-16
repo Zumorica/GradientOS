@@ -37,6 +37,7 @@ in
 
     # Performance and power saving
     services.auto-cpufreq.enable = true;
+    services.power-profiles-daemon.enable = lib.mkForce false;
     services.irqbalance.enable = true;
     services.ananicy = {
       enable = true;
@@ -58,7 +59,6 @@ in
 
     environment.shells = with pkgs; [
       nushell
-      nushellFull
     ]; 
 
     # systemd-based initrd

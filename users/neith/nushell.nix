@@ -3,7 +3,7 @@
 
   programs.nushell = {
     enable = true;
-    package = pkgs.nushellFull;
+    package = pkgs.nushell;
     extraConfig = ''
       $env.config = {
         show_banner: false

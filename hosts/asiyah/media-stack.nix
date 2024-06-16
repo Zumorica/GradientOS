@@ -7,9 +7,6 @@ in {
   services.jellyfin = {
     inherit group;
     enable = true;
-    package = pkgs.jellyfin.override {
-      ffmpeg = pkgs.ffmpeg-full;
-    };
   };
 
   systemd.services.jellyfin.serviceConfig = {
