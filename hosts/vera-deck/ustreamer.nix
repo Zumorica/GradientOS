@@ -55,7 +55,7 @@ in {
       --slowdown \
       --quality 80 \
       --persistent \
-      --encoder M2M-IMAGE'';
+      --encoder hw'';
   };
 
   services.mainsail.nginx.locations = {
