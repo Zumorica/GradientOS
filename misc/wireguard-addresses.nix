@@ -3,6 +3,7 @@
     gradientnet = "192.168.24.0";
     asiyah = "192.168.24.1";
     briah = "192.168.24.24";
+    atziluth = "192.168.24.48";
     miracle-crusher = "192.168.24.2";
     vera-deck = "192.168.24.3";
     vera-phone = "192.168.24.4";

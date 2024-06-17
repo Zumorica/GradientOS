@@ -430,6 +430,8 @@
       kernel-allow-missing = import ./overlays/kernel-allow-missing.nix;
     };
 
+    apps = self.lib.forAllSystemsWithOverlays [ self.overlays.gradientpkgs self.overlays.gradientos  ] (pkgs: (import ./misc/ansible/apps.nix pkgs));
+
     packages = self.lib.forAllSystems (pkgs: self.overlays.gradientpkgs pkgs pkgs);
     legacyPackages = self.lib.forAllSystemsWithOverlays [ self.overlays.gradientpkgs self.overlays.gradientos  ] (pkgs: (pkgs));
   };
