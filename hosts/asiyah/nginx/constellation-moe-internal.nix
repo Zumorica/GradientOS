@@ -25,10 +25,6 @@ in {
       ${oauth2-config}
     '';*/
 
-    locations."/oauth2/".extraConfig = ''
-      auth_request off;
-    '';
-
     locations."/stream/" = {
       proxyPass = "http://127.0.0.1:${toString ports.vdo-ninja}/";
       proxyWebsockets = true;
