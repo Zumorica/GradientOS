@@ -13,6 +13,7 @@
     kdePackages.okular
     libreoffice-fresh
     element-desktop
+    discord-canary
     google-chrome
     moonlight-qt
     qbittorrent

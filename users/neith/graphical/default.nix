@@ -7,6 +7,7 @@
     kdePackages.kolourpaint
     lxqt.pavucontrol-qt
     kdePackages.okular
+    discord-canary
     google-chrome
     moonlight-qt
     qbittorrent
