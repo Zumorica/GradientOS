@@ -44,6 +44,7 @@ in
       colmena
       waypipe
       sysstat
+      python3
       yt-dlp
       p7zip
       sops
