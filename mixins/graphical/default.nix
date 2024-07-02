@@ -25,11 +25,7 @@
   services.flatpak.enable = true;
   services.packagekit.enable = true;
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  hardware.graphics.enable = true;
 
   environment.sessionVariables = {
     # Use desktop environment's native file dialog in certain programs.

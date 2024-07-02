@@ -6,7 +6,7 @@
     options i915 enable_guc=2
   '';
 
-  hardware.opengl = {
+  hardware.graphics = {
     extraPackages = with pkgs; [
       intel-vaapi-driver.override { enableHybridCodec = true; }
       intel-compute-runtime

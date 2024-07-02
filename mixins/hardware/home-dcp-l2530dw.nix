@@ -24,7 +24,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    ptouch-print
     xsane
   ];
 
