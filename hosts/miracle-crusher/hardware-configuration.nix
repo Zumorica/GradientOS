@@ -19,6 +19,9 @@
 
     # needed for controlling RGB LEDs on RAM sticks
     "acpi_enforce_resources=lax"
+
+    # enable amdgpu overclocking, see https://wiki.archlinux.org/title/AMDGPU#Boot_parameter
+    "amdgpu.ppfeaturemask=0xfff7ffff"
   ];
   boot.extraModulePackages = with config.boot.kernelPackages; [ ];
   boot.extraModprobeConfig = ''
