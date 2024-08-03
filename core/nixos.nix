@@ -39,12 +39,15 @@ in
     services.auto-cpufreq.enable = true;
     services.power-profiles-daemon.enable = lib.mkForce false;
     services.irqbalance.enable = true;
-    services.ananicy = {
-      enable = true;
-      package = pkgs.ananicy-cpp;
-      rulesProvider = pkgs.ananicy-rules-cachyos;
-      extraRules = import ./ananicy-rules.nix;
-    };
+    
+    # Do NOT reenable until https://gitlab.com/ananicy-cpp/ananicy-cpp/-/issues/40
+    # or systemd will eat your fucking face due to the cgroups v1 deprecation
+    #services.ananicy = {
+    #  enable = true;
+    #  package = pkgs.ananicy-cpp;
+    #  rulesProvider = pkgs.ananicy-rules-cachyos;
+    #  extraRules = import ./ananicy-rules.nix;
+    #};
 
     security.rtkit.enable = true;
     security.polkit.enable = true;
