@@ -21,7 +21,7 @@
     smartgithg
     bitwarden
     tdesktop
-    audacity
+    tenacity
     chromium
     inkscape
     qpwgraph
