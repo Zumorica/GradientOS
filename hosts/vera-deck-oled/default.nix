@@ -29,7 +29,7 @@
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
     vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
     vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";
-    neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+    neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };
 
   networking.hosts = with config.gradient.const.wireguard.addresses; {
@@ -39,7 +39,7 @@
     "${gradientnet.vera-deck}" = [ "deck" ];
     "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.asiyah}" = [ "lilynet" ];
-    "${lilynet.neith-deck}" = [ "neith" "lily" ];
+    "${lilynet.neith-deck}" = [ "neith-deck" ];
   };
 
 }

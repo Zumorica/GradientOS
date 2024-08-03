@@ -24,7 +24,7 @@
     vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";
     vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
     vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
-    neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+    neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };
 
   networking.hosts = with config.gradient.const.wireguard.addresses; {
@@ -33,7 +33,7 @@
     "${gradientnet.vera-deck}" = [ "deck" ];
     "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
     "${gradientnet.vera-laptop}" = [ "laptop" ];
-    "${lilynet.neith-deck}" = [ "lily" "neith" ];
+    "${lilynet.neith-deck}" = [ "neith-deck" ];
   };
 
 }

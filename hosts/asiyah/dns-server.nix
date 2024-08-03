@@ -43,7 +43,7 @@ in
     "/vera.lily/${miracle-crusher}"
     "/vera-deck.lily/${vera-deck}"
     "/vera-deck-oled.lily/${vera-deck-oled}"
-    "/neith.lily/${neith-deck}"
+    "/neith-deck.lily/${neith-deck}"
   ];
   networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.dns-lilynet ];
   networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.dns-lilynet ];
@@ -53,7 +53,7 @@ in
     "/briah.slugcat/${briah}"
     "/remie.slugcat/${remie}"
     "/vera.slugcat/${miracle-crusher}"
-    "/neith.slugcat/${neith-deck}"
+    "/neith-deck.slugcat/${neith-deck}"
     "/luna.slugcat/${luna}"
   ];
   networking.firewall.interfaces.slugcatnet.allowedTCPPorts = [ ports.dns-slugcatnet ];

@@ -35,7 +35,7 @@
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
     vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
     vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
-    neith = "ssh-ng://nix-ssh@neith.lily?priority=100";
+    neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };
 
   # Share QL-600 printer!
@@ -52,7 +52,7 @@
     "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
     "${gradientnet.vera-laptop}" = [ "laptop" ];
     "${lilynet.asiyah}" = [ "lilynet" ];
-    "${lilynet.neith-deck}" = [ "neith" "lily" ];
+    "${lilynet.neith-deck}" = [ "neith-deck" ];
     "${slugcatnet.asiyah}" = [ "slugcatnet" ];
     "${slugcatnet.remie}" = [ "remie" ];
     "${slugcatnet.luna}" = [ "luna" ];
