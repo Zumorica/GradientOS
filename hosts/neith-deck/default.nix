@@ -14,11 +14,12 @@
 
   gradient.profiles.gaming.enable = true;
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = lib.mkDefault "neith";
-  services.displayManager.defaultSession = "plasma";
+  # Use Jovian's steam deck UI autostart.
+  services.displayManager.sddm.enable = lib.mkForce false;
+  jovian.steam.autoStart = true;
+  jovian.steam.user = "neith";
   jovian.decky-loader.user = "neith";
+  jovian.steam.desktopSession = "plasma";
 
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.lily?priority=50";
