@@ -19,6 +19,7 @@
     neith-deck = "192.168.109.3";
     vera-deck = "192.168.109.5";
     vera-deck-oled = "192.168.109.6";
+    neith-desktop = "192.168.109.7";
   };
 
   slugcatnet = {

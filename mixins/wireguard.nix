@@ -155,6 +155,10 @@ in
             allowedIPs = [ "${vera-deck-oled}/32" ];
             publicKey = keys.vera-deck-oled;
           }
+          {
+            allowedIPs = [ "${neith-desktop}/32" ];
+            publicKey = keys.neith-desktop;
+          }
         ] else [
           {
             allowedIPs = [ "${lilynet}/24" ];

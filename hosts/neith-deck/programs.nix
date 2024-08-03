@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
 
-  programs.steam.package = pkgs.steam-original-fixed;
+  # programs.steam.package = pkgs.steam-original-fixed;
   environment.systemPackages = with pkgs; [
-    steam-deck-client
+    # steam-deck-client
     prismlauncher
     moonlight-qt
     dolphin-emu

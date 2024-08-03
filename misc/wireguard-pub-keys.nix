@@ -4,6 +4,7 @@
   vera-deck = "3iA3etOZC+5J3zKjcFvQVw5bhiKKC0XGUQap43yMB1o=";
   vera-deck-oled = "okNBZAPQiNALnW0Z6AXz+pXv1CJfo+YfCTtnx07fLEo=";
   neith-deck = "p4dmhuDzBmzHvudnT2nnSTrGQY047ubuCEjEk2U2zFw=";
+  neith-desktop = "VK93plqvZl1SOkgSjIuTCZBxj3TKw5it/NCZUTv8Ank=";
   asiyah = "sZ7toLMyaiDj/r2Lz9n7UNMs1tXeQn+qAP1hHclKiQs=";
   briah = "oIa6pYWG0rIZ0lYiLlOCiR74FSoXkQOfLHssz3iB/Rc=";
   atziluth = "TODO";
