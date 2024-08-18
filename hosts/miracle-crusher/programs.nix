@@ -12,6 +12,7 @@
     sqlitebrowser
     prusa-slicer
     dolphin-emu
+    mullvad-vpn
     xivlauncher
     godot-mono
     unityhub
