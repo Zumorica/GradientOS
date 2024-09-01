@@ -6,7 +6,7 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
 
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0-rc1.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.91.0.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -73,7 +73,7 @@
       inputs.flake-compat.follows = "flake-compat";
     };
 
-    declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable";
+    declarative-flatpak.url = "github:GermanBread/declarative-flatpak/stable-v3";
 
     vdo-ninja = {
       url = "github:steveseguin/vdo.ninja/v24.4";
