@@ -1,11 +1,12 @@
-{ stdenv
+{ lib
+, stdenv
 , fetchzip
 , makeWrapper
 , makeDesktopItem
 , steam-run
 }:
 let
-  version = "4.1.3";
+  version = "4.3";
 in
 stdenv.mkDerivation {
   inherit version;
@@ -13,7 +14,7 @@ stdenv.mkDerivation {
 
   src = fetchzip {
     url = "https://github.com/godotengine/godot/releases/download/${version}-stable/Godot_v${version}-stable_mono_linux_x86_64.zip";
-    sha256 = "sha256-QtsPXx4q0S95WATc4YM+MSocapY1G7BgdSiToX/ODzY=";
+    sha256 = "sha256-L32cwE/E1aEAz6t3SlO0k/QQuKRt/8lJntfdCYVdGCE=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
