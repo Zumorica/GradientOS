@@ -39,6 +39,9 @@ in
     services.auto-cpufreq.enable = true;
     services.power-profiles-daemon.enable = lib.mkForce false;
     services.irqbalance.enable = true;
+
+    # Convenience
+    services.envfs.enable = true;
     
     # Do NOT reenable until https://gitlab.com/ananicy-cpp/ananicy-cpp/-/issues/40
     # or systemd will eat your fucking face due to the cgroups v1 deprecation
