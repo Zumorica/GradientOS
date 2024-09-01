@@ -369,7 +369,7 @@
           targetHost = ips.gradientnet.briah;
           tags = with colmena-tags; [ aarch64 raspberry-pi ]; # Disabled for now. [ server vera ];
           allowLocalDeployment = true;
-          # buildOnTarget = true; # cross-compile build breaks otherwise
+          buildOnTarget = true;
         };
       }
 
