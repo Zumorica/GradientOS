@@ -35,6 +35,7 @@ in
       appimage-run
       imagemagick
       ffmpeg-full
+      nix-weather
       lm_sensors
       ssh-to-age
       distrobox
