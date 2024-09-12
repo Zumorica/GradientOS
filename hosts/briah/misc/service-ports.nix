@@ -9,5 +9,6 @@
   # misc
   syncthing = 8384;
   syncthing-transfers = 22000;
+  home-assistant = 8123;
   
 }

@@ -6,6 +6,7 @@
     ./programs.nix
     #./syncthing.nix
     ./filesystems.nix
+    ./home-assistant.nix
     # ./ss14-watchdog.nix
     ./secrets/default.nix
   ];

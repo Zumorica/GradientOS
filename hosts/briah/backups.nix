@@ -1,10 +1,10 @@
-{ ... }:
+{ config, ... }:
 {
 
   services.restic.backups.hokma = {
     paths = [
       "/home/vera"
-      # "/var/lib/moonraker"
+      config.services.home-assistant.configDir
     ];
   };
 

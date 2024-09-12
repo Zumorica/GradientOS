@@ -354,6 +354,7 @@
           mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.nix-store-serve
+          mixins.hardware-bluetooth
           mixins.hardware-raspberrypi4
           mixins.restic-repository-hokma
           ({ pkgs, ... }: { nix.package = pkgs.lix; })
