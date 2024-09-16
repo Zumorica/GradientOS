@@ -27,6 +27,9 @@ in
   services.nginx.virtualHosts."hass.gradient.moe" = {
     enableACME = true;
     addSSL = true;
+    extraConfig = ''
+      proxy_buffering off;
+    '';
     locations."/".extraConfig = ''
       proxy_pass http://${config.gradient.const.wireguard.addresses.gradientnet.briah}:${toString ports.home-assistant};
       proxy_set_header Host $host;
