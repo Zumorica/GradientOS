@@ -30,6 +30,7 @@ in
       rustup
       rustc
       cargo
+      gcc
       (vscode-with-extensions.override {
           vscodeExtensions = with vscode-extensions; [
 
