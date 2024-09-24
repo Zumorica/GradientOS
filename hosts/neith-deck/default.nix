@@ -13,6 +13,7 @@
   networking.hostName = "neith-deck";
 
   gradient.profiles.gaming.enable = true;
+  gradient.profiles.desktop.enable = true;
 
   # Use Jovian's steam deck UI autostart.
   services.displayManager.sddm.enable = lib.mkForce false;

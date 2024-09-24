@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 
 {
+
+  imports = [
+    self.inputs.nixos-hardware.nixosModules.common-gpu-amd
+  ];
 
   environment.variables.AMD_VULKAN_ICD = "RADV";
 

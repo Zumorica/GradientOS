@@ -13,6 +13,7 @@
     ./filesystems.nix
     ./kiosk-session.nix
     ./secrets/default.nix
+    ./specialisations
     ./hardware-configuration.nix
   ];
 

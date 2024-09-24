@@ -20,8 +20,6 @@ in
 
   config = lib.mkMerge [
     (lib.mkIf cfg.profiles.audio.enable {
-      sound.enable = true;
-      
       hardware.pulseaudio.enable = lib.mkForce false;
     
       services.pipewire = {

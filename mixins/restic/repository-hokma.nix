@@ -16,7 +16,7 @@ in
     timerConfig = {
       OnCalendar = "Mon *-*-* 10:00:00";
       # Prevent concurrent backups, as it can lead to duplicate files
-      RandomizedDelaySec = "5h";
+      RandomizedDelaySec = "12h";
     };
 
     # Set these on your host!

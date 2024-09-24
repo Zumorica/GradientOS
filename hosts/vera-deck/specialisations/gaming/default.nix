@@ -8,13 +8,13 @@
     mixin-graphical-steam
     mixin-graphical-wayland-autologin-workaround
     mixin-graphical-wayland-environment-variables
-    mixin-pipewire
     mixin-pipewire-virtual-sink
     mixin-pipewire-low-latency
     mixin-hardware-xbox-one-controller
   ];
 
   gradient.profiles.gaming.enable = true;
+  gradient.profiles.desktop.enable = true;
 
   # Disable 3D printer stuff
   services.klipper.enable = lib.mkForce false;

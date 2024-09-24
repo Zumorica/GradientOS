@@ -5,7 +5,10 @@ in
 {
 
   imports = [
+    ./audio
     ./gaming.nix
+    ./desktop.nix
+    ./development.nix
   ];
 
   options = {

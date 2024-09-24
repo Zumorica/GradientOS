@@ -30,7 +30,6 @@
 
   home-zsh = ./mixins/home/zsh.nix;
 
-  pipewire = ./mixins/pipewire/default.nix;
   pipewire-um2 = ./mixins/pipewire/um2/default.nix;
   pipewire-virtual-sink = ./mixins/pipewire/virtual-sink/default.nix;
   pipewire-input-normalizer = ./mixins/pipewire/input-normalizer.nix;

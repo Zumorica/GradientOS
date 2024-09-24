@@ -99,7 +99,6 @@
 
         modules = [
           declarative-flatpak.nixosModules.default
-          nixos-hardware.nixosModules.common-cpu-amd-pstate
 
           mixins.wine
           mixins.gnupg
@@ -125,7 +124,6 @@
           mixins.graphical-wayland-autologin-workaround
           mixins.graphical-wayland-environment-variables
 
-          mixins.pipewire
           mixins.pipewire-um2
           mixins.pipewire-input-normalizer
           mixins.pipewire-virtual-sink
@@ -184,7 +182,6 @@
           mixins.graphical-wayland-autologin-workaround
           mixins.graphical-wayland-environment-variables
           
-          mixins.pipewire
           mixins.pipewire-input-normalizer
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
@@ -278,7 +275,6 @@
           mixins.graphical-wayland-autologin-workaround
           mixins.graphical-wayland-environment-variables
           
-          mixins.pipewire
           mixins.pipewire-virtual-sink
           mixins.pipewire-low-latency
           
@@ -290,6 +286,62 @@
           mixins.hardware-webcam
           mixins.hardware-bluetooth
           mixins.hardware-steamdeck
+          mixins.hardware-openrazer
+          mixins.hardware-home-dcp-l2530dw
+          mixins.hardware-xbox-one-controller
+        ];
+
+        users.vera.modules = [
+          sops-nix.homeManagerModule
+          ./users/vera/graphical/default.nix
+        ];
+
+        deployment = {
+          targetHost = ips.gradientnet.vera-deck-oled;
+          tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          allowLocalDeployment = true;
+        };
+      }
+
+      {
+        name = "featherine";
+        makeSystem = false; # Remove once functional
+
+        modules = [
+          jovian-nixos.nixosModules.default
+          declarative-flatpak.nixosModules.default
+          nixos-hardware.nixosModules.gpd-win-mini-2024
+          
+          mixins.wine
+          mixins.gnupg
+          mixins.plymouth
+          mixins.wireguard
+          mixins.uwu-style
+          mixins.vera-locale
+          mixins.upgrade-diff
+          mixins.v4l2loopback
+          mixins.virtualisation
+          mixins.nix-store-serve
+          mixins.system76-scheduler
+          mixins.declarative-flatpak
+          
+          mixins.graphical
+          mixins.graphical-kde
+          mixins.graphical-steam
+          mixins.graphical-wayland-autologin-workaround
+          mixins.graphical-wayland-environment-variables
+          
+          mixins.pipewire-low-latency
+          mixins.pipewire-virtual-sink
+          mixins.pipewire-input-normalizer
+          
+          mixins.restic-repository-hokma
+
+          mixins.hardware-qmk
+          mixins.hardware-amdcpu
+          mixins.hardware-amdgpu
+          mixins.hardware-webcam
+          mixins.hardware-bluetooth
           mixins.hardware-openrazer
           mixins.hardware-home-dcp-l2530dw
           mixins.hardware-xbox-one-controller

@@ -1,7 +1,7 @@
 { ... }:
 {
 
-  specialisations.gaming.configuration = {...}:{
+  specialisation.gaming.configuration = {...}:{
     imports = [ ./gaming ];
   };
 

@@ -15,6 +15,8 @@
   networking.hostName = "miracle-crusher";
 
   gradient.profiles.gaming.enable = true;
+  gradient.profiles.desktop.enable = true;
+  gradient.profiles.development.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
