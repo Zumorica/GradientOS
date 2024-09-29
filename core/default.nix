@@ -8,6 +8,7 @@ in
     ./nix.nix
     ./nixos.nix
     ./constants.nix
+    ./installer.nix
     ./secrets/default.nix
   ];
 
