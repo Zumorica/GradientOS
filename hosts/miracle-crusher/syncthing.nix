@@ -54,6 +54,11 @@ in {
         addresses = [ "dynamic" ];
         id = work-laptop;
       };
+
+      hadal-rainbow = {
+        addresses = [ "dynamic" ];
+        id = hadal-rainbow;
+      };
     };
 
     settings.folders = with folders; {
@@ -78,13 +83,13 @@ in {
       "/home/vera/Music" = {
         id = music;
         label = "Music";
-        devices = [ "briah" "vera-phone" "vera-deck" "vera-deck-oled" ];
+        devices = [ "briah" "vera-phone" "vera-deck" "vera-deck-oled" "work-laptop" ];
       };
 
       "/home/vera/Documents/TheMidnightHall" = {
         id = midnight-hall;
         label = "The Midnight Hall";
-        devices = [ "briah" "neith-deck" ];
+        devices = [ "briah" "neith-deck" "hadal-rainbow" ];
       };
 
       "/data/retrodeck" = {

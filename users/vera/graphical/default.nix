@@ -15,16 +15,13 @@
     element-desktop
     discord-canary
     google-chrome
-    moonlight-qt
     qbittorrent
     glabels-qt
-    smartgithg
     bitwarden
     tdesktop
     tenacity
     chromium
     inkscape
-    qpwgraph
     firefox
     discord
     ventoy

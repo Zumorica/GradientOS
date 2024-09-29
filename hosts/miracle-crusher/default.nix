@@ -18,16 +18,14 @@
   gradient.profiles.desktop.enable = true;
   gradient.profiles.development.enable = true;
 
+  gradient.profiles.audio.um2.enable = true;
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "vera";
   services.displayManager.defaultSession = "plasma";
 
   services.hardware.openrgb.enable = true;
-
-  # For games and such.
-  networking.firewall.allowedTCPPortRanges = [ { from=7777; to=7787; } { from=25565; to=25566; } ];
-  networking.firewall.allowedUDPPortRanges = [ { from=7777; to=7787; } { from=25565; to=25566; } ];
 
   # WOL support.
   networking.interfaces.enp16s0.wakeOnLan.enable = true;
@@ -44,7 +42,7 @@
 
   # Share QL-600 printer!
   services.printing = {
-    openFirewall = true;
+    openFirewall = false;
     defaultShared = true;
     browsing = true;
   };

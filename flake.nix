@@ -116,18 +116,8 @@
           mixins.system76-scheduler
           mixins.declarative-flatpak
 
-          mixins.graphical
-          mixins.graphical-kde
           mixins.graphical-steam
-          mixins.graphical-gamescope
           mixins.graphical-sunshine
-          mixins.graphical-wayland-autologin-workaround
-          mixins.graphical-wayland-environment-variables
-
-          mixins.pipewire-um2
-          mixins.pipewire-input-normalizer
-          mixins.pipewire-virtual-sink
-          mixins.pipewire-low-latency
 
           mixins.restic-repository-hokma
 
@@ -176,15 +166,7 @@
           mixins.system76-scheduler
           mixins.declarative-flatpak
           
-          mixins.graphical
-          mixins.graphical-kde
           mixins.graphical-steam
-          mixins.graphical-wayland-autologin-workaround
-          mixins.graphical-wayland-environment-variables
-          
-          mixins.pipewire-input-normalizer
-          mixins.pipewire-virtual-sink
-          mixins.pipewire-low-latency
           
           mixins.hardware-amdcpu
           mixins.hardware-amdgpu
@@ -269,14 +251,7 @@
           mixins.system76-scheduler
           mixins.declarative-flatpak
           
-          mixins.graphical
-          mixins.graphical-kde
           mixins.graphical-steam
-          mixins.graphical-wayland-autologin-workaround
-          mixins.graphical-wayland-environment-variables
-          
-          mixins.pipewire-virtual-sink
-          mixins.pipewire-low-latency
           
           mixins.restic-repository-hokma
 
@@ -325,16 +300,8 @@
           mixins.system76-scheduler
           mixins.declarative-flatpak
           
-          mixins.graphical
-          mixins.graphical-kde
           mixins.graphical-steam
-          mixins.graphical-wayland-autologin-workaround
-          mixins.graphical-wayland-environment-variables
-          
-          mixins.pipewire-low-latency
-          mixins.pipewire-virtual-sink
-          mixins.pipewire-input-normalizer
-          
+
           mixins.restic-repository-hokma
 
           mixins.hardware-qmk

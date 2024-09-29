@@ -8,6 +8,7 @@ in
     ./audio
     ./gaming.nix
     ./desktop.nix
+    ./graphics.nix
     ./development.nix
   ];
 
@@ -27,9 +28,10 @@ in
 
     environment.systemPackages = with pkgs; [
       (with dotnetCorePackages; combinePackages [
-        sdk_6_0
-        sdk_7_0
-        sdk_8_0
+        dotnet_8.sdk
+        dotnet_8.aspnetcore
+        dotnet_9.sdk
+        dotnet_9.aspnetcore
       ])
       gradientos-upgrade-switch
       gradientos-upgrade-boot
@@ -42,11 +44,9 @@ in
       lm_sensors
       ssh-to-age
       distrobox
-      wlr-randr
       usbutils
       pciutils
       colmena
-      waypipe
       sysstat
       python3
       yt-dlp
@@ -60,6 +60,7 @@ in
       nil
       age
       dig
+      eza
     ] ++ (if pkgs.system == "x86_64-linux" then [
       unrar
       rar

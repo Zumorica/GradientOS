@@ -20,21 +20,10 @@
   wine = ./mixins/wine.nix;
   wireguard = ./mixins/wireguard.nix;
 
-  graphical = ./mixins/graphical/default.nix;
-  graphical-gamescope = ./mixins/graphical/gamescope.nix;
-  graphical-kde = ./mixins/graphical/kde.nix;
   graphical-steam = ./mixins/graphical/steam.nix;
   graphical-sunshine = ./mixins/graphical/sunshine.nix;
-  graphical-wayland-autologin-workaround = ./mixins/graphical/wayland/autologin-workaround.nix;
-  graphical-wayland-environment-variables = ./mixins/graphical/wayland/environment-variables.nix;
-
+  
   home-zsh = ./mixins/home/zsh.nix;
-
-  pipewire-um2 = ./mixins/pipewire/um2/default.nix;
-  pipewire-virtual-sink = ./mixins/pipewire/virtual-sink/default.nix;
-  pipewire-input-normalizer = ./mixins/pipewire/input-normalizer.nix;
-  pipewire-low-latency = ./mixins/pipewire/low-latency.nix;
-  pipewire-rnnoise = ./mixins/pipewire/rnnoise.nix;
 
   restic-repository-hokma = ./mixins/restic/repository-hokma.nix;
 

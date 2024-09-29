@@ -6,7 +6,6 @@ in
 
   # TODO: Turn these into proper modules
   imports = [
-    ./zsh.nix
     ./openssh.nix
     ./network.nix
     ./workarounds.nix

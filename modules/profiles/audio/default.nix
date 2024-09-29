@@ -4,7 +4,10 @@ let
 in
 {
   imports = [
-
+    ./um2.nix
+    ./rnnoise.nix
+    ./virtual-sink.nix
+    ./input-normalizer.nix
   ];
 
   options = {
@@ -31,8 +34,9 @@ in
         wireplumber.enable = true;
       };
 
-      environment.systemPackages = [
-        pkgs.jack-matchmaker
+      environment.systemPackages = with pkgs; [
+        jack-matchmaker
+        qpwgraph
       ];
 
       # Very permissive limits... But it fixes a race condition!
