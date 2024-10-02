@@ -9,6 +9,7 @@
     vera-phone = "192.168.24.4";
     vera-laptop = "192.168.24.5";
     vera-deck-oled = "192.168.24.6";
+    featherine = "192.168.24.7";
   };
   
   lilynet = {
@@ -20,6 +21,7 @@
     vera-deck = "192.168.109.5";
     vera-deck-oled = "192.168.109.6";
     neith-desktop = "192.168.109.7";
+    featherine = "192.168.109.8";
   };
 
   slugcatnet = {

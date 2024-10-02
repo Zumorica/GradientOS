@@ -33,6 +33,7 @@ in
     "/vera-deck-oled.gradient/${vera-deck-oled}"
     "/vera-phone.gradient/${vera-phone}"
     "/vera-laptop.gradient/${vera-laptop}"
+    "/featherine.gradient/${featherine}"
   ];
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.dns-gradientnet ];
   networking.firewall.interfaces.gradientnet.allowedUDPPorts = [ ports.dns-gradientnet ];
@@ -44,6 +45,7 @@ in
     "/vera-deck.lily/${vera-deck}"
     "/vera-deck-oled.lily/${vera-deck-oled}"
     "/neith-deck.lily/${neith-deck}"
+    "/featherine.lily/${featherine}"
   ];
   networking.firewall.interfaces.lilynet.allowedTCPPorts = [ ports.dns-lilynet ];
   networking.firewall.interfaces.lilynet.allowedUDPPorts = [ ports.dns-lilynet ];

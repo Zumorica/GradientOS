@@ -10,6 +10,7 @@
   atziluth = "TODO";
   vera-phone = "yySbF5AY5dmoTp5v/e6wwhl9VZqTvhXufGAnUqbfZkg=";
   vera-laptop = "Ml8DDdUjufdmEc0//PATnJq007Sc6gfoiG2gIHD1mAw=";
+  featherine = "ck7DAR0e7vBgAQ9atvzjHlXtBnuRqWPoPhmamw8ip0c=";
 
   remie = "KwDSonsjWvqwsnhA3RBMz7F2bJr30o26DwsSEOWPoig=";
   luna = "vmBKfmh0hnqfnU8LLXpHf0Tx71QLIgiHfT7TfCVdzmU=";

@@ -28,7 +28,7 @@ Flake for different NixOS system configurations.
 ### Modules
 - **[default](modules/default.nix)**: imports every other module in this list
 - **[tmpfiles-check](modules/tmpfiles-check.nix)**: support for system-reproducibility-breaking, declarative mutable files using tmpfiles.d
-- **[substituter-switcher](modules/substituter-switcher.nix)**: adds a command to active or deactivate optional substituters specified in your config
+- **[substituter-switcher](modules/substituter-switcher.nix)**: adds a command to activate or deactivate optional substituters specified in your config
 
 ### Machines
 

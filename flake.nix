@@ -280,7 +280,6 @@
 
       {
         name = "featherine";
-        makeSystem = false; # Remove once functional
 
         modules = [
           jovian-nixos.nixosModules.default
@@ -296,7 +295,7 @@
           mixins.upgrade-diff
           mixins.v4l2loopback
           mixins.virtualisation
-          mixins.nix-store-serve
+          #mixins.nix-store-serve
           mixins.system76-scheduler
           mixins.declarative-flatpak
           
@@ -320,8 +319,8 @@
         ];
 
         deployment = {
-          targetHost = ips.gradientnet.vera-deck-oled;
-          tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
+          targetHost = ips.gradientnet.featherine;
+          tags = with colmena-tags; [ x86_64 desktop vera ];
           allowLocalDeployment = true;
         };
       }
@@ -402,7 +401,7 @@
         modules = [
           ({ modulesPath, lib, ... }:
           {
-            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix") ];
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix") ];
             boot.initrd.systemd.enable = lib.mkForce false;
           })
         ];
@@ -422,7 +421,7 @@
           jovian-nixos.nixosModules.default
           ({ modulesPath, lib, ... }:
           {
-            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma5.nix") ];
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix") ];
             jovian.devices.steamdeck.enable = true;
             jovian.devices.steamdeck.enableXorgRotation = false;
             hardware.pulseaudio.enable = lib.mkForce false;
