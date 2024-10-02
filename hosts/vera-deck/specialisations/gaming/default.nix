@@ -3,13 +3,7 @@
 
   imports = with self.nixosModules; [      
     mixin-system76-scheduler
-    mixin-graphical
-    mixin-graphical-kde
     mixin-graphical-steam
-    mixin-graphical-wayland-autologin-workaround
-    mixin-graphical-wayland-environment-variables
-    mixin-pipewire-virtual-sink
-    mixin-pipewire-low-latency
     mixin-hardware-xbox-one-controller
   ];
 
