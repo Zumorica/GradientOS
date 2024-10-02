@@ -1,0 +1,8 @@
+{ ... }:
+{
+
+  imports = [
+    ./syncthing.nix
+  ];
+
+}

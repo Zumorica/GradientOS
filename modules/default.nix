@@ -5,6 +5,7 @@
 
   imports = [
     ./kernel
+    ./presets
     ./hardware
     ./profiles
     ./tmpfiles-check.nix

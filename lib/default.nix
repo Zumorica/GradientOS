@@ -125,5 +125,5 @@ rec {
     let
      matches = builtins.filter (case: (case.case == value) || (case.case == null)) cases;
     in
-      if matches == [] then null else builtins.head(matches);
+      if matches == [] then null else (builtins.head(matches)).value;
 }

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, self, ... }:
 let
   mkConstant = description: file:
     mkConstantBase description file (lib.types.attrsOf lib.types.str);
@@ -29,9 +29,6 @@ in
     gradient.const.syncthing.deviceIds = mkConstant "Syncthing device identifiers" 
       ./../misc/syncthing-device-ids.nix;
 
-    gradient.const.syncthing.folderIds = mkConstant "Syncthing folder identifiers"
-      ./../misc/syncthing-folder-ids.nix;
-
     gradient.const.wireguard.addresses = mkConstantNested "Wireguard VPN addresses"
       ./../misc/wireguard-addresses.nix;
 
@@ -43,6 +40,11 @@ in
 
     gradient.mixins = mkConstantFiles "GradientOS Mixin Modules"
       ./../nixosMixins.nix;
+
+    gradient.lib = lib.mkOption {
+      type = lib.types.anything;
+      default = (import ./../lib/default.nix) self;
+    };
   };
 
 }

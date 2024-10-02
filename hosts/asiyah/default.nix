@@ -19,6 +19,8 @@
     ./trilium-memory-repository.nix
   ];
 
+  gradient.presets.syncthing.enable = true;
+
   gradient.substituters = {
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
     vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";

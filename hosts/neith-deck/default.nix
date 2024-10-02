@@ -4,7 +4,6 @@
 
   imports = [
     ./programs.nix
-    ./syncthing.nix
     ./filesystems.nix
     ./secrets/default.nix
     ./hardware-configuration.nix
@@ -14,6 +13,9 @@
 
   gradient.profiles.gaming.enable = true;
   gradient.profiles.desktop.enable = true;
+
+  gradient.presets.syncthing.enable = true;
+  gradient.presets.syncthing.user = "neith";
 
   # Use Jovian's steam deck UI autostart.
   services.displayManager.sddm.enable = lib.mkForce false;

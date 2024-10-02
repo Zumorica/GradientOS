@@ -8,6 +8,18 @@
     secrets = {
 
       wireguard-private-key = { restartUnits = [ "wireguard-*" ]; };
+
+      syncthing-cert = {
+        format = "binary";
+        sopsFile = ./syncthing-cert.pem;
+        restartUnits = [ "syncthing.service" ];
+      };
+
+      syncthing-key = {
+        format = "binary";
+        sopsFile = ./syncthing-key.pem;
+        restartUnits = [ "syncthing.service" ];
+      };
       
     };
   };

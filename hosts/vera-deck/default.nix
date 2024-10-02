@@ -9,7 +9,6 @@
     ./mainsail.nix
     ./ustreamer.nix
     ./moonraker.nix
-    ./syncthing.nix
     ./filesystems.nix
     ./kiosk-session.nix
     ./secrets/default.nix
@@ -18,6 +17,8 @@
   ];
 
   networking.hostName = "vera-deck";
+
+  gradient.presets.syncthing.enable = true;
 
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";

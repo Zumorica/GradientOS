@@ -4,12 +4,13 @@
   imports = [
     ./backups.nix
     ./programs.nix
-    #./syncthing.nix
     ./filesystems.nix
     ./home-assistant.nix
     # ./ss14-watchdog.nix
     ./secrets/default.nix
   ];
+
+  gradient.presets.syncthing.enable = true;
 
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";

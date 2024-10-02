@@ -353,6 +353,7 @@
         ];
 
         deployment = {
+          targetHost = ips.gradientnet.asiyah;
           tags = with colmena-tags; [ x86_64 server vera ];
           allowLocalDeployment = true;
         };

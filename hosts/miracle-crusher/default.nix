@@ -5,7 +5,6 @@
   imports = [
     ./backups.nix
     ./programs.nix
-    ./syncthing.nix
     ./filesystems.nix
     ./secrets/default.nix
     ./libvirtd/default.nix
@@ -19,6 +18,8 @@
   gradient.profiles.development.enable = true;
 
   gradient.profiles.audio.um2.enable = true;
+
+  gradient.presets.syncthing.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;

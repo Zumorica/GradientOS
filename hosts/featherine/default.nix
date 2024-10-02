@@ -13,6 +13,8 @@
   gradient.profiles.desktop.enable = true;
   gradient.profiles.development.enable = true;
 
+  gradient.presets.syncthing.enable = true;
+
   # Android app support with waydroid.
   virtualisation.waydroid.enable = true;
 
