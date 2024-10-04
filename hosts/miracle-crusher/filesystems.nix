@@ -15,7 +15,10 @@
   # Enable swap on luks
   boot.initrd.luks.devices."luks-723a41e3-725d-43ea-98f9-6e3be7908365" = {
     device = "/dev/disk/by-uuid/723a41e3-725d-43ea-98f9-6e3be7908365";
-    keyFile = "/crypto_keyfile.bin";
+  };
+
+  boot.initrd.luks.devices."luks-1338fa28-7856-4a33-9e7a-0b0f08d7ee22" = {
+    device = "/dev/disk/by-uuid/1338fa28-7856-4a33-9e7a-0b0f08d7ee22";
   };
 
   fileSystems = {
@@ -56,9 +59,5 @@
   swapDevices = [
     { device = "/dev/disk/by-uuid/02626a2a-ecb6-455d-a258-e03a1bb896d4"; }
   ];
-
-  boot.initrd.luks.devices."luks-1338fa28-7856-4a33-9e7a-0b0f08d7ee22" = {
-    device = "/dev/disk/by-uuid/1338fa28-7856-4a33-9e7a-0b0f08d7ee22";
-  };
 
 }
