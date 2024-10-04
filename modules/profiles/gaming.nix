@@ -61,6 +61,14 @@ in
         capSysNice = true;
       };
 
+      # Remote gaming hell yeah! Must be started manually for "security"
+      services.sunshine = {
+        enable = true;
+        capSysAdmin = true;
+        openFirewall = true;
+        autoStart = lib.mkDefault false;
+      };
+
       # Declarative flatpak might not be present.
       services.flatpak = if config.services.flatpak ? "packages" then {
         packages = [
