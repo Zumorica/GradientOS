@@ -77,6 +77,7 @@ in
           options = {
             localAnnounceEnabled = true;
             limitBandwidthInLan = false;
+            urAccepted = "-1";
           };
         };
       };
@@ -107,10 +108,12 @@ in
       versioning.type = "trashcan";
       path = config.gradient.lib.switch hostName [
         { case = "miracle-crusher"; value = "/data/retrodeck"; }
+        { case = "featherine"; value = "/data/retrodeck"; }
+        { case = "asiyah"; value = "/data/retrodeck"; }
         { case = "vera-deck-oled"; value = "/run/media/deck/mmcblk0p1/retrodeck"; }
         { case = null; value = throw "Did not match any hostname..."; }
       ];
-      devices = [ "miracle-crusher" "vera-deck-oled" ];
+      devices = [ "asiyah" "miracle-crusher" "vera-deck-oled" "featherine" ];
     };
     ffxiv-config = {
       id = "ujgmj-wkmsh";
