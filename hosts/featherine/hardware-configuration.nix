@@ -8,7 +8,7 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "amdgpu" "xhci_hcd" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "i2c-dev" ];
   boot.kernelParams = [];
   boot.extraModulePackages = with config.boot.kernelPackages; [ ];
   boot.extraModprobeConfig = "";
