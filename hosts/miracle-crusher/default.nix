@@ -48,17 +48,4 @@
     browsing = true;
   };
 
-  networking.hosts = with config.gradient.const.wireguard.addresses; {
-    "${gradientnet.asiyah}"  = [ "gradientnet" "gradient" "asiyah" ];
-    "${gradientnet.briah}" = [ "briah" ];
-    "${gradientnet.vera-deck}" = [ "deck" ];
-    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
-    "${gradientnet.vera-laptop}" = [ "laptop" ];
-    "${lilynet.asiyah}" = [ "lilynet" ];
-    "${lilynet.neith-deck}" = [ "neith-deck" ];
-    "${slugcatnet.asiyah}" = [ "slugcatnet" ];
-    "${slugcatnet.remie}" = [ "remie" ];
-    "${slugcatnet.luna}" = [ "luna" ];
-  };
-
 }

@@ -30,13 +30,5 @@
     gpu_mem=256
     hdmi_force_hotplug=1
   '';
-  
-  networking.hosts = with config.gradient.const.wireguard.addresses; {
-    "${gradientnet.asiyah}" = [ "asiyah" ];
-    "${gradientnet.miracle-crusher}" = [ "vera" ];
-    "${gradientnet.vera-deck}" = [ "deck" ];
-    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
-    "${lilynet.neith-deck}" = [ "neith-deck" ];
-  };
 
 }

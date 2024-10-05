@@ -30,14 +30,4 @@
     neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };
 
-  networking.hosts = with config.gradient.const.wireguard.addresses; {
-    "${gradientnet.asiyah}" = [ "gradientnet" "gradient" "asiyah" ];
-    "${gradientnet.briah}"  = [ "briah" ];
-    "${gradientnet.miracle-crusher}" = [ "vera" ];
-    "${gradientnet.vera-deck-oled}" = [ "deck-oled" ];
-    "${gradientnet.vera-laptop}" = [ "laptop" ];
-    "${lilynet.asiyah}" = [ "lilynet" ];
-    "${lilynet.neith-deck}" = [ "neith-deck" ];
-  };
-
 }
