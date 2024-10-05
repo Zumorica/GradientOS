@@ -2,7 +2,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-
+    unstable.wlr-randr
   ];
 
   services.flatpak.packages = [

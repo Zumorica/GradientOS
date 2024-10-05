@@ -18,6 +18,8 @@
 
   networking.hostName = "vera-deck";
 
+  gradient.profiles.graphics.enable = true;
+
   gradient.presets.syncthing.enable = true;
 
   gradient.substituters = {

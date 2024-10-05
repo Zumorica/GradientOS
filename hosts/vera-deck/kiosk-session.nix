@@ -8,6 +8,7 @@ in {
     user = "vera";
     program = pkgs.writeScript "cage-script" ''
       ${pkgs.unstable.wlr-randr}/bin/wlr-randr --output eDP-1 --off
+      ${pkgs.unstable.wlr-randr}/bin/wlr-randr --output DP-1 --mode 800x480@68.349998Hz
       ${pkgs.unstable.chromium}/bin/chromium --noerrdialogs --disable-infobars --incognito --kiosk http://127.0.0.1:${toString ports.mainsail}
     '';
     extraArguments = [ "-d" ];
