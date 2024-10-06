@@ -32,7 +32,7 @@ Flake for different NixOS system configurations.
 
 ### Machines
 
-- **[miracle-crusher](hosts/miracle-crusher)**: Custom Gaming Desktop.
+- **[bernkastel](hosts/bernkastel)**: Custom Gaming Desktop.
 - **[vera-deck](hosts/vera-deck)**: Steam Deck LCD used as a Server.
 - **[vera-deck-oled](hosts/vera-deck-oled)**: Steam Deck OLED.
 - **[featherine](hosts/featherine)**: GPD Win Mini 2024.

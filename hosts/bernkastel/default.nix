@@ -11,7 +11,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "miracle-crusher";
+  networking.hostName = "bernkastel";
 
   gradient.profiles.gaming.enable = true;
   gradient.profiles.desktop.enable = true;

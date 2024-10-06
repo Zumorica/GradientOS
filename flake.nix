@@ -95,7 +95,7 @@
     gradientosConfigurations = [
         
       {
-        name = "miracle-crusher";
+        name = "bernkastel";
 
         modules = [
           declarative-flatpak.nixosModules.default
@@ -139,7 +139,7 @@
         ];
 
         deployment = {
-          targetHost = ips.gradientnet.miracle-crusher;
+          targetHost = ips.gradientnet.bernkastel;
           tags = with colmena-tags; [ x86_64 desktop vera ];
           allowLocalDeployment = true;
           buildOnTarget = true;

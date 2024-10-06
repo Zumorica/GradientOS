@@ -8,7 +8,7 @@
     keys = with config.gradient.const.ssh.pubKeys; [
       vera
       neith
-      miracle-crusher
+      bernkastel
       vera-deck
       vera-deck-oled
       neith-deck

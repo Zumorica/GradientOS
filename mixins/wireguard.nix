@@ -31,7 +31,7 @@ let
 
   asiyahHost = "asiyah";
   briahHost = "briah";
-  miracleCrusherHost = "miracle-crusher";
+  bernkastelHost = "bernkastel";
   neithDeckHost = "neith-deck";
   veraDeckHost = "vera-deck";
   veraDeckOledHost = "vera-deck-oled";
@@ -66,7 +66,7 @@ in
       };
     })
 
-    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost veraDeckHost veraDeckOledHost featherineHost ]) {
+    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost veraDeckHost veraDeckOledHost featherineHost ]) {
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "gradientnet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" ];
 
@@ -84,8 +84,8 @@ in
             publicKey = keys.briah;
           }
           {
-            allowedIPs = [ "${miracle-crusher}/32" ];
-            publicKey = keys.miracle-crusher;
+            allowedIPs = [ "${bernkastel}/32" ];
+            publicKey = keys.bernkastel;
           }
           {
             allowedIPs = [ "${vera-deck}/32" ];
@@ -125,7 +125,7 @@ in
       };
     })
 
-    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost neithDeckHost veraDeckHost veraDeckOledHost featherineHost ]) {
+    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost veraDeckHost veraDeckOledHost featherineHost ]) {
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
@@ -143,8 +143,8 @@ in
             publicKey = keys.briah;
           }
           {
-            allowedIPs = [ "${miracle-crusher}/32" ];
-            publicKey = keys.miracle-crusher;
+            allowedIPs = [ "${bernkastel}/32" ];
+            publicKey = keys.bernkastel;
           }
           {
             allowedIPs = [ "${neith-deck}/32" ];
@@ -184,7 +184,7 @@ in
       };
     })
 
-    ( lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost miracleCrusherHost neithDeckHost ]) {
+    ( lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost ]) {
         networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
         systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
 
@@ -206,8 +206,8 @@ in
               publicKey = keys.remie;
             }
             {
-              allowedIPs = [ "${miracle-crusher}/32" ];
-              publicKey = keys.miracle-crusher;
+              allowedIPs = [ "${bernkastel}/32" ];
+              publicKey = keys.bernkastel;
             }
             {
               allowedIPs = [ "${luna}/32" ];

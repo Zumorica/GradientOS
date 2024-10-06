@@ -95,43 +95,43 @@ in
       id = "default";
       versioning.type = "trashcan";
       path = "~/Documents/Sync";
-      devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "vera-deck" "vera-deck-oled" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
     };
     music = {
       id = "y0fft-chww4";
       versioning.type = "trashcan";
       path = "~/Music";
-      devices = [ "miracle-crusher" "vera-deck" "vera-deck-oled" "asiyah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "vera-deck" "vera-deck-oled" "asiyah" "vera-phone" "work-laptop" "featherine" ];
     };
     retrodeck = {
       id = "9rctd-ets59";
       versioning.type = "trashcan";
       path = config.gradient.lib.switch hostName [
-        { case = "miracle-crusher"; value = "/data/retrodeck"; }
+        { case = "bernkastel"; value = "/data/retrodeck"; }
         { case = "featherine"; value = "/data/retrodeck"; }
         { case = "asiyah"; value = "/data/retrodeck"; }
         { case = "vera-deck-oled"; value = "/run/media/deck/mmcblk0p1/retrodeck"; }
         { case = null; value = throw "Did not match any hostname..."; }
       ];
-      devices = [ "asiyah" "miracle-crusher" "vera-deck-oled" "featherine" ];
+      devices = [ "asiyah" "bernkastel" "vera-deck-oled" "featherine" ];
     };
     ffxiv-config = {
       id = "ujgmj-wkmsh";
       versioning.type = "trashcan";
       path = "~/.xlcore/ffxivConfig";
-      devices = [ "miracle-crusher" "asiyah" "vera-deck" "vera-deck-oled" "featherine" ];
+      devices = [ "bernkastel" "asiyah" "vera-deck" "vera-deck-oled" "featherine" ];
     };
     the-midnight-hall = {
       id = "ykset-ue2ke";
       versioning.type = "trashcan";
       path = "~/Documents/TheMidnightHall";
-      devices = [ "miracle-crusher" "asiyah" "featherine" "neith-deck" "hadal-rainbow" ];
+      devices = [ "bernkastel" "asiyah" "featherine" "neith-deck" "hadal-rainbow" ];
     };
     important-documents = {
       id = "egytl-udh2q";
       versioning.type = "trashcan";
       path = "~/.ImportantDocuments_encfs/";
-      devices = [ "miracle-crusher" "asiyah" ];
+      devices = [ "bernkastel" "asiyah" ];
     };
   }));
 

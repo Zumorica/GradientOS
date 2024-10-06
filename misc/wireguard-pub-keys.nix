@@ -1,6 +1,6 @@
 {
 
-  miracle-crusher = "pgPX/8I6p/6z19w4mP38VVNK9RQDXHI3rUdy9Zzv0gg=";
+  bernkastel = "pgPX/8I6p/6z19w4mP38VVNK9RQDXHI3rUdy9Zzv0gg=";
   vera-deck = "3iA3etOZC+5J3zKjcFvQVw5bhiKKC0XGUQap43yMB1o=";
   vera-deck-oled = "okNBZAPQiNALnW0Z6AXz+pXv1CJfo+YfCTtnx07fLEo=";
   neith-deck = "p4dmhuDzBmzHvudnT2nnSTrGQY047ubuCEjEk2U2zFw=";

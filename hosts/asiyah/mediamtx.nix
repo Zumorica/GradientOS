@@ -24,7 +24,7 @@ let
         ips = with addresses.gradientnet; [
           "127.0.0.1"
           "::1"
-          miracle-crusher
+          bernkastel
         ];
         permissions = [
           { action = "api"; }

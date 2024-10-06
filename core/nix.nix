@@ -54,7 +54,7 @@ in
             "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
             asiyah
             briah
-            miracle-crusher
+            bernkastel
             vera-deck
             vera-deck-oled
             neith-deck

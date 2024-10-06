@@ -4,7 +4,7 @@
     asiyah = "192.168.24.1";
     briah = "192.168.24.24";
     atziluth = "192.168.24.48";
-    miracle-crusher = "192.168.24.2";
+    bernkastel = "192.168.24.2";
     vera-deck = "192.168.24.3";
     vera-phone = "192.168.24.4";
     vera-laptop = "192.168.24.5";
@@ -16,7 +16,7 @@
     lilynet = "192.168.109.0";
     asiyah = "192.168.109.1";
     briah = "192.168.109.24";
-    miracle-crusher = "192.168.109.2";
+    bernkastel = "192.168.109.2";
     neith-deck = "192.168.109.3";
     vera-deck = "192.168.109.5";
     vera-deck-oled = "192.168.109.6";
@@ -29,7 +29,7 @@
     asiyah = "192.168.4.1";
     briah = "192.168.4.24";
     remie = "192.168.4.2";
-    miracle-crusher = "192.168.4.3";
+    bernkastel = "192.168.4.3";
     luna = "192.168.4.4";
     neith-deck = "192.168.4.5";
   };

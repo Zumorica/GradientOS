@@ -1,7 +1,7 @@
 keys:
   - &user_vera age1w7xthmy2u80yp9jx98dnmcek0xcdcfmjx5at823m3536rkp5q3xqkqfw2j
   - &user_neith age10h2dan2d3jgy8tjq4djhu5lg4krx2m735nxcvg2schkpkvht0ynsmpdqne
-  - &host_miraclecrusher age1hl9999dlv29qejtac0sdw7nnm9d06uh4nzmgc029ndg40vllavyq5u0pqu
+  - &host_bernkastel age1hl9999dlv29qejtac0sdw7nnm9d06uh4nzmgc029ndg40vllavyq5u0pqu
   - &host_neithdeck age1uj0nmmvdeajg0hqlahe839c5r4n6nz0r6ampcwa46yhetx32kgrqqky22x
   - &host_veradeck age1kvsa0ka66tzx3qdq6cacehyyfg80ecq6jfgqxgf8098mdah4earspnft40
   - &host_veradeckoled age1ttl5pp50xffh73y3ekutsret24gd3rn7w2yvvcrhu2ywkz867fes8ea2s7
@@ -15,7 +15,7 @@ creation_rules:
     - age:
       - *user_vera
       - *user_neith
-      - *host_miraclecrusher
+      - *host_bernkastel
       - *host_neithdeck
       - *host_veradeck
       - *host_veradeckoled
@@ -34,11 +34,11 @@ creation_rules:
       - *user_neith
       - *user_vera
 
-  - path_regex: 'hosts/miracle-crusher/secrets/*'
+  - path_regex: 'hosts/bernkastel/secrets/*'
     key_groups:
     - age:
       - *user_vera
-      - *host_miraclecrusher
+      - *host_bernkastel
 
   - path_regex: 'hosts/vera-deck/secrets/*'
     key_groups:

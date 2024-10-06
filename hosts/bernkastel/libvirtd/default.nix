@@ -29,7 +29,7 @@ in {
     
     "/var/lib/libvirt/vbios.rom".C = {
       argument = "${./vbios.rom}";
-      repoPath = "/etc/nixos/hosts/miracle-crusher/libvirtd/vbios.rom";
+      repoPath = "/etc/nixos/hosts/bernkastel/libvirtd/vbios.rom";
       doCheck = true;
       group = "libvirtd";
       mode = "0664";
@@ -37,7 +37,7 @@ in {
 
     "/var/lib/libvirt/qemu/win10.xml".C = {
       argument = "${./win10.xml}";
-      repoPath = "/etc/nixos/hosts/miracle-crusher/libvirtd/win10.xml";
+      repoPath = "/etc/nixos/hosts/bernkastel/libvirtd/win10.xml";
       doCheck = true;
       group = "libvirtd";
       mode = "0666";
@@ -45,7 +45,7 @@ in {
 
     "/var/lib/libvirt/qemu/win10-no-passthrough.xml".C = {
       argument = "${./win10-no-passthrough.xml}";
-      repoPath = "/etc/nixos/hosts/miracle-crusher/libvirtd/win10-no-passthrough.xml";
+      repoPath = "/etc/nixos/hosts/bernkastel/libvirtd/win10-no-passthrough.xml";
       doCheck = true;
       group = "libvirtd";
       mode = "0666";
