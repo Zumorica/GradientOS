@@ -10,7 +10,7 @@
       neith
       bernkastel
       vera-deck
-      vera-deck-oled
+      erika
       neith-deck
       asiyah
       briah

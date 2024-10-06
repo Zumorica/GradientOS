@@ -34,7 +34,7 @@ Flake for different NixOS system configurations.
 
 - **[bernkastel](hosts/bernkastel)**: Custom Gaming Desktop.
 - **[vera-deck](hosts/vera-deck)**: Steam Deck LCD used as a Server.
-- **[vera-deck-oled](hosts/vera-deck-oled)**: Steam Deck OLED.
+- **[erika](hosts/erika)**: Steam Deck OLED.
 - **[featherine](hosts/featherine)**: GPD Win Mini 2024.
 - **[neith-deck](hosts/neith-deck)**: Steam Deck LCD.
 - **[asiyah](hosts/asiyah)**: ThinkCentre M900 Tiny Home Server.

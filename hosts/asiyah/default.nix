@@ -22,9 +22,9 @@
 
   gradient.substituters = {
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
-    vera = "ssh-ng://nix-ssh@vera.gradient?priority=40";
+    bernkastel = "ssh-ng://nix-ssh@bernkastel.gradient?priority=40";
     vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
-    vera-deck-oled = "ssh-ng://nix-ssh@vera-deck-oled.gradient?priority=50";
+    erika = "ssh-ng://nix-ssh@erika.gradient?priority=50";
     neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };
   

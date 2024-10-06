@@ -34,7 +34,7 @@ let
   bernkastelHost = "bernkastel";
   neithDeckHost = "neith-deck";
   veraDeckHost = "vera-deck";
-  veraDeckOledHost = "vera-deck-oled";
+  erikaHost = "erika";
   featherineHost = "featherine";
 
   hostName = config.networking.hostName;
@@ -66,7 +66,7 @@ in
       };
     })
 
-    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost veraDeckHost veraDeckOledHost featherineHost ]) {
+    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost veraDeckHost erikaHost featherineHost ]) {
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "gradientnet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" ];
 
@@ -100,8 +100,8 @@ in
             publicKey = keys.vera-laptop;
           }
           {
-            allowedIPs = [ "${vera-deck-oled}/32" ];
-            publicKey = keys.vera-deck-oled;
+            allowedIPs = [ "${erika}/32" ];
+            publicKey = keys.erika;
           }
           {
             allowedIPs = [ "${featherine}/32" ];
@@ -125,7 +125,7 @@ in
       };
     })
 
-    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost veraDeckHost veraDeckOledHost featherineHost ]) {
+    (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost veraDeckHost erikaHost featherineHost ]) {
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
@@ -155,8 +155,8 @@ in
             publicKey = keys.vera-deck;
           }
           {
-            allowedIPs = [ "${vera-deck-oled}/32" ];
-            publicKey = keys.vera-deck-oled;
+            allowedIPs = [ "${erika}/32" ];
+            publicKey = keys.erika;
           }
           {
             allowedIPs = [ "${neith-desktop}/32" ];

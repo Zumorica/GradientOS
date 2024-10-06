@@ -95,13 +95,13 @@ in
       id = "default";
       versioning.type = "trashcan";
       path = "~/Documents/Sync";
-      devices = [ "bernkastel" "vera-deck" "vera-deck-oled" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "vera-deck" "erika" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
     };
     music = {
       id = "y0fft-chww4";
       versioning.type = "trashcan";
       path = "~/Music";
-      devices = [ "bernkastel" "vera-deck" "vera-deck-oled" "asiyah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "vera-deck" "erika" "asiyah" "vera-phone" "work-laptop" "featherine" ];
     };
     retrodeck = {
       id = "9rctd-ets59";
@@ -110,16 +110,16 @@ in
         { case = "bernkastel"; value = "/data/retrodeck"; }
         { case = "featherine"; value = "/data/retrodeck"; }
         { case = "asiyah"; value = "/data/retrodeck"; }
-        { case = "vera-deck-oled"; value = "/run/media/deck/mmcblk0p1/retrodeck"; }
+        { case = "erika"; value = "/run/media/deck/mmcblk0p1/retrodeck"; }
         { case = null; value = throw "Did not match any hostname..."; }
       ];
-      devices = [ "asiyah" "bernkastel" "vera-deck-oled" "featherine" ];
+      devices = [ "asiyah" "bernkastel" "erika" "featherine" ];
     };
     ffxiv-config = {
       id = "ujgmj-wkmsh";
       versioning.type = "trashcan";
       path = "~/.xlcore/ffxivConfig";
-      devices = [ "bernkastel" "asiyah" "vera-deck" "vera-deck-oled" "featherine" ];
+      devices = [ "bernkastel" "asiyah" "vera-deck" "erika" "featherine" ];
     };
     the-midnight-hall = {
       id = "ykset-ue2ke";

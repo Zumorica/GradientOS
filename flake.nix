@@ -231,7 +231,7 @@
       }
 
       {
-        name = "vera-deck-oled";
+        name = "erika";
         overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
@@ -272,7 +272,7 @@
         ];
 
         deployment = {
-          targetHost = ips.gradientnet.vera-deck-oled;
+          targetHost = ips.gradientnet.erika;
           tags = with colmena-tags; [ x86_64 steam-deck desktop vera ];
           allowLocalDeployment = true;
         };
