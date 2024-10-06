@@ -27,7 +27,7 @@ let
     ${ip6tablesCmd} -t nat -D POSTROUTING -o ${interface} -j MASQUERADE
   ";
 
-  generateHosts = suffix: addresses: lib.attrsets.mapAttrs' (name: value: { name = value; value = "${name}${suffix}"; }) addresses;
+  generateHosts = suffix: addresses: lib.attrsets.mapAttrs' (name: value: { name = value; value = ["${name}${suffix}"]; }) addresses;
 
   asiyahHost = "asiyah";
   briahHost = "briah";
