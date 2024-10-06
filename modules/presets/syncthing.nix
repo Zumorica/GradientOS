@@ -77,7 +77,7 @@ in
           options = {
             localAnnounceEnabled = true;
             limitBandwidthInLan = false;
-            urAccepted = "-1";
+            urAccepted = -1;
           };
         };
       };
