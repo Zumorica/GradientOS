@@ -20,7 +20,7 @@
     neith-deck = "192.168.109.3";
     beatrice = "192.168.109.5";
     erika = "192.168.109.6";
-    neith-desktop = "192.168.109.7";
+    hadal-rainbow = "192.168.109.7";
     featherine = "192.168.109.8";
   };
 

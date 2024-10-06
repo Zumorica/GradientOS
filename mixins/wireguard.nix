@@ -129,7 +129,7 @@ in
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
-      networking.hosts = generateHosts ".lily" addr.gradientnet;
+      networking.hosts = generateHosts ".lily" addr.lilynet;
 
       networking.wireguard.interfaces.lilynet = with addr.lilynet; {
         ips = ["${addr.lilynet.${hostName}}/${if isAsiyah then "24" else "32"}"];
@@ -159,8 +159,8 @@ in
             publicKey = keys.erika;
           }
           {
-            allowedIPs = [ "${neith-desktop}/32" ];
-            publicKey = keys.neith-desktop;
+            allowedIPs = [ "${hadal-rainbow}/32" ];
+            publicKey = keys.hadal-rainbow;
           }
           {
             allowedIPs = [ "${featherine}/32" ];
@@ -188,7 +188,7 @@ in
         networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
         systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
 
-        networking.hosts = generateHosts ".slugcat" addr.gradientnet;
+        networking.hosts = generateHosts ".slugcat" addr.slugcatnet;
         
         networking.wireguard.interfaces.slugcatnet = with addr.slugcatnet; {
           ips = ["${addr.slugcatnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
