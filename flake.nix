@@ -188,7 +188,7 @@
       }
 
       {
-        name = "vera-deck";
+        name = "beatrice";
         overlays = [ self.overlays.kernel-allow-missing ];
 
         modules = [
@@ -224,7 +224,7 @@
         ];
 
         deployment = {
-          targetHost = ips.gradientnet.vera-deck;
+          targetHost = ips.gradientnet.beatrice;
           tags = with colmena-tags; [ x86_64 steam-deck desktop server vera ];
           allowLocalDeployment = true;
         };

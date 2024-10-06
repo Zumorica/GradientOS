@@ -36,7 +36,7 @@
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";
-    vera-deck = "ssh-ng://nix-ssh@vera-deck.gradient?priority=45";
+    beatrice = "ssh-ng://nix-ssh@beatrice.gradient?priority=45";
     erika = "ssh-ng://nix-ssh@erika.gradient?priority=50";
     neith-deck = "ssh-ng://nix-ssh@neith-deck.lily?priority=100";
   };

@@ -12,17 +12,17 @@ in {
         port = ports.mainsail;
       }
       {
-        addr = addresses.gradientnet.vera-deck;
+        addr = addresses.gradientnet.beatrice;
         port = ports.mainsail;
       }
       {
-        addr = addresses.lilynet.vera-deck;
+        addr = addresses.lilynet.beatrice;
         port = ports.mainsail;
       }
     ];
     nginx.serverAliases = [
-      "vera-deck.gradient"
-      "vera-deck.lily"
+      "beatrice.gradient"
+      "beatrice.lily"
     ];
   };
 

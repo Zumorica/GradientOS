@@ -24,10 +24,10 @@ in {
       authorization = {
         cors_domains = [
           "*://${config.networking.hostName}:*"
-          "*://${addresses.gradientnet.vera-deck}:*"
-          "*://${addresses.lilynet.vera-deck}:*"
-          "*//vera-deck.gradient"
-          "*//vera-deck.lily"
+          "*://${addresses.gradientnet.beatrice}:*"
+          "*://${addresses.lilynet.beatrice}:*"
+          "*//beatrice.gradient"
+          "*//beatrice.lily"
         ];
         trusted_clients = [
           "127.0.0.1"

@@ -55,7 +55,7 @@ in
             asiyah
             briah
             bernkastel
-            vera-deck
+            beatrice
             erika
             neith-deck
           ];

@@ -95,13 +95,13 @@ in
       id = "default";
       versioning.type = "trashcan";
       path = "~/Documents/Sync";
-      devices = [ "bernkastel" "vera-deck" "erika" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "beatrice" "erika" "asiyah" "briah" "vera-phone" "work-laptop" "featherine" ];
     };
     music = {
       id = "y0fft-chww4";
       versioning.type = "trashcan";
       path = "~/Music";
-      devices = [ "bernkastel" "vera-deck" "erika" "asiyah" "vera-phone" "work-laptop" "featherine" ];
+      devices = [ "bernkastel" "beatrice" "erika" "asiyah" "vera-phone" "work-laptop" "featherine" ];
     };
     retrodeck = {
       id = "9rctd-ets59";
@@ -119,7 +119,7 @@ in
       id = "ujgmj-wkmsh";
       versioning.type = "trashcan";
       path = "~/.xlcore/ffxivConfig";
-      devices = [ "bernkastel" "asiyah" "vera-deck" "erika" "featherine" ];
+      devices = [ "bernkastel" "asiyah" "beatrice" "erika" "featherine" ];
     };
     the-midnight-hall = {
       id = "ykset-ue2ke";

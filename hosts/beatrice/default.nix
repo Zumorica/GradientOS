@@ -16,7 +16,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "vera-deck";
+  networking.hostName = "beatrice";
 
   gradient.profiles.graphics.enable = true;
 
