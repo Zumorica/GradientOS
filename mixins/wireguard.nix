@@ -27,6 +27,8 @@ let
     ${ip6tablesCmd} -t nat -D POSTROUTING -o ${interface} -j MASQUERADE
   ";
 
+  generateHosts = suffix: addresses: lib.attrsets.mapAttrs' (name: value: { name = value; value = "${name}${suffix}"; }) addresses;
+
   asiyahHost = "asiyah";
   briahHost = "briah";
   miracleCrusherHost = "miracle-crusher";
@@ -68,9 +70,7 @@ in
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "gradientnet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" ];
 
-      environment.etc."NetworkManager/dnsmasq.d/nameserver-gradientnet.conf".text = ''
-        server=/gradient/${addr.gradientnet.asiyah}#${toString asiyahPorts.dns-gradientnet}
-      '';
+      networking.hosts = generateHosts ".gradient" addr.gradientnet;
 
       networking.wireguard.interfaces.gradientnet = with addr.gradientnet; {
         ips = ["${addr.gradientnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
@@ -129,9 +129,7 @@ in
       networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
-      environment.etc."NetworkManager/dnsmasq.d/nameserver-lilynet.conf".text = ''
-        server=/lily/${addr.lilynet.asiyah}#${toString asiyahPorts.dns-lilynet}
-      '';
+      networking.hosts = generateHosts ".lily" addr.gradientnet;
 
       networking.wireguard.interfaces.lilynet = with addr.lilynet; {
         ips = ["${addr.lilynet.${hostName}}/${if isAsiyah then "24" else "32"}"];
@@ -190,9 +188,7 @@ in
         networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
         systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
 
-        environment.etc."NetworkManager/dnsmasq.d/nameserver-slugcatnet.conf".text = ''
-          server=/slugcat/${addr.slugcatnet.asiyah}#${toString asiyahPorts.dns-slugcatnet}
-        '';
+        networking.hosts = generateHosts ".slugcat" addr.gradientnet;
         
         networking.wireguard.interfaces.slugcatnet = with addr.slugcatnet; {
           ips = ["${addr.slugcatnet.${hostName}}/${if isAsiyah then "24" else "32"}"];
