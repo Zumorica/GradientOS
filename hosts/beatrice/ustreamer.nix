@@ -22,12 +22,13 @@ in {
       --drop-same-frames 30 \
       --last-as-blank 60 \
       --device-timeout 60 \
-      --workers 8 \
+      --workers 4 \
+      --buffers 5 \
       --image-default \
       --slowdown \
-      --quality 80 \
+      --quality 100 \
       --persistent \
-      --encoder hw'';
+      --encoder cpu'';
   };
 
   systemd.services.ustreamer-endoscope = {
@@ -50,12 +51,13 @@ in {
       --drop-same-frames 30 \
       --last-as-blank 60 \
       --device-timeout 60 \
-      --workers 8 \
+      --workers 4 \
+      --buffers 5 \
       --image-default \
       --slowdown \
-      --quality 80 \
+      --quality 100 \
       --persistent \
-      --encoder hw'';
+      --encoder cpu'';
   };
 
   services.mainsail.nginx.locations = {
