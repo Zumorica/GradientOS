@@ -7,6 +7,7 @@
   #ss14-watchdog = 5000;
 
   # misc
+  esphome = 6052;
   syncthing = 8384;
   syncthing-transfers = 22000;
   home-assistant = 8123;

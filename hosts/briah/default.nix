@@ -7,6 +7,7 @@
     ./filesystems.nix
     ./home-assistant.nix
     # ./ss14-watchdog.nix
+    ./esphome/default.nix
     ./secrets/default.nix
   ];
 
