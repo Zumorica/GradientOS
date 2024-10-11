@@ -19,6 +19,7 @@
   ];
 
   gradient.presets.syncthing.enable = true;
+  gradient.profiles.catppuccin.enable = true;
 
   gradient.substituters = {
     briah = "ssh-ng://nix-ssh@briah.gradient?priority=60";

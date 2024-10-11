@@ -9,6 +9,7 @@ in
     ./gaming.nix
     ./desktop.nix
     ./graphics.nix
+    ./catppuccin.nix
     ./development.nix
   ];
 

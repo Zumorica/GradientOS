@@ -80,6 +80,11 @@ in
               ms-vscode-remote.remote-ssh-edit
               ms-vscode-remote.remote-ssh
 
+              # catppuccin
+              catppuccin.catppuccin-vsc-icons
+              catppuccin.catppuccin-vsc
+
+
             ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
               {
                 name = "excalidraw-editor";

@@ -19,6 +19,7 @@
   networking.hostName = "beatrice";
 
   gradient.profiles.graphics.enable = true;
+  gradient.profiles.catppuccin.enable = true;
 
   gradient.presets.syncthing.enable = true;
 

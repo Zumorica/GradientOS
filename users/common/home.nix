@@ -1,8 +1,10 @@
-{ ... }:
+{ self, ... }:
 
 {
 
   imports = [
+    self.inputs.catppuccin.homeManagerModules.catppuccin
+
     ./nix.nix
     ./nix-direnv.nix
   ];

@@ -1,10 +1,10 @@
 [Appearance]
-ColorScheme=vera
-DimmValue=41
+ColorScheme=catppuccin-mocha
+DimmValue=0
 Font=Roboto Mono Medium [GOOG],10,-1,5,57,0,0,0,0,0,Regular
 
 [General]
-DimWhenInactive=true
+DimWhenInactive=false
 Name=Vera Profile
 Parent=FALLBACK/
 TerminalColumns=96

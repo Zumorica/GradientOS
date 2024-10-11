@@ -16,6 +16,7 @@
   gradient.profiles.gaming.enable = true;
   gradient.profiles.desktop.enable = true;
   gradient.profiles.development.enable = true;
+  gradient.profiles.catppuccin.enable = true;
 
   gradient.profiles.audio.um2.enable = true;
 

@@ -12,6 +12,12 @@
   home.username = "vera";
   home.homeDirectory = "/home/vera";
 
+  catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+  gtk.catppuccin.enable = true;
+  qt.style.catppuccin.enable = true;
+  qt.style.catppuccin.apply = true;
+
   home.sessionPath = [
     "$HOME/bin"
   ];

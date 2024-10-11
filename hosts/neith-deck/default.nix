@@ -13,6 +13,7 @@
 
   gradient.profiles.gaming.enable = true;
   gradient.profiles.desktop.enable = true;
+  gradient.profiles.catppuccin.enable = false;
 
   gradient.presets.syncthing.enable = true;
   gradient.presets.syncthing.user = "neith";

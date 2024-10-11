@@ -12,6 +12,7 @@
   gradient.profiles.gaming.enable = true;
   gradient.profiles.desktop.enable = true;
   gradient.profiles.development.enable = true;
+  gradient.profiles.catppuccin.enable = true;
 
   gradient.presets.syncthing.enable = true;
 

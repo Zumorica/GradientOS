@@ -11,6 +11,7 @@
   ];
 
   gradient.presets.syncthing.enable = true;
+  gradient.profiles.catppuccin.enable = true;
 
   gradient.substituters = {
     asiyah = "ssh-ng://nix-ssh@asiyah.gradient?priority=40";
