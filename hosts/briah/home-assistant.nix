@@ -90,6 +90,7 @@ in
     config.recorder = {
       purge_keep_days = 365;
     };
+    config.zha.zigpy_config.ota.z2m_remote_index = "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json";
   };
 
   networking.firewall.interfaces.gradientnet.allowedTCPPorts = [ ports.home-assistant ];
