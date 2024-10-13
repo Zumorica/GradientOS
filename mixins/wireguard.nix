@@ -48,6 +48,38 @@ in
     {
       networking.wireguard.enable = true;
       environment.systemPackages = [ pkgs.wireguard-tools ];
+
+      systemd.services.vpn-watchdog = {
+        description = "VPN Watchdog";
+        after = [ "network-pre.target" ];
+        wants = [ "network.target" ];
+        before = [ "network.target" ];
+        path = with pkgs; [ systemd unixtools.ping ];
+        script = ''
+          FAILURES=0
+          while true; do
+            if ping vpn.gradient.moe -c 1 -W 5; then
+              if ((FAILURES > 2)); then
+                echo "Restarting VPN services..."
+                systemctl restart *wireguard*
+                echo "Restarted VPN!"
+              fi
+              FAILURES=0
+              sleep "25"
+            else
+              SLEEP_TIME=$((FAILURES>25 ? 25 : FAILURES))
+              echo "Failed to ping! Retrying in $SLEEP_TIME seconds..."
+              FAILURES=$((FAILURES+1))
+              sleep "$SLEEP_TIME"
+            fi
+          done
+        '';
+        serviceConfig = {
+          Type = "simple";
+          Restart = "always";
+          RestartSec = 10;
+        };
+      };
     }
 
     (lib.mkIf isAsiyah {
@@ -62,13 +94,14 @@ in
       networking.firewall = {
         allowedTCPPorts = with asiyahPorts; [ gradientnet lilynet slugcatnet ];
         allowedUDPPorts = with asiyahPorts; [ gradientnet lilynet slugcatnet ];
-        interfaces.gradientnet.allowedTCPPorts = with asiyahPorts; [ ssh ];
       };
     })
 
     (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost beatriceHost erikaHost featherineHost ]) {
-      networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "gradientnet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "gradientnet" ];
+
+      # Allow SSH over gradientnet
+      networking.firewall.interfaces.gradientnet.allowedTCPPorts = config.services.openssh.ports;
 
       networking.hosts = generateHosts ".gradient" addr.gradientnet;
 
@@ -126,7 +159,6 @@ in
     })
 
     (lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost beatriceHost erikaHost featherineHost ]) {
-      networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "lilynet" ];
       systemd.network.wait-online.ignoredInterfaces = [ "lilynet" ];
 
       networking.hosts = generateHosts ".lily" addr.lilynet;
@@ -185,7 +217,6 @@ in
     })
 
     ( lib.mkIf (builtins.any (v: hostName == v) [ asiyahHost briahHost bernkastelHost neithDeckHost ]) {
-        networking.firewall.trustedInterfaces = lib.mkIf (!isAsiyah) [ "slugcatnet" ];
         systemd.network.wait-online.ignoredInterfaces = [ "slugcatnet" ];
 
         networking.hosts = generateHosts ".slugcat" addr.slugcatnet;
