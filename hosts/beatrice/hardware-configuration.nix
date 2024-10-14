@@ -13,6 +13,7 @@
 
   boot.plymouth.enable = lib.mkForce false;
   boot.initrd.unl0kr.enable = true;
+  hardware.amdgpu.initrd.enable = false;
 
   nixpkgs.hostPlatform = "x86_64-linux";
   

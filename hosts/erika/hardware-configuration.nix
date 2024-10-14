@@ -13,6 +13,7 @@
 
   boot.plymouth.enable = lib.mkForce false;
   boot.initrd.unl0kr.enable = true;
+  hardware.amdgpu.initrd.enable = false;
   
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
