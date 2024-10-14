@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   ports = import ./misc/service-ports.nix;
+  briahPorts = import ../briah/misc/service-ports.nix;
   addresses = import ../../misc/wireguard-addresses.nix;
   cfgPath = "/var/lib/moonraker";
 in {
@@ -81,6 +82,12 @@ in {
         output_path = "${cfgPath}/timelapse/";
         ffmpeg_binary_path = "${pkgs.ffmpeg}/bin/ffmpeg";
         camera = "c920";
+      };
+
+      mqtt = {
+        port = briahPorts.mqtt;
+        address = addresses.gradientnet.briah;
+        instance_name = config.networking.hostName;
       };
     };
   };

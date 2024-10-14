@@ -2,8 +2,10 @@
 {
 
   imports = [
+    ./mqtt.nix
     ./backups.nix
     ./programs.nix
+    ./postgresql.nix
     ./filesystems.nix
     ./home-assistant.nix
     # ./ss14-watchdog.nix

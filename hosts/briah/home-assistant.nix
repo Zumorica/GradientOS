@@ -71,6 +71,7 @@ in
       moonraker
       smartir
     ];
+    extraPackages = ps: with ps; [ psycopg2 ];
     config.telegram_bot = "!include telegram.yaml";
     config.automation = "!include automations.yaml";
     config.notify = "!include notifiers.yaml";
@@ -89,6 +90,7 @@ in
     config.history = {};
     config.recorder = {
       purge_keep_days = 365;
+      db_url = "postgresql://@/hass";
     };
     config.zha.zigpy_config.ota.z2m_remote_index = "https://raw.githubusercontent.com/Koenkk/zigbee-OTA/master/index.json";
   };
