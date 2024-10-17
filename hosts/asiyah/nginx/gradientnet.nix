@@ -3,18 +3,56 @@
 */
 { config, ... }:
 let
+  dashboard = builtins.toFile "dashboard.html" (dashboardReplaceConstants dashboardBaseHtml);
+  dashboardReplaceConstants = html: builtins.replaceStrings 
+    [
+      "@ASIYAH@"
+      "@BRIAH@"
+      "@BEATRICE@"
+      "@PORT-Z2M@"
+      "@PORT-ESPHOME@"
+    ]
+    [
+      "asiyah.gradient"
+      "briah.gradient"
+      "beatrice.gradient"
+      (toString briahPorts.zigbee2mqtt)
+      (toString briahPorts.esphome)
+    ]
+    html;
+  dashboardBaseHtml = (builtins.readFile ./dashboard.html);
+  briahPorts = import ../../briah/misc/service-ports.nix;
   ports = import ../misc/service-ports.nix;
   ips = import ../../../misc/wireguard-addresses.nix;
-in {
+in
+{
 
-  services.nginx.virtualHosts."gradientnet" = with ips.gradientnet; {
+  services.nginx.virtualHosts."asiyah.gradient" = with ips.gradientnet; {
     listenAddresses = [ asiyah ];
     
     serverAliases = [
-      "gradient"
-      "asiyah"
       asiyah
     ];
+
+    locations."/".extraConfig = ''
+      if ($host = ${asiyah}) {
+        return 301 http://$host/dashboardIps/;
+      }
+      root ${builtins.dirOf dashboard}/;
+      try_files /${builtins.baseNameOf dashboard} =404;
+      sub_filter '@DASHBOARD_LOCATION@' '${dashboard}';
+      sub_filter_once off;
+    '';
+
+    locations."/dashboardIps/".extraConfig = ''
+      root ${builtins.dirOf dashboard}/;
+      try_files /${builtins.baseNameOf dashboard} =404;
+      sub_filter 'asiyah.gradient' '${asiyah}';
+      sub_filter 'briah.gradient' '${briah}';
+      sub_filter 'beatrice.gradient' '${beatrice}';
+      sub_filter '@DASHBOARD_LOCATION@' '${dashboard}';
+      sub_filter_once off;
+    '';
     
     locations."/memory_repository/" = {
       proxyPass = "http://127.0.0.1:${toString ports.trilium}/";
