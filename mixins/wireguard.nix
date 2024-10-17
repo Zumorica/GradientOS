@@ -54,11 +54,19 @@ in
         after = [ "network-pre.target" ];
         wants = [ "network.target" ];
         before = [ "network.target" ];
+        enable = !isAsiyah; # Asiyah shouldn't need this.
         path = with pkgs; [ systemd unixtools.ping ];
         script = ''
+          ${if config.networking.wireguard.interfaces ? "gradientnet" then ''
+          VPN=${addr.gradientnet.asiyah}
+          '' else if config.networking.wireguard.interfaces ? "lilynet" then ''
+          VPN=${addr.lilynet.asiyah}
+          '' else if config.networking.wireguard.interfaces ? "slugcatnet" then ''
+          VPN=${addr.slugcatnet.asiyah}
+          '' else "echo 'No Wireguard VPN configured!'; exit 1"}
           FAILURES=0
           while true; do
-            if ping vpn.gradient.moe -c 1 -W 5; then
+            if (ping vpn.gradient.moe -c 1 -W 5 && ping $VPN -c 1 -W 5); then
               if ((FAILURES > 2)); then
                 echo "Restarting VPN services..."
                 systemctl restart *wireguard*
@@ -67,7 +75,7 @@ in
               FAILURES=0
               sleep "25"
             else
-              SLEEP_TIME=$((FAILURES>25 ? 25 : FAILURES))
+              SLEEP_TIME=$((FAILURES>25 ? 60 : FAILURES))
               echo "Failed to ping! Retrying in $SLEEP_TIME seconds..."
               FAILURES=$((FAILURES+1))
               sleep "$SLEEP_TIME"

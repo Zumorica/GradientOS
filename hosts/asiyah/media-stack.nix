@@ -37,6 +37,13 @@ in {
     listenPort = ports.bazarr;
   };
 
+  virtualisation.oci-containers.containers.flaresolverr = {
+    image = "ghcr.io/flaresolverr/flaresolverr:latest";
+    #ports = [ "${toString ports.flaresolverr}:8191" ];
+    environment = { LOG_LEVEL="info"; };
+    extraOptions = [ "--network=host" ];
+  };
+
   services.deluge = {
     inherit group;
     enable = true;
@@ -80,6 +87,7 @@ in {
     sonarr
     jackett
     bazarr
+    flaresolverr
     deluge-web
   ];
   

@@ -24,6 +24,7 @@
   deluge-web = 8112;
   deluge-daemon = 58846;
   deluge-listen = [ 6881 6891 ];
+  flaresolverr = 8191;
 
   # misc
   redis-oauth2 = 6380;

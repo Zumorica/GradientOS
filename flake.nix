@@ -102,6 +102,7 @@
         modules = [
           declarative-flatpak.nixosModules.default
 
+          mixins.tor
           mixins.wine
           mixins.gnupg
           mixins.monado
@@ -240,6 +241,7 @@
           jovian-nixos.nixosModules.default
           declarative-flatpak.nixosModules.default
           
+          mixins.tor
           mixins.wine
           mixins.gnupg
           mixins.plymouth
@@ -288,6 +290,7 @@
           declarative-flatpak.nixosModules.default
           nixos-hardware.nixosModules.gpd-win-mini-2024
           
+          mixins.tor
           mixins.wine
           mixins.gnupg
           mixins.plymouth
@@ -335,6 +338,7 @@
           # nixos-hardware.nixosModules.common-gpu-intel
           gradient-generator.nixosModules.default
 
+          mixins.tor
           mixins.wine
           mixins.gnupg
           mixins.podman
