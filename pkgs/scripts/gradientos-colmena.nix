@@ -6,6 +6,6 @@ writeShellApplication {
   runtimeInputs = [ colmena ];
 
   text = ''
-    colmena -f "git+https://github.com/Zumorica/GradientOS" --show-trace "$@"
+    colmena -f "git+https://github.com/gradientvera/GradientOS" --show-trace "$@"
   '';
 }

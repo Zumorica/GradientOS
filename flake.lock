@@ -190,11 +190,11 @@
         "rev": "67dac04e46b70c26830e48c29454d4cb4972d7f6",
         "revCount": 95,
         "type": "git",
-        "url": "ssh://git@github.com/Zumorica/gradient-generator"
+        "url": "ssh://git@github.com/gradientvera/gradient-generator"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/Zumorica/gradient-generator"
+        "url": "ssh://git@github.com/gradientvera/gradient-generator"
       }
     },
     "gradient-moe": {
@@ -202,17 +202,17 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1717833979,
-        "narHash": "sha256-Qh8EgzYsM3BVgzvszB/hWAQq1Iavmv3QFxJIsepXv80=",
+        "lastModified": 1729253152,
+        "narHash": "sha256-aeheiUd320bXfO2fKlrB3+cWf0eXFJwN59P6K+K2uN8=",
         "ref": "refs/heads/main",
-        "rev": "2af1181679c0341ae1f23bab7cd8afce4dcdebb8",
-        "revCount": 15,
+        "rev": "2dfce7551e169fe2ffdf0c04e1b7e0d6eb350350",
+        "revCount": 16,
         "type": "git",
-        "url": "ssh://git@github.com/Zumorica/gradient.moe"
+        "url": "ssh://git@github.com/gradientvera/gradient.moe"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/Zumorica/gradient.moe"
+        "url": "ssh://git@github.com/gradientvera/gradient.moe"
       }
     },
     "home-manager": {

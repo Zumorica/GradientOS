@@ -24,7 +24,7 @@ in
 
   config = lib.mkIf cfg.core.enable {
     system.configurationRevision = lib.mkIf (self ? rev) self.rev;
-    system.autoUpgrade.flake = "github:Zumorica/GradientOS";
+    system.autoUpgrade.flake = "github:gradientvera/GradientOS";
   };
 
 }

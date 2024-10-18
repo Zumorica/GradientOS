@@ -28,11 +28,11 @@
     };
 
     gradient-generator = {
-      url = "git+ssh://git@github.com/Zumorica/gradient-generator";
+      url = "git+ssh://git@github.com/gradientvera/gradient-generator";
     };
 
     gradient-moe = {
-      url = "git+ssh://git@github.com/Zumorica/gradient.moe";
+      url = "git+ssh://git@github.com/gradientvera/gradient.moe";
     };
 
     constellation-moe = {
